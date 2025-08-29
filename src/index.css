@@ -1,8 +1,43 @@
-@import "tailwindcss"; 
+@import "tailwindcss";
+
+@theme {
+  --font-montserrat: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-insideout: "InsideOut", ui-sans-serif, system-ui, sans-serif;
+  --font-pixar: "Pixar", ui-sans-serif, system-ui, sans-serif;
+  --font-waltograph: "Waltograph", ui-sans-serif, system-ui, sans-serif;
+}
 
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InsideOut";
+  src: url("./assets/fonts/InsideOut-DAp0.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pixar";
+  src: url("./assets/fonts/Pixar.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Waltograph";
+  src: url("./assets/fonts/waltograph42.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
