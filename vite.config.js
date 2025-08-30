@@ -8,5 +8,5 @@ export default defineConfig({
     react(), 
     tailwindcss(),
   ],
-  base: "/2026-ARW",
+  base: "/apply",
 })
