@@ -12,6 +12,17 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color-blue-900: #0A0823;
+  --color-blue-800: #171052;
+  --color-blue-700: #182D6A;
+  --color-yellow-200: #F7D991;
+  --color-beige-200: #ECA974;
+  --color-rose-200: #D7A4A0;
+  --color-green-500: #05A54C;
+  --color-green-700: #05674A;
+  --color-yellow-600: #CAA64F;
+
 }
 
 @font-face {
