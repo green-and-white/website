@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Orb from "../components/Orb.jsx";
-import CommitteeCard from "../components/CommitteeCard.jsx";
+import MobileCommitteeCarousel from "../components/MobileCommitteeCarousel.jsx";
 import Modal from "../components/Modal.jsx";
 import descriptionsRaw from "../assets/committee_info/descriptions.txt?raw";
 
@@ -70,17 +70,15 @@ export default function Committees({ animated = true }) {
         </defs>
       </svg>
 
-      <section className="committee-orbs relative py-12 sm:py-24 md:py-36">
+      <section className="committee-orbs relative py-6 sm:py-24 md:py-36">
         <div className="container mx-auto px-6">
           {isMobileCards ? (
             <div className="mx-auto w-full max-w-2xl">
               <div className="text-center">
-                <h2 className="font-insideout text-white text-4xl sm:text-5xl select-none">Core Committees</h2>
+                <h2 className="font-insideout text-white text-3xl sm:text-5xl select-none">Core Committees</h2>
               </div>
-              <div className="mt-6 space-y-10">
-                {placements.map((p, i) => (
-                  <CommitteeCard key={i} committee={p} />
-                ))}
+              <div className="mt-3">
+                <MobileCommitteeCarousel committees={placements} />
               </div>
             </div>
           ) : (
