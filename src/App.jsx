@@ -7,10 +7,9 @@ import FAQs from './sections/FAQs'
 import Footer from './sections/Footer'
 import Dates from './sections/Dates'
 
-import './App.css'
+import "./App.css";
 
 function App() {
-
   return (
     <>
       <Hero></Hero>
@@ -22,9 +21,8 @@ function App() {
         <FAQs></FAQs>
       </div>
       <Footer></Footer>
-  
     </>
-  )
+  );
 }
 
-export default App
+export default App;
