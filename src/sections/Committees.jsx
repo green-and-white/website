@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Committees() {
   return (
-    <div>Committees</div>
+    <h1 className = " w-full text-center section-header">
+        Core Commitees
+    </h1>
   )
 }
