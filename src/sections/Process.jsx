@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 const stepsData = [
-  { number: "01", title: "APPLICATION", description: "Fill out the application form at bit.ly/GW26-T1-Application by Saturday, September 13.", color: "var(--color-marketing)" },
-  { number: "02", title: "EXAMINATION", description: "Wait for the details of your committee exam and take-home exam to be sent to you by September 15. Submit your exam deliverables, resume, and portfolio within the given time period.", color: "var(--color-customer-care)" },
-  { number: "03", title: "COMMITTEE HEAD INTERVIEW", description: " Schedule your interview with the committee head of your priority and secondary committee choices.", color: "var(--color-layout)" },
-  { number: "04", title: "EXECUTIVE EDITOR INTERVIEW", description: "Schedule your interview with the executive editors.", color: "var(--color-web)" },
+  { number: "01", title: "Application", description: "Fill out the application form at bit.ly/GW26-T1-Application by Saturday, September 13.", color: "var(--color-marketing)" },
+  { number: "02", title: "Examination", description: "Wait for the details of your committee exam and take-home exam to be sent to you by September 15. Submit your exam deliverables, resume, and portfolio within the given time period.", color: "var(--color-customer-care)" },
+  { number: "03", title: "Committee Head Interview", description: " Schedule your interview with the committee head of your priority and secondary committee choices.", color: "var(--color-layout)" },
+  { number: "04", title: "Executive Editor Interview", description: "Schedule your interview with the executive editors.", color: "var(--color-web)" },
 ];
 
 function StepItem({ number, title, description, color, isActive, onClick, enableClick }) {
@@ -24,7 +24,7 @@ function StepItem({ number, title, description, color, isActive, onClick, enable
     );
   return (
     <div
-      className="relative overflow-hidden group rounded-xl"
+      className="relative overflow-hidden group rounded-xl max-w-[500px] w-full"
       style={{ "--highlight": color }}
       onClick={enableClick ? onClick : undefined}
     >
@@ -36,13 +36,13 @@ function StepItem({ number, title, description, color, isActive, onClick, enable
       ></div>
 
       {/* Content */}
-      <div className="relative flex items-start space-x-6 md:space-x-8 px-2 py-4">
+      <div className="relative flex items-start space-x-6 md:space-x-4 px-2 py-4">
         <div className="flex flex-row h-full gap-4 items-center">
           <span className="font-pixar text-xl md:text-2xl font-bold">{number}</span>
-          <div className="w-[2px] h-10 bg-white"></div>
         </div>
+        <div className="w-[2px] h-9 bg-white"></div>
         <div className="flex-1 flex flex-col gap-2">
-          <h3 className="font-insideout text-2xl md:text-3xl font-bold mb-2">{title}</h3>
+          <h3 className="font-insideout text-2xl md:text-2xl font-bold mb-2">{title}</h3>
           <p className="font-montserrat text-xs md:text-sm"
                 dangerouslySetInnerHTML={{ __html: parsedDescription }}>
 
@@ -68,15 +68,15 @@ export default function Steps() {
     <section className="bg-radial-gradient-custom text-white flex flex-col items-center justify-center font-montserrat">
       <div className="flex flex-col lg:flex-row w-full max-w-7xl items-center lg:space-x-16">
         {/* Left Section */}
-        <div className="flex-1 flex flex-col h-full items-center lg:items-start text-center lg:text-left mb-12 lg:mb-0">
-          <h2 className="text-2xl md:text-4xl font-insideout mb-4">JOIN GREEN & WHITE</h2>
+        <div className="flex-1 flex flex-col h-full items-center text-center lg:text-left mb-12 lg:mb-0">
+          <h2 className="text-2xl md:text-4xl font-insideout mb-4">Ready to make core memories with us?</h2>
           <p className="max-w-xs md:max-w-md lg:max-w-none text-xs md:text-base font-montserrat">
-            Take these next steps to be part of a community that celebrates milestones.
+            Prepare to make unforgettable memories by taking these steps
           </p>
         </div>
 
         {/* Right Section */}
-        <div className="flex-1 w-full space-y-2 md:space-y-6">
+        <div className="flex-1 w-full flex flex-col items-center space-y-2 md:space-y-6">
           {stepsData.map((step, index) => (
             <StepItem
               key={index}

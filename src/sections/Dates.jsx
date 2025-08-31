@@ -2,22 +2,22 @@ import {useState, useEffect} from 'react';
 
 const eventsData = [
   {
-    title: "COMMITTEE EXAMS",
+    title: "Committee Exams",
     date: "Sept. 15 - 17",
     color: "#CA6702",
   },
   {
-    title: "TAKE HOME EXAMS",
+    title: "Take Home Exams",
     date: "Sept. 15 - 20",
     color: "#F6BB46",
   },
   {
-    title: "COMMITTEE HEAD INTERVIEWS",
+    title: "Committee Head Interviews",
     date: "Sept. 18 - 20",
     color: "#05A54C",
   },
   {
-    title: "EXECUTIVE EDITOR INTERVIEWS",
+    title: "Executive Editor Interviews",
     date: "Sept. 22 - 26",
     color: "#036074",
   },
@@ -53,9 +53,9 @@ function VerticalTimeline(){
 
 function HorizontalTimeline(){
     return(
-     <div className="relative hidden lg:block py-8 ">
+     <div className="relative hidden lg:block py-8 max-w-[1280px] mx-auto">
           {/* Main Line */}
-          <div className="absolute top-1/2 left-0 w-full h-1 bg-white/30"></div>
+          <div className="absolute top-1/2 left-0 w-full h-[2px] bg-white/30"></div>
 
           <div className="flex items-center justify-between relative z-10">
             {eventsData.map((event, index) => (
@@ -79,10 +79,10 @@ function HorizontalTimeline(){
                     index % 2 === 0 ? "-top-28" : "top-12"
                   } w-40 md:w-56 text-center p-3 rounded-2xl bg-white/5 backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-1`}
                 >
-                  <span className="block text-base md:text-lg font-semibold text-white group-hover:text-[var(--event-color)]">
+                  <span className="block text-base md:text-lg font-pixar text-white group-hover:text-[var(--event-color)]">
                     {event.date}
                   </span>
-                  <h3 className="text-lg font-bold font-insideout mt-1 leading-snug group-hover:text-[var(--event-color)]">
+                  <h3 className="text-base font-montserrat mt-1 leading-snug group-hover:text-[var(--event-color)]">
                     {event.title}
                   </h3>
                 </div>
@@ -106,8 +106,8 @@ return (
     <section className="text-white py-20 font-montserrat flex flex-col items-center justify-center">
         <div className="w-full">
             <h2
-                className={`text-3xl md:text-5xl text-center lg:text-start font-bold font-insideout ${
-                    isMobile ? "mb-12" : "mb-34"
+                className={`text-3xl md:text-5xl text-center font-bold font-insideout ${
+                    isMobile ? "mb-12" : "mb-48"
                 }`}
             >
                 Important Dates

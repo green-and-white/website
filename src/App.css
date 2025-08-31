@@ -2,7 +2,7 @@
   font-size: 80px;
   color: #fff;
   text-align: center;
-  animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 0.8s ease-in-out infinite alternate;
   font-size: 3rem;
    @media (min-width: 780px) {
     font-size: 4rem;
@@ -12,7 +12,7 @@
   }
 }
 
-@keyframes glow {
+@keyframes glow{
   from {
     text-shadow: 
       0 0 1px #fff;
@@ -20,12 +20,16 @@
   to {
     text-shadow: 
       0 0 2px #fff,
-      0 0 3px #fff,
-      0 0 3px #fff,
-      0 0 3px #fff;
+      0 0 2.5px #fff,
+      0 0 2.5px #fff;
   }
 }
 
+.glow {
+  text-shadow: 
+    0 0 10px #fff
+ 
+}
 
 .radial-gradient {
    background: #182D6A;

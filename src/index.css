@@ -5,6 +5,7 @@
   --font-insideout: "InsideOut", ui-sans-serif, system-ui, sans-serif;
   --font-pixar: "Pixar", ui-sans-serif, system-ui, sans-serif;
   --font-waltograph: "Waltograph", ui-sans-serif, system-ui, sans-serif;
+  --font-times: "Times New Roman", ui-serif, Georgia, serif;
 }
 
 :root {
@@ -64,4 +65,11 @@ body{
   src: url("./assets/fonts/waltograph42.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face{
+    font-family: "Times New Roman";
+    src: url("./assets/fonts/Times-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
