@@ -127,6 +127,9 @@ export default function Committees({ animated = true }) {
                         bPercent={0}
                         layout="static"
                         className={`opacity-80 ${p.className ?? ""}`}
+                        shineTop={`${10 + (i * 5) % 20}%`}
+                        shineLeft={`${20 + (i * 7) % 30}%`}
+                        shineRotate={`${10 + (i * 10) % 60}deg`}
                       />
                     </div>
                   );
