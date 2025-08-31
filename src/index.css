@@ -23,6 +23,19 @@
   --color-green-700: #05674A;
   --color-yellow-600: #CAA64F;
 
+  --color-marketing: #AD2B17;
+  --color-customer-care: #CA6702;
+  --color-literary: #F6BB46;
+  --color-office: #05A54C;
+  --color-layout: #036074;
+  --color-web: #C54B8C;
+  --color-photo: #C5ADEC;
+
+}
+
+body{
+    background-color: var(--color-blue-900);
+    color: white;
 }
 
 @font-face {
