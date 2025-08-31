@@ -8,7 +8,25 @@
   --font-times: "Times New Roman", ui-serif, Georgia, serif;
 }
 
+/* Utility: clamp text lines (mobile) */
+.clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4; /* standard property for compatibility */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* standard property for compatibility */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 :root {
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -31,6 +49,7 @@
   --color-layout: #036074;
   --color-web: #C54B8C;
   --color-photo: #C5ADEC;
+  --color-modal-bg: #F2F0EF;
 
 }
 
@@ -72,4 +91,185 @@ body{
     src: url("./assets/fonts/Times-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
+}
+
+/* === Committees Orbs Styles (scoped) === */
+.committee-orbs {
+  position: relative;
+}
+
+.committee-orbs .orb {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden; /* clip inner image */
+  pointer-events: none; /* purely decorative */
+  will-change: transform;
+  border: 1.5px solid var(--orb-border, transparent);
+  box-shadow:
+    inset 0 0 28px rgba(0, 0, 0, 0.55),
+    0 0 16px var(--orb-glow-inner, var(--orb-glow-1, rgba(255, 215, 0, 0.55))),
+    0 0 38px var(--orb-glow-outer, var(--orb-glow-2, rgba(255, 165, 0, 0.35)));
+}
+
+.committee-orbs .orb-image {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.cru.org/content/experience-fragments/shared-library/language-masters/en/train-and-grow/leading-a-small-group/four-key-components-of-a-small-group-meeting/master/_jcr_content/root/image.coreimg.png/1752346812818/four-key-components-small-group.png');
+  background-size: cover;
+  background-position: center;
+  filter: url(#glass-distortion);
+  transform: scale(1.05);
+}
+
+.committee-orbs .orb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 120%, rgba(255,255,255,0.2), rgba(255,255,255,0) 70%);
+  z-index: 2;
+}
+
+.committee-orbs .orb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: var(--orb-tint, rgba(255, 215, 0, 0.28));
+  z-index: 1;
+}
+
+.committee-orbs .orb-shine {
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  width: 50%;
+  height: 25%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+  border-radius: 50%;
+  transform: rotate(20deg);
+  z-index: 3;
+}
+
+/* subtle, not-too-much float */
+@keyframes orb-float-var {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(var(--float-x, 4px), calc(var(--float-y, 8px) * -1)); }
+  100% { transform: translate(0, 0); }
+}
+
+/* size variants if needed */
+.committee-orbs .orb.xs { width: 64px; height: 64px; }
+.committee-orbs .orb.sm { width: 80px; height: 80px; }
+.committee-orbs .orb.md { width: 110px; height: 110px; }
+.committee-orbs .orb.lg { width: 130px; height: 130px; }
+
+/* Floater wrapper to animate orb and its label together */
+.orb-container-clickable {
+  position: absolute;
+  cursor: pointer;
+  will-change: transform;
+  /* Variable-driven float animation on the container */
+  animation-name: orb-float-var;
+  animation-duration: var(--float-duration, 7s);
+  animation-timing-function: var(--float-ease, ease-in-out);
+  animation-iteration-count: infinite;
+}
+
+.committee-orbs .orb-floater {
+  position: absolute;
+}
+
+/* Orb theme derivation and per-section base colors */
+.committee-orbs .orb-theme {
+  /* Derive tint/glows/border from the base color with transparency */
+  --orb-tint: color-mix(in srgb, var(--orb-base) 30%, transparent);
+  --orb-glow-inner: color-mix(in srgb, var(--orb-base) 55%, transparent);
+  --orb-glow-outer: color-mix(in srgb, var(--orb-base) 38%, transparent);
+  --orb-border: color-mix(in srgb, var(--orb-base) 40%, transparent);
+}
+
+/* Support both descendant and same-element theme assignment */
+.committee-orbs .orb-theme--marketing, .committee-orbs.orb-theme--marketing { --orb-base: var(--color-marketing); }
+.committee-orbs .orb-theme--customer-care, .committee-orbs.orb-theme--customer-care { --orb-base: var(--color-customer-care); }
+.committee-orbs .orb-theme--literary, .committee-orbs.orb-theme--literary { --orb-base: var(--color-literary); }
+.committee-orbs .orb-theme--office, .committee-orbs.orb-theme--office { --orb-base: var(--color-office); }
+.committee-orbs .orb-theme--layout, .committee-orbs.orb-theme--layout { --orb-base: var(--color-layout); }
+.committee-orbs .orb-theme--web, .committee-orbs.orb-theme--web { --orb-base: var(--color-web); }
+.committee-orbs .orb-theme--photo, .committee-orbs.orb-theme--photo { --orb-base: var(--color-photo); }
+
+/* Labels for orbs */
+.committee-orbs .orb-label {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 8px);
+  white-space: nowrap;
+  font-family: var(--font-montserrat);
+  font-size: 13px;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* === Modal Styles === */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--color-modal-bg);
+  color: var(--color-blue-900);
+  padding: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 5rem;
+  border-radius: 16px;
+  width: 70vw;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* stretch children so hr/text share boundaries */
+  justify-content: center; /* center vertically within min-height */
+  gap: 1rem;
+  min-height: 60vh; /* make modal taller */
+}
+
+.modal-orb-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* center the orb horizontally */
+}
+
+.modal-orb-container .orb {
+  box-shadow: none; /* remove outer glow inside modal */
+}
+
+.modal-separator {
+  width: 100%;
+  height: 2px;
+  border: none;
+  background-color: var(--orb-base);
+}
+
+.modal-title {
+  font-family: var(--font-insideout);
+  font-size: 2.5rem;
+  color: var(--color-blue-900);
+  text-align: center;
+}
+
+.modal-description {
+  font-family: var(--font-montserrat);
+  font-size: 1rem;
+  text-align: center;
 }

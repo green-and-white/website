@@ -8,10 +8,9 @@ import Footer from './sections/Footer'
 import Dates from './sections/Dates'
 import Navbar from './Navbar'
 
-import './App.css'
+import "./App.css";
 
 function App() {
-
   return (
     <>
       <Navbar />
@@ -24,9 +23,8 @@ function App() {
         <FAQs></FAQs>
       </div>
       <Footer></Footer>
-  
     </>
-  )
+  );
 }
 
-export default App
+export default App;
