@@ -1,5 +1,5 @@
 import logo from "/src/assets/icons/logo.svg";
-
+import logo2 from "/src/assets/icons/ARW_GW_SVG.svg"
 export default function Hero() {
   return (
 
@@ -9,7 +9,7 @@ export default function Hero() {
           
             {/* Top: Logo + Org Name + Tagline */}
             <div className="relative flex flex-col h-1/2 md:justify-end md:bottom-16 items-center gap-2">
-                <img src={logo} alt="Logo" className="max-h-18" />
+                <img src={logo2} alt="Logo" className="max-h-18" />
 
                 <h2 className="font-waltograph text-white text-2xl md:text-3xl font-bold tracking-wide">
                     Green &amp; White

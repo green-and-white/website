@@ -30,7 +30,7 @@ function StepItem({ number, title, description, color, isActive, onClick, enable
     >
       {/* Highlight */}
       <div
-        className={`absolute inset-0 bg-[var(--highlight)] transition-transform duration-500
+        className={`absolute inset-0 bg-[var(--highlight)] transition-transform duration-400
         ${isActive ? "translate-x-0" : "translate-x-[-100%]"}
         group-hover:translate-x-0`}
       ></div>
@@ -58,14 +58,14 @@ export default function Steps() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkWidth = () => setIsMobile(window.innerWidth < 1024); // lg breakpoint
+    const checkWidth = () => setIsMobile(window.innerWidth < 1025); // lg breakpoint
     checkWidth();
     window.addEventListener("resize", checkWidth);
     return () => window.removeEventListener("resize", checkWidth);
   }, []);
 
   return (
-    <section className="bg-radial-gradient-custom text-white min-h-screen flex flex-col items-center justify-center font-montserrat">
+    <section className="bg-radial-gradient-custom text-white flex flex-col items-center justify-center font-montserrat">
       <div className="flex flex-col lg:flex-row w-full max-w-7xl items-center lg:space-x-16">
         {/* Left Section */}
         <div className="flex-1 flex flex-col h-full items-center lg:items-start text-center lg:text-left mb-12 lg:mb-0">
@@ -76,7 +76,7 @@ export default function Steps() {
         </div>
 
         {/* Right Section */}
-        <div className="flex-1 w-full md:space-y-6">
+        <div className="flex-1 w-full space-y-2 md:space-y-6">
           {stepsData.map((step, index) => (
             <StepItem
               key={index}

@@ -1,1 +1,42 @@
+.cta {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+  font-size: 3rem;
+   @media (min-width: 780px) {
+    font-size: 4rem;
+  }
+   @media (min-width: 1024px) {
+    font-size: 4.5rem;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 
+      0 0 1px #fff;
+  }
+  to {
+    text-shadow: 
+      0 0 2px #fff,
+      0 0 3px #fff,
+      0 0 3px #fff,
+      0 0 3px #fff;
+  }
+}
+
+
+.radial-gradient {
+   background: #182D6A;
+   background: radial-gradient(circle, rgba(24, 45, 106, 1) 0%, rgba(23, 16, 82, 1) 54%, rgba(10, 8, 35, 1) 100%);
+}
+
+.section-header{
+    font-size: 2.25rem; /* 36px */
+    font-weight: 700; /* bold */
+    @media (min-width: 1024px) {
+    font-size: 3.75rem
+  }
+}
 

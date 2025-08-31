@@ -5,6 +5,7 @@ import Committees from './sections/Committees'
 import Process from './sections/Process'
 import FAQs from './sections/FAQs'
 import Footer from './sections/Footer'
+import Dates from './sections/Dates'
 
 import './App.css'
 
@@ -14,9 +15,10 @@ function App() {
     <>
       <Hero></Hero>
       <About></About>
-      <div>
+      <div className = "flex flex-col gap-8 radial-gradient py-16 px-8 lg:px-28">
         <Committees></Committees>
         <Process></Process>
+        <Dates></Dates>
         <FAQs></FAQs>
       </div>
       <Footer></Footer>
