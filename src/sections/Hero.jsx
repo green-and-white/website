@@ -3,7 +3,7 @@ import logo from "/src/assets/icons/logo.svg";
 export default function Hero() {
   return (
 
-    <section className="relative bg-radial from-blue-900 from-11% to-blue-800 to-100% min-h-screen">
+    <section id = "hero" className="relative bg-radial from-blue-900 from-11% to-blue-800 to-100% min-h-screen">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 h-full">
         <div className="flex flex-col justify-between items-center text-center h-screen py-8">
           

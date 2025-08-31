@@ -24,6 +24,7 @@ function StepItem({ number, title, description, color, isActive, onClick, enable
     );
   return (
     <div
+        id="process"
       className="relative overflow-hidden group rounded-xl max-w-[500px] w-full"
       style={{ "--highlight": color }}
       onClick={enableClick ? onClick : undefined}

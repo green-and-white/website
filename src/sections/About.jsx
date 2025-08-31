@@ -2,7 +2,7 @@ import about from "../assets/video/about.mp4";
 
 export default function About() {
   return (
-    <section className="relative w-full max-h-[725px] overflow-hidden font-montserrat">
+    <section id="about" className="relative w-full max-h-[725px] overflow-hidden font-montserrat">
       {/* Background video*/}
       <video
         src={about}

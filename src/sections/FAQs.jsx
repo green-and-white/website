@@ -68,7 +68,7 @@ export default function FAQs() {
   };
 
   return (
-    <section className="text-white py-20 px-4 md:px-8 font-montserrat flex flex-col items-center">
+    <section id="faqs" className="text-white py-20 px-4 md:px-8 font-montserrat flex flex-col items-center">
       <div className="w-full max-w-4xl space-y-2">
         <h2 className="text-3xl md:text-5xl font-bold font-insideout text-center mb-16">
           FREQUENTLY ASKED QUESTIONS

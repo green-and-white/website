@@ -103,7 +103,7 @@ export default function Dates() {
     return () => window.removeEventListener("resize", checkWidth);
     }, []);
 return (
-    <section className="text-white py-20 font-montserrat flex flex-col items-center justify-center">
+    <section id="dates" className="text-white py-20 font-montserrat flex flex-col items-center justify-center">
         <div className="w-full">
             <h2
                 className={`text-3xl md:text-5xl text-center font-bold font-insideout ${
