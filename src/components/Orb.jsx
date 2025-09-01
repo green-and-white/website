@@ -55,6 +55,8 @@ export default function Orb({
       className={`${layout === "absolute" ? "orb-floater" : "orb-static"} flex flex-col items-center ${className}`}
       style={style}
     >
+  {/* spinning ring behind the orb - purely decorative */}
+  <span className="orb-ring" aria-hidden="true" />
       <div className={`orb ${size} orb-theme`}>
         <div
           className="orb-image"
