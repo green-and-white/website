@@ -27,13 +27,56 @@ export default function Committees({ animated = true }) {
     }, {});
 
   const placements = [
-    { angle: -130, size: "md", className: MARKETING, label: "Marketing", offsetX: 5, description: descriptions.Marketing },
-    { angle: -90, size: "md", className: CUSTOMER_CARE, label: "Customer Care", description: descriptions["Customer Care"] },
-    { angle: -50, size: "md", className: LITERARY, label: "Literary", description: descriptions.Literary },
-    { angle: 180, size: "md", className: OFFICE, label: "Office", description: descriptions.Office },
-    { angle: 0, size: "md", className: LAYOUT, label: "Layout", description: descriptions.Layout },
-    { angle: 60, size: "md", className: WEB, label: "Web", description: descriptions.Web },
-    { angle: 120, size: "md", className: PHOTO, label: "Photo", description: descriptions.Photo },
+    {
+      angle: 0,
+      size: "md",
+      className: LAYOUT,
+      label: "Layout",
+      description: descriptions.Layout,
+    },
+    {
+      angle: -90,
+      size: "md",
+      className: CUSTOMER_CARE,
+      label: "Customer Care",
+      description: descriptions["Customer Care"],
+    },
+    {
+      angle: -50,
+      size: "md",
+      className: LITERARY,
+      label: "Literary",
+      description: descriptions.Literary,
+    },
+    {
+      angle: 180,
+      size: "md",
+      className: OFFICE,
+      label: "Office",
+      description: descriptions.Office,
+    },
+    {
+      angle: -130,
+      size: "md",
+      className: MARKETING,
+      label: "Marketing",
+      offsetX: 5,
+      description: descriptions.Marketing,
+    },
+    {
+      angle: 60,
+      size: "md",
+      className: WEB,
+      label: "Web",
+      description: descriptions.Web,
+    },
+    {
+      angle: 120,
+      size: "md",
+      className: PHOTO,
+      label: "Photo",
+      description: descriptions.Photo,
+    },
   ];
 
   // Responsive ring radii based on viewport width to keep orbs within view on small screens
