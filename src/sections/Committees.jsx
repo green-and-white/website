@@ -26,58 +26,9 @@ export default function Committees({ animated = true }) {
       return acc;
     }, {});
 
-  const placements = [
-    {
-      angle: 0,
-      size: "md",
-      className: LAYOUT,
-      label: "Layout",
-      description: descriptions.Layout,
-    },
-    {
-      angle: -90,
-      size: "md",
-      className: CUSTOMER_CARE,
-      label: "Customer Care",
-      description: descriptions["Customer Care"],
-    },
-    {
-      angle: -50,
-      size: "md",
-      className: LITERARY,
-      label: "Literary",
-      description: descriptions.Literary,
-    },
-    {
-      angle: 180,
-      size: "md",
-      className: OFFICE,
-      label: "Office",
-      description: descriptions.Office,
-    },
-    {
-      angle: -130,
-      size: "md",
-      className: MARKETING,
-      label: "Marketing",
-      offsetX: 5,
-      description: descriptions.Marketing,
-    },
-    {
-      angle: 60,
-      size: "md",
-      className: WEB,
-      label: "Web",
-      description: descriptions.Web,
-    },
-    {
-      angle: 120,
-      size: "md",
-      className: PHOTO,
-      label: "Photo",
-      description: descriptions.Photo,
-    },
-  ];
+
+
+  // ...existing code... (placements are computed after radii to use accurate ellipse geometry)
 
   // Responsive ring radii based on viewport width to keep orbs within view on small screens
   useEffect(() => {
@@ -89,6 +40,77 @@ export default function Committees({ animated = true }) {
   const scaleX = vw < 400 ? 0.65 : vw < 640 ? 0.75 : vw < 840 ? 0.8 : vw < 1024 ? 0.9 : 1;
   const scaleY = vw < 400 ? 0.85 : vw < 640 ? 0.90 : vw < 840 ? 0.95 : 1;
   const radii = { aPercent: 50 * scaleX, bPercent: 50 * scaleY };
+
+  // Permanent oblong multipliers tuned from temporary testing so the oval
+  // placement matches the desired look at large sizes.
+  // (Previously you adjusted these with sliders; final values chosen:)
+  const OBLONG_X = 1.12; // horizontal stretch multiplier
+  const OBLONG_Y = 0.60; // vertical squeeze multiplier
+
+  // Base list of committees in the desired display order. Keep metadata but
+  // compute angles using ellipse arc-length sampling below for visual evenness.
+  const _rawPlacements = [
+    // Removed the percent nudge so Marketing sits exactly on the computed top angle
+    { size: "md", className: MARKETING, label: "Marketing", offsetX: 0, description: descriptions.Marketing },
+  // Customer Care nudges slightly inward on wide/oval layouts
+  { size: "md", className: CUSTOMER_CARE, label: "Customer Care", radialFactor: 0.85, description: descriptions["Customer Care"] },
+    { size: "md", className: LITERARY, label: "Literary", description: descriptions.Literary },
+    { size: "md", className: OFFICE, label: "Office", description: descriptions.Office },
+    { size: "md", className: LAYOUT, label: "Layout", description: descriptions.Layout },
+    { size: "md", className: WEB, label: "Web", description: descriptions.Web },
+  // Photo nudges slightly inward on wide/oval layouts
+  { size: "md", className: PHOTO, label: "Photo", radialFactor: 0.85, description: descriptions.Photo },
+  ];
+
+  // Compute visually even angles around an ellipse by numerical arc-length
+  // parametrization. We start at -90° (top) and go clockwise.
+  const placements = (() => {
+    const a = radii.aPercent * OBLONG_X; // x-radius in percent (final tuned)
+    const b = radii.bPercent * OBLONG_Y; // y-radius in percent (final tuned)
+    const n = _rawPlacements.length;
+
+    // Parametric ellipse: x = a*cos(t), y = b*sin(t), t in [0, 2PI)
+    // We'll compute target arc-length positions along t starting from top (-90deg -> t = -PI/2)
+    const samples = 1000; // sampling resolution for arc-length approximation
+    const ts = new Array(samples + 1);
+    const ss = new Array(samples + 1);
+    let cumulative = 0;
+    const t0 = -Math.PI / 2;
+    for (let i = 0; i <= samples; i++) {
+      const t = t0 + (i / samples) * 2 * Math.PI;
+      ts[i] = t;
+      if (i === 0) {
+        ss[i] = 0;
+      } else {
+        const tPrev = ts[i - 1];
+        // approximate segment length via chord length
+        const x1 = a * Math.cos(tPrev);
+        const y1 = b * Math.sin(tPrev);
+        const x2 = a * Math.cos(t);
+        const y2 = b * Math.sin(t);
+        const dx = x2 - x1;
+        const dy = y2 - y1;
+        cumulative += Math.sqrt(dx * dx + dy * dy);
+        ss[i] = cumulative;
+      }
+    }
+
+    const total = ss[samples];
+    const targets = new Array(n).fill(0).map((_, i) => (i / n) * total);
+
+    // For each target arc length, find corresponding t via linear search on ss
+    const angles = targets.map((target) => {
+      let idx = 0;
+      while (idx < ss.length - 1 && ss[idx + 1] < target) idx++;
+      const s0 = ss[idx];
+      const s1 = ss[idx + 1] || s0;
+      const tInterp = ss[idx + 1] === s0 ? ts[idx] : ts[idx] + ((target - s0) / (s1 - s0)) * (ts[idx + 1] - ts[idx]);
+      // convert t to degrees; note that t = -PI/2 corresponds to -90deg
+      return (tInterp * 180) / Math.PI;
+    });
+
+    return _rawPlacements.map((p, idx) => ({ angle: angles[idx], ...p }));
+  })();
 
   // Map orb sizes to half-width/height in px for accurate centering
   const halfSizePx = { sm: 40, md: 55, lg: 65 };
@@ -129,8 +151,14 @@ export default function Committees({ animated = true }) {
               <div className="absolute inset-0">
                 {placements.map((p, i) => {
                   const rad = (p.angle * Math.PI) / 180;
-                  const x = Math.cos(rad) * radii.aPercent + (p.offsetX ?? 0);
-                  const y = Math.sin(rad) * radii.bPercent + (p.offsetY ?? 0);
+                  // If the ellipse is wider than tall, allow radialFactor to pull
+                  // certain orbs closer to center for visual balance.
+                  const isWide = radii.aPercent > radii.bPercent;
+                  const radial = isWide && p.radialFactor ? p.radialFactor : 1;
+                  const aEffective = radii.aPercent * radial;
+                  const bEffective = radii.bPercent * radial;
+                  const x = Math.cos(rad) * aEffective + (p.offsetX ?? 0);
+                  const y = Math.sin(rad) * bEffective + (p.offsetY ?? 0);
 
                   // Per-orb animation variance (deterministic by index)
                   const durationSec = 6 + ((i * 7) % 5) * 0.7; // 6s..9.8s
@@ -138,14 +166,14 @@ export default function Committees({ animated = true }) {
                   const ampY = 7 + ((i * 3) % 6); // 7px..12px
                   const phaseMs = -((delays[i] ?? 0) + (i * 97) % 500); // negative to start mid-cycle
 
-                  return (
+      return (
                     <div
                       key={i}
                       className="orb-container-clickable"
                       style={{
                         left: `calc(50% + ${x}% - ${halfSizePx[responsiveSize] ?? 55}px)`,
                         top: `calc(50% + ${y}% - ${halfSizePx[responsiveSize] ?? 55}px)`,
-                        // Motion control
+                        // Motion control (restored)
                         animationDelay: `${phaseMs}ms`,
                         animationName: animated ? undefined : "none",
                         // Per-orb variables consumed by CSS keyframes
