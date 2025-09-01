@@ -57,7 +57,7 @@ export default function Footer() {
         <div className="text-center md:text-left text-sm">
           <div className="font-bold mb-2">CREDITS</div>
           <p>
-            Website by Johan Marlo Cabili, Ramon Martinez, & Jabin Guamos
+            Website by Ramon Enrico Martinez, Johan Marlo Cabili, & Jabin Guamos
           </p>
           <p>
             Art and graphics by <span className="text-white">Kim Balasabas & Kurt Villagracia</span>

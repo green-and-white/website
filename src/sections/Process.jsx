@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import island from "../assets/icons/GW_Island-Dust.png"
 const stepsData = [
   { number: "01", title: "Application", description: "Fill out the application form at bit.ly/GW26-T1-Application by Saturday, September 13.", color: "var(--color-marketing)" },
   { number: "02", title: "Examination", description: "Wait for the details of your committee exam and take-home exam to be sent to you by September 15. Submit your exam deliverables, resume, and portfolio within the given time period.", color: "var(--color-customer-care)" },
@@ -15,7 +15,7 @@ function StepItem({ number, title, description, color, isActive, onClick, enable
             const tempLink = document.createElement('a');
             tempLink.href = url.startsWith('http') ? url : `https://${url}`;
             tempLink.target = '_blank'; // Open in a new tab
-            tempLink.rel = 'noopener noreferrer'; // Security best practice
+            tempLink.rel = 'noopener noreferrer'; 
             tempLink.className = 'text-blue-500 underline';
             tempLink.textContent = url;
             
@@ -45,7 +45,6 @@ function StepItem({ number, title, description, color, isActive, onClick, enable
           <h3 className="font-insideout text-2xl md:text-2xl font-bold mb-2">{title}</h3>
           <p className="font-montserrat text-xs md:text-sm"
                 dangerouslySetInnerHTML={{ __html: parsedDescription }}>
-
          </p>
         </div>
       </div>
@@ -71,8 +70,9 @@ export default function Steps() {
       <div className="flex flex-col lg:flex-row w-full max-w-7xl items-center lg:space-x-16">
         {/* Left Section */}
         <div className="flex-1 flex flex-col h-full items-center text-center lg:text-left mb-12 lg:mb-0">
-          <h2 className="text-2xl md:text-4xl font-insideout mb-4">Ready to make core memories with us?</h2>
-          <p className="max-w-xs md:max-w-md lg:max-w-none text-xs md:text-base font-montserrat">
+          <img src={island} alt="Island" className="max-w-[350px] h-full mb-6"></img>
+          <h2 className="text-2xl md:text-4xl text-center font-insideout mb-4">Ready to make core memories with us?</h2>
+          <p className="max-w-xs md:max-w-md lg:max-w-none text-center text-xs md:text-base font-montserrat">
             Prepare to make unforgettable memories by taking these steps
           </p>
         </div>

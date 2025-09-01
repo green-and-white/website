@@ -12,7 +12,13 @@ export default function Modal({ isOpen, onClose, committee }) {
         </div>
         <hr className="modal-separator" />
         <h3 className="modal-title font-insideout text-black">{committee.label}</h3>
-        <p className="modal-description">{committee.description}</p>
+        <p className="modal-description">
+            {committee.description.split(/(Green & White)/g).map((part, index) => (
+              <span key={index} className={part === "Green & White" ? "font-bold" : ""}>
+                {part}
+              </span>
+            ))}
+        </p>
       </div>
     </div>
   );

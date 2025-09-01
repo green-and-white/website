@@ -93,13 +93,13 @@ export default function FAQs() {
             {/* Answer with smooth transition */}
             <div
               className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                openIndexes.includes(index) ? "max-h-full opacity-100" : "max-h-0 opacity-0"
+                openIndexes.includes(index) ? "max-h-175 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
               <div className="p-6 pt-0">
-                <p className="text-base font-montserrat">{faq.answer}</p>
+                <p className="text-sm font-montserrat">{faq.answer}</p>
                 {faq.list && (
-                    <ul className="list-disc pl-6">
+                    <ul className="list-disc pl-6 text-sm">
                         {faq.list.map((item, i) => (
                         <li key={i}>{item}</li>
                         ))}

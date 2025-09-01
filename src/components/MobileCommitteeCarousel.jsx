@@ -144,8 +144,14 @@ export default function MobileCommitteeCarousel({ committees = [] }) {
                   <Orb layout="static" showLabel={false} size="xs" />
                 </div>
                 <hr className="modal-separator my-1" />
-                <h3 className="font-insideout text-center" style={{ fontSize: "1.4rem" }}>{c.label}</h3>
-                <p className="font-montserrat text-center flex-1 overflow-y-auto pr-1" style={{ fontSize: "0.85rem", lineHeight: "1.3" }}>{c.description}</p>
+                <h3 className="font-insideout text-center py-2" style={{ fontSize: "1.4rem" }}>{c.label}</h3>
+                <p className="font-montserrat text-center flex-1 overflow-y-auto pr-1" style={{ fontSize: "0.85rem", lineHeight: "1.3" }}>
+                    {c.description.split(/(Green & White)/g).map((part, index) => (
+                      <span key={index} className={part === "Green & White" ? "font-bold" : ""}>
+                        {part}
+                      </span>
+                    ))}
+                </p>
               </div>
             </div>
           </div>

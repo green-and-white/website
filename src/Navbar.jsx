@@ -37,11 +37,10 @@ const Navbar = () => {
       className={`fixed top-0 left-0 w-full transition-transform duration-300 z-50
         ${showNavbar ? "translate-y-0 bg-opacity-30 backdrop-blur-sm shadow-md" : "-translate-y-full"}`}
     >
-      <div className="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
-        {/* Logo/Brand (can be a logo image or text) */}
-        <div className="flex-shrink-0 text-white font-insideout text-2xl font-bold">
+      <div className="max-w-[1280px] mx-auto py-4 flex items-center justify-between md:justify-center px-8">
+        <div className="w-1/3 text-white font-insideout text-2xl font-bold">
           <a href="#" className="hover:text-gray-300 transition-colors duration-300">
-            <img src={logo} alt="Logo" className="max-h-10" 
+            <img src={logo} alt="Logo" className="max-h-8" 
                 style={{
                     filter: "drop-shadow(0 0 2px white)"
             }}/>
@@ -50,7 +49,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden w-full md:flex md:justify-center space-x-8">
           {navLinks.map((link, index) => (
             <a
               key={index}
@@ -61,6 +60,7 @@ const Navbar = () => {
             </a>
           ))}
         </div>
+        <div className = "w-1/3"></div>
 
         {/* Mobile menu button */}
         <div className="md:hidden">
