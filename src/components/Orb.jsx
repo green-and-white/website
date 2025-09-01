@@ -55,7 +55,11 @@ export default function Orb({
       className={`${layout === "absolute" ? "orb-floater" : "orb-static"} flex flex-col items-center ${className}`}
       style={style}
     >
+  {/* spinning ring behind the orb - purely decorative */}
+  <span className="orb-ring" aria-hidden="true" />
       <div className={`orb ${size} orb-theme`}>
+        {/* inner spinning ring (visible on top of image but beneath shine/overlays) */}
+        <span className="orb-ring-inner" aria-hidden="true" />
         <div
           className="orb-image"
           style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined}

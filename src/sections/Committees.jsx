@@ -62,14 +62,7 @@ export default function Committees({ animated = true }) {
 
   return (
     <>
-      <svg style={{ position: "absolute", height: 0, width: 0 }} aria-hidden>
-        <defs>
-          <filter id="glass-distortion">
-            <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="1" result="noise" />
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G" />
-          </filter>
-        </defs>
-      </svg>
+  {/* SVG glass-distortion filter removed to avoid cross-browser inconsistencies */}
 
       <section id="committees" className="committee-orbs relative py-6 sm:py-24 md:py-36">
         <div className="container mx-auto px-6">

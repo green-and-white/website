@@ -122,13 +122,63 @@ body{
     0 0 38px var(--orb-glow-outer, var(--orb-glow-2, rgba(255, 165, 0, 0.35)));
 }
 
+/* spinning ring that sits behind the orb for a subtle motion effect */
+.committee-orbs .orb-ring{
+  position: absolute;
+  width: calc(100% + 34px);
+  height: calc(100% + 34px);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1; /* behind the orb */
+  background: conic-gradient(from 90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.12) 15%, rgba(255,255,255,0.02) 30%, rgba(255,255,255,0.02) 70%, rgba(255,255,255,0.08) 85%, rgba(255,255,255,0.02) 100%);
+  filter: blur(6px) saturate(110%);
+  animation: orb-ring-spin linear infinite;
+  animation-duration: var(--orb-ring-spin, 8s);
+}
+
+@keyframes orb-ring-spin{
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
 .committee-orbs .orb-image {
   width: 100%;
   height: 100%;
   background-image: url('https://www.cru.org/content/experience-fragments/shared-library/language-masters/en/train-and-grow/leading-a-small-group/four-key-components-of-a-small-group-meeting/master/_jcr_content/root/image.coreimg.png/1752346812818/four-key-components-small-group.png');
   background-size: cover;
   background-position: center;
-  filter: url(#glass-distortion);
+  /* Force a circular clipping on the image so it never overflows the orb.
+    Removed the SVG filter for cross-browser consistency. */
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  border-radius: 50%;
+  transform: translateZ(0);
+}
+
+/* inner ring that sits on top of the image but beneath the shine/overlay pseudo-elements */
+.committee-orbs .orb-ring-inner{
+  position: absolute;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0; /* beneath ::after (z-index:1) and ::before (z-index:2) */
+  background: conic-gradient(from 0deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02) 10%, rgba(255,255,255,0.06) 30%, transparent 60%);
+  mix-blend-mode: screen;
+  filter: blur(2px) saturate(120%);
+  animation: orb-ring-inner-spin linear infinite;
+  animation-duration: var(--orb-ring-inner-spin, 6s);
+}
+
+@keyframes orb-ring-inner-spin{
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
 }
 
 .committee-orbs .orb::before {
