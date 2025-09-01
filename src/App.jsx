@@ -8,12 +8,15 @@ import Footer from './sections/Footer'
 import Dates from './sections/Dates'
 import Navbar from './Navbar'
 
+import SparkleCursor from './components/SparkleCursor';
+import './components/SparkleCursor.css';
 import "./App.css";
 
 function App() {
   return (
     <>
       <Navbar />
+      <SparkleCursor />
       <Hero></Hero>
       <About></About>
       <div className = "flex flex-col gap-16 radial-gradient py-16 px-8 lg:px-28">

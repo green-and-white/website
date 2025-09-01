@@ -43,13 +43,14 @@ export default function Committees({ animated = true }) {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  const ringScale = vw < 400 ? 0.78 : vw < 640 ? 0.88 : 1;
-  const radii = { aPercent: 50 * ringScale, bPercent: 50 * ringScale };
+  const scaleX = vw < 400 ? 0.65 : vw < 640 ? 0.75 : vw < 840 ? 0.8 : vw < 1024 ? 0.9 : 1;
+  const scaleY = vw < 400 ? 0.85 : vw < 640 ? 0.90 : vw < 840 ? 0.95 : 1;
+  const radii = { aPercent: 50 * scaleX, bPercent: 50 * scaleY };
 
   // Map orb sizes to half-width/height in px for accurate centering
   const halfSizePx = { sm: 40, md: 55, lg: 65 };
   // Responsive orb size
-  const responsiveSize = vw < 400 ? 'sm' : 'md';
+  const responsiveSize = vw < 768 ? 'sm' : 'md';
   // We will de-sync animation via negative delays and vary duration/amplitude per orb
   const delays = [0, 150, 300, 450, 600, 750, 900];
 
@@ -126,6 +127,9 @@ export default function Committees({ animated = true }) {
                         bPercent={0}
                         layout="static"
                         className={`opacity-80 ${p.className ?? ""}`}
+                        shineTop={`${10 + (i * 5) % 20}%`}
+                        shineLeft={`${20 + (i * 7) % 30}%`}
+                        shineRotate={`${10 + (i * 10) % 60}deg`}
                       />
                     </div>
                   );

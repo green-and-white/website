@@ -25,6 +25,11 @@ export default function Orb({
   layout = "absolute", // "absolute" | "static"
   showLabel = true,
   className = "",
+  shineTop = "10%",
+  shineLeft = "25%",
+  shineWidth = "50%",
+  shineHeight = "25%",
+  shineRotate = "20deg",
 }) {
   const rad = (angle * Math.PI) / 180;
   const x = Math.cos(rad) * aPercent + offsetX;
@@ -55,7 +60,16 @@ export default function Orb({
           className="orb-image"
           style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined}
         />
-        <div className="orb-shine" />
+        <div
+          className="orb-shine"
+          style={{
+            top: shineTop,
+            left: shineLeft,
+            width: shineWidth,
+            height: shineHeight,
+            transform: `rotate(${shineRotate})`,
+          }}
+        />
       </div>
       {label && showLabel ? <div className="orb-label mt-2">{label}</div> : null}
     </div>

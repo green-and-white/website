@@ -44,3 +44,11 @@
   }
 }
 
+.orb-container-clickable .orb {
+  transition: all 0.3s ease-in-out;
+}
+
+.orb-container-clickable:hover .orb {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+  transform: scale(1.05);
+}
