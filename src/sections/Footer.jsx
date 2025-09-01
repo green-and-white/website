@@ -1,21 +1,27 @@
 import facebook from "../assets/icons/facebook.svg";
 import instagram from "../assets/icons/instagram.svg";
 import github from "../assets/icons/github.svg";
+import logo from '../assets/icons/logo.svg';
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-900 text-white py-12 font-montserrat">
+    <footer className="bg-blue-900 text-white px-4 md:px-8 py-12 font-montserrat">
       <div className="max-w-[1280px] mx-auto px-6">
         
         {/* First row: logo, about, socials */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <div className="flex flex-col md:flex-row gap-16 items-center md:items-start">
+          
           {/* Logo */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-row gap-2 items-center md:items-start">
             <img
-              src="/assets/gnw-logo.png"
+              src={logo}
               alt="Green & White Logo"
-              className="h-12 mb-3"
+              className="h-12"
             />
+            <div className="flex flex-col justify-center items-center md:items-start font-montserrat">
+              <div className="tracking-widest text-2xl text-center md:text-left">GREEN & WHITE</div>
+              <div className="text-xs text-center md:text-left">Capturing Images of Lasallian Excellence</div>
+            </div>
           </div>
 
           {/* About Section */}
@@ -30,7 +36,7 @@ export default function Footer() {
           {/* Social Links */}
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <h4 className="text-sm font-semibold mb-3">FOLLOW US</h4>
-            <div className="flex gap-4">
+            <div className="flex gap-4 md:-ml-1.5">
               <a href="https://www.facebook.com/dlsu.gnw" aria-label="Facebook">
                 <img src={facebook} alt="Facebook" className="h-6 w-6 hover:opacity-80 transition" />
               </a>

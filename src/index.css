@@ -7,7 +7,9 @@
   --font-waltograph: "Waltograph", ui-sans-serif, system-ui, sans-serif;
   --font-times: "Times New Roman", ui-serif, Georgia, serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 /* Utility: clamp text lines (mobile) */
 .clamp-4 {
   display: -webkit-box;

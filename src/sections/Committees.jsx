@@ -70,7 +70,7 @@ export default function Committees({ animated = true }) {
         </defs>
       </svg>
 
-      <section className="committee-orbs relative py-6 sm:py-24 md:py-36">
+      <section id="committees" className="committee-orbs relative py-6 sm:py-24 md:py-36">
         <div className="container mx-auto px-6">
           {isMobileCards ? (
             <div className="mx-auto w-full max-w-2xl">

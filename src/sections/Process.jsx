@@ -24,7 +24,6 @@ function StepItem({ number, title, description, color, isActive, onClick, enable
     );
   return (
     <div
-        id="process"
       className="relative overflow-hidden group rounded-xl max-w-[500px] w-full"
       style={{ "--highlight": color }}
       onClick={enableClick ? onClick : undefined}
@@ -66,6 +65,8 @@ export default function Steps() {
   }, []);
 
   return (
+    <>
+    <div id = "process"></div>
     <section className="bg-radial-gradient-custom text-white flex flex-col items-center justify-center font-montserrat">
       <div className="flex flex-col lg:flex-row w-full max-w-7xl items-center lg:space-x-16">
         {/* Left Section */}
@@ -93,5 +94,7 @@ export default function Steps() {
         </div>
       </div>
     </section>
+    </>
   );
+  
 }

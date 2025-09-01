@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import logo from './assets/icons/logo.svg';
 
 const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Committees', href: '#committees' },
-    { name: 'Applications', href: '#applications' },
+    { name: 'Applications', href: '#process' },
     { name: 'Dates', href: '#dates' },
-    { name: 'Process', href: '#process' },
+    { name: 'FAQs', href: '#faqs' },
   ];
 
 const Navbar = () => {
@@ -40,7 +41,11 @@ const Navbar = () => {
         {/* Logo/Brand (can be a logo image or text) */}
         <div className="flex-shrink-0 text-white font-insideout text-2xl font-bold">
           <a href="#" className="hover:text-gray-300 transition-colors duration-300">
-            GREEN & WHITE
+            <img src={logo} alt="Logo" className="max-h-10" 
+                style={{
+                    filter: "drop-shadow(0 0 2px white)"
+            }}/>
+            
           </a>
         </div>
 
@@ -50,7 +55,7 @@ const Navbar = () => {
             <a
               key={index}
               href={link.href}
-              className="text-white font-montserrat text-lg font-semibold  transition-colors duration-300 hover:text-gray-300"
+              className="text-white font-montserrat cursor-pointer font-semibold transition-colors duration-300 hover:text-gray-300"
             >
               {link.name}
             </a>
