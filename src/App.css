@@ -59,3 +59,22 @@
     rgba(10, 8, 36, 1)
     );
 }
+
+.applynow{
+  color: #cf8fbe;
+  text-align: center;
+  animation: applyGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes applyGlow{
+  from {
+    text-shadow: 
+      0 0 1px rgba(197, 75, 140, 0.7);
+  }
+  to {
+    text-shadow: 
+     0 0 5px rgba(197, 75, 140, 0.7),
+     0 0 10px rgba(197, 75, 140, 0.5), 
+     0 0 15px rgba(197, 75, 140, 0.3);
+  }
+}

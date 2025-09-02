@@ -30,7 +30,7 @@ export default function Orb({
   shineWidth = "50%",
   shineHeight = "25%",
   shineRotate = "20deg",
-}) {
+}) {    
   const rad = (angle * Math.PI) / 180;
   const x = Math.cos(rad) * aPercent + offsetX;
   const y = Math.sin(rad) * bPercent + offsetY;
@@ -60,7 +60,7 @@ export default function Orb({
       <div className={`orb ${size} orb-theme`}>
         <div
           className="orb-image"
-          style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined}
+           style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined}
         />
         <div
           className="orb-shine"

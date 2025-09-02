@@ -155,7 +155,7 @@ body{
 .committee-orbs .orb-image {
   width: 100%;
   height: 100%;
-  background-image: url('https://www.cru.org/content/experience-fragments/shared-library/language-masters/en/train-and-grow/leading-a-small-group/four-key-components-of-a-small-group-meeting/master/_jcr_content/root/image.coreimg.png/1752346812818/four-key-components-small-group.png');
+  /* background-image: url('https://www.cru.org/content/experience-fragments/shared-library/language-masters/en/train-and-grow/leading-a-small-group/four-key-components-of-a-small-group-meeting/master/_jcr_content/root/image.coreimg.png/1752346812818/four-key-components-small-group.png'); */
   background-size: cover;
   background-position: center;
   /* Force a circular clipping on the image so it never overflows the orb.

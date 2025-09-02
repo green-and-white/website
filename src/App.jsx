@@ -19,7 +19,7 @@ function App() {
       <SparkleCursor />
       <Hero></Hero>
       <About></About>
-      <div className = "flex flex-col gap-16 radial-gradient py-16 px-8 lg:px-28">
+      <div id = "committees" className = "flex flex-col gap-16 radial-gradient py-16 px-8 lg:px-28">
         <Committees></Committees>
         <Process></Process>
         <Dates></Dates>

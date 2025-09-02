@@ -11,46 +11,62 @@ function StepItem({ number, title, description, color, isActive, onClick, enable
     const parsedDescription = description.replace(
         /(https?:\/\/[^\s]+|bit\.ly\/[^\s]+)/g,
         (url) => {
-            // Create a temporary element to safely parse the URL
             const tempLink = document.createElement('a');
             tempLink.href = url.startsWith('http') ? url : `https://${url}`;
-            tempLink.target = '_blank'; // Open in a new tab
-            tempLink.rel = 'noopener noreferrer'; 
+            tempLink.target = '_blank';
+            tempLink.rel = 'noopener noreferrer';
             tempLink.className = 'text-blue-500 underline';
             tempLink.textContent = url;
-            
             return tempLink.outerHTML;
         }
     );
-  return (
-    <div
-      className="relative overflow-hidden group rounded-xl max-w-[500px] w-full"
-      style={{ "--highlight": color }}
-      onClick={enableClick ? onClick : undefined}
-    >
-      {/* Highlight */}
-      <div
-        className={`absolute inset-0 bg-[var(--highlight)] transition-transform duration-400
-        ${isActive ? "translate-x-0" : "translate-x-[-100%]"}
-        group-hover:translate-x-0`}
-      ></div>
 
-      {/* Content */}
-      <div className="relative flex items-start space-x-6 md:space-x-4 px-2 py-4">
-        <div className="flex flex-row h-full gap-4 items-center">
-          <span className="font-pixar text-xl md:text-2xl font-bold">{number}</span>
+    return (
+        <div
+            className="relative overflow-hidden group rounded-xl max-w-[500px] w-full"
+            style={{ "--highlight": color }}
+            onClick={enableClick ? onClick : undefined}
+        >
+            {/* Highlight */}
+            <div
+                className={`absolute inset-0 bg-[var(--highlight)] transition-transform duration-400
+                ${isActive ? "translate-x-0" : "translate-x-[-100%]"}
+                group-hover:translate-x-0`}
+            ></div>
+
+            {/* Content */}
+            <div className="relative flex items-start space-x-6 md:space-x-4 px-2 py-4">
+                <div className="flex flex-row h-full gap-4 items-center">
+                    <span 
+                      className="font-pixar text-xl md:text-2xl font-bold transition-all duration-300 group-hover:text-shadow-lg"
+                      style={{ 
+                          textShadow: '0 0 5px var(--highlight)',
+                          '--tw-text-shadow-lg': `0 0 15px var(--highlight), 0 0 25px var(--highlight)`
+                      }}
+                    >
+                      {number}
+                    </span>
+                </div>
+                <div className="w-[2px] h-9 bg-white"></div>
+                <div className="flex-1 flex flex-col gap-2">
+                    <h3 
+                      className="font-insideout text-2xl md:text-2xl font-bold mb-2 transition-all duration-300 group-hover:text-shadow-lg"
+                      style={{ 
+                          textShadow: '0 0 5px var(--highlight)',
+                          '--tw-text-shadow-lg': `0 0 15px var(--highlight), 0 0 25px var(--highlight)`
+                      }}
+                    >
+                      {title}
+                    </h3>
+                    <p className="font-montserrat text-xs md:text-sm"
+                        dangerouslySetInnerHTML={{ __html: parsedDescription }}>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div className="w-[2px] h-9 bg-white"></div>
-        <div className="flex-1 flex flex-col gap-2">
-          <h3 className="font-insideout text-2xl md:text-2xl font-bold mb-2">{title}</h3>
-          <p className="font-montserrat text-xs md:text-sm"
-                dangerouslySetInnerHTML={{ __html: parsedDescription }}>
-         </p>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
+
 
 export default function Steps() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -70,7 +86,7 @@ export default function Steps() {
       <div className="flex flex-col lg:flex-row w-full max-w-7xl items-center lg:space-x-16">
         {/* Left Section */}
         <div className="flex-1 flex flex-col h-full items-center text-center lg:text-left mb-12 lg:mb-0">
-          <img src={island} alt="Island" className="max-w-[350px] h-full mb-6"></img>
+          <img src={island} alt="Island" className="max-w-[350px] h-auto w-full mb-6 object-contain"></img>
           <h2 className="text-2xl md:text-4xl text-center font-insideout mb-4">Ready to make core memories with us?</h2>
           <p className="max-w-xs md:max-w-md lg:max-w-none text-center text-xs md:text-base font-montserrat">
             Prepare to make unforgettable memories by taking these steps

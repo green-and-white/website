@@ -53,7 +53,7 @@ export default function Committees({ animated = true }) {
     // Removed the percent nudge so Marketing sits exactly on the computed top angle
     { size: "md", className: MARKETING, label: "Marketing", offsetX: 0, description: descriptions.Marketing },
   // Customer Care nudges slightly inward on wide/oval layouts
-  { size: "md", className: CUSTOMER_CARE, label: "Customer Care", radialFactor: 0.85, description: descriptions["Customer Care"] },
+  { size: "md", className: CUSTOMER_CARE, label: "Customer Care", radialFactor: 0.85, description: descriptions["Customer Care"], src: "../assets/orbpics/cc.jpg" },
     { size: "md", className: LITERARY, label: "Literary", description: descriptions.Literary },
     { size: "md", className: OFFICE, label: "Office", description: descriptions.Office },
     { size: "md", className: LAYOUT, label: "Layout", description: descriptions.Layout },
@@ -129,7 +129,7 @@ export default function Committees({ animated = true }) {
     <>
   {/* SVG glass-distortion filter removed to avoid cross-browser inconsistencies */}
 
-      <section id="committees" className="committee-orbs relative py-6 sm:py-24 md:py-36">
+      <section className="committee-orbs relative py-6 sm:py-24 md:py-36">
         <div className="container mx-auto px-6">
           {isMobileCards ? (
             <div className="mx-auto w-full max-w-2xl">
@@ -165,6 +165,7 @@ export default function Committees({ animated = true }) {
                   const ampX = 3 + ((i * 5) % 6); // 3px..8px
                   const ampY = 7 + ((i * 3) % 6); // 7px..12px
                   const phaseMs = -((delays[i] ?? 0) + (i * 97) % 500); // negative to start mid-cycle
+                 
 
       return (
                     <div

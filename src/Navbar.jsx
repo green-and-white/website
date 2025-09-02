@@ -60,7 +60,12 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-        <div className = "w-1/3"></div>
+        <div className = "hidden w-1/3 md:flex items-right">
+          <a className='text-white text-right w-full font-montserrat cursor-pointer font-semibold transition-colors duration-300 hover:text-gray-300 applynow'
+            href="https://docs.google.com/forms/d/e/1FAIpQLScc9dqbM0z2BGe49uxzfuRwij8EGEPVYE2WV3mUEjb5gnbrdw/viewform" target="_blank" rel="noopener noreferrer">
+            Apply Now
+          </a>
+        </div>
 
         {/* Mobile menu button */}
         <div className="md:hidden">
@@ -87,24 +92,32 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div
+     <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-60' : 'max-h-0'
+            isOpen ? 'max-h-70' : 'max-h-0'
         }`}
-      >
-        <div className="flex flex-col items-center py-4 space-y-4">
-          {navLinks.map((link, index) => (
+        >
+        <div className="grid grid-cols-2 grid-rows-3 gap-4 py-4 place-items-center">
+            {navLinks.map((link, index) => (
             <a
-              key={index}
-              href={link.href}
-              className="text-white font-montserrat text-lg font-semibold uppercase transition-colors duration-300 hover:text-gray-300"
-              onClick={() => setIsOpen(false)} // Close menu on click
+                key={index}
+                href={link.href}
+                className="text-white font-montserrat text-lg font-semibold transition-colors duration-300 hover:text-gray-300"
+                onClick={() => setIsOpen(false)} // Close menu on click
             >
-              {link.name}
+                {link.name}
             </a>
-          ))}
+            ))}
+            <a
+            className="text-white text-lg font-montserrat cursor-pointer font-semibold transition-colors duration-300 hover:text-gray-300 applynow"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScc9dqbM0z2BGe49uxzfuRwij8EGEPVYE2WV3mUEjb5gnbrdw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            Apply Now
+            </a>
         </div>
-      </div>
+        </div>
     </nav>
   );
 };

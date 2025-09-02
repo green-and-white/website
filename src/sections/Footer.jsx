@@ -59,9 +59,6 @@ export default function Footer() {
           <p>
             Website by Ramon Enrico Martinez, Johan Marlo Cabili, & Jabin Guamos
           </p>
-          <p>
-            Art and graphics by <span className="text-white">Kim Balasabas & Kurt Villagracia</span>
-          </p>
         </div>
       </div>
     </footer>
