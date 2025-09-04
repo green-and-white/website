@@ -5,13 +5,13 @@ import Modal from "../components/Modal.jsx";
 import descriptionsRaw from "../assets/committee_info/descriptions.txt?raw";
 
 
-import cc from "../assets/orbpics/cc.jpg"
-import photo from "../assets/orbpics/photo.jpg"
-import office from "../assets/orbpics/office.jpeg"
-import marketing from "../assets/orbpics/marketing.jpg"
-import layout from "../assets/orbpics/layout.jpg"
-import web from "../assets/orbpics/web.jpg"
-import literary from "../assets/orbpics/literary.jpg"
+import cc from "../assets/orbpics/cc.webp"
+import photo from "../assets/orbpics/photo.webp"
+import office from "../assets/orbpics/office.webp"
+import marketing from "../assets/orbpics/marketing.webp"
+import layout from "../assets/orbpics/layout.webp"
+import web from "../assets/orbpics/web.webp"
+import literary from "../assets/orbpics/literary.webp"
 
 export default function Committees({ animated = true }) {
   const [selectedCommittee, setSelectedCommittee] = useState(null);
@@ -68,7 +68,7 @@ export default function Committees({ animated = true }) {
     { size: "md", className: LAYOUT, label: "Layout", description: descriptions.Layout, src: layout},
     { size: "md", className: WEB, label: "Web", description: descriptions.Web, src:web},
   // Photo nudges slightly inward on wide/oval layouts
-  { size: "md", className: PHOTO, label: "Photo", radialFactor: 0.85, description: descriptions.Photo, src: photo, src:photo},
+  { size: "md", className: PHOTO, label: "Photo", radialFactor: 0.85, description: descriptions.Photo, src: photo},
   ];
 
   // Compute visually even angles around an ellipse by numerical arc-length
