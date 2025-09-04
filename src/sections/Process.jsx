@@ -96,7 +96,7 @@ export default function Steps() {
       <div className="flex flex-col lg:flex-row w-full max-w-7xl items-center lg:space-x-16">
         {/* Left Section */}
         <div className="flex-1 flex flex-col h-full items-center text-center lg:text-left mb-12 lg:mb-0">
-          <img src={island} alt="Island" className="max-w-[350px] h-auto w-full mb-6 object-contain"></img>
+          <img src={island} alt="Island" className="max-w-[350px] h-auto w-full mb-6 object-contain island"></img>
           <h2 className="text-2xl md:text-4xl text-center font-insideout mb-4">Ready to make core memories with us?</h2>
           <p className="max-w-xs md:max-w-md lg:max-w-none text-center text-xs md:text-base font-montserrat">
             Prepare to make unforgettable memories by taking these steps
