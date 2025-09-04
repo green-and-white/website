@@ -15,7 +15,7 @@ const faqsData = [
         "Marketing: Ideates and executes promotion strategies that encourage students to subscribe to the yearbook.",
         "Customer Care: Accommodates subscriber concerns and guides subscribers throughout yearbook processes.",
         "Office: Organizes the systems, logistics and data of the yearbook operations.",
-        "Web: Deploys and manages the digital solutions behind G&W’s systems."
+        "Web: Deploys and manages the digital solutions behind Green & White's systems."
     ]   
   },
   {
@@ -83,7 +83,11 @@ export default function FAQs() {
             {/* Question Row */}
             <div className="flex items-center justify-between p-6">
               <h3 className="text-xl font-bold font-insideout">
-                {faq.question}
+                    {faq.question.split(/(Green & White)/g).map((part, index) => (
+                        <span key={index} className={`text-xl ${part === "Green & White" ? "font-bold" : ""}`}>
+                            {part}
+                        </span>
+                    ))}
               </h3>
               <div className="flex items-center justify-center w-6 h-6 text-2xl font-bold leading-none">
                 {openIndexes.includes(index) ? "−" : "+"}
@@ -97,11 +101,21 @@ export default function FAQs() {
               }`}
             >
               <div className="p-6 pt-0">
-                <p className="text-sm font-montserrat">{faq.answer}</p>
+                    {faq.answer.split(/(Green & White)/g).map((part, index) => (
+                        <span key={index} className={`text-sm md:text-base ${part === "Green & White" ? "font-bold" : ""}`}>
+                            {part}
+                        </span>
+                    ))}
                 {faq.list && (
-                    <ul className="list-disc pl-6 text-sm">
+                    <ul className="list-disc pl-6 text-sm md:text-base">
                         {faq.list.map((item, i) => (
-                        <li key={i}>{item}</li>
+                        <li key={i}>
+                            {item.split(/(Green & White)/g).map((part, index) => (
+                                <span key={index} className={`text-sm md:text-base ${part === "Green & White" ? "font-bold" : ""}`}>
+                                    {part}
+                                </span>
+                            ))}
+                        </li>
                         ))}
                     </ul>)}
               </div>

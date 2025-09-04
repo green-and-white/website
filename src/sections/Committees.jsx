@@ -4,6 +4,15 @@ import MobileCommitteeCarousel from "../components/MobileCommitteeCarousel.jsx";
 import Modal from "../components/Modal.jsx";
 import descriptionsRaw from "../assets/committee_info/descriptions.txt?raw";
 
+
+import cc from "../assets/orbpics/cc.jpg"
+import photo from "../assets/orbpics/photo.jpg"
+import office from "../assets/orbpics/office.jpeg"
+import marketing from "../assets/orbpics/marketing.jpg"
+import layout from "../assets/orbpics/layout.jpg"
+import web from "../assets/orbpics/web.jpg"
+import literary from "../assets/orbpics/literary.jpg"
+
 export default function Committees({ animated = true }) {
   const [selectedCommittee, setSelectedCommittee] = useState(null);
   const [vw, setVw] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
@@ -51,15 +60,15 @@ export default function Committees({ animated = true }) {
   // compute angles using ellipse arc-length sampling below for visual evenness.
   const _rawPlacements = [
     // Removed the percent nudge so Marketing sits exactly on the computed top angle
-    { size: "md", className: MARKETING, label: "Marketing", offsetX: 0, description: descriptions.Marketing },
+    { size: "md", className: MARKETING, label: "Marketing", offsetX: 0, description: descriptions.Marketing, src: marketing},
   // Customer Care nudges slightly inward on wide/oval layouts
-  { size: "md", className: CUSTOMER_CARE, label: "Customer Care", radialFactor: 0.85, description: descriptions["Customer Care"], src: "../assets/orbpics/cc.jpg" },
-    { size: "md", className: LITERARY, label: "Literary", description: descriptions.Literary },
-    { size: "md", className: OFFICE, label: "Office", description: descriptions.Office },
-    { size: "md", className: LAYOUT, label: "Layout", description: descriptions.Layout },
-    { size: "md", className: WEB, label: "Web", description: descriptions.Web },
+  { size: "md", className: CUSTOMER_CARE, label: "Customer Care", radialFactor: 0.85, description: descriptions["Customer Care"], src: cc },
+    { size: "md", className: LITERARY, label: "Literary", description: descriptions.Literary, src: literary},
+    { size: "md", className: OFFICE, label: "Office", description: descriptions.Office, src: office},
+    { size: "md", className: LAYOUT, label: "Layout", description: descriptions.Layout, src: layout},
+    { size: "md", className: WEB, label: "Web", description: descriptions.Web, src:web},
   // Photo nudges slightly inward on wide/oval layouts
-  { size: "md", className: PHOTO, label: "Photo", radialFactor: 0.85, description: descriptions.Photo },
+  { size: "md", className: PHOTO, label: "Photo", radialFactor: 0.85, description: descriptions.Photo, src: photo, src:photo},
   ];
 
   // Compute visually even angles around an ellipse by numerical arc-length

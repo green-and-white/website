@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import island from "../assets/icons/GW_Island-Dust.png"
 const stepsData = [
-  { number: "01", title: "Application", description: "Fill out the application form at bit.ly/GW26-T1-Application by Saturday, September 13.", color: "var(--color-marketing)" },
-  { number: "02", title: "Examination", description: "Wait for the details of your committee exam and take-home exam to be sent to you by September 15. Submit your exam deliverables, resume, and portfolio within the given time period.", color: "var(--color-customer-care)" },
-  { number: "03", title: "Committee Head Interview", description: " Schedule your interview with the committee head of your priority and secondary committee choices.", color: "var(--color-layout)" },
-  { number: "04", title: "Executive Editor Interview", description: "Schedule your interview with the executive editors.", color: "var(--color-web)" },
+  { number: "1", title: "Application", description: "Fill out the application form at bit.ly/GW26-T1-Application by Saturday, September 13.", color: "var(--color-marketing)" },
+  { number: "2", title: "Examination", description: "Wait for the details of your committee exam and take-home exam to be sent to you by September 15. Submit your exam deliverables, resume, and portfolio within the given time period.", color: "var(--color-customer-care)" },
+  { number: "3", title: "Committee Head Interview", description: " Schedule your interview with the committee head of your priority and secondary committee choices.", color: "var(--color-layout)" },
+  { number: "4", title: "Executive Editor Interview", description: "Schedule your interview with the executive editors.", color: "var(--color-web)" },
 ];
 
 function StepItem({ number, title, description, color, isActive, onClick, enableClick }) {
@@ -15,7 +15,7 @@ function StepItem({ number, title, description, color, isActive, onClick, enable
             tempLink.href = url.startsWith('http') ? url : `https://${url}`;
             tempLink.target = '_blank';
             tempLink.rel = 'noopener noreferrer';
-            tempLink.className = 'text-blue-500 underline';
+            tempLink.className = 'text-red-500 font-bold underline';
             tempLink.textContent = url;
             return tempLink.outerHTML;
         }
@@ -23,16 +23,26 @@ function StepItem({ number, title, description, color, isActive, onClick, enable
 
     return (
         <div
-            className="relative overflow-hidden group rounded-xl max-w-[500px] w-full"
-            style={{ "--highlight": color }}
+            className="relative group rounded-xl max-w-[500px] w-full overflow-visible"
             onClick={enableClick ? onClick : undefined}
         >
-            {/* Highlight */}
-            <div
-                className={`absolute inset-0 bg-[var(--highlight)] transition-transform duration-400
-                ${isActive ? "translate-x-0" : "translate-x-[-100%]"}
-                group-hover:translate-x-0`}
-            ></div>
+        {/* Highlight */}
+            <div className={`absolute inset-0
+                  flex items-center justify-center
+                  opacity-0 group-hover:opacity-100
+                  transition-opacity duration-700
+                  pointer-events-none 
+                  w-[110%] h-[120%]
+                  `}
+            >
+              <div
+                  className="w-full h-full relative ounded-full overflow-visible"
+                  style={{
+                  background: `radial-gradient(ellipse at center, ${color} 0%, transparent 90%)`,
+                  filter: "blur(45px)",
+                  }}
+              ></div>
+            </div> 
 
             {/* Content */}
             <div className="relative flex items-start space-x-6 md:space-x-4 px-2 py-4">
@@ -114,3 +124,26 @@ export default function Steps() {
   );
   
 }
+
+
+ {/* Highlight
+    <div
+        className={`
+            absolute inset-0
+            flex items-center justify-center
+            opacity-0 group-hover:opacity-100
+            transition-opacity duration-700
+            pointer-events-none border border-black
+            w-[120%] h-[120%]
+        `}
+        style={{ overflow: "visible" }} // allow the glow to bleed
+        >
+            <div
+                className="w-[120%] h-[50%] border border-black rounded-full"
+                style={{
+                background: `radial-gradient(ellipse at center, ${color} 0%, transparent 70%)`,
+                filter: "blur(60px)",
+                }}
+            ></div>
+        </div> */
+  }

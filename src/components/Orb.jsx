@@ -30,7 +30,7 @@ export default function Orb({
   shineWidth = "50%",
   shineHeight = "25%",
   shineRotate = "20deg",
-}) {    
+}) {      
   const rad = (angle * Math.PI) / 180;
   const x = Math.cos(rad) * aPercent + offsetX;
   const y = Math.sin(rad) * bPercent + offsetY;

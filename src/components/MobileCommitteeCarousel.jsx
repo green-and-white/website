@@ -27,7 +27,7 @@ export default function MobileCommitteeCarousel({ committees = [] }) {
   const slideWidth = Math.round(containerWidth * 0.8 - gap); // 80% width -> larger peeks
   // Center the current slide so both left and right peeks are visible
   const translateX = Math.round(containerWidth / 2 - (sidePadding + index * (slideWidth + gap) + slideWidth / 2));
-
+  
   useEffect(() => {
     const handleResize = () => {
       if (!containerRef.current) return;
@@ -141,7 +141,7 @@ export default function MobileCommitteeCarousel({ committees = [] }) {
                 style={{ backgroundColor: "var(--color-modal-bg)", color: "var(--color-blue-900)", minHeight: `${MIN_CARD_HEIGHT}px`, height: uniformHeight ? `${uniformHeight}px` : undefined }}
               >
                 <div className="my-0.5 modal-orb-container">
-                  <Orb layout="static" showLabel={false} size="xs" />
+                  <Orb layout="static" showLabel={false} size="xs" imageSrc={c.src}/>
                 </div>
                 <hr className="modal-separator my-1" />
                 <h3 className="font-insideout text-center py-2" style={{ fontSize: "1.4rem" }}>{c.label}</h3>

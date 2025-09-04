@@ -44,7 +44,7 @@ export default function Footer() {
                 <img src={instagram} alt="Instagram" className="h-6 w-6 hover:opacity-80 transition" />
               </a>
               <a href="https://github.com/green-and-white" aria-label="GitHub">
-                <img src={github} alt="GitHub" className="h-7 w-7 hover:opacity-80 transition" />
+                <img src={github} alt="GitHub" className="h-6 w-6 hover:opacity-80 transition" />
               </a>
             </div>
           </div>
@@ -58,6 +58,9 @@ export default function Footer() {
           <div className="font-bold mb-2">CREDITS</div>
           <p>
             Website by Ramon Enrico Martinez, Johan Marlo Cabili, & Jabin Guamos
+          </p>
+          <p>
+            Art by Andrea Estrella
           </p>
         </div>
       </div>
