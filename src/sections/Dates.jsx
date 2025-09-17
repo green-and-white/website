@@ -7,7 +7,7 @@ const eventsData = [
     color: "#CA6702",
   },
   {
-    title: "Take Home Exams",
+    title: "Practical Exams",
     date: "Sept. 15 - 20",
     color: "#F6BB46",
   },
