@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function DraggableItem({ id, children, start = { x: 0, y: 0 } }) {
+export default function DraggableItem({ id, children, start = { x: 0, y: 0 }, lastItemIdx, setLastItemIdx, index}
+ ) {
   const ref = useRef(null);
   const [pos, setPos] = useState(start);
   const [drag, setDrag] = useState(false);
@@ -54,6 +55,7 @@ export default function DraggableItem({ id, children, start = { x: 0, y: 0 } }) 
 
   const begin = (x, y) => {
     setDrag(true);
+    setLastItemIdx(index); 
     startRef.current = { x: x - lastRef.current.x, y: y - lastRef.current.y };
   };
 
@@ -84,14 +86,17 @@ export default function DraggableItem({ id, children, start = { x: 0, y: 0 } }) 
   // Touch
   const onTouchStart = (e) => {
     const t = e.touches[0];
+    setLastItemIdx(index);
     begin(t.clientX, t.clientY);
   };
   const onTouchMove = (e) => {
     const t = e.touches[0];
+    setLastItemIdx(index);
     move(t.clientX, t.clientY);
   };
   const onTouchEnd = end;
-
+  
+  
   return (
     <div
       ref={ref}
@@ -99,12 +104,12 @@ export default function DraggableItem({ id, children, start = { x: 0, y: 0 } }) 
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
-      className="fixed select-none"
+      className={`fixed select-none`}
       style={{
         left: pos.x,
         top: pos.y,
         cursor: drag ? "grabbing" : "grab",
-        zIndex: drag ? 50 : 1,
+        zIndex: lastItemIdx == index ? 49 : 2, 
         touchAction: "none",
       }}
     >

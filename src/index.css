@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+@theme {
+  --font-libre-caslon: "libre", sans-serif; /* Link to your custom font */
+  --font-helvetica: "helvetica", sans-serif; /* Link to your custom font */
+}
+
+@font-face {
+  font-family: "libre";
+  src: url("./assets/fonts/LibreCaslonCondensed-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "helvetica";
+  src: url("./assets//fonts/Helvetica.ttf") format("truetype");
+}
+
+
+
 :root {
   font-family: "Inter", sans-serif;
   line-height: 1.5;
@@ -13,4 +30,37 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.background{
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  display: block;
+  background-image: url('background.jpg');
+  background-size: cover;
+  transform: scale(1.1); /* https://stackoverflow.com/questions/28870932/how-to-remove-white-border-from-blur-background-image */
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  width: 100vw;
+  height:100vh;
+}
+
+.liquid-glass{
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.2px);
+  -webkit-backdrop-filter: blur(1.2px);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+}
+
+.chair{
+  width: 350px;
+  height: 350px;
 }
