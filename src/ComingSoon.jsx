@@ -140,16 +140,16 @@ export default function ComingSoon() {
   
   return (
     
-    <main className="relative h-screen flex flex-col justify-between overflow-hidden text-gray-800 py-4">
+    <main className="relative h-screen flex flex-col justify-between overflow-hidden text-gray-800 pt-4">
       {/* Background image */}
       <section className="background"></section>
 
        {/* Logo at top center */}
        <div className="pointer-events-none inset-x-0 flex justify-center">
           <img
-            src={screenSize === "mobile" ? logo_vertical : logo_horizontal}
+            src={screenSize.includes("mobile") ? logo_vertical : logo_horizontal}
             alt="Green & White"
-            className="h-12 drop-shadow-md select-none z-[200]"
+            className="h-14 drop-shadow-md select-none z-[200]"
           />
         </div>
 
@@ -160,19 +160,19 @@ export default function ComingSoon() {
           aria-label="Coming soon message"
           className="h-full pointer-events-none inset-0 flex flex-col items-center justify-center gap-3 text-center z-50">
           <h1
-            className="font-extrabold CTA leading-tight max-w-[249px] md:max-w-full
-                       bg-clip-text text-[#D9B350] drop-shadow-sm font-libre-caslon z-50"
+            className="font-extrabold CTA leading-tight max-w-[249px] md:max-w-full 
+                       bg-clip-text text-[#D9B350] font-libre-caslon z-50"
             style={{zIndex:500}}>
             Keep your memories alive.
           </h1>
 
           <a
-            className="pointer-events-auto liquid-glass py-4 px-6 text-white font-helvetica"
+            className="pointer-events-auto liquid-glass"
             href="https://forms.gle/your-prereg-form"
             target="_blank"
             rel="noreferrer"
           >
-            Pre-register now
+              <div class="text-xl glass-card p-5 text-white font-helvetica">Pre-register now</div>
           </a>
 
         </section>
@@ -184,7 +184,7 @@ export default function ComingSoon() {
                           setLastItemIdx={setLastItemIdx}
                           index={index}
                           >
-            <figure className={`m-0 flex flex-col items-center text-center `}>
+            <figure className={`m-0 flex flex-col items-center text-center`}>
               <img
                 src={it.src}
                 alt={it.alt}
@@ -192,7 +192,7 @@ export default function ComingSoon() {
                   width: `${it.w}px`,
                   height: `${it.h}px`,
                 }}
-                className={`m-0 block select-none`}
+                className={`m-0 block select-none drop-shadow-2xl`}
                 draggable={false}
               />
               {it.label && (
@@ -205,11 +205,11 @@ export default function ComingSoon() {
         ))}
       </div>  
         {/* Footer */}
-        <footer className="bg-[rgba(0,0,0,0.2)] text-white text-center py-4 shadow-lg">
-          <h1 className="text-2xl font-bold opacity-90 z-100">COMING SOON</h1>
-          <div className="mt-1 text-xs opacity-90">
-            Website by Ramon Enrico Martinez, Johan Mario Cabili, &amp; Danielle
-            Ang
+        <footer className="bg-[rgba(0,0,0,0.2)] text-white text-center py-4 shadow-lg glass-card-footer">
+          <h1 className="text-2xl md:text-4xl font-bold opacity-90 z-100">COMING SOON</h1>
+          <div className="mt-1 text-xs md:text-base opacity-90">
+            Website by <strong>Ramon Enrico Martinez</strong>, <strong>Johan Mario Cabili</strong>, &amp; <strong>Danielle
+            Ang </strong>
           </div>
           {/* 
           <button
