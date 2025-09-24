@@ -144,6 +144,9 @@
 .CTA{
   font-size: clamp(40px, 5vw, 64px);
   text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+  /* Keep your memories alive. */
+  line-height: 40px;
+
 }
 
 .chair{

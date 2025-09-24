@@ -160,7 +160,7 @@ export default function ComingSoon() {
           aria-label="Coming soon message"
           className="h-full pointer-events-none inset-0 flex flex-col items-center justify-center gap-3 text-center z-50">
           <h1
-            className="font-extrabold CTA leading-tight max-w-[249px] md:max-w-full tracking-tight
+            className="font-extrabold CTA leading-tight max-w-[249px] md:max-w-full tracking-normal
                        bg-clip-text text-[#D9B350] font-libre-caslon z-50"
             style={{zIndex:500}}>
             Keep your memories alive.
