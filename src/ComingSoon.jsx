@@ -37,48 +37,61 @@ export default function ComingSoon() {
   });
 
   const getScreenSize = (width) => {
-    if (width > 1024)
+    if (width > 1023)
       return "desktop"
     else if(width > 680)
       return "tablet"
-    return "mobile"; 
+    else if (width > 400)
+      return "mobile"
+    return "mobileS"; 
   }
 
   const [screenSize, setScreenSize] = useState(getScreenSize(window.innerWidth));
 
   const stickers = {
+    mobileS: {
+      i26:    { w: 42,  h: 42,   x: 0.75, y: 0.85 },
+      cat:    { w: 0,   h: 0,    x: 0.8,  y: 0.6  }, // unchanged
+      chappy: { w: 77,  h: 77,   x: 0.7, y: 0.25 },
+      paper:  { w: 105, h: 84,   x: 0.03, y: 0.95 },
+      id:     { w: 49,  h: 70,   x: 0.05, y: 0.87 },
+      ticket: { w: 0,   h: 0,    x: 0.80, y: 0.18 }, // unchanged
+      beep:   { w: 84,  h: 56,   x: 0.64,  y: 1  },
+      chair:  { w: 85,  h: 95,  x: 0.05, y: 0.2  },
+      slip:   { w: 70,  h: 70,   x: 0.75, y: 0.95  },
+    },
     mobile: {
-      i26:   { w: 80,  h: 60,  x: 0.75, y: 0.05 },
-      cat:   { w: 100, h: 100, x: 0.70, y: 0.55 },
-      chappy:{ w: 90,  h: 90,  x: 0.10, y: 0.30 },
-      paper: { w: 50, h: 50,  x: 0.08, y: 1 },
-      id:    { w: 70,  h: 100,  x: 0.05, y: 0.70 },
-      ticket:{ w: 80,  h: 160, x: 0.80, y: 0.18 },
-      beep:  { w: 120, h: 80,  x: 0.50, y: 0.55 },
-      chair: { w: 100, h: 120, x: 0.10, y: 0.15 },
-      slip:  { w: 100, h: 100, x: 0.65, y: 0.60 },
+      i26:   { w: 60,  h: 60,  x: 0.75, y: 0.70 },
+      cat:   { w: 0, h: 0, x: 0.8, y: 0.6 },
+      chappy:{ w: 120,  h: 120,  x: 0.67, y: 0.25 },
+      paper: { w: 150, h: 120,  x: 0.03, y: 0.85 },
+      id:    { w: 70,  h: 100,  x: 0.05, y: 0.77 },
+      ticket:{ w: 0,  h: 0, x: 0.80, y: 0.18 },
+      beep:  { w: 120, h: 80,  x: 0.6, y: 0.9 },
+      chair: { w: 130, h: 150, x: 0.05, y: 0.2 },
+      slip:  { w: 100, h: 100, x: 0.72, y: 0.8 },
     },
     tablet: {
-      i26:   { w: 100, h: 80,  x: 0.78, y: 0.05 },
-      cat:   { w: 150, h: 150, x: 0.75, y: 0.58 },
-      chappy:{ w: 120, h: 120, x: 0.12, y: 0.34 },
-      id:    { w: 80,  h: 110, x: 0.06, y: 0.38 },
+      i26:   { w: 100, h: 80,  x: 0.78, y: 0.1 },
+      cat:   { w: 120, h: 120, x: 0.8, y: 0.45 },
+      chappy:{ w: 90, h: 90, x: 0.2, y: 0.77 },
+      id:    { w: 80,  h: 110, x: 0.03, y: 0.8 },
       paper: { w: 140, h: 100, x: 0.07, y: 1 },
-      ticket:{ w: 100, h: 200, x: 0.82, y: 0.20 },
-      beep:  { w: 150, h: 100, x: 0.55, y: 0.58 },
-      chair: { w: 120, h: 150, x: 0.11, y: 0.07 },
-      slip:  { w: 140, h: 140, x: 0.68, y: 0.62 },
+      ticket:{ w: 80, h: 200, x: 0.82, y: 0.6 },
+      beep:  { w: 150, h: 100, x: 0.62, y: 0.85 },
+      chair: { w: 110, h: 140, x: 0.06, y: 0.07 },
+      slip:  { w: 140, h: 140, x: 0.74, y: 0.9 },
     },
     desktop: {
-      i26:   { w: 130, h: 100, x: 0.80, y: 0.04 },
-      cat:   { w: 200, h: 200, x: 0.82, y: 0.60 },
-      chappy:{ w: 150, h: 150, x: 0.13, y: 0.36 },
-      id:    { w: 100, h: 140, x: 0.05, y: 0.40 },
-      paper: { w: 250, h: 180, x: 0.05, y: 0.65 },
-      ticket:{ w: 100, h: 300, x: 0.86, y: 0.20 },
-      beep:  { w: 260, h: 150, x: 0.58, y: 0.60 },
-      chair: { w: 180, h: 220, x: 0.10, y: 0.04 },
-      slip:  { w: 200, h: 200, x: 0.69, y: 0.66 },
+      i26:    { w: 130, h: 100, x: 0.78, y: 0.10 },
+      cat:    { w: 200, h: 200, x: 0.80, y: 0.45 },
+      chappy: { w: 150, h: 150, x: 0.11, y: 0.56 },
+      id:     { w: 100, h: 140, x: 0.03, y: 0.65 },
+      paper:  { w: 250, h: 180, x: 0.07, y: 0.8 },
+      ticket: { w: 100, h: 300, x: 0.82, y: 0.60 },
+      beep:   { w: 260, h: 150, x: 0.62, y: 0.85 },
+      chair:  { w: 180, h: 220, x: 0.06, y: 0.07 },
+      slip:   { w: 200, h: 200, x: 0.74, y: 0.90 },
     },
   };
   
@@ -93,8 +106,8 @@ export default function ComingSoon() {
         { id: "obj1",  src: i26,    w: stickers[screenSize].i26.w,    h: stickers[screenSize].i26.h,    start: { x: baseW * stickers[screenSize].i26.x,    y: baseH * stickers[screenSize].i26.y },    alt: "26" },     
         { id: "obj4",  src: cat,    w: stickers[screenSize].cat.w,    h: stickers[screenSize].cat.h,    start: { x: baseW * stickers[screenSize].cat.x,    y: baseH * stickers[screenSize].cat.y },    alt: "Cat" },     
         { id: "obj5",  src: chappy, w: stickers[screenSize].chappy.w, h: stickers[screenSize].chappy.h, start: { x: baseW * stickers[screenSize].chappy.x, y: baseH * stickers[screenSize].chappy.y }, alt: "Chappy" },
-        { id: "obj6",  src: id,     w: stickers[screenSize].id.w,     h: stickers[screenSize].id.h,     start: { x: baseW * stickers[screenSize].id.x,     y: baseH * stickers[screenSize].id.y },     alt: "ID" },      
         { id: "obj7",  src: paper,  w: stickers[screenSize].paper.w,  h: stickers[screenSize].paper.h,  start: { x: baseW * stickers[screenSize].paper.x,  y: baseH * stickers[screenSize].paper.y },  alt: "Paper" }, 
+        { id: "obj6",  src: id,     w: stickers[screenSize].id.w,     h: stickers[screenSize].id.h,     start: { x: baseW * stickers[screenSize].id.x,     y: baseH * stickers[screenSize].id.y },     alt: "ID" },      
         { id: "obj11", src: ticket, w: stickers[screenSize].ticket.w, h: stickers[screenSize].ticket.h, start: { x: baseW * stickers[screenSize].ticket.x, y: baseH * stickers[screenSize].ticket.y }, alt: "Ticket" }, 
         { id: "obj12", src: beep,   w: stickers[screenSize].beep.w,   h: stickers[screenSize].beep.h,   start: { x: baseW * stickers[screenSize].beep.x,   y: baseH * stickers[screenSize].beep.y },   alt: "Beep" },  
         { id: "obj13", src: chair,  w: stickers[screenSize].chair.w,  h: stickers[screenSize].chair.h,  start: { x: baseW * stickers[screenSize].chair.x,  y: baseH * stickers[screenSize].chair.y },  alt: "Chair" }, 
