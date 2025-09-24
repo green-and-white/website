@@ -1,6 +1,6 @@
 import DraggableItem from "./components/DraggableItem";
 import logo_horizontal from "./assets/icons/horizontal.svg";
-import logo_vertical from "./assets/icons/logo.svg"; //replace with revised
+import logo_vertical from "./assets/icons/White-Vertical.svg"; //replace with revised
 import sample from "./assets/images/sample.png";
 import folder from "./assets/images/folder.png";
 
@@ -140,16 +140,16 @@ export default function ComingSoon() {
   
   return (
     
-    <main className="relative h-screen flex flex-col justify-between overflow-hidden text-gray-800 pt-4">
+    <main className="relative h-screen flex flex-col justify-between overflow-hidden text-gray-800">
       {/* Background image */}
       <section className="background"></section>
 
        {/* Logo at top center */}
-       <div className="pointer-events-none inset-x-0 flex justify-center">
+       <div className="pointer-events-none inset-x-0 flex justify-center pt-6">
           <img
             src={screenSize.includes("mobile") ? logo_vertical : logo_horizontal}
             alt="Green & White"
-            className="h-14 drop-shadow-md select-none z-[200]"
+            className={`${screenSize.includes("mobile")? "h-16" : "h-14"} drop-shadow-md select-none z-[200]`}
           />
         </div>
 
@@ -160,7 +160,7 @@ export default function ComingSoon() {
           aria-label="Coming soon message"
           className="h-full pointer-events-none inset-0 flex flex-col items-center justify-center gap-3 text-center z-50">
           <h1
-            className="font-extrabold CTA leading-tight max-w-[249px] md:max-w-full 
+            className="font-extrabold CTA leading-tight max-w-[249px] md:max-w-full tracking-tight
                        bg-clip-text text-[#D9B350] font-libre-caslon z-50"
             style={{zIndex:500}}>
             Keep your memories alive.
@@ -172,7 +172,7 @@ export default function ComingSoon() {
             target="_blank"
             rel="noreferrer"
           >
-              <div class="text-xl glass-card p-5 text-white font-helvetica">Pre-register now</div>
+              <div class="text-sm md:text-base glass-card p-3 md:p-5 text-white font-helvetica">Pre-register now</div>
           </a>
 
         </section>
@@ -205,17 +205,16 @@ export default function ComingSoon() {
         ))}
       </div>  
         {/* Footer */}
-        <footer className="bg-[rgba(0,0,0,0.2)] text-white text-center py-4 shadow-lg glass-card-footer">
-          <h1 className="text-2xl md:text-4xl font-bold opacity-90 z-100">COMING SOON</h1>
-          <div className="mt-1 text-xs md:text-base opacity-90">
+        <footer className="bg-[rgba(0,0,0,0.2)] text-white text-center py-4 px-8 shadow-lg glass-card-footer">
+          <h1 className="text-2xl md:text-4xl py-2 font-bold opacity-90 z-100">COMING SOON</h1>
+          <div className="mt-1 text-xs pb-2 md:text-base opacity-90">
             Website by <strong>Ramon Enrico Martinez</strong>, <strong>Johan Mario Cabili</strong>, &amp; <strong>Danielle
             Ang </strong>
           </div>
           {/* 
           <button
             onClick={resetLayout}
-            className="absolute right-3 top-3 rounded-md bg-white px-3 py-1 text-[#2a67a7] shadow"
-          >
+            className="absolute right-3 top-3 rounded-md bg-white px-3 py-1 text-[#2a67a7] shadow">
             Reset layout
           </button> 
           */}
