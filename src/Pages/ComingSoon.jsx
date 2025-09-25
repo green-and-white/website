@@ -142,7 +142,7 @@ export default function ComingSoon() {
       <section className={`${styles.background}`}></section>
 
        {/* Logo at top center */}
-       <div className="pointer-events-none inset-x-0 flex justify-center pt-6">
+       <div className="z-40 pointer-events-none inset-x-0 flex justify-center pt-6">
           <img
             src={screenSize.includes("mobile") ? logo_vertical : logo_horizontal}
             alt="Green & White"
@@ -155,33 +155,33 @@ export default function ComingSoon() {
         {/* Hero text center */}
         <section 
           aria-label="Coming soon message"
-          className="h-full pointer-events-none inset-0 flex flex-col items-center justify-center gap-3 text-center z-50">
+          className="h-full pointer-events-none inset-0 flex flex-col items-center justify-center gap-3 md:gap-6 text-center z-50">
           <h1
             className={`font-extrabold ${styles.CTA} leading-tight max-w-[249px] md:max-w-full tracking-normal
-                       bg-clip-text text-[#D9B350] font-libre-caslon z-50`}
+                       bg-clip-text text-[#D9B350] font-libre-caslon`}
             style={{zIndex:500}}>
             Keep your memories alive.
           </h1>
 
           <a
-            className="pointer-events-auto"
+            className="pointer-events-auto z-50"
             href="https://forms.gle/your-prereg-form"
             target="_blank"
             rel="noreferrer"
           >
-              <div class={` ${styles.glassCard} text-sm md:text-base  p-3 md:p-5 text-white font-helvetica`}>Pre-register now</div>
+              <div className={`${styles.glassCard} text-sm md:text-base  p-3 md:p-5 text-white font-helvetica`}>Pre-register now</div>
           </a>
 
         </section>
 
         {/* Draggable objects */}
         {items.map((it, index) => (
-          <DraggableItem key={it.id} id={it.id} start={it.start} 
+          <DraggableItem  id={it.id} keyIdx={index} key = {index} start={it.start} 
                           lastItemIdx = {lastItemIdx}
                           setLastItemIdx={setLastItemIdx}
                           index={index}
                           >
-            <figure className={`m-0 flex flex-col items-center text-center`}>
+            <figure className={`m-0 flex flex-col items-center text-center drop-shadow-2xl`} key={index}>
               <img
                 src={it.src}
                 alt={it.alt}
@@ -192,17 +192,12 @@ export default function ComingSoon() {
                 className={`m-0 block select-none drop-shadow-2xl`}
                 draggable={false}
               />
-              {it.label && (
-                <figcaption className="mt-1 text-xs text-gray-800 break-words leading-tight max-w-[80px]">
-                  {it.label}
-                </figcaption>
-              )}
             </figure>
           </DraggableItem>
         ))}
       </div>  
         {/* Footer */}
-        <footer className={`bg-[rgba(0,0,0,0.2)] text-white text-center py-4 px-8 shadow-lg ${styles.glassCardFooter}`}>
+        <footer className={`z-40 bg-[rgba(0,0,0,0.2)] text-white text-center py-4 px-8 shadow-lg ${styles.glassCardFooter}`}>
           <h1 className="text-2xl md:text-4xl py-2 font-bold opacity-90 z-100">COMING SOON</h1>
           <div className="mt-1 text-xs pb-2 md:text-base opacity-90">
             Website by <strong>Ramon Enrico Martinez</strong>, <strong>Johan Mario Cabili</strong>, &amp; <strong>Danielle
