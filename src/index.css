@@ -1,13 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --font-libre-caslon: "libre", sans-serif; /* Link to your custom font */
-  --font-helvetica: "helvetica", sans-serif; /* Link to your custom font */
+  --font-montserrat: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-insideout: "InsideOut", ui-sans-serif, system-ui, sans-serif;
+  --font-pixar: "Pixar", ui-sans-serif, system-ui, sans-serif;
+  --font-waltograph: "Waltograph", ui-sans-serif, system-ui, sans-serif;
+  --font-times: "Times New Roman", ui-serif, Georgia, serif;
+  --font-libre-caslon: "libre", sans-serif;
+  --font-helvetica: "helvetica", sans-serif;
 }
-
-@font-face {
-  font-family: "libre";
-  src: url("./assets/fonts/LibreCaslonCondensed-Regular.ttf") format("truetype");
+html {
+  scroll-behavior: smooth;
+}
+/* Utility: clamp text lines (mobile) */
+.clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4; /* standard property for compatibility */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 @font-face {
@@ -30,15 +41,141 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --color-blue-900: #0A0823;
+  --color-blue-800: #171052;
+  --color-blue-700: #182D6A;
+  --color-yellow-200: #F7D991;
+  --color-beige-200: #ECA974;
+  --color-rose-200: #D7A4A0;
+  --color-green-500: #05A54C;
+  --color-green-700: #05674A;
+  --color-yellow-600: #CAA64F;
+
+  --color-marketing: #AD2B17;
+  --color-customer-care: #CA6702;
+  --color-literary: #F6BB46;
+  --color-office: #05A54C;
+  --color-layout: #036074;
+  --color-web: #C54B8C;
+  --color-photo: #C5ADEC;
+  --color-modal-bg: #F2F0EF;
+
 }
 
-.background{
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 0;
-  display: block;
-  background-image: url('background.jpg');
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    background-color: var(--color-blue-900);
+    color: white;
+    overflow-x: hidden;
+}
+
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "InsideOut";
+  src: url("./assets/fonts/InsideOut-DAp0.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pixar";
+  src: url("./assets/fonts/Pixar.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Waltograph";
+  src: url("./assets/fonts/waltograph42.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+    font-family: "Times New Roman";
+    src: url("./assets/fonts/Times-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: "libre";
+  src: url("./assets/fonts/LibreCaslonCondensed-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "helvetica";
+  src: url("./assets//fonts/Helvetica.ttf") format("truetype");
+}
+
+
+/* === Committees Orbs Styles (scoped) === */
+.committee-orbs {
+  position: relative;
+}
+
+.committee-orbs .orb {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden; /* clip inner image */
+  pointer-events: none; /* purely decorative */
+  will-change: transform;
+  border: 1.5px solid var(--orb-border, transparent);
+  box-shadow:
+    0 0 16px var(--orb-glow-inner, var(--orb-glow-1, rgba(255, 215, 0, 0.55))),
+    0 0 38px var(--orb-glow-outer, var(--orb-glow-2, rgba(255, 165, 0, 0.35)));
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+
+/* spinning ring that sits behind the orb for a subtle motion effect */
+.committee-orbs .orb-ring{
+  position: absolute;
+  width: calc(100% + 34px);
+  height: calc(100% + 34px);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1; /* behind the orb */
+  background: conic-gradient(from 90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.12) 15%, rgba(255,255,255,0.02) 30%, rgba(255,255,255,0.02) 70%, rgba(255,255,255,0.08) 85%, rgba(255,255,255,0.02) 100%);
+  filter: blur(6px) saturate(110%);
+  animation: orb-ring-spin linear infinite;
+  animation-duration: var(--orb-ring-spin, 8s);
+}
+
+@keyframes orb-ring-spin{
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.orb-container-clickable:hover .orb {
+  opacity: 1;
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+}
+
+.committee-orbs .orb-image {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.cru.org/content/experience-fragments/shared-library/language-masters/en/train-and-grow/leading-a-small-group/four-key-components-of-a-small-group-meeting/master/_jcr_content/root/image.coreimg.png/1752346812818/four-key-components-small-group.png'); 
+  background-size: cover;
   background-position: center;
   background-size: cover;
   transform: scale(1.06); /* https://stackoverflow.com/questions/28870932/how-to-remove-white-border-from-blur-background-image */

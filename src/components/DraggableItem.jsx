@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function DraggableItem({ id, children, start = { x: 0, y: 0 }, lastItemIdx, setLastItemIdx, index}
+export default function DraggableItem({ id, keyIdx, children, start = { x: 0, y: 0 }, lastItemIdx, setLastItemIdx, index}
  ) {
   const ref = useRef(null);
   const [pos, setPos] = useState(start);
@@ -96,20 +96,20 @@ export default function DraggableItem({ id, children, start = { x: 0, y: 0 }, la
   };
   const onTouchEnd = end;
   
-  
   return (
     <div
+      key={keyIdx}
       ref={ref}
       onMouseDown={onMouseDown}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
-      className={`fixed select-none`}
+      className={`fixed select-none drop-shadow-2xl`}
       style={{
         left: pos.x,
         top: pos.y,
         cursor: drag ? "grabbing" : "grab",
-        zIndex: lastItemIdx == index ? 49 : 2, 
+        zIndex: lastItemIdx == index ? 49 : 48, 
         touchAction: "none",
       }}
     >
