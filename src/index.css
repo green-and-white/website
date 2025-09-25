@@ -6,6 +6,8 @@
   --font-pixar: "Pixar", ui-sans-serif, system-ui, sans-serif;
   --font-waltograph: "Waltograph", ui-sans-serif, system-ui, sans-serif;
   --font-times: "Times New Roman", ui-serif, Georgia, serif;
+  --font-libre-caslon: "libre", sans-serif;
+  --font-helvetica: "helvetica", sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -102,6 +104,17 @@ body{
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+  font-family: "libre";
+  src: url("./assets/fonts/LibreCaslonCondensed-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "helvetica";
+  src: url("./assets//fonts/Helvetica.ttf") format("truetype");
+}
+
 
 /* === Committees Orbs Styles (scoped) === */
 .committee-orbs {
