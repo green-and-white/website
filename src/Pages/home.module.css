@@ -4,7 +4,7 @@
     right: 0;
     z-index: 0;
     display: block;
-    background-image: url('background.jpg');
+    background-image: url('../assets/background.webp');
     background-position: center;
     background-size: cover;
     transform: scale(1.06); /* https://stackoverflow.com/questions/28870932/how-to-remove-white-border-from-blur-background-image */
