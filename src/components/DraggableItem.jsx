@@ -25,21 +25,12 @@ export default function DraggableItem({ id, keyIdx, children, start = { x: 0, y:
     };
   };
 
-  // Load saved position or clamp the start
+  // Set and clamp the start position
   useEffect(() => {
-    const saved = localStorage.getItem(`drag:${id}`);
-    let p = saved ? JSON.parse(saved) : start;
-
-    p = clampPosition(p);
-
+    const p = clampPosition(start);
     setPos(p);
     lastRef.current = p;
   }, [id, start]);
-
-  // Save position
-  useEffect(() => {
-    localStorage.setItem(`drag:${id}`, JSON.stringify(pos));
-  }, [id, pos]);
 
   // Re-clamp on resize
   useEffect(() => {

@@ -12,6 +12,8 @@ import ticket from "../assets/stickers/ticket.webp";
 import beep from "../assets/stickers/beep.webp";
 import chair from "../assets/stickers/chair.webp";
 
+import background from "../assets/background.webp";
+
 import styles from "./home.module.css"
 
 import { useState, useEffect, useRef } from "react";
@@ -133,13 +135,15 @@ export default function ComingSoon() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
- // console.log(items[0]);
   
   return (
     
     <main className="relative h-screen flex flex-col justify-between overflow-hidden text-gray-800">
       {/* Background image */}
-      <section className={`${styles.background}`}></section>
+      <section className={styles.background}
+                style={{ backgroundImage: `url(${background})` }}
+      >
+      </section>
 
        {/* Logo at top center */}
        <div className="z-40 pointer-events-none inset-x-0 flex justify-center pt-6">
