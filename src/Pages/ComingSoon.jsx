@@ -5,7 +5,7 @@ import logo_vertical from "../assets/icons/White-Vertical.svg";
 // Stickers
 import slip from "../assets/stickers/SLIP.webp";
 import taft from "../assets/stickers/taft.webp";
-import vc from "../assets/stickers/VC.webp";
+import vc from "../assets/stickers/VC2.webp";
 import y1924 from "../assets/stickers/1924.webp";
 import booklet from "../assets/stickers/BOOKLET.webp";
 import cat from "../assets/stickers/CAT.webp";
@@ -57,7 +57,7 @@ export default function ComingSoon() {
       slip:         { w: 100, h: 85,   x: 0.60, y: 0.95 },
       chair:        { w: 115, h: 120,  x: 0.00, y: 0.30 },
       taft:         { w: 105, h: 85,   x: 0.20, y: 0.22 },
-      vc:           { w: 110, h: 90,   x: 0.7, y: 0.18 },
+      vc:           { w: 110, h: 90,   x: 0.7, y: 0.17 },
       yearbook2026: { w: 110, h: 100,  x: 0.37, y: 0.37 },
     },
 
@@ -71,36 +71,36 @@ export default function ComingSoon() {
       slip:         { w: 130, h: 110,  x: 0.55, y: 0.85 },
       chair:        { w: 150, h: 150,  x: 0.00, y: 0.25 },
       taft:         { w: 120, h: 100,  x: 0.19, y: 0.14 },
-      vc:           { w: 150, h: 120,  x: 0.60, y: 0.1 },
+      vc:           { w: 150, h: 120,  x: 0.60, y: 0.08 },
       yearbook2026: { w: 150, h: 130,  x: 0.33, y: 0.34 },
     },
 
-    tablet: {
-      y1924:        { w: 150, h: 120,  x: 0.82, y: 0.88 },
-      cat:          { w: 180, h: 180,  x: 0.26, y: 0.62 },
-      booklet:      { w: 190, h: 190,  x: 0.08, y: 0.77 },
-      id:           { w: 150, h: 120,  x: 0.02, y: 0.52 },
-      grad:         { w: 210, h: 170,  x: 0.44, y: 0.78 },
-      matcha:       { w: 170, h: 190,  x: 0.80, y: 0.42 },
-      slip:         { w: 170, h: 130,  x: 0.65, y: 0.80 },
-      chair:        { w: 190, h: 190,  x: 0.08, y: 0.25 },
-      taft:         { w: 170, h: 130,  x: 0.25, y: 0.10 },
-      vc:           { w: 190, h: 150,  x: 0.63, y: 0.10 },
-      yearbook2026: { w: 190, h: 160,  x: 0.43, y: 0.18 },
+    tablet: {//556
+      y1924:        { w: 150, h: 120,  x: 0.75, y: 1.04 },
+      cat:          { w: 180, h: 180,  x: 0.05, y: 0.84 },
+      booklet:      { w: 190, h: 190,  x: 0.17, y: 0.80 },
+      id:           { w: 150, h: 120,  x: 0.00, y: 0.79 },
+      grad:         { w: 210, h: 170,  x: 0.60, y: 0.15 },
+      matcha:       { w: 170, h: 190,  x: 0.75, y: 0.60 },
+      slip:         { w: 170, h: 130,  x: 0.57, y: 0.80 },
+      chair:        { w: 190, h: 190,  x: 0.00, y: 0.25 },
+      taft:         { w: 170, h: 130,  x: 0.20, y: 0.10 },
+      vc:           { w: 190, h: 150,  x: 0.67, y: 0.08 },
+      yearbook2026: { w: 190, h: 160,  x: 0.38, y: 0.33 },
     },
 
     desktop: {
-      y1924:        { w: 190, h: 160,  x: 0.83, y: 0.95 },
-      cat:          { w: 200, h: 200,  x: 0.28, y: 0.64 },
-      booklet:      { w: 220, h: 220,  x: 0.1, y: 0.75 },
-      id:           { w: 200, h: 150,  x: 0, y: 0.55 },
-      grad:         { w: 260, h: 200,  x: 0.45, y: 0.77 },
+      y1924:        { w: 190, h: 160,  x: 0.79, y: 1.05 },
+      cat:          { w: 200, h: 200,  x: 0.1, y: 0.68 },
+      booklet:      { w: 220, h: 220,  x: 0.16, y: 0.75 },
+      id:           { w: 200, h: 150,  x: 0.05, y: 0.60 },
+      grad:         { w: 260, h: 200,  x: 0.62, y: 0.16 },
       matcha:       { w: 170, h: 220,  x: 0.80, y: 0.45 },
-      slip:         { w: 190, h: 140,  x: 0.65, y: 0.77  },
-      chair:        { w: 230, h: 220,  x: 0.08, y: 0.25 },
+      slip:         { w: 190, h: 140,  x: 0.66, y: 0.77  },
+      chair:        { w: 230, h: 220,  x: 0.05, y: 0.20 },
       taft:         { w: 180, h: 130,   x: 0.25, y: 0.1  },
-      vc:           { w: 240, h: 180,   x: 0.63, y: 0.1  },
-      yearbook2026: { w: 220, h: 200,  x: 0.43, y: 0.15  },
+      vc:           { w: 240, h: 180,   x: 0.70, y: 0.08  },
+      yearbook2026: { w: 220, h: 200,  x: 0.42, y: 0.25 },
     },
   };
 
@@ -169,7 +169,7 @@ export default function ComingSoon() {
 
           <a
             className="pointer-events-auto z-50"
-            href="https://forms.gle/your-prereg-form"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdF9cwCuSCi7-rq3tpvpM4oC87NEGv1tTb902hHsiNMLa33qw/viewform?usp=sharing&ouid=101554952558433635299"
             target="_blank"
             rel="noreferrer"
           >
@@ -211,7 +211,7 @@ export default function ComingSoon() {
             Website by <strong>Ramon Enrico Martinez</strong>, <strong>Johan Mario Cabili</strong>, &amp; <strong>Danielle Ang</strong>
           </div>
           <div>
-            Visuals by <strong>Kim Balasabas</strong>, <strong>Maggy de Guzman</strong>, and <strong>Angela Dizon</strong>
+            Visuals by <strong>Kim Balasabas</strong>, <strong>Maggy de Guzman</strong>, & <strong>Angela Dizon</strong>
           </div>
         </div>
       </footer>
