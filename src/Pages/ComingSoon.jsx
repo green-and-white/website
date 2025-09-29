@@ -48,17 +48,17 @@ export default function ComingSoon() {
   // Sticker positions & sizes
   const stickers = {
     mobileS: {
-      y1924:        { w: 90,  h: 80,   x: 0.78, y: 0.88 },
-      cat:          { w: 100, h: 100,  x: 0.25, y: 0.58 },
-      booklet:      { w: 110, h: 110,  x: 0.05, y: 0.75 },
-      id:           { w: 100, h: 85,   x: 0.02, y: 0.48 },
-      grad:         { w: 120, h: 100,  x: 0.42, y: 0.78 },
-      matcha:       { w: 105, h: 120,  x: 0.78, y: 0.38 },
-      slip:         { w: 100, h: 85,   x: 0.65, y: 0.82 },
-      chair:        { w: 115, h: 120,  x: 0.08, y: 0.22 },
-      taft:         { w: 105, h: 85,   x: 0.22, y: 0.18 },
-      vc:           { w: 110, h: 90,   x: 0.62, y: 0.18 },
-      yearbook2026: { w: 110, h: 100,  x: 0.43, y: 0.35 },
+      y1924:        { w: 90,  h: 80,   x: 0.78, y: 1.1},
+      cat:          { w: 100, h: 100,  x: 0.08, y: 0.85 },
+      booklet:      { w: 110, h: 110,  x: 0.20, y: 0.90 },
+      id:           { w: 100, h: 85,   x: 0.004, y: 0.75 },
+      grad:         { w: 120, h: 100,  x: 0.63, y: 0.235 },
+      matcha:       { w: 80, h: 100,  x: 0.75, y: 0.75 },
+      slip:         { w: 100, h: 85,   x: 0.60, y: 0.95 },
+      chair:        { w: 115, h: 120,  x: 0.00, y: 0.30 },
+      taft:         { w: 105, h: 85,   x: 0.20, y: 0.22 },
+      vc:           { w: 110, h: 90,   x: 0.7, y: 0.18 },
+      yearbook2026: { w: 110, h: 100,  x: 0.37, y: 0.37 },
     },
 
     mobile: {
@@ -207,7 +207,12 @@ export default function ComingSoon() {
       <footer className={`z-40 bg-[rgba(0,0,0,0.2)] text-white text-center py-4 px-8 shadow-lg ${styles.glassCardFooter}`}>
         <h1 className="text-2xl md:text-4xl py-2 font-bold opacity-90 z-100">COMING SOON</h1>
         <div className="mt-1 text-xs pb-2 md:text-base opacity-90">
-          Website by <strong>Ramon Enrico Martinez</strong>, <strong>Johan Mario Cabili</strong>, &amp; <strong>Danielle Ang</strong>
+          <div>
+            Website by <strong>Ramon Enrico Martinez</strong>, <strong>Johan Mario Cabili</strong>, &amp; <strong>Danielle Ang</strong>
+          </div>
+          <div>
+            Visuals by <strong>Kim Balasabas</strong>, <strong>Maggy de Guzman</strong>, and <strong>Angela Dizon</strong>
+          </div>
         </div>
       </footer>
     </main>
