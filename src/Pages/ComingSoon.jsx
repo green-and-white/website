@@ -100,7 +100,7 @@ export default function ComingSoon() {
       chair:        { w: 230, h: 220,  x: 0.05, y: 0.20 },
       taft:         { w: 180, h: 130,   x: 0.25, y: 0.1  },
       vc:           { w: 240, h: 180,   x: 0.70, y: 0.08  },
-      yearbook2026: { w: 220, h: 200,  x: 0.42, y: 0.25 },
+      yearbook2026: { w: 220, h: 200,  x: 0.42, y: 0.22 },
     },
   };
 
@@ -169,9 +169,9 @@ export default function ComingSoon() {
 
           <a
             className="pointer-events-auto z-50"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdF9cwCuSCi7-rq3tpvpM4oC87NEGv1tTb902hHsiNMLa33qw/viewform?usp=sharing&ouid=101554952558433635299"
+            href="https://forms.gle/xNBJWFrup67DRsjP8"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             <div className={`${styles.glassCard} text-sm md:text-base p-3 md:p-5 text-white font-helvetica`}>
               Pre-register now
