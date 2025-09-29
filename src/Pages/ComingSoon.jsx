@@ -204,7 +204,7 @@ export default function ComingSoon() {
         <footer className={`z-40 bg-[rgba(0,0,0,0.2)] text-white text-center py-4 px-8 shadow-lg ${styles.glassCardFooter}`}>
           <h1 className="text-2xl md:text-4xl py-2 font-bold opacity-90 z-100">COMING SOON</h1>
           <div className="mt-1 text-xs pb-2 md:text-base opacity-90">
-            Website by <strong>Ramon Enrico Martinez</strong>, <strong>Johan Mario Cabili</strong>, &amp; <strong>Danielle
+            Website by <strong>Ramon Enrico Martinez</strong>, <strong>Johan Marlo Cabili</strong>, &amp; <strong>Danielle
             Ang </strong>
           </div>
           {/* 
