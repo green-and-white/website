@@ -140,7 +140,7 @@ export default function ComingSoon() {
 
 
   return (
-    <main className="relative h-screen flex flex-col justify-between overflow-hidden text-gray-800">
+    <main className="relative h-[100dvh] flex flex-col justify-between overflow-hidden text-gray-800">
       {/* Background image */}
       <section className={styles.background}
                style={{ backgroundImage: `url(${background})` }}>
@@ -151,7 +151,7 @@ export default function ComingSoon() {
         <img
           src={screenSize.includes("mobile") ? logo_vertical : logo_horizontal}
           alt="Green & White"
-          className={`${screenSize.includes("mobile")? "h-16" : "h-14"} drop-shadow-md select-none z-[200]`}
+          className={`${screenSize.includes("mobile")? "h-16" : "h-14"} select-none z-[200]`}
         />
       </div>
 
@@ -190,12 +190,12 @@ export default function ComingSoon() {
             setLastItemIdx={setLastItemIdx}
             index={index}
           >
-            <figure className="m-0 flex flex-col items-center text-center drop-shadow-2xl">
+            <figure className="m-0 flex flex-col items-center text-center">
               <img
                 src={it.src}
                 alt={it.alt}
                 style={{ width: `${it.w}px`, height: `${it.h}px` }}
-                className="m-0 block select-none drop-shadow-2xl"
+                className="m-0 block select-none"
                 draggable={false}
               />
             </figure>
