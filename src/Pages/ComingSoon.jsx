@@ -147,7 +147,7 @@ export default function ComingSoon() {
       </section>
 
       {/* Logo at top center */}
-      <div className="z-40 pointer-events-none inset-x-0 flex justify-center pt-6">
+      <div className="z-50 pointer-events-none inset-x-0 flex justify-center pt-6">
         <img
           src={screenSize.includes("mobile") ? logo_vertical : logo_horizontal}
           alt="Green & White"
@@ -208,7 +208,7 @@ export default function ComingSoon() {
         <h1 className="text-2xl md:text-4xl py-2 font-bold opacity-90 z-100">COMING SOON</h1>
         <div className="mt-1 text-xs pb-2 md:text-base opacity-90">
           <div>
-            Website by <strong>Ramon Enrico Martinez</strong>, <strong>Johan Mario Cabili</strong>, &amp; <strong>Danielle Ang</strong>
+            Website by <strong>Ramon Enrico Martinez</strong>, <strong>Johan Marlo Cabili</strong>, &amp; <strong>Danielle Ang</strong>
           </div>
           <div>
             Visuals by <strong>Kim Balasabas</strong>, <strong>Maggy de Guzman</strong>, & <strong>Angela Dizon</strong>
