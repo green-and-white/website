@@ -8,6 +8,7 @@
   --font-times: "Times New Roman", ui-serif, Georgia, serif;
   --font-libre-caslon: "libre", sans-serif;
   --font-helvetica: "helvetica", sans-serif;
+  --font-jost: "jost", sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -64,7 +65,7 @@ html {
 }
 
 body{
-    background-color: var(--color-blue-900);
+   
     color: white;
     overflow-x: hidden;
 }
@@ -113,6 +114,31 @@ body{
 @font-face {
   font-family: "helvetica";
   src: url("./assets//fonts/Helvetica.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "jost";
+  font-weight: 100 900;
+  src: url("./assets/fonts/JostVariable.ttf") format("truetype");
+}
+
+@font-face{
+  font-family:"jost"; 
+  src: url("./assets/fonts/JostItalic.ttf") format("truetype");
+  font-style: italic; 
+}
+
+.font-jost-regular{
+    font-family: "jost";
+    font-weight: 400;
+}
+.font-jost-medium{
+    font-family: "jost";
+    font-weight: 500;
+}
+.font-jost-italic{
+    font-family: "jost";
+    font-style: italic;
 }
 
 

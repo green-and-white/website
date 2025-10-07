@@ -18,15 +18,18 @@ export default function Apply() {
     <> 
         <Navbar />
         <SparkleCursor />
-        <Hero></Hero>
-        <About></About>
-        <div id = "committees" className = "flex flex-col gap-16 radial-gradient py-16 px-8 lg:px-28">
-            <Committees></Committees>
-            <Process></Process>
-            <Dates></Dates>
-            <FAQs></FAQs>
+        <div className='bg-blue-900'>
+          <Hero></Hero>
+          <About></About>
+          <div id = "committees" className = "flex flex-col gap-16 radial-gradient py-16 px-8 lg:px-28">
+              <Committees></Committees>
+              <Process></Process>
+              <Dates></Dates>
+              <FAQs></FAQs>
+          </div>
+          <Footer></Footer>
         </div>
-        <Footer></Footer>
+       
     </>
    
   )
