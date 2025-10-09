@@ -3,15 +3,9 @@
   <head>
     <script type="text/javascript">        
       //reload again for stickers
-      console.log(window.location.pathname);
-      
-      window.reloadOnce = window.reloadOnce || false;                                             
-      if (window.location.pathname === '/apply/' || window.location.pathname == "/apply") {                                                          
-          window.location.href = '/#/apply';                                                                  
-      }
-      if (window.location.pathname === '/links/' || window.location.pathname === '/links' ) {                                                          
-          window.location.href = '/#/links';                                                                  
-      }                                                                                                     
+      const path = window.location.pathname;
+      if (/\/apply\/?$/.test(path)) window.location.href = '/#/apply';
+      if (/links/.test(path)) window.location.href = '/#/links';                                                                                            
     </script>   
     <meta charset="UTF-8" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
