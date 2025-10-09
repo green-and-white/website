@@ -13,7 +13,7 @@ export default function Links() {
 return (
     <section className='grid justify-center items-center text-black p-8'>
             <div className = " flex flex-col gap-5 max-w-[400px]">
-                    <div className="logo-container w-full  flex flex-col items-center max-w-[225px] mx-auto">
+                    <div className="logo-container w-full  flex flex-col gap-3 items-center max-w-[225px] mx-auto">
                             <img src={logo} alt="Logo" className="logo mx-auto w-[147px]"/>
                             <p className = "text-center font-jost-regular">The official yearbook publication of De La Salle University</p>
                     </div>
@@ -34,14 +34,14 @@ return (
                                             <img src={tiktok} alt="TikTok" className=" h-5 w-5 p-[1px] rounded-2xl"/>
                                     </a>
                             </div>
-                    <hr />
+                    <hr className = "h-[1px] bg-[#E5E7EB] border-none"/>
                     <section className = "flex flex-col gap-4">
                             <div className = "font-jost-medium text-center text-xl leading-[16px]">Green & White 2026</div>
                             <Link title={"Pre-registration"}
                                     desc={"Green & White 2026"}
                                     url={"https://greenandwhite.com.ph"}></Link>
                     </section>
-                    <hr />
+                    <hr className = "h-[1px] bg-[#E5E7EB] border-none" />
                     <section className = "flex flex-col gap-4">
                             <div className="font-jost-medium text-center text-xl leading-[16px]"> Previous Years</div>
                             <div className='flex flex-col gap-2'>
@@ -57,7 +57,7 @@ return (
                             </div>
                             
                     </section>
-                    <hr />
+                    <hr className = "h-[1px] bg-[#E5E7EB] border-none"/>
                     <section>
                             <div className='font-jost-medium text-xl'> Have a different concern?</div>
                             <div className="font-jost-regular">
