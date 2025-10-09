@@ -11,7 +11,7 @@ import globe from "../assets/icons/globe.svg"
 
 export default function Links() {
 return (
-    <section className='grid justify-center h-dvh items-center text-black'>
+    <section className='grid justify-center items-center text-black p-8'>
             <div className = " flex flex-col gap-5 max-w-[400px]">
                     <div className="logo-container w-full  flex flex-col items-center max-w-[225px] mx-auto">
                             <img src={logo} alt="Logo" className="logo mx-auto w-[147px]"/>
@@ -46,13 +46,13 @@ return (
                             <div className="font-jost-medium text-center text-xl leading-[16px]"> Previous Years</div>
                             <div className='flex flex-col gap-2'>
                                 <Link title={"Yearbook Distribution"}
-                                                desc={"Green & White 2015, 2016, 2017, and 2020"}
+                                                desc={"Green & White Unclaimed Yearbooks"}
                                                 url={"https://web.facebook.com/share/p/1JrLJRuq95/ "}></Link>
                                 <Link title={"Delivery Address Collection"}
-                                                desc={"Green & White 2017 and 2018"}
+                                                desc={"Green & White 2018 and 2019"}
                                                 url={"https://web.facebook.com/share/p/19wcLTYSEB/ "}></Link>
                                 <Link title={"Yearbook Finder"}
-                                                desc={"Green & White 2016, 2017, and 2020"}
+                                                desc={"Green & White"}
                                                 url={"https://bit.ly/GW-YearbookFinder"}></Link>
                             </div>
                             
