@@ -3,7 +3,7 @@ import logo_horizontal from "../assets/icons/horizontal.svg";
 import logo_vertical from "../assets/icons/White-Vertical.svg"; 
 
 // Stickers
-import slip from "../assets/stickers/SLIP.webp";
+import slip from "../assets/stickers/slip.webp";
 import taft from "../assets/stickers/taft.webp";
 import vc from "../assets/stickers/VC2.webp";
 import y1924 from "../assets/stickers/1924.webp";
