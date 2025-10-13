@@ -2,6 +2,7 @@ import Apply from "./Pages/Apply.jsx"
 import ComingSoon from "./Pages/ComingSoon.jsx"
 import Links from "./Pages/Links.jsx"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
+import { Analytics } from '@vercel/analytics/react';
 import './components/SparkleCursor.css';
 import "./App.css";
 
@@ -19,7 +20,7 @@ function App() {
           <Route path="/links" element={<Links/>}/>
         </Routes>
       </BrowserRouter>
-      
+      <Analytics mode="production" />
     </>
   );
 }
