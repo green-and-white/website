@@ -1,4 +1,4 @@
-import about from "../assets/video/about.webm";
+import about from "@/assets/video/about.webm";
 
 export default function About() {
   return (

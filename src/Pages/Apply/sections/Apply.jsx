@@ -1,15 +1,15 @@
 import React from 'react'
-import Hero from '../sections/Hero'
-import About from '../sections/About'
-import Committees from '../sections/Committees'
-import Process from '../sections/Process'
-import FAQs from '../sections/FAQs'
-import Footer from '../sections/Footer'
-import Dates from '../sections/Dates'
-import Navbar from '../Navbar'
+import Hero from './Hero'
+import About from '../About'
+import Committees from './Committees'
+import Process from './Process'
+import FAQs from './FAQs'
+import Footer from './Footer'
+import Dates from './Dates'
+import Navbar from '../../../Navbar'
 
-import SparkleCursor from '../components/SparkleCursor';
-import '../components/SparkleCursor.css';
+import SparkleCursor from "@/components/SparkleCursor";
+import '@/components/SparkleCursor.css';
 
 
 

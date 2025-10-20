@@ -1,12 +1,12 @@
 import React from 'react'
-import Link from '../components/Link.jsx'
+import Link from "@/components/Link.jsx"
 
-import logo from "../assets/logos_updated/black-vertical.svg"
-import facebook from "../assets/icons/facebook-black.svg"
-import instagram from "../assets/icons/instagram-black.svg"
-import telegram from "../assets/icons/telegram.svg"
-import tiktok from "../assets/icons/tiktok.svg"
-import globe from "../assets/icons/globe.svg"
+import logo from "@/assets/logos_updated/black-vertical.svg"
+import facebook from "@/assets/icons/facebook-black.svg"
+import instagram from "@/assets/icons/instagram-black.svg"
+import telegram from "@/assets/icons/telegram.svg"
+import tiktok from "@/assets/icons/tiktok.svg"
+import globe from "@/assets/icons/globe.svg"
 
 
 export default function Links() {

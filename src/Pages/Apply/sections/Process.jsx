@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import island from "../assets/icons/GW_Island-Dust.png"
+import island from "@/assets/icons/GW_Island-Dust.png"
 const stepsData = [
   { number: "1", title: "Application", description: "Fill out the application form at bit.ly/GW26-T1-Application by Saturday, September 13.", color: "var(--color-marketing)" },
   { number: "2", title: "Examination", description: "Wait for the details of your committee exam and take-home exam to be sent to you by September 15. Submit your exam deliverables, resume, and portfolio within the given time period.", color: "var(--color-customer-care)" },

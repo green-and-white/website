@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Orb from "../components/Orb.jsx";
-import MobileCommitteeCarousel from "../components/MobileCommitteeCarousel.jsx";
-import Modal from "../components/Modal.jsx";
-import descriptionsRaw from "../assets/committee_info/descriptions.txt?raw";
+import Orb from "@/components/Orb.jsx";
+import MobileCommitteeCarousel from "@/components/MobileCommitteeCarousel.jsx";
+import Modal from "@/components/Modal.jsx";
+import descriptionsRaw from "@/assets/committee_info/descriptions.txt?raw";
 
 
-import cc from "../assets/orbpics/cc.webp"
-import photo from "../assets/orbpics/photo.webp"
-import office from "../assets/orbpics/office.webp"
-import marketing from "../assets/orbpics/marketing.webp"
-import layout from "../assets/orbpics/layout.webp"
-import web from "../assets/orbpics/web.webp"
-import literary from "../assets/orbpics/literary.webp"
+import cc from "@/assets/orbpics/cc.webp"
+import photo from "@/assets/orbpics/photo.webp"
+import office from "@/assets/orbpics/office.webp"
+import marketing from "@/assets/orbpics/marketing.webp"
+import layout from "@/assets/orbpics/layout.webp"
+import web from "@/assets/orbpics/web.webp"
+import literary from "@/assets/orbpics/literary.webp"
 
 export default function Committees({ animated = true }) {
   const [selectedCommittee, setSelectedCommittee] = useState(null);

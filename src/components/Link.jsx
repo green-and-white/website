@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "../Pages/links.module.css"
+import styles from "@/Pages/links/links.module.css"
 
 export default function LinkButton({title, desc, url}) {
   return (

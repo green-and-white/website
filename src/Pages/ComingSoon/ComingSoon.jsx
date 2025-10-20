@@ -1,21 +1,21 @@
-import DraggableItem from "../components/DraggableItem"; 
-import logo_horizontal from "../assets/icons/horizontal.svg";
-import logo_vertical from "../assets/icons/White-Vertical.svg"; 
+import DraggableItem from "../../components/DraggableItem"; 
+import logo_horizontal from "../../assets/logos_updated/white-horizontal.svg";
+import logo_vertical from "../../assets/logos_updated/white-vertical.svg"; 
 
 // Stickers
-import slip from "../assets/stickers/slip.webp";
-import taft from "../assets/stickers/taft.webp";
-import vc from "../assets/stickers/VC2.webp";
-import y1924 from "../assets/stickers/1924.webp";
-import booklet from "../assets/stickers/BOOKLET.webp";
-import cat from "../assets/stickers/cat.webp";
-import chair from "../assets/stickers/CHAIR.webp";
-import grad from "../assets/stickers/GRAD.webp";
-import id from "../assets/stickers/id.webp";
-import matcha from "../assets/stickers/MATCHA.webp";
-import yearbook2026 from "../assets/stickers/YEARBOOK_2026.webp";
+import slip from "../../assets/stickers/slip.webp";
+import taft from "../../assets/stickers/taft.webp";
+import vc from "../../assets/stickers/VC2.webp";
+import y1924 from "../../assets/stickers/1924.webp";
+import booklet from "../../assets/stickers/BOOKLET.webp";
+import cat from "../../assets/stickers/cat.webp";
+import chair from "../../assets/stickers/CHAIR.webp";
+import grad from "../../assets/stickers/GRAD.webp";
+import id from "../../assets/stickers/id.webp";
+import matcha from "../../assets/stickers/MATCHA.webp";
+import yearbook2026 from "../../assets/stickers/YEARBOOK_2026.webp";
 
-import background from "../assets/background.webp";
+import background from "../../assets/background.webp";
 import styles from "./home.module.css";
 
 import { useState, useEffect, useRef } from "react";
