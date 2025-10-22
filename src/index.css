@@ -73,7 +73,7 @@ html {
 
 body{
    
-    color: white;
+    /* color: white; */
     overflow-x: hidden;
 }
 
@@ -113,9 +113,30 @@ body{
     font-style: normal;
 }
 
+/* Libre Caslon Condensed: use variable WOFF2 primary with static fallback */
+@font-face {
+  font-family: "libre";
+  src: url("./assets/fonts/LibreCaslonCondensed[wdth,wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "libre";
+  src: url("./assets/fonts/LibreCaslonCondensed-Italic[wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Static fallback for very old browsers or if you need exact Regular glyphs */
 @font-face {
   font-family: "libre";
   src: url("./assets/fonts/LibreCaslonCondensed-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
