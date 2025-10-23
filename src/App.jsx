@@ -17,7 +17,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ComingSoon/>}/>
+          <Route path="/" element={<Main/>}/>
           <Route path="/primer" element={<Primer/>}/>
           <Route path="/apply" element={<Apply/>}/>
           <Route path="/links" element={<Links/>}/>
