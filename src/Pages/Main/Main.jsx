@@ -7,6 +7,7 @@ import Announcements from "./sections/Announcements/page";
 import About from "./sections/About/page";
 import YearbookActivities from "./sections/YearbookActivities/page";
 import Countdown from "./sections/Countdown/page";
+import Footer from "./Footer";
 
 import {useRef, useEffect} from "react"
 
@@ -19,6 +20,7 @@ export default function Main() {
       <Announcements />
       <YearbookActivities />
       <Countdown/>
+      <Footer/>
     </main>
   );
 }
