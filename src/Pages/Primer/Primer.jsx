@@ -1,5 +1,5 @@
 import React from "react";
-import "./Primer.css";
+import styles from "./Primer.module.css";
 import texture from "../../assets/textures/texture.png";
 
 const STAR_STICKER =
@@ -54,79 +54,79 @@ export default function Primer() {
   return (
     <main>
       {/* Registration */}
-      <section className="primer-hero flex flex-col pt-8 pb-0">
-        <div className="hero-inner flex justify-between h-[90vh]">
-          <h2 data-text="Registration">Registration</h2>
-          <h3 data-text="Guidelines">Guidelines</h3>
+      <section className={`${styles.primerHero} flex flex-col pt-8 pb-0`}>
+        <div className={`${styles.heroInner} flex justify-between h-[90vh]`}>
+          <h2 className={styles.h2} data-text="Registration">Registration</h2>
+          <h3 className={styles.h3} data-text="Guidelines">Guidelines</h3>
         </div>
 
         <img
           src={texture}
           alt=""
           aria-hidden="true"
-          className="primer-texture"
+          className={styles.primerTexture}
         />
       </section>
 
       {/* Packages and Payments */}
-      <section className="primer-packages pt-20">
+      <section className={`${styles.primerPackages} pt-20`}>
         <img
           src={texture}
           alt=""
           aria-hidden="true"
-          className="primer-texture"
+          className={styles.primerTexture}
         />
 
-        <div className="primer-packages__content">
-          <div className="packages-header">
-            <h2 data-text="Yearbook">Yearbook</h2>
-            <h3 data-text="Packages & Payment">Packages & Payment</h3>
+        <div className={styles.primerPackagesContent}>
+          <div className={styles.packagesHeader}>
+            <h2 className={styles.h2} data-text="Yearbook">Yearbook</h2>
+            <h3 className={styles.h3} data-text="Packages & Payment">Packages & Payment</h3>
           </div>
 
-          <div className="primer-packages__layout">
-            <aside className="primer-packages__aside">
-              <div className="basic-inclusions-card">
-                <div className="basic-inclusions-card__title">
-                  <span className="basic-inclusions-card__highlight">
+          <div className={styles.primerPackagesLayout}>
+            <aside className={styles.primerPackagesAside}>
+              <div className={styles.basicInclusionsCard}>
+                <div className={styles.basicInclusionsCardTitle}>
+                  <span className={styles.basicInclusionsCardHighlight}>
                     + Basic Inclusions
                   </span>
-                  <span className="basic-inclusions-card__subtitle">
+                  <span className={styles.basicInclusionsCardSubtitle}>
                     (All packages come with these services)
                   </span>
                 </div>
 
-                <ul className="basic-inclusions-card__list">
+                <ul className={styles.basicInclusionsCardList}>
                   {BASIC_INCLUSIONS.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
               </div>
 
-              <button type="button" className="packages-toggle">
+              <button type="button" className={styles.packagesToggle}>
                 <span>Payment Details</span>
                 <span aria-hidden="true">+</span>
               </button>
 
-              <button type="button" className="packages-toggle">
+              <button type="button" className={styles.packagesToggle}>
                 <span>Payment Schemes</span>
                 <span aria-hidden="true">+</span>
               </button>
             </aside>
 
-            <div className="primer-packages__cards">
+            <div className={styles.primerPackagesCards}>
               {PACKAGE_CARDS.map((pkg) => (
                 <article
                   key={pkg.tier}
-                  className="package-card"
+                  className={styles.packageCard}
                   style={{ "--package-accent": pkg.accent }}
                 >
-                  <div className="package-card__surface">
-                    <div className="package-card__price">{pkg.price}</div>
-                    <div className="package-card__heading">
-                      <div className="package-card__tier">{pkg.tier}</div>
-                      <div className="package-card__title">{pkg.title}</div>
+                  <div className={styles.packageCardSurface}>
+                    <div className={styles.packageCardPrice}>{pkg.price}</div>
+                    <div className={styles.packageCardHeading}>
+                      <div className={styles.packageCardTier}>{pkg.tier}</div>
+                      <div className={styles.packageCardTitle}>{pkg.title}</div>
                     </div>
-                    <ul className="package-card__list">
+                    <ul className={styles.packageCardList}>
                       {pkg.perks.map((perk) => (
                         <li key={perk}>{perk}</li>
                       ))}
@@ -136,7 +136,7 @@ export default function Primer() {
               ))}
             </div>
 
-            <figure className="late-fee-sticker">
+            <figure className={styles.lateFeeSticker}>
               <img src={STAR_STICKER} alt="" aria-hidden="true" />
               <figcaption>
                 <span>P400</span>
@@ -161,7 +161,7 @@ export default function Primer() {
 
         <div className="relative z-10 max-w-[1440px] mx-auto px-8 py-20">
           <div className="flex items-end">
-            <h3 className="borde ml-auto" data-text="Timeline">
+            <h3 className={`${styles.h3} ml-auto`} data-text="Timeline">
               Timeline
             </h3>
           </div>
@@ -290,12 +290,9 @@ export default function Primer() {
 
         <div className="relative z-10 max-w-[1440px] mx-auto px-8 py-20">
           <div className="relative mb-16">
-            <p className="font-[Libre_Caslon_Condensed] font-bold italic text-[64px] leading-normal text-white">
+            <h3 className={styles.h3} data-text="Payment Deadlines">
               Payment Deadlines
-            </p>
-            <p className="absolute top-[6px] left-[7px] font-[Libre_Caslon_Condensed] font-bold italic text-[64px] leading-normal text-black pointer-events-none">
-              Payment Deadlines
-            </p>
+            </h3>
           </div>
 
           <div className="max-w-[896px] mx-auto">
@@ -419,15 +416,15 @@ export default function Primer() {
 
         <div className="relative z-10 max-w-[1440px] mx-auto px-8 py-20">
           <div className="flex justify-between items-start mb-20">
-            <h2 data-text="Registration">Registration</h2>
-            <h3 data-text="Steps">Steps</h3>
+            <h2 className={styles.h2} data-text="Registration">Registration</h2>
+            <h3 className={styles.h3} data-text="Steps">Steps</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Step 01 */}
             <div className="text-center text-white">
               <div className="relative inline-block mb-6">
-                <h3 data-text="01">01</h3>
+                <h3 className={styles.h3} data-text="01">01</h3>
               </div>
               <p className="font-bold text-[17px] mb-4">
                 DECIDE ON PRE-REGISTRATION
@@ -441,7 +438,7 @@ export default function Primer() {
             {/* Step 02 */}
             <div className="text-center text-white">
               <div className="relative inline-block mb-6">
-                <h3 data-text="02">02</h3>
+                <h3 className={styles.h3} data-text="02">02</h3>
               </div>
               <p className="font-bold text-[17px] mb-4">
                 CHOOSE YOUR PAYMENT METHOD
@@ -459,7 +456,7 @@ export default function Primer() {
             {/* Step 03 */}
             <div className="text-center text-white">
               <div className="relative inline-block mb-6">
-                <h3 data-text="03">03</h3>
+                <h3 className={styles.h3} data-text="03">03</h3>
               </div>
               <p className="font-bold text-[17px] mb-4 max-w-[317px] mx-auto">
                 RETURN TO G&W BOOTH AND PROVIDE YOUR PROOF OF PAYMENT
@@ -478,7 +475,7 @@ export default function Primer() {
             {/* Step 04 */}
             <div className="text-center text-white">
               <div className="relative inline-block mb-6">
-                <h3 data-text="04">04</h3>
+                <h3 className={styles.h3} data-text="04">04</h3>
               </div>
               <p className="font-bold text-[17px] mb-4">FINISH REGISTRATION</p>
               <ol className="text-left text-[17px] list-decimal pl-5 space-y-1">
