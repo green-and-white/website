@@ -162,6 +162,14 @@ body{
   font-display: swap;
 }
 
+@font-face{
+  font-family: "helvetica"; 
+  src: url("./assets/fonts/Helvetica-Light-05.ttf") format("truetype");
+  font-weight: 300; 
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: "jost";
   font-weight: 100 900;

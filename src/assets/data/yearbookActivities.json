@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "activity": "Registration",
+    "description": "The official start of the yearbook journey, where students confirmed their slots, filled out details, and got their first glimpse of the production process. Excitement mixed with anticipation as everyone prepared to make their mark in this year's publication.",
+    "bgColor": "bg-retro-lightblue",
+    "sticker": {
+      "src": "taft",
+      "position": "top-left",
+      "className": "w-28 h-28 -rotate-25"
+    }
+  },
+  {
+    "id": 2,
+    "activity": "Pictorials",
+    "description": "From candid smiles to polished portraits, students stepped in front of the camera to capture moments that would define their batch. The sessions were filled with laughter, style choices, and the shared joy of immortalizing college memories.",
+    "bgColor": "bg-retro-green",
+    "sticker": {
+      "src": "camera",
+      "position": "top-right",
+      "className": "w-36 h-24 -rotate-15"
+    }
+  },
+  {
+    "id": 3,
+    "activity": "Online Verification",
+    "description": "After the photoshoots, students reviewed and verified their information and portraits online. This stage ensured that every name, detail, and image reflected each graduate accurately—because every story deserved to be told right.",
+    "bgColor": "bg-retro-orange",
+    "sticker": {
+      "src": "laptop",
+      "position": "bottom-left",
+      "className": "w-36 h-28 -rotate-20"
+    }
+  },
+  {
+    "id": 4,
+    "activity": "Releasing",
+    "description": "The highlight of the journey—graduates finally received their yearbooks. As pages turned, memories resurfaced and milestones were celebrated. The release marked both an ending and a reminder that these moments will live on in print.",
+    "bgColor": "bg-retro-yellow",
+    "sticker": {
+      "src": "vitoCruz",
+      "position": "bottom-right",
+      "className": "w-28 h-28 rotate-15"
+    }
+  }
+]

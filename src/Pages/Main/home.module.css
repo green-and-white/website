@@ -182,31 +182,36 @@
 .cave {
     position: relative;
     width: 100vw;
-    height: 100vh;
     overflow: hidden;
     background: center/cover no-repeat;
+    z-index: 2;
+
+    padding: 40px 32px; 
+    @media (min-width: 640px) {
+      padding-bottom: 80px;
+    }
 }
 
 .cave::before {
     content: "";
-    position: absolute;
     inset: 0;
     background: inherit;
     filter: brightness(80%);
     z-index: 0;
 }
 
-.cave > * {
-    position: relative;
-    z-index: 1;
-}
+
 
 .sky {
   position: relative;
   width: 100vw;
-  height: 100vh;
   overflow: hidden;
   background: center/cover no-repeat;
+
+   padding: 40px 32px; 
+  @media (min-width: 640px) {
+    padding-bottom: 80px;
+  }
 }
 
 .sky::before {
