@@ -1,4 +1,4 @@
-.heading2 {
+.h2{
     color: #FFF;
     position: relative;
     -webkit-text-stroke-color: #000;
@@ -9,40 +9,44 @@
     z-index: 2;
 }
 
-.heading2::before {
+.h2::before{
     content: attr(data-text);
     position: absolute;
     left: 4px;
     top: 4px;
-    z-index: -1;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
     font-family: var(--font-libre-caslon);
-    color: #000;
+    color:#000;
+    z-index: -1;
     pointer-events: none;
     white-space: pre;
     font-family: inherit;
     font-size: inherit;
-    font-style: inherit;
+    gap: clamp(1.25rem, 3vw, 1.75rem);
+    max-width: 403px;
+    width: 100%;
 }
 
-.heading3 {
+.h3{
     color: #FFF;
     position: relative;
     -webkit-text-stroke-color: #000;
     -webkit-text-stroke-width: 2px;
-    font-size: 4rem;
     font-style: italic;
+    font-size: 4rem;
     z-index: 2;
     font-family: var(--font-libre-caslon);
     font-weight: 700;
+
 }
 
-.heading3::before {
+.h3::before{
     content: attr(data-text);
     position: absolute;
     left: 3px;
     top: 4px;
     z-index: -1; 
-    color: #000;
+    color:#000;
     pointer-events: none;
     white-space: pre;
     font-family: inherit;
@@ -50,21 +54,21 @@
     font-style: inherit;
 }
 
-.primerHero {
+.primerHero{
     position: relative;
     overflow: hidden;
     background-color: #bd8833;
-    background-image: radial-gradient(ellipse at 50% 38%, #ffc567 0%, #dea74d 50%, #bd8833 100%);
+    background-image: radial-gradient(ellipse at 50% 38%, #ffc567 0%, #dea74d 50%, #bd8833 75%, #a87900 100%);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.heroInner {
+.heroInner{
     position: relative; 
     z-index: 2;
 }
 
-.primerTexture {
+.primerTexture{
     position: absolute;
     inset: 0;
     width: 100%;
@@ -74,4 +78,393 @@
     opacity: 0.2; 
     pointer-events: none;
     mix-blend-mode: normal; 
+}
+
+.primerPackages{
+    position: relative;
+    overflow: hidden;
+    background-color: #bd8833;
+    background-image: radial-gradient(ellipse at 50% 38%, #ffc567 0%, #dea74d 50%, #bd8833 75%, #a87900 100%);
+    background-size: cover;
+    padding: clamp(3.5rem, 6vw, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(6rem, 9vw, 9rem);
+}
+
+.primerPackagesContent{
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 5vw, 3rem);
+}
+
+.packagesHeader{
+    position: relative;
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.packagesHeader .h2,
+.packagesHeader .h3{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+.packagesHeader .h2{
+    top: clamp(3.5rem, 6vw, 4.5rem);
+}
+
+.packagesHeader .h3{
+    top: clamp(6.5rem, 9vw, 7.5rem);
+}
+
+.primerPackagesLayout{
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+}
+
+.primerPackagesAside{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 3vw, 1.75rem);
+    max-width: 403px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.primerPackagesAside > *{
+    width: 100%;
+}
+
+.basicInclusionsCard{
+    position: relative;
+    border: 3px solid #000;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.85rem;
+}
+
+.basicInclusionsCard::before{
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border-radius: 15px;
+    background: #058cd7;
+    z-index: 1;
+}
+
+.basicInclusionsCardTitle,
+.basicInclusionsCardList{
+    position: relative;
+    z-index: 2;
+}
+
+.basicInclusionsCardTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    color: #fff;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.basicInclusionsCardHighlight{
+    font-size: 1.4rem;
+}
+
+.basicInclusionsCardSubtitle{
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.basicInclusionsCardList{
+    list-style: disc;
+    margin: 0;
+    padding: 0 1.5rem 1.5rem 2rem;
+    list-style-position: outside;
+    color: #fff;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.basicInclusionsCardList li{
+    margin-bottom: 0.4rem;
+}
+
+.basicInclusionsCardList li:last-child{
+    margin-bottom: 0;
+}
+
+.packagesToggle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    border: 3px solid #000;
+    border-radius: 999px;
+    padding: 0.65rem 1.5rem;
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 38%, #058cd7 38%, #058cd7 100%);
+    box-shadow: inset 0 0 0 6px #ffffff, 0 4px 4px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.packagesToggle span:last-child{
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.packagesToggle:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
+}
+
+.primerPackagesCards{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: clamp(1.25rem, 2.5vw, 2.25rem);
+    max-width: 960px;
+    margin: 0 auto;
+    padding-bottom: clamp(5rem, 8vw, 6rem);
+}
+
+.packageCard{
+    position: relative;
+    flex: 0 0 210px;
+    width: 210px;
+    height: 320px;
+    border: 3px solid #000;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 8px;
+    overflow: hidden;
+}
+
+.packageCard::before{
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 15px;
+    background: var(--package-accent);
+    z-index: 0;
+}
+
+.packageCardSurface{
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem 2.2rem;
+    color: #fff;
+}
+
+.packageCardPrice{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+    color: var(--package-accent);
+    padding: 0.45rem 0.9rem;
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 16px;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.packageCardHeading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 1.1rem;
+}
+
+.packageCardTier{
+    font-family: var(--font-libre-caslon);
+    font-size: clamp(3.2rem, 4.3vw, 4.1rem);
+    line-height: 1;
+}
+
+.packageCardTitle{
+    font-family: var(--font-libre-caslon);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.45rem;
+    line-height: 1.05;
+    margin-top: -0.45rem;
+}
+
+.packageCardList{
+    list-style: disc;
+    margin: 0;
+    padding-left: 1.3rem;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    align-self: stretch;
+    text-align: left;
+    margin-top: auto;
+}
+
+.packageCardList li{
+    margin-bottom: 0.4rem;
+}
+
+.packageCardList li:last-child{
+    margin-bottom: 0;
+}
+
+.lateFeeSticker{
+    position: absolute;
+    left: 50%;
+    bottom: -3.25rem;
+    transform: translateX(-50%);
+    width: clamp(7rem, 10vw, 8.75rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lateFeeSticker img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.lateFeeSticker figcaption{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    color: #fff;
+    font-family: var(--font-libre-caslon);
+}
+
+.lateFeeSticker span{
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(1.8rem, 3vw, 2.35rem);
+}
+
+.lateFeeSticker small{
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 600;
+}
+
+@media (max-width: 1100px){
+    .primerPackagesLayout{
+        grid-template-columns: 1fr;
+    }
+
+    .primerPackagesCards{
+        max-width: 540px;
+    }
+
+    .lateFeeSticker{
+        position: relative;
+        left: 50%;
+        bottom: auto;
+        margin-top: clamp(2rem, 6vw, 3rem);
+    }
+}
+
+@media (max-width: 900px){
+    .packageCard{
+        flex: 1 1 calc(50% - 1.25rem);
+        width: min(100%, 240px);
+        height: auto;
+    }
+}
+
+@media (min-width: 1100px){
+    .primerPackagesCards{
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+
+    .packageCard{
+        flex: 0 0 210px;
+        transition: transform 0.2s ease;
+    }
+
+    .packageCard + .packageCard{
+        margin-left: -1.85rem;
+    }
+
+    .packageCard:nth-child(1){
+        transform: translateY(26px);
+        z-index: 1;
+    }
+
+    .packageCard:nth-child(2){
+        transform: translateY(-32px);
+        z-index: 3;
+    }
+
+    .packageCard:nth-child(3){
+        transform: translateY(18px);
+        z-index: 2;
+    }
+
+    .packageCard:nth-child(4){
+        transform: translateY(-20px);
+        z-index: 1;
+    }
+}
+
+@media (max-width: 650px){
+    .primerPackages{
+        padding-bottom: clamp(5rem, 12vw, 7rem);
+    }
+
+    .primerPackagesCards{
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 100%;
+    }
+
+    .packageCard{
+        flex: 1 1 auto;
+        width: 100%;
+        height: auto;
+        width: 100%;
+    }
+
+    .packagesToggle{
+        font-size: 0.95rem;
+    }
 }
