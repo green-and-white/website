@@ -43,7 +43,8 @@ export default function Hero() {
       */}
       <section
         className={`${styles.henry}`}
-        style={{ backgroundImage: `url(${henryBackground})` }}
+        style={{ backgroundImage: `url(${henryBackground})`, 
+                    backgroundSize: "cover" }}
         ref={container}
       >
         {/* Page 1: Hero Content */}
@@ -55,11 +56,12 @@ export default function Hero() {
             className="absolute top-8 h-14 sm:h-16"
             style={{y:sm}}
           />
-        <div className={`${styles.homeStickers}`}>
+        <motion.div className={`${styles.homeStickers}`}
+                    style={{y:lg}}>
             <img className={`${styles.cat} hidden sm:block`} 
                  src={catSticker} 
                  alt="Cat Sticker" 
-                 style={{md}}/>
+                 style={{top:md}}/>
             <img
               className={`${styles.chair} hidden sm:block`}
               src={chairSticker}
@@ -75,7 +77,7 @@ export default function Hero() {
               src={bookletSticker}
               alt="Booklet Sticker"
             />
-          </div>
+          </motion.div>
           {/* CTA Content */}
           <div className="max-w-[700px] h-full flex flex-col justify-end gap-8 text-center pb-28 sm:pb-20">
             <motion.h1 className={`font-extrabold ${styles.CTA} text-[#EEDB49] font-libre-caslon`}
