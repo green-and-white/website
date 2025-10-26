@@ -85,7 +85,7 @@ export default function Hero() {
               Keep your memories alive.
             </motion.h1>
             <motion.div className={`flex flex-col sm:flex-row justify-center gap-2.5 ${styles.glass}`}
-                        style={{y:0}}>
+                        style={{y:sm}}>
               <a
                 className="pointer-events-auto z-50"
                 href="https://forms.gle/xNBJWFrup67DRsjP8"

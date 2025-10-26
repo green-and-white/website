@@ -39,7 +39,7 @@ export default function YearbookActivities() {
     <>
       {/*Cave Section*/}
       <section 
-        className={`${styles.cave} sm:h-screen sm:flex sm:flex-col sm:justify-center`} 
+        className={`${styles.cave} sm:flex sm:flex-col sm:justify-center`} 
         style={{ backgroundImage: `url(${caveBackground})` }}
       >
         <div className={`${styles.heading} sm:mb-12`}>Yearbook Activities</div>

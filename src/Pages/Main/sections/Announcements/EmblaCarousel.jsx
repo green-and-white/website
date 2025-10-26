@@ -11,7 +11,9 @@ import useEmblaCarousel from 'embla-carousel-react'
 
 const EmblaCarousel = (props) => {
   const { slides, options } = props
-  const [emblaRef, emblaApi] = useEmblaCarousel(options)
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    Autoplay({ delay: 4000, stopOnInteraction: false })
+  ])
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   const onNavButtonClick = useCallback((emblaApi) => {
