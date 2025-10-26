@@ -16,10 +16,14 @@
     "@tailwindcss/vite": "^4.1.12",
     "@vercel/analytics": "^1.5.0",
     "css-doodle": "^0.44.0",
+    "i": "^0.3.7",
+    "motion": "^12.23.24",
+    "npm": "^11.6.2",
     "react": "^19.1.1",
     "react-countdown": "^2.3.6",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.2",
+    "react-spring": "^10.0.3",
     "tailwindcss": "^4.1.12"
   },
   "devDependencies": {

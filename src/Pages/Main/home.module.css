@@ -1,27 +1,99 @@
 .henry {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  /* allow page scrolling — content can extend beyond the initial viewport */
+
   background-position: center;
   background-size: cover;
+  /* keep the background image fixed while the content scrolls over it */
+  background-attachment: fixed;
+
+  padding: 40px 32px; 
+  @media (min-width: 640px) {
+    padding-bottom: 80px;
+  }
 }
 
-.henry::before {
-  content: "";
-  position: absolute;
-  inset: -10px;
-  background-image: inherit;
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.06);
-  filter: blur(2px);
-  z-index: 0;
-}
 
 .henry > * {
-  position: relative;
   z-index: 1;
+}
+
+.homeStickers{
+  width: 250px; 
+  height: 100%; 
+  position: relative; 
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+
+
+  @media (min-width: 640px) {
+    width: 250px; 
+    height: 400px; 
+    position: absolute; 
+    display: block;
+    right: 15%; 
+    top: 10%;
+  }
+}
+
+.homeStickers > img{
+  position: absolute; 
+}
+
+.cat{
+  width:120px;
+
+  bottom: 20%;
+  right: 25%; 
+
+  @media (max-width: 500px){
+    
+    top: 30%;
+  }
+
+  rotate: calc(15deg)
+}
+
+.chair{
+  width: 140px;
+  top: 24%;
+  left: -12%;  
+
+  @media (max-width: 500px){
+    top: 20%;
+    left: 14%; 
+  }
+  rotate: calc(10deg); 
+}
+
+.yearbook2026{
+  width:200px;
+  height: auto; 
+
+  right:1%;
+  rotate:calc(40deg);
+
+  @media (max-width: 640px){
+    position: relative; 
+    left: 10%;
+    rotate: calc(20deg)
+  }
+
+}
+
+.booklet{
+  width:120px;
+
+  bottom: 30%;
+  right: -10%; 
+
+  @media (max-width: 500px){
+    top: 25%;
+    right: 0%; 
+  }
+
+  rotate: calc(-10deg)
 }
 
 .glassCard {
@@ -125,15 +197,8 @@
     max-width: 400px;
 }
 
-.whiteHorizontal {
-    width: 20%;
-    height: auto;
-    margin-top: 5%;
-    margin-left: 40%;
-}
-
 .CTA {
     font-size: clamp(40px, 5vw, 64px);
-    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 20px #000000;
     line-height: 40px;
 }
