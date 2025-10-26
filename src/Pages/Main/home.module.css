@@ -1,0 +1,258 @@
+.henry {
+  /* allow page scrolling — content can extend beyond the initial viewport */
+
+  background-position: center;
+  background-size: cover;
+  /* keep the background image fixed while the content scrolls over it */
+  background-attachment: fixed;
+
+  padding: 40px 32px; 
+  @media (min-width: 640px) {
+    padding-bottom: 80px;
+  }
+}
+
+
+.henry > * {
+  z-index: 1;
+}
+
+.homeStickers{
+  width: 250px; 
+  height: 100%; 
+  position: relative; 
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+
+
+  @media (min-width: 640px) {
+    width: 250px; 
+    height: 400px; 
+    position: absolute; 
+    display: block;
+    right: 15%; 
+    top: 10%;
+  }
+}
+
+.homeStickers > img{
+  position: absolute; 
+}
+
+.cat{
+  width:120px;
+
+  bottom: 20%;
+  right: 25%; 
+
+  @media (max-width: 500px){
+    
+    top: 30%;
+  }
+
+  rotate: calc(15deg)
+}
+
+.chair{
+  width: 140px;
+  top: 24%;
+  left: -12%;  
+
+  @media (max-width: 500px){
+    top: 20%;
+    left: 14%; 
+  }
+  rotate: calc(10deg); 
+}
+
+.yearbook2026{
+  width:200px;
+  height: auto; 
+
+  right:1%;
+  rotate:calc(40deg);
+
+  @media (max-width: 640px){
+    position: relative; 
+    left: 10%;
+    rotate: calc(20deg)
+  }
+
+}
+
+.booklet{
+  width:120px;
+
+  bottom: 30%;
+  right: -10%; 
+
+  @media (max-width: 500px){
+    top: 25%;
+    right: 0%; 
+  }
+
+  rotate: calc(-10deg)
+}
+
+.glassCard {
+
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.glassCardCarousel {
+
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+
+.glassCard > p{
+  /* Green & White is the official yearbook publication of De La Salle University. Celebrating its 101st year, the publication lives as the record-keeper of Lasallian memories. From portraits to pages, Green & White brings the Lasallian community together and etches their place in time through the yearbook. */
+
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 20px #000000;
+  
+}
+
+.heading{
+  /* Heading styling -> from figma */
+
+
+  font-family: 'Helvetica';
+  font-style: normal;
+  
+  font-size: 40px;
+  line-height: 46px;
+  /* identical to box height */
+  text-align: center;
+  font-weight: bold;
+
+  color: #FFFFFF;
+
+  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-width: 4px;
+  paint-order: stroke fill;
+}
+
+.audihall {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  background: center/cover no-repeat;
+
+  scroll-snap-type: y proximity;
+
+  padding: 40px 32px; 
+  @media (min-width: 640px) {
+    padding-bottom: 80px;
+  }
+}
+
+.audihall::before {
+  content: "";
+  inset: 0;
+  background: inherit;
+  filter: brightness(50%);
+  z-index: 0;
+}
+
+.cave {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+    background: center/cover no-repeat;
+    z-index: 2;
+
+    padding: 40px 32px; 
+    @media (min-width: 640px) {
+      padding-bottom: 80px;
+    }
+}
+
+.cave::before {
+    content: "";
+    inset: 0;
+    background: inherit;
+    filter: brightness(80%);
+    z-index: 0;
+}
+
+
+
+.sky {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  background: center/cover no-repeat;
+
+   padding: 40px 32px; 
+  @media (min-width: 640px) {
+    padding-bottom: 80px;
+  }
+}
+
+.sky::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-position: center;
+  background-size: cover;
+  filter: brightness(50%);
+  z-index: 0;
+}
+
+.sky > * {
+  position: relative;
+  z-index: 1;
+}
+
+.cardboard {
+    position: relative;
+    display: flex;
+    gap: 10%;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 50vh;
+}
+
+.whiteVertical {
+    width: 15%;
+    height: auto;
+}
+
+.description {
+    max-width: 400px;
+}
+
+.CTA {
+    font-size: clamp(40px, 5vw, 64px);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 20px #000000;
+    line-height: 40px;
+}
