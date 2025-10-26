@@ -3,12 +3,14 @@
 
   background-position: center;
   background-size: cover;
-  /* keep the background image fixed while the content scrolls over it */
-  background-attachment: fixed;
+  /* use scroll for mobile compatibility */
+  background-attachment: scroll;
 
   padding: 40px 32px; 
   @media (min-width: 640px) {
     padding-bottom: 80px;
+    /* keep the background image fixed on desktop */
+    background-attachment: fixed;
   }
 }
 
