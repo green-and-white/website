@@ -97,7 +97,7 @@
 }
 
 .glassCard {
-  padding: 0.5rem 1.25rem;
+
   color: white;
   font-weight: 600;
   font-size: 1rem;
@@ -108,26 +108,75 @@
   -webkit-backdrop-filter: blur(6px);
 }
 
+.glassCardCarousel {
+
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+
+.glassCard > p{
+  /* Green & White is the official yearbook publication of De La Salle University. Celebrating its 101st year, the publication lives as the record-keeper of Lasallian memories. From portraits to pages, Green & White brings the Lasallian community together and etches their place in time through the yearbook. */
+
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 20px #000000;
+  
+}
+
+.heading{
+  /* Heading styling -> from figma */
+
+
+  font-family: 'Helvetica';
+  font-style: normal;
+  
+  font-size: 40px;
+  line-height: 46px;
+  /* identical to box height */
+  text-align: center;
+  font-weight: bold;
+
+  color: #FFFFFF;
+
+  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-width: 4px;
+  paint-order: stroke fill;
+}
+
 .audihall {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   background: center/cover no-repeat;
+
+  scroll-snap-type: y proximity;
+
+  padding: 40px 32px; 
+  @media (min-width: 640px) {
+    padding-bottom: 80px;
+  }
 }
 
 .audihall::before {
   content: "";
-  position: absolute;
   inset: 0;
   background: inherit;
   filter: brightness(50%);
   z-index: 0;
-}
-
-.audihall > * {
-  position: relative;
-  z-index: 1;
 }
 
 .cave {

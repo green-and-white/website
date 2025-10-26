@@ -5,11 +5,15 @@ import styles from '../../home.module.css'
 import henryBackground from "@/assets/home_page/henry.webp";
 
 import whiteHorizontal from "@/assets/logos_updated/white-horizontal.svg";
+import whiteVertical from "@/assets/logos_updated/white-vertical.svg";
 
 import chairSticker from '@/assets/stickers/chair.webp';
 import yearbookSticker from '@/assets/stickers/YEARBOOK_2026.webp';
 import catSticker from '@/assets/stickers/cat2.webp'
 import bookletSticker from "@/assets/stickers/booklet.webp"
+
+import { motion, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
 
 
 // <main className='relative min-h-screen'
@@ -19,7 +23,18 @@ import bookletSticker from "@/assets/stickers/booklet.webp"
 //       backgroundPosition: "center",
 // }}> 
 
+
 export default function Hero() {
+
+    const container = useRef(null);
+    const { scrollYProgress } = useScroll({ 
+        target: container, 
+        offset: ['start end', 'end start']
+    });
+    const sm = useTransform(scrollYProgress, [0, 1], [0, -50]);
+    const md = useTransform(scrollYProgress, [0, 1], [0, -150]);
+    const lg = useTransform(scrollYProgress, [0, 1], [0, -250]);
+
   return (
     <>
       {/* 
@@ -27,21 +42,24 @@ export default function Hero() {
         scrollable pages. 
       */}
       <section
-        className={`${styles.henry} relative`}
+        className={`${styles.henry}`}
         style={{ backgroundImage: `url(${henryBackground})` }}
+        ref={container}
       >
         {/* Page 1: Hero Content */}
         <div className="h-screen relative flex flex-col items-center justify-center text-white">
           {/* GW Logo */}
-          <img
+          <motion.img
             src={whiteHorizontal}
             alt="Green & White Logo"
-            className="absolute top-0 h-14 sm:h-16"
+            className="absolute top-8 h-14 sm:h-16"
+            style={{y:sm}}
           />
         <div className={`${styles.homeStickers}`}>
             <img className={`${styles.cat} hidden sm:block`} 
                  src={catSticker} 
-                 alt="Cat Sticker" />
+                 alt="Cat Sticker" 
+                 style={{md}}/>
             <img
               className={`${styles.chair} hidden sm:block`}
               src={chairSticker}
@@ -59,11 +77,13 @@ export default function Hero() {
             />
           </div>
           {/* CTA Content */}
-          <div className="max-w-[700px] h-full flex flex-col justify-end gap-10 text-center pb-28 sm:pb-36">
-            <h1 className={`font-extrabold ${styles.CTA} text-[#EEDB49] font-libre-caslon`}>
+          <div className="max-w-[700px] h-full flex flex-col justify-end gap-8 text-center pb-28 sm:pb-20">
+            <motion.h1 className={`font-extrabold ${styles.CTA} text-[#EEDB49] font-libre-caslon`}
+                        style={{y:md}}>
               Keep your memories alive.
-            </h1>
-            <div className={`flex flex-col sm:flex-row justify-center gap-2.5 ${styles.glass}`}>
+            </motion.h1>
+            <motion.div className={`flex flex-col sm:flex-row justify-center gap-2.5 ${styles.glass}`}
+                        style={{y:0}}>
               <a
                 className="pointer-events-auto z-50"
                 href="https://forms.gle/xNBJWFrup67DRsjP8"
@@ -71,7 +91,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
               >
                 <div
-                  className={`${styles.glassCard} cursor-pointer transition transform duration-200 ease-in-out hover:scale-105 hover:bg-white/20 border border-white/50`}
+                  className={`${styles.glassCard} px-4 py-3 cursor-pointer transition transform duration-200 ease-in-out hover:scale-105 hover:bg-white/20 border border-white/50`}
                 >
                   Pre-register now
                 </div>
@@ -83,12 +103,12 @@ export default function Hero() {
                 rel="noopener noreferrer"
               >
                 <div
-                  className={`${styles.glassCard} cursor-pointer transition transform duration-200 ease-in-out hover:scale-105 hover:bg-white/20 border border-white/50`}
+                  className={`${styles.glassCard} px-4 py-3 cursor-pointer transition transform duration-200 ease-in-out hover:scale-105 hover:bg-white/20 border border-white/50`}
                 >
                   View 2026 primer
                 </div>
               </a>
-            </div>
+            </motion.div>
           </div>
 
           {/* Stickers */}
@@ -96,12 +116,24 @@ export default function Hero() {
         </div>
 
         {/* Page 2: More Information */}
-        <div className="h-screen relative flex flex-col items-center justify-center text-white">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">This is Page 2</h2>
-            <p>You can add more scrollable content here.</p>
-          </div>
-        </div>
+        <motion.div className="pt-40 relative flex flex-col items-center justify-center text-white"
+                        style={{y:lg}}>
+          <div className={`flex flex-col max-w-[700px] gap-10 justify-center items-center ${styles.glassCard} p-10`}>
+                <img
+                    src={whiteVertical}
+                    alt="Green & White Logo"
+                    className="h-48"
+                />
+            <p className = "font-helvetica text-center text-sm sm:test-base lg:text-lg">
+                    <strong>Green & White </strong>is the official yearbook publication of De La Salle University.
+                    <br></br><br />
+                    Celebrating its 101st year, the publication lives as the record-keeper of Lasallian 
+                    memories. From portraits to pages, Green & White brings the Lasallian community together 
+                    and etches their place in time through the yearbook.
+            </p>
+            </div>
+          </motion.div>
+         
       </section>
     </>
   );

@@ -9,6 +9,13 @@
   --font-libre-caslon: "libre", sans-serif;
   --font-helvetica: "helvetica", sans-serif;
   --font-jost: "jost", sans-serif;
+
+  --color-retro-yellow: #FFC567;
+  --color-retro-pink: #FB7DA8;
+  --color-retro-orange: #FD5A46;
+  --color-retro-purple: #552CB7;
+  --color-retro-green: #009953;
+  --color-retro-lightblue: #058CD7;
 }
 html {
   scroll-behavior: smooth;
@@ -142,6 +149,17 @@ body{
 @font-face {
   font-family: "helvetica";
   src: url("./assets/fonts/Helvetica.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "helvetica"; 
+  src: url("./assets/fonts/Helvetica-Bold-02.ttf") format("truetype");
+  font-weight: 700; 
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -155,6 +173,7 @@ body{
   src: url("./assets/fonts/JostItalic.ttf") format("truetype");
   font-style: italic; 
 }
+
 
 .font-jost-regular{
     font-family: "jost";

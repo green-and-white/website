@@ -14,7 +14,7 @@ import {useRef, useEffect} from "react"
 export default function Main() {
   
   return (
-    <main>
+    <main className = "snap-proximity">
       <Hero />
       <Announcements />
       <YearbookActivities />
