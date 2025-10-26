@@ -11,17 +11,17 @@ import globe from "@/assets/icons/globe.svg"
 
 export default function Footer() {
   return (
-    <div className="flex flex-col items-center px-[10px] py-[30px] justify-center gap-[30px] bg-white font-helvetica">
-        <div className="flex gap-2">
+    <div className="flex flex-col items-center px-[32px] py-[30px] max-w-[600px] lg:max-w-none mx-auto justify-center gap-[30px] bg-white font-helvetica">
+        <div className="flex gap-2 items-center">
             {/* logo + sticker */}
-            <img src={blackVertical} alt="Black Vertical Logo" className="h-[84px]" />
-            <img src={yb2026} alt="Yearbook 2026 Sticker" className="h-[84px]" />
+            <img src={blackVertical} alt="Black Vertical Logo" className="mt-2 h-[70px]" />
+            <img src={yb2026} alt="Yearbook 2026 Sticker" className="h-[110px]" />
         </div>
         {/* Credits */}
-        <div>
-            Website by Johan Marlo Cabili, Danielle Ang, Ramon Enciro Martinez, Alvin Sean Cua, and Jabin Guamos
-            <br/>
-            Visuals by Kiolo Marzan, Gabriel Gil Ang, Amber Laca, Zoila Caga, Angela Faith Dizon, and Maggy de Guzman
+        <div className = "text-center">
+            Website by <strong>Johan Marlo Cabili</strong>, <strong>Danielle Ang</strong>, <strong>Ramon Enciro Martinez</strong>, <strong>Alvin Sean Cua</strong>, and <strong>Jabin Guamos</strong>
+            <br/><br className = "block lg:hidden" />
+            Visuals by <strong>Kiolo Marzan</strong>, <strong>Gabriel Gil Ang</strong>, <strong>Amber Laca</strong>, <strong>Zoila Caga</strong>, <strong>Angela Faith Dizon</strong>, and <strong>Maggy de Guzman</strong>
         </div>
         <div>
            
