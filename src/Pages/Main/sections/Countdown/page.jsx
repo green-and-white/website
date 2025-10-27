@@ -51,7 +51,7 @@ export default function Countdownpage() {
                     style={{textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 20px #000000'}}>
                     Ready to be part of the yearbook?
                 </h1>
-                <div className={`${styles.countdownCard} py-2 px-4 sm:py-3 sm:px-6 flex justify-center gap-2 sm:gap-4 mx-auto`}>
+                <div className={`${styles.countdownCard} py-2 px-4 sm:py-3 sm:px-6 flex justify-center gap-2 sm:gap-4`}>
                   <Countdown date={targetTime} renderer={renderer}/>
                 </div>
             </div>
