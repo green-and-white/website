@@ -20,7 +20,7 @@ export default function Footer() {
         <div className = "text-center">
             Website by <strong>Johan Marlo Cabili</strong>, <strong>Danielle Ang</strong>, <strong>Ramon Enrico Martinez</strong>, <strong>Alvin Sean Cua</strong>, and <strong>Jabin Guamos</strong>
             <br/><br className = "block lg:hidden" />
-            Visuals by <strong>Kiolo Marzan</strong>, <strong>Gabriel Gil Ang</strong>, <strong>Amber Laca</strong>, <strong>Zoila Caga</strong>, <strong>Angela Faith Dizon</strong>, and <strong>Maggy de Guzman</strong>
+            Visuals by <strong>Kiolo Marzan</strong>, <strong>Gabriel Ang</strong>, <strong>Zoila Caga</strong>, <strong>Angela Faith Dizon</strong>, <strong>Kim Balasabas</strong>, and <strong>Maggy de Guzman</strong>
         </div>
         <div>
            
