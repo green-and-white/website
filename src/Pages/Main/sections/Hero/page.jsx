@@ -14,6 +14,7 @@ import bookletSticker from "@/assets/stickers/booklet.webp"
 
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useState, useEffect } from 'react';
+import { redirect } from 'react-router-dom';
 
 
 // <main className='relative min-h-screen'

@@ -47,8 +47,8 @@ export default function Countdownpage() {
             id='countdown'>
             
             <div className="flex flex-col items-center gap-10 justify-center mt-12 sm:mt-20 md:mt-28 px-4">
-                <h1 className={`font-extrabold text-[#D9B350] font-libre-caslon flex justify-center mt-8 sm:mt-12 md:mt-16 text-3xl sm:text-4xl md:text-5xl px-4 text-center`} 
-                    style={{ textShadow: '0px 2px 1px rgba(0, 0, 0, 0.5)' }}>
+                <h1 className={`font-extrabold text-[#EEDB49] font-libre-caslon flex justify-center mt-8 sm:mt-12 md:mt-16 text-3xl sm:text-4xl md:text-5xl px-4 text-center`} 
+                    style={{textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 20px #000000'}}>
                     Ready to be part of the yearbook?
                 </h1>
                 <div className={`${styles.countdownCard} py-2 px-4 sm:py-3 sm:px-6 flex justify-center gap-2 sm:gap-4 mx-auto`}>

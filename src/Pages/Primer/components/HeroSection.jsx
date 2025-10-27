@@ -16,19 +16,19 @@ function Notes(){
           NOTES
         </h1>
         
-        <ul className="pl-6 list-disc list-inside space-y-3 text-sm md:text-base lg:text-[20px] helvetica">
-          <li>Students with 4 terms or less are eligible for the yearbook.</li>
-          
-          <li>
+        <ul className="pl-6 list-disc list-inside space-y-3 md:text-base lg:text-[20px] helvetica">
+          <li style = {{textShadow: '1.5px 1.5px 4px rgba(0, 0, 0, 1)'}}>Students with 4 terms or less are eligible for the yearbook.</li>
+
+          <li style = {{textShadow: '1.5px 1.5px 4px rgba(0, 0, 0, 1)'}}>
             The completion of registration will require coming on-site. In the event that you cannot complete the onsite registration, you may authorize someone on your behalf to accomplish the step for you.
           </li>
           
-          <li>
+          <li style = {{textShadow: '1.5px 1.5px 4px rgba(0, 0, 0, 1)'}}>
             We suggest allotting 30 minutes to complete the entire registration, including the payment.
           </li>
-          
-          <li>
-            There is a pre-registration process, which will allow you to pre-fill your information beforehand to expedite the process on-site. However, registration must still be verified at the Green & White booth. Access the forms here: 
+
+          <li style = {{textShadow: '1.5px 1.5px 4px rgba(0, 0, 0, 1)'}}>
+            There is a pre-registration process, which will allow you to pre-fill your information beforehand to expedite the process on-site. However, registration must still be verified at the Green & White booth. Access the forms here:
             <a href="https://forms.gle/xNBJWFrup67DRsjP8"> Pre-registration Forms</a>
           </li>
         </ul>
