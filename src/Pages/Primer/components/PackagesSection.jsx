@@ -21,7 +21,7 @@ export default function PackagesSection() {
       />
 
       <div className={styles.primerPackagesContent}>
-        <div className={styles.packagesHeader}>
+        <div className={`flex flex-col items-center justify-center`}>
           <h2 className={styles.h2} data-text="Yearbook">
             Yearbook
           </h2>
@@ -31,62 +31,6 @@ export default function PackagesSection() {
         </div>
 
         <div className={styles.primerPackagesLayout}>
-          <aside className={styles.primerPackagesAside}>
-            <Accordion>
-              <AccordionItem title="+ Basic Inclusions">
-                <p className={styles.accordionSubtitle}>
-                  (All packages come with these services)
-                </p>
-                <ul className={styles.accordionList}>
-                  {BASIC_INCLUSIONS.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </AccordionItem>
-
-              <AccordionItem title="Payment Details">
-                <div className={styles.paymentDetails}>
-                  {PAYMENT_DETAILS.map((detail, index) => (
-                    <div key={index} className={styles.paymentDetailItem}>
-                      <strong className={styles.paymentDetailTitle}>
-                        {detail.title}
-                      </strong>
-                      {detail.description && (
-                        <p className={styles.paymentDetailDescription}>
-                          {detail.description}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </AccordionItem>
-
-              <AccordionItem title="Payment Schemes">
-                <div className={styles.paymentSchemes}>
-                  <p className={styles.paymentSchemesIntro}>
-                    {PAYMENT_SCHEMES.intro}
-                  </p>
-                  
-                  <div className={styles.paymentSchemeItem}>
-                    <strong className={styles.paymentSchemeMethod}>
-                      {PAYMENT_SCHEMES.partial.title}
-                    </strong>
-                    <p className={styles.paymentSchemeDescription}>
-                      {PAYMENT_SCHEMES.partial.details}
-                    </p>
-                    <p className={styles.paymentSchemeInstructions}>
-                      {PAYMENT_SCHEMES.partial.instructions}
-                    </p>
-                  </div>
-
-                  <p className={styles.paymentSchemeNote}>
-                    <strong>Note:</strong> {PAYMENT_SCHEMES.note}
-                  </p>
-                </div>
-              </AccordionItem>
-            </Accordion>
-          </aside>
-
           <div className={styles.primerPackagesCards}>
             {PACKAGE_CARDS.map((pkg) => (
               <PackageCard
@@ -98,17 +42,76 @@ export default function PackagesSection() {
                 perks={pkg.perks}
               />
             ))}
-            <figure className={styles.lateFeeSticker}>
-              <img src={STAR_STICKER} alt="" aria-hidden="true" />
-              <figcaption>
-                <span>P400</span>
-                <small>late fee!</small>
-              </figcaption>
-            </figure>
           </div>
+
+          <div className = "w-full flex justify-center">
+            <div className={styles.primerPackagesAside}>
+                        <Accordion>
+                          <AccordionItem title="Basic Inclusions">
+                            <p className={styles.accordionSubtitle}>
+                              (All packages come with these services)
+                            </p>
+                            <ul className={styles.accordionList}>
+                              {BASIC_INCLUSIONS.map((item) => (
+                                <li key={item}>{item}</li>
+                              ))}
+                            </ul>
+                          </AccordionItem>
+
+                          <AccordionItem title="Payment Details">
+                            <div className={styles.paymentDetails}>
+                              {PAYMENT_DETAILS.map((detail, index) => (
+                                <div key={index} className={styles.paymentDetailItem}>
+                                  <strong className={styles.paymentDetailTitle}>
+                                    {detail.title}
+                                  </strong>
+                                  {detail.description && (
+                                    <p className={styles.paymentDetailDescription}>
+                                      {detail.description}
+                                    </p>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          </AccordionItem>
+
+                          <AccordionItem title="Payment Schemes">
+                            <div className={styles.paymentSchemes}>
+                              <p className={styles.paymentSchemesIntro}>
+                                {PAYMENT_SCHEMES.intro}
+                              </p>
+                              
+                              <div className={styles.paymentSchemeItem}>
+                                <strong className={styles.paymentSchemeMethod}>
+                                  {PAYMENT_SCHEMES.partial.title}
+                                </strong>
+                                <p className={styles.paymentSchemeDescription}>
+                                  {PAYMENT_SCHEMES.partial.details}
+                                </p>
+                                <p className={styles.paymentSchemeInstructions}>
+                                  {PAYMENT_SCHEMES.partial.instructions}
+                                </p>
+                              </div>
+
+                              <p className={styles.paymentSchemeNote}>
+                                <strong>Note:</strong> {PAYMENT_SCHEMES.note}
+                                {PAYMENT_SCHEMES.bullet}
+                              </p>
+                            </div>
+                          </AccordionItem>
+                        </Accordion>
+                      </div>
+          </div>
+
+          <figure className={`hidden`}>
+            <img src={STAR_STICKER} alt="" aria-hidden="true" />
+            <figcaption>
+              <span>P400</span>
+              <small>late fee!</small>
+            </figcaption>
+          </figure>
         </div>
       </div>
-      {/* ...existing code... */}
     </section>
   );
 }

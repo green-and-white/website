@@ -27,7 +27,7 @@ export default function Calendar() {
             ...item, 
             content: (
                 <>
-                See you in the locations inidicated!
+                See you in the locations indicated!
                 </>
             )
         }
@@ -113,8 +113,28 @@ export default function Calendar() {
             key={index}
             className="border border-white p-2 sm:p-3 md:p-4 w-auto h-full  relative bg-transparent overflow-visible flex flex-row justify-center items-center"
           >
-            <span className="text-xs sm:text-sm md:text-lg text-white absolute top-1 left-1 sm:top-2 sm:left-2 font-helvetica italic font-bold">
-              {item.day}
+            <span className={`text-xs sm:text-sm md:text-lg text-white absolute top-1 left-1 sm:top-2 sm:left-2 font-helvetica italic font-bold ${
+              item.day === '05' || item.day === '19' ? 'z-20' : ''
+            }`}>
+              {item.day === '05' || item.day === '19' ? (
+                <span className="relative inline-block">
+                  <svg 
+                    viewBox="0 0 100 100" 
+                    className={`absolute -left-0.5 -top-0 w-[3em] h-[3em] ${
+                      item.day === '05' ? 'fill-retro-orange' : 'fill-retro-green'
+                    }`}
+                    style={{ 
+                      transform: 'translate(-25%, -25%)',
+                      filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))'
+                    }}
+                  >
+                    <path d="M50 0 L61 25 L85 15 L75 39 L100 50 L75 61 L85 85 L61 75 L50 100 L39 75 L15 85 L25 61 L0 50 L25 39 L15 15 L39 25 Z" />
+                  </svg>
+                  <span className="relative z-10">{item.day}</span>
+                </span>
+              ) : (
+                item.day
+              )}
             </span>
             {item.content && (
               <div className="py-2 md:py-4 text-white text-center w-[140%] text-[12px] sm:text-[12px] md:text-[20px] -rotate-6 overflow-visible z-10"

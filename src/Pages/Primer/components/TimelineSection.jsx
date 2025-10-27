@@ -15,8 +15,8 @@ export default function TimelineSection() {
       </div>
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-8 py-20">
-        <div className="flex items-end pb-32">
-          <h3 className={`${styles.h3} ml-auto`} data-text="Timeline">
+        <div className="flex pb-32">
+          <h3 className={`${styles.h3} text-center w-full`} data-text="Timeline">
             Timeline
           </h3>
         </div>
@@ -70,10 +70,10 @@ export default function TimelineSection() {
             </ul>
           </div>
 
-          {/* Item 2: 2-3 MONTHS (bottom, after 40% line) */}
+          {/* Item 2: 2 to 3 MONTHS (bottom, after 40% line) */}
           <div className="absolute left-[41%] top-[54%] ml-3 w-[200px] text-white text-[17px]">
             <p className="font-bold mb-2">
-              2-3 MONTHS AFTER PICTORIALS
+              2 to 3 MONTHS AFTER PICTORIALS
             </p>
             <p className="font-bold mb-2">ONLINE VERIFICATION</p>
             <ul className="list-disc pl-5">
@@ -81,10 +81,10 @@ export default function TimelineSection() {
             </ul>
           </div>
 
-          {/* Item 3: 3-4 MONTHS (top right, after 60% line) */}
+          {/* Item 3: 3 to 4 MONTHS (top right, after 60% line) */}
           <div className="absolute left-[61%] top-[-5%] ml-3 w-[220px] text-white text-[17px]">
             <p className="font-bold mb-2 ">
-              3-4 MONTHS AFTER PICTORIALS
+              3 to 4 MONTHS AFTER PICTORIALS
             </p>
             <p className="font-bold mb-2">RELEASING</p>
             <ul className="list-disc pl-5 space-y-1">
@@ -145,10 +145,10 @@ export default function TimelineSection() {
             </ul>
           </div>
 
-          {/* Item 2: 2-3 MONTHS (bottom) */}
+          {/* Item 2: 2 to 3 MONTHS (bottom) */}
           <div className="absolute left-[41%] top-[55%] ml-2 w-[150px] text-white text-[14px]">
             <p className="font-bold mb-1 text-[13px] whitespace-nowrap">
-              2-3 MONTHS AFTER
+              2 to 3 MONTHS AFTER
             </p>
             <p className="font-bold mb-1 text-[13px]">PICTORIALS</p>
             <p className="font-bold mb-1 text-[13px]">ONLINE VERIFICATION</p>
@@ -157,10 +157,10 @@ export default function TimelineSection() {
             </ul>
           </div>
 
-          {/* Item 3: 3-4 MONTHS (top right) */}
+          {/* Item 3: 3 to 4 MONTHS (top right) */}
           <div className="absolute left-[61%] top-0 ml-2 w-[160px] text-white text-[14px]">
-            <p className="font-bold mb-1 text-[13px] whitespace-nowrap">
-              3-4 MONTHS AFTER
+            <p className="hidden md:block font-bold mb-1 text-[13px] whitespace-nowrap">
+              3 to 4 MONTHS AFTER
             </p>
             <p className="font-bold mb-1 text-[13px]">PICTORIALS</p>
             <p className="font-bold mb-1 text-[13px]">RELEASING</p>
@@ -196,9 +196,9 @@ export default function TimelineSection() {
             {/* Junction dot (where horizontal line meets vertical) - adjust top-[X%] to move dot up/down */}
             <div className="absolute left-1/2 -translate-x-1/2 top-[32%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
             {/* Horizontal line to right - adjust top-[X%] to move line up/down, w-X to change length */}
-            <div className="absolute left-1/2 top-[40%] w-16 h-[3px] bg-white" />
+            <div className="absolute left-1/2 top-[40%] w-12 h-[3px] bg-white" />
             {/* Text content on right - adjust top-[X%] to move vertically, ml-[calc(50%+Xrem)] to move horizontally */}
-            <div className="absolute left-0 top-[-20%] ml-[calc(50%+4rem)] text-white text-[1.2rem]">
+            <div className="absolute left-0 top-[-20%] ml-[calc(47%+4rem)] text-white text-[1.2rem]">
               <p className="font-bold mb-2">DURING PICTORIALS</p>
               <ul className="list-disc pl-5 space-y-1 text-[.8rem]">
                 <li>Hair & Make-Up</li>
@@ -211,37 +211,39 @@ export default function TimelineSection() {
             </div>
           </div>
 
-          {/* Item 2: 2-3 MONTHS (line to left, text on left) */}
-          <div className="relative pb-12 min-h-[140px]">
+          {/* Item 2: 2 to 3 MONTHS (line to left, text on left) */}
+          <div className="relative pb-12 min-h-[140px] mt-14 md:mt-0">
             {/* Dot - adjust top-[Xpx] or top-[X%] to move dot up/down */}
             <div className="absolute left-1/2 -translate-x-1/2 top-[5%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
             {/* Horizontal line to left - adjust top-[Xpx] or top-[X%] to move line up/down, w-X to change length */}
-            <div className="absolute right-1/2 top-[15%] w-16 h-[3px] bg-white" />
+            <div className="absolute right-1/2 top-[15%] w-12 h-[3px] bg-white" />
             {/* Text content on left - adjust top-[Xpx] to move vertically, mr-[calc(50%+Xrem)] to move horizontally */}
-            <div className="absolute right-0 top-[-50%] mr-[calc(55%+3.5rem)] text-right text-white text-[1.2rem]">
-              <p className="font-bold mb-2">
-                2-3 MONTHS AFTER PICTORIALS
+            <div className="absolute right-0 top-[-50%] mr-[calc(44%+3.5rem)] text-right text-white text-[1.2rem]">
+              <p className="font-bold mb-2 hidden md:block">
+                2 to 3 MONTHS AFTER PICTORIALS
               </p>
-              <p className="font-bold mb-2">ONLINE VERIFICATION</p>
-              <ul className="list-none text-[.8rem] space-y-1">
-                <li>• Digital copy of the Graduate portrait</li>
+              <p className="font-bold mb-2 text-left md:text-start">ONLINE VERIFICATION</p>
+              <ul className="list-disc text-[.8rem] text-left md:text-start space-y-1">
+                <li><strong>2 to 3 months after pictorials</strong></li>
+                <li>Digital copy of the Graduate portrait</li>
               </ul>
             </div>
           </div>
 
-          {/* Item 3: 3-4 MONTHS (line to right, text on right) */}
-          <div className="relative pb-12 min-h-[160px]">
+          {/* Item 3: 3 to 4 MONTHS (line to right, text on right) */}
+          <div className="relative pb-12 min-h-[160px] mt-14 md:mt-0">
             {/* Dot - adjust top-[Xpx] or top-[X%] to move dot up/down */}
             <div className="absolute left-1/2 -translate-x-1/2 top-[10%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
             {/* Horizontal line to right - adjust top-[Xpx] or top-[X%] to move line up/down, w-X to change length */}
-            <div className="absolute left-1/2 top-[20%] w-16 h-[3px] bg-white" />
+            <div className="absolute left-1/2 top-[20%] w-12 h-[3px] bg-white" />
             {/* Text content on right - adjust top-[Xpx] to move vertically, ml-[calc(50%+Xrem)] to move horizontally */}
             <div className="absolute left-0 top-[-60%] ml-[calc(55%+3.5rem)] text-white text-[1.2rem]">
-              <p className="font-bold mb-2">
-                3-4 MONTHS AFTER PICTORIALS
+              <p className="font-bold mb-2 hidden md:block">
+                3 to 4 MONTHS AFTER PICTORIALS
               </p>
               <p className="font-bold mb-2">RELEASING</p>
               <ul className="list-disc pl-5 space-y-1 text-[.8rem]">
+                <li className="md:hidden"><strong>3 to 4 months after pictorials</strong></li>
                 <li>The framed image together with all the printouts</li>
                 <li>Subscribers must pick up their frames on campus</li>
               </ul>
@@ -249,18 +251,18 @@ export default function TimelineSection() {
           </div>
 
           {/* Item 4: END OF '26 (line to left, text on left) */}
-          <div className="relative pb-12 min-h-[120px]">
+          <div className="relative pb-12 min-h-[120px] mt-14 md:mt-0">
             {/* Dot - adjust top-[Xpx] or top-[X%] to move dot up/down */}
             <div className="absolute left-1/2 -translate-x-1/2 top-[-2%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
             {/* Horizontal line to left - adjust top-[Xpx] or top-[X%] to move line up/down, w-X to change length */}
-            <div className="absolute right-1/2 top-[10%] w-16 h-[3px] bg-white" />
+            <div className="absolute right-1/2 top-[10%] w-12 h-[3px] bg-white" />
             {/* Text content on left - adjust top-[Xpx] to move vertically, mr-[calc(50%+Xrem)] to move horizontally */}
-            <div className="absolute right-0 top-[-50%] mr-[calc(55%+3.5rem)] text-right text-white text-[1.2rem]">
-              <p className="font-bold mb-2">
-                END OF '26 TO START OF '27
+            <div className="absolute right-0 top-[-50%] mr-[calc(50%+3.5rem)] text-right text-white text-[1.2rem]">
+              <p className="font-bold mb-2 text-left">
+                END OF 2026 TO START OF 2027
               </p>
-              <ul className="list-none text-[.8rem] space-y-1">
-                <li>• Physical Yearbook delivered to your home</li>
+              <ul className="list-disc text-left text-[.8rem] space-y-1">
+                <li> Physical Yearbook delivered to your home</li>
               </ul>
             </div>
           </div>
