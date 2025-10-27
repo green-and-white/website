@@ -41,6 +41,7 @@ export default function YearbookActivities() {
       <section 
         className={`${styles.cave} sm:flex sm:flex-col sm:justify-center`} 
         style={{ backgroundImage: `url(${caveBackground})` }}
+        id='yearbookActs'
       >
         <div className={`${styles.heading} sm:mb-12`}>Yearbook Activities</div>
         

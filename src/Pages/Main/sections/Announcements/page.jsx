@@ -29,7 +29,8 @@ export default function Announcements() {
    <>
         {/* Audihall Section */}
         <section className={`${styles.audihall} flex flex-col items-center justify-center gap-12`} 
-                style={{ backgroundImage: `url(${audiHallBackground})` }}>
+                style={{ backgroundImage: `url(${audiHallBackground})` }}
+                id='announcements'>
             <h1 className={`${styles.heading} text-white text-4xl`}>Announcements</h1>
             <EmblaCarousel slides={SLIDES} options={OPTIONS}/>
         </section>

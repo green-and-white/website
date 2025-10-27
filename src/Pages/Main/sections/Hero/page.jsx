@@ -46,6 +46,7 @@ export default function Hero() {
         style={{ backgroundImage: `url(${henryBackground})`, 
                     backgroundSize: "cover" }}
         ref={container}
+        id='hero'
       >
         {/* Page 1: Hero Content */}
         <div className="h-screen relative flex flex-col items-center justify-center text-white">
@@ -113,21 +114,21 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Stickers */}
           
         </div>
 
         {/* Page 2: More Information */}
         <motion.div className="pt-40 relative flex flex-col items-center justify-center text-white"
                         style={{y:lg}}>
-          <div className={`flex flex-col max-w-[700px] gap-10 justify-center items-center ${styles.glassCard} p-10`}>
+          <div className={`flex flex-col max-w-[650px] gap-12 justify-center items-center ${styles.glassCard} p-4 py-8 sm:p-8`}>
                 <img
                     src={whiteVertical}
                     alt="Green & White Logo"
                     className="h-48"
                 />
             <p className = "font-helvetica text-center text-sm sm:test-base lg:text-lg">
-                    <strong>Green & White </strong>is the official yearbook publication of De La Salle University.
+                    <strong>Green & White </strong>is the official yearbook publication of 
+                    <br className='hidden md:block'/> De La Salle University.
                     <br></br><br />
                     Celebrating its 101st year, the publication lives as the record-keeper of Lasallian 
                     memories. From portraits to pages, Green & White brings the Lasallian community together 
