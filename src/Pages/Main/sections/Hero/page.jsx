@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from '../../home.module.css'
 
-import henryBackground from "@/assets/home_page/henry.webp";
+import henryBackground from "@/assets/home_page/henryc.webp";
 
 import whiteHorizontal from "@/assets/logos_updated/white-horizontal.svg";
 import whiteVertical from "@/assets/logos_updated/white-vertical.svg";
