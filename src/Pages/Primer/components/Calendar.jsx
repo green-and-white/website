@@ -18,7 +18,7 @@ export default function Calendar() {
           ...item, 
           content: (
             <>
-              Registration starts today until <span style={{ color: 'var(--color-retro-orange)' }}>Nov 19</span>!
+              Registration starts on this day until <span style={{ color: 'var(--color-retro-orange)' }}>Nov 19</span>!
             </>
           )
         };
