@@ -96,7 +96,7 @@ export default function TimelineSection() {
           {/* Item 4: END OF '26 (bottom right, after 80% line) */}
           <div className="absolute left-[81%] top-[54%] ml-3 w-[180px] text-white text-[17px]">
             <p className="font-bold mb-2">
-              END OF '26 TO START OF '27
+              END OF 2026 TO START OF 2027
             </p>
             <ul className="list-disc pl-5">
               <li>Physical Yearbook delivered to your home</li>
@@ -173,9 +173,9 @@ export default function TimelineSection() {
           {/* Item 4: END OF '26 (bottom right) */}
           <div className="absolute left-[81%] top-[55%] ml-2 w-[140px] text-white text-[14px]">
             <p className="font-bold mb-1 text-[13px] whitespace-nowrap">
-              END OF '26 TO
+              END OF 2026 TO
             </p>
-            <p className="font-bold mb-1 text-[13px]">START OF '27</p>
+            <p className="font-bold mb-1 text-[13px]">START OF 2027</p>
             <ul className="list-disc pl-4 text-[12px]">
               <li>Physical Yearbook delivered to your home</li>
             </ul>
