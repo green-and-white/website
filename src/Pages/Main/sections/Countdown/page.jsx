@@ -43,7 +43,7 @@ export default function Countdownpage() {
   return (
     <>
         {/*Sky Section*/}
-        <section className={styles.sky} style={{ backgroundImage: `url(${skyBackground})` }}
+        <section className={styles.henry} style={{ backgroundImage: `url(${skyBackground})` }}
             id='countdown'>
             
             <div className="flex flex-col gap-10 justify-center mt-12 sm:mt-20 md:mt-28 px-4">

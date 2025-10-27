@@ -16,6 +16,16 @@ const EmblaCarousel = (props) => {
   ])
   const [selectedIndex, setSelectedIndex] = useState(0)
 
+  // Modulo-based color selection
+  const getSlideColor = (index) => {
+    const colors = [
+      { bg: 'bg-retro-green', text: 'text-retro-green' },     // 0
+      { bg: 'bg-retro-orange', text: 'text-retro-orange' },   // 1
+      { bg: 'bg-retro-purple', text: 'text-retro-purple' }    // 2
+    ];
+    return colors[index % 3];
+  };
+
   const onNavButtonClick = useCallback((emblaApi) => {
     const autoplay = emblaApi?.plugins()?.autoplay
     if (!autoplay) return
@@ -67,10 +77,22 @@ const EmblaCarousel = (props) => {
               <div className="embla__slide" key={index}>
                 <div className='flex flex-col sm:flex-row items-stretch justify-center'>
                       <img src={slide.img} alt={slide.title} className={`${styles.image} w-full sm:w-1/3 h-auto sm:h-full max-h-[300px] object-fill rounded-t-md sm:rounded-l-md sm:rounded-tr-none aspect-4/5`} />
-                      <div className = "bg-retro-green sm:w-1/2 flex flex-col flex-1 justify-center px-4 py-6 rounded-b-md sm:rounded-r-md sm:rounded-bl-none text-white text-center">
+                      <div className={`${getSlideColor(index).bg} sm:w-1/2 flex flex-col flex-1 justify-center px-4 py-6 rounded-b-md sm:rounded-r-md sm:rounded-bl-none text-white text-center`}>
                           <h2 className={`font-libre-caslon text-3xl`}>{slide.title}</h2>
                           <br />
                           <p className={`font-helvetica text-sm`}>{slide.desc}</p>
+                          {slide.url && (
+                            <div className="mt-4">
+                              <a 
+                                href={slide.url} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className={`inline-block bg-white font-helvetica ${getSlideColor(index).text} font-bold px-6 py-2 rounded-full hover:bg-retro-yellow hover:text-black transition-colors duration-200`}
+                              >
+                                {slide.buttonText || "Learn More"}
+                              </a>
+                            </div>
+                          )}
                       </div>
                     
                 </div>

@@ -182,7 +182,7 @@
   z-index: 0;
 }
 
-.cave {
+.photoStudio {
     position: relative;
     width: 100vw;
     overflow: hidden;
@@ -193,15 +193,9 @@
     @media (min-width: 640px) {
       padding-bottom: 80px;
     }
+
 }
 
-.cave::before {
-    content: "";
-    inset: 0;
-    background: inherit;
-    filter: brightness(80%);
-    z-index: 0;
-}
 
 
 
