@@ -1,6 +1,14 @@
 import styles from "../Primer.module.css";
 import texture from "../../../assets/textures/texture.png";
-import { BASIC_INCLUSIONS, PACKAGE_CARDS, STAR_STICKER } from "../primerData";
+import {
+  BASIC_INCLUSIONS,
+  PACKAGE_CARDS,
+  STAR_STICKER,
+  PAYMENT_DETAILS,
+  PAYMENT_SCHEMES,
+} from "../primerData";
+import { Accordion, AccordionItem } from "./Accordion";
+import PackageCard from "./PackageCard";
 
 export default function PackagesSection() {
   return (
@@ -24,54 +32,71 @@ export default function PackagesSection() {
 
         <div className={styles.primerPackagesLayout}>
           <aside className={styles.primerPackagesAside}>
-            <div className={styles.basicInclusionsCard}>
-              <div className={styles.basicInclusionsCardTitle}>
-                <span className={styles.basicInclusionsCardHighlight}>
-                  + Basic Inclusions
-                </span>
-                <span className={styles.basicInclusionsCardSubtitle}>
+            <Accordion>
+              <AccordionItem title="+ Basic Inclusions">
+                <p className={styles.accordionSubtitle}>
                   (All packages come with these services)
-                </span>
-              </div>
+                </p>
+                <ul className={styles.accordionList}>
+                  {BASIC_INCLUSIONS.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </AccordionItem>
 
-              <ul className={styles.basicInclusionsCardList}>
-                {BASIC_INCLUSIONS.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
+              <AccordionItem title="Payment Details">
+                <div className={styles.paymentDetails}>
+                  {PAYMENT_DETAILS.map((detail, index) => (
+                    <div key={index} className={styles.paymentDetailItem}>
+                      <strong className={styles.paymentDetailTitle}>
+                        {detail.title}
+                      </strong>
+                      {detail.description && (
+                        <p className={styles.paymentDetailDescription}>
+                          {detail.description}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </AccordionItem>
 
-            <button type="button" className={styles.packagesToggle}>
-              <span>Payment Details</span>
-              <span aria-hidden="true">+</span>
-            </button>
+              <AccordionItem title="Payment Schemes">
+                <div className={styles.paymentSchemes}>
+                  <p className={styles.paymentSchemesIntro}>
+                    {PAYMENT_SCHEMES.intro}
+                  </p>
+                  
+                  <div className={styles.paymentSchemeItem}>
+                    <strong className={styles.paymentSchemeMethod}>
+                      {PAYMENT_SCHEMES.partial.title}
+                    </strong>
+                    <p className={styles.paymentSchemeDescription}>
+                      {PAYMENT_SCHEMES.partial.details}
+                    </p>
+                    <p className={styles.paymentSchemeInstructions}>
+                      {PAYMENT_SCHEMES.partial.instructions}
+                    </p>
+                  </div>
 
-            <button type="button" className={styles.packagesToggle}>
-              <span>Payment Schemes</span>
-              <span aria-hidden="true">+</span>
-            </button>
+                  <p className={styles.paymentSchemeNote}>
+                    <strong>Note:</strong> {PAYMENT_SCHEMES.note}
+                  </p>
+                </div>
+              </AccordionItem>
+            </Accordion>
           </aside>
 
           <div className={styles.primerPackagesCards}>
             {PACKAGE_CARDS.map((pkg) => (
-              <article
+              <PackageCard
                 key={pkg.tier}
-                className={styles.packageCard}
-                style={{ "--package-accent": pkg.accent }}
-              >
-                <div className={styles.packageCardSurface}>
-                  <div className={styles.packageCardPrice}>{pkg.price}</div>
-                  <div className={styles.packageCardHeading}>
-                    <div className={styles.packageCardTier}>{pkg.tier}</div>
-                    <div className={styles.packageCardTitle}>{pkg.title}</div>
-                  </div>
-                  <ul className={styles.packageCardList}>
-                    {pkg.perks.map((perk) => (
-                      <li key={perk}>{perk}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
+                tier={pkg.tier}
+                title={pkg.title}
+                price={pkg.price}
+                accent={pkg.accent}
+                perks={pkg.perks}
+              />
             ))}
           </div>
 

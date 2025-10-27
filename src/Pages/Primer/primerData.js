@@ -46,6 +46,35 @@ export const PACKAGE_CARDS = [
   },
 ];
 
+export const PAYMENT_DETAILS = [
+  {
+    title: "Onsite via Cash or Card",
+    description: null,
+  },
+  {
+    title: "Online-banking via official bank partners",
+    description: "BPI, BDO, Union Bank, and RCBC. Those who choose to do Online-banking must pay in Full.",
+  },
+  {
+    title: "GCash",
+    description: "GCash is not an available option.",
+  },
+  {
+    title: "Late payments",
+    description: "Late payments will incur a fee of ₱400.",
+  },
+];
+
+export const PAYMENT_SCHEMES = {
+  intro: "You may opt to pay in Full or Partial",
+  partial: {
+    title: "Partial (Two Installments)",
+    details: "50% by November 19 and 50% by January 14",
+    instructions: "Drop off your second installments at the dropbox in Rm. 503, 5/F Br. Connon Hall and fill up the QR Code to confirm your submission. If registration is ongoing, you may drop off your Official Receipt at the booth.",
+  },
+  note: "Those who choose to do Online-banking must pay in Full.",
+};
+
 export const REGISTRATION_STEPS = [
   {
     step: "01",

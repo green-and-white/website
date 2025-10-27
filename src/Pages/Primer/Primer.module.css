@@ -82,26 +82,27 @@
 
 .primerPackages{
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     background-color: #bd8833;
     background-image: radial-gradient(ellipse at 50% 38%, #ffc567 0%, #dea74d 50%, #bd8833 75%, #a87900 100%);
     background-size: cover;
-    padding: clamp(3.5rem, 6vw, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(6rem, 9vw, 9rem);
+    padding: clamp(0.5rem, 2vw, 1.5rem) clamp(1.5rem, 5vw, 4rem) clamp(8rem, 20vw, 20rem);
+    z-index: 15;
 }
 
 .primerPackagesContent{
     position: relative;
-    z-index: 2;
+    z-index: 15;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: clamp(2rem, 5vw, 3rem);
+    gap: clamp(2rem, 4vw, 3rem);
 }
 
 .packagesHeader{
     position: relative;
-    min-height: 160px;
+    min-height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,11 +117,11 @@
 }
 
 .packagesHeader .h2{
-    top: clamp(3.5rem, 6vw, 4.5rem);
+    top: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .packagesHeader .h3{
-    top: clamp(6.5rem, 9vw, 7.5rem);
+    top: clamp(5.5rem, 8vw, 6.5rem);
 }
 
 .primerPackagesLayout{
@@ -132,6 +133,7 @@
 }
 
 .primerPackagesAside{
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: clamp(1.25rem, 3vw, 1.75rem);
@@ -206,6 +208,218 @@
 
 .basicInclusionsCardList li:last-child{
     margin-bottom: 0;
+}
+
+/* Accordion Styles */
+.accordion{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 3vw, 1.75rem);
+    width: 100%;
+}
+
+.accordionItem{
+    position: relative;
+    width: 100%;
+}
+
+.accordionToggle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    border: 3px solid #000;
+    border-radius: 999px;
+    padding: 0.65rem 1.5rem;
+    background: #058cd7;
+    box-shadow: inset 0 0 0 6px #058cd7, 0 4px 4px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.accordionIcon{
+    font-size: 1.4rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.accordionToggle:hover{
+    transform: translateY(-2px);
+    box-shadow: inset 0 0 0 6px #058cd7, 0 6px 8px rgba(0, 0, 0, 0.25);
+}
+
+.accordionToggleOpen{
+    border-radius: 20px 20px 0 0;
+}
+
+.accordionToggleOpen .accordionIcon{
+    transform: rotate(180deg);
+}
+
+.accordionContent{
+    animation: accordionSlideDown 0.3s ease-out;
+}
+
+@keyframes accordionSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accordionContentInner{
+    min-height: 0;
+    border: 3px solid #000;
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    background: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.accordionList{
+    list-style: disc;
+    margin: 0;
+    padding-left: 1.5rem;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.accordionList li{
+    margin-bottom: 0.5rem;
+}
+
+.accordionList li:last-child{
+    margin-bottom: 0;
+}
+
+.accordionSubtitle{
+    margin: 0 0 1rem 0;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+}
+
+.paymentDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.paymentDetailItem{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.paymentDetailItem:last-child{
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.paymentDetailTitle{
+    display: block;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #058cd7;
+    margin-bottom: 0.25rem;
+}
+
+.paymentDetailDescription{
+    margin: 0;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+.paymentSchemes{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.paymentSchemesIntro{
+    margin: 0;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #058cd7;
+}
+
+.paymentSchemeItem{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.paymentSchemeItem:last-child{
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.paymentSchemeMethod{
+    display: block;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #058cd7;
+    margin-bottom: 0.35rem;
+}
+
+.paymentSchemeDescription{
+    margin: 0 0 0.5rem 0;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+.paymentSchemeInstructions{
+    margin: 0;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #666;
+    padding: 0.75rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+    border-left: 3px solid #058cd7;
+}
+
+.paymentSchemeNote{
+    margin: 0;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #333;
+    padding: 0.75rem;
+    background: #fff3cd;
+    border-radius: 8px;
+    border-left: 3px solid #ffc107;
+}
+
+.paymentSchemeNote strong{
+    color: #856404;
 }
 
 .packagesToggle{
@@ -346,19 +560,21 @@
 
 .lateFeeSticker{
     position: absolute;
-    left: 50%;
-    bottom: -3.25rem;
+    left: 53%;
+    bottom: 1.25rem;
     transform: translateX(-50%);
     width: clamp(7rem, 10vw, 8.75rem);
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 5;
 }
 
 .lateFeeSticker img{
     width: 100%;
     height: 100%;
     object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
 }
 
 .lateFeeSticker figcaption{
@@ -418,7 +634,7 @@
 
     .packageCard{
         flex: 0 0 210px;
-        transition: transform 0.2s ease;
+        transition: transform 0.3s ease;
     }
 
     .packageCard + .packageCard{
@@ -426,23 +642,28 @@
     }
 
     .packageCard:nth-child(1){
-        transform: translateY(26px);
-        z-index: 1;
-    }
-
-    .packageCard:nth-child(2){
-        transform: translateY(-32px);
+        transform: translateY(30px);
         z-index: 3;
     }
 
+    .packageCard:nth-child(2){
+        transform: translateY(-20px);
+        z-index: 1;
+    }
+
     .packageCard:nth-child(3){
-        transform: translateY(18px);
-        z-index: 2;
+        transform: translateY(30px);
+        z-index: 3;
     }
 
     .packageCard:nth-child(4){
         transform: translateY(-20px);
         z-index: 1;
+    }
+
+    .packageCard:hover{
+        transform: translateY(-40px) !important;
+        z-index: 4 !important;
     }
 }
 
