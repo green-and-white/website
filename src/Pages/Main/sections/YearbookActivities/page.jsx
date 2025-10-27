@@ -75,7 +75,7 @@ export default function YearbookActivities() {
         <div className={`${styles.heading} sm:mb-12`}>Yearbook Activities</div>
         
         {/* Desktop layout: 2x2 grid with rotations and animations */}
-        <div className="hidden sm:grid sm:grid-cols-2 sm:gap-8 sm:max-w-5xl sm:mx-auto sm:px-8">
+        <div className="hidden sm:grid sm:grid-cols-2 sm:gap-8 lg:gap-14 sm:max-w-5xl sm:mx-auto sm:px-8">
           {yearbookActivitiesData.map((activity, index) => {
             // Alternating rotation angles for visual interest
             const rotations = ['rotate-[-2deg]', 'rotate-[3deg]', 'rotate-[2deg]', 'rotate-[-3deg]'];

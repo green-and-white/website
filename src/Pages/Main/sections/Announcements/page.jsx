@@ -1,7 +1,7 @@
 import EmblaCarousel from './EmblaCarousel'
 
 import styles from '../../home.module.css'
-import audiHallBackground from "@/assets/home_page/tv_studio.webp";
+import miguelBackground from "@/assets/home_page/miguel.webp";
 import yearbookClaiming from '@/assets/announcements/yearbook_claiming.jpg'
 import links from '@/assets/announcements/links.jpg'
 
@@ -32,7 +32,7 @@ export default function Announcements() {
    <>
         {/* Audihall Section */}
         <section className={`${styles.henry} min-h-screen flex flex-col items-center justify-center gap-12`} 
-                style={{ backgroundImage: `url(${audiHallBackground})`}}
+                style={{ backgroundImage: `url(${miguelBackground})`}}
                 id='announcements'>
             <h1 className={`${styles.heading} text-white text-4xl`}>Announcements</h1>
             <EmblaCarousel slides={SLIDES} options={OPTIONS}/>

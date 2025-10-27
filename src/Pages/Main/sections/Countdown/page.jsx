@@ -9,7 +9,7 @@ export default function Countdownpage() {
     const renderer = ({ days, hours, minutes, seconds }) => {
         return (
         <div className="text-center">
-            <div className="flex justify-center items-center text-2xl sm:text-3xl md:text-4xl font-bold gap-4 sm:gap-6 text-white">
+            <div className={`flex justify-center items-center text-2xl sm:text-3xl md:text-4xl font-bold gap-4 sm:gap-6 text-white`}>
             <div className="flex flex-col items-center">
                 <span className="font-helvetica font-bold">{days}</span>
                 <span className="helvetica text-xs sm:text-sm mt-1">Days</span>
