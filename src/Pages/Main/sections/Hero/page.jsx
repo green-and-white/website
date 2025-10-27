@@ -13,7 +13,7 @@ import catSticker from '@/assets/stickers/cat2.webp'
 import bookletSticker from "@/assets/stickers/booklet.webp"
 
 import { motion, useScroll, useTransform } from 'motion/react';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 
 // <main className='relative min-h-screen'
@@ -34,6 +34,19 @@ export default function Hero() {
     const sm = useTransform(scrollYProgress, [0, 1], [0, -50]);
     const md = useTransform(scrollYProgress, [0, 1], [0, -150]);
     const lg = useTransform(scrollYProgress, [0, 1], [0, -250]);
+
+    const [isLargeScreen, setIsLargeScreen] = useState(
+      typeof window !== 'undefined' ? window.innerWidth > 1024 : false
+    );
+
+    useEffect(() => {
+      const handleResize = () => setIsLargeScreen(window.innerWidth > 1024);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const yOffset = isLargeScreen ? 90 : 0;
+    const xOffset = isLargeScreen ? 100 : 0;
 
   return (
     <>
@@ -58,7 +71,10 @@ export default function Hero() {
             style={{y:sm}}
           />
         <motion.div className={`${styles.homeStickers}`}
-                    style={{y:lg}}>
+                    style={{
+                      y: useTransform(scrollYProgress, [0, 1], [yOffset, -250 + yOffset]),
+                      x: useTransform(scrollYProgress, [0, 1], [xOffset, xOffset]),
+                    }}>
             <img className={`${styles.cat} hidden sm:block`} 
                  src={catSticker} 
                  alt="Cat Sticker" 

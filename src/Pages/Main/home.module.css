@@ -59,7 +59,7 @@
 }
 
 .chair{
-  width: 140px;
+  width: 160px;
   top: 24%;
   left: -12%;  
 
@@ -254,3 +254,14 @@
     line-height: 40px;
 }
 
+.countdownCard {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
