@@ -86,7 +86,7 @@
     background-color: #bd8833;
     background-image: radial-gradient(ellipse at 50% 38%, #ffc567 0%, #dea74d 50%, #bd8833 75%, #a87900 100%);
     background-size: cover;
-    padding: clamp(0.5rem, 2vw, 1.5rem) clamp(1.5rem, 5vw, 4rem) clamp(8rem, 20vw, 20rem);
+    padding: clamp(0.5rem, 2vw, 1.5rem) clamp(1.5rem, 5vw, 4rem) clamp(8rem, 5vw, 6rem);
     z-index: 15;
 }
 
@@ -211,12 +211,8 @@
 }
 
 /* Accordion Styles */
-.accordion{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 50;
+ .accordion{
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: clamp(1.25rem, 3vw, 1.75rem);
@@ -266,7 +262,7 @@
     transform: rotate(180deg);
 }
 
-.accordionContent{
+ .accordionContent{
     animation: accordionSlideDown 0.3s ease-out;
 }
 
@@ -559,15 +555,15 @@
 }
 
 .lateFeeSticker{
-    position: absolute;
-    left: 53%;
-    bottom: 1.25rem;
+    position: fixed;
+    left: 50%;
+    bottom: 11rem;
     transform: translateX(-50%);
     width: clamp(7rem, 10vw, 8.75rem);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 5;
+    z-index: 100;
 }
 
 .lateFeeSticker img{
