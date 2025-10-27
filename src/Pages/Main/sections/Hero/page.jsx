@@ -101,7 +101,7 @@ export default function Hero() {
               </a>
               <a
                 className="pointer-events-auto z-50"
-                href="https://google.com"
+                href="https://greenandwhite.com.ph/primer"
                 target="_blank"
                 rel="noopener noreferrer"
               >

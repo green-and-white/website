@@ -28,7 +28,7 @@ export function Accordion({ children }) {
 
 export function AccordionItem({ title, children, isOpen, onToggle }) {
   return (
-    <div className={styles.accordionItem}>
+    <div className={`${styles.accordionItem}`}>
       <button
         type="button"
         className={`${styles.accordionToggle} ${isOpen ? styles.accordionToggleOpen : ""}`}

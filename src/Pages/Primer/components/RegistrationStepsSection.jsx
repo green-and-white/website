@@ -47,7 +47,7 @@ export default function RegistrationStepsSection() {
                         card.variant ||
                         (step.columnVariant === "wide" ? "wide" : "standard")
                       }
-                      isRotated={(step.step === "02" || step.step === "03") && index === 1}
+                      isRotated={false}
                     />
                   ))}
                 </div>

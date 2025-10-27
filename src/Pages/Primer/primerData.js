@@ -2,13 +2,14 @@ export const STAR_STICKER =
   "http://localhost:3845/assets/66cc56276eb2ccb3d89f386dd2a1dab80ab855ba.svg";
 
 export const BASIC_INCLUSIONS = [
-  "1 Physical yearbook",
-  "1 Framed print toga (8 x 10 in)",
-  "4 Wallet-size Toga black & white",
-  "4 Wallet-size Toga colored",
-  "1 Digital copy of the edited graduate portrait only",
-  "Hair & Make-up services",
-  "Yearbook delivery",
+  "1 Physical Yearbook",
+  "1 Framed Print Toga (8 x 10 in)",
+  "Hair & Make-up Services for Pictorials",
+  "Live-editing of image after picture-taking",
+  "1 Soft-copy of the Edited Graduate Photo only",
+  "4 Wallet-size Toga (Black & White)",
+  "4 Wallet-size Toga (Colored)",
+  "Yearbook Delivery",
 ];
 
 export const PACKAGE_CARDS = [
@@ -48,16 +49,16 @@ export const PACKAGE_CARDS = [
 
 export const PAYMENT_DETAILS = [
   {
-    title: "Onsite via Cash or Card",
+    title: "On-site via Cash or Card",
     description: null,
   },
   {
     title: "Online-banking via official bank partners",
-    description: "BPI, BDO, Union Bank, and RCBC. Those who choose to do Online-banking must pay in Full.",
+    description: "BPI, BDO, Union Bank, and RCBC. Those who choose to do Online-banking must pay in full.",
   },
   {
     title: "GCash",
-    description: "GCash is not an available option.",
+    description: "Gcash is not an available option.",
   },
   {
     title: "Late payments",
@@ -72,7 +73,8 @@ export const PAYMENT_SCHEMES = {
     details: "50% by November 19 and 50% by January 14",
     instructions: "Drop off your second installments at the dropbox in Rm. 503, 5/F Br. Connon Hall and fill up the QR Code to confirm your submission. If registration is ongoing, you may drop off your Official Receipt at the booth.",
   },
-  note: "Those who choose to do Online-banking must pay in Full.",
+  note: "Those who choose to do Online-banking must pay in full. ",
+  bullet: "If you will pay beyond the registration period, drop off your second installment official receipts at the dropbox in Rm. 503, 5/F Br. Connon Hall and accomplish the form through the QR Code to confirm your submission."
 };
 
 export const REGISTRATION_STEPS = [
@@ -165,9 +167,9 @@ export const REGISTRATION_STEPS = [
     cards: [
       {
         list: [
-          "Accomplish registration form.",
-          "Wait for the staff to print out a physical copy of your Registration Form, which will act as your receipt, Contract of Agreement, and Data Privacy Agreement.",
-          "Read and sign two copies of the Registration Form to confirm that you agree to the terms and conditions of the contract.",
+          "Accomplish the registration form.",
+          "Wait for the print-out of your Green & White Registration Form.",
+          "Read and sign two copies of the form.",
           "Join the Telegram channel!",
         ],
         variant: "wide",

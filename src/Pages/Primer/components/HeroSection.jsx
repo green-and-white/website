@@ -40,8 +40,8 @@ function Notes(){
 export default function HeroSection() {
   return (
     <section className={`${styles.primerHero}  min-h-screen flex flex-col pt-8 pb-0`}>
-      <div className={`${styles.heroInner} flex justify-between`}>
-        <h2 className={styles.h2} data-text="Registration">
+      <div className={`${styles.heroInner} flex flex-col items-center justify-center gap-2`}>
+        <h2 className={`${styles.h2}`} data-text="Registration">
           Registration
         </h2>
         <h3 className={styles.h3} data-text="Guidelines">
