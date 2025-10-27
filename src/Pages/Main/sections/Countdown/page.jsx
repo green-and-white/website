@@ -46,12 +46,14 @@ export default function Countdownpage() {
         <section className={styles.henry} style={{ backgroundImage: `url(${skyBackground})` }}
             id='countdown'>
             
-            <div className="flex flex-col gap-10 justify-center mt-12 sm:mt-20 md:mt-28 px-4">
+            <div className="flex flex-col items-center gap-10 justify-center mt-12 sm:mt-20 md:mt-28 px-4">
                 <h1 className={`font-extrabold text-[#D9B350] font-libre-caslon flex justify-center mt-8 sm:mt-12 md:mt-16 text-3xl sm:text-4xl md:text-5xl px-4 text-center`} 
                     style={{ textShadow: '0px 2px 1px rgba(0, 0, 0, 0.5)' }}>
                     Ready to be part of the yearbook?
                 </h1>
-                <Countdown date={targetTime} renderer={renderer}/>
+                <div className={`${styles.countdownCard} py-2 px-4 sm:py-3 sm:px-6 flex justify-center gap-2 sm:gap-4 mx-auto`}>
+                  <Countdown date={targetTime} renderer={renderer}/>
+                </div>
             </div>
             
             <div className="text-white font-libre-caslon font-bold flex justify-center mt-4 sm:mt-6 mb-12 sm:mb-16 md:mb-24 text-base sm:text-lg md:text-xl px-4 text-center">

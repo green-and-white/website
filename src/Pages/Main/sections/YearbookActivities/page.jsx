@@ -6,8 +6,8 @@ import styles from '../../home.module.css'
 import caveBackground from "@/assets/home_page/cave.jpg";
 import photoBackground from "@/assets/home_page/photo_studio.webp";
 
-import model1 from '@/assets/stickers/model1.png'
-import model2 from '@/assets/stickers/model2.png'
+import model1 from '@/assets/stickers/model1_cutout.png'
+import model2 from '@/assets/stickers/model2_cutout.png'
 import laptopSticker from '@/assets/stickers/laptop.png'
 import cameraSticker from '@/assets/stickers/camera.png'
 import vitoCruzSticker from '@/assets/stickers/VC2.webp'
@@ -65,7 +65,6 @@ export default function YearbookActivities() {
 
   return (
     <>
-      {/*Cave Section*/}
       <section 
         className={`${styles.henry} min-h-screen text-sm !py-20 sm:flex sm:flex-col sm:justify-center`} 
         style={{ backgroundImage: `url(${photoBackground})`,
@@ -75,7 +74,17 @@ export default function YearbookActivities() {
         <div className={`${styles.heading} sm:mb-12`}>Yearbook Activities</div>
         
         {/* Desktop layout: 2x2 grid with rotations and animations */}
-        <div className="hidden sm:grid sm:grid-cols-2 sm:gap-8 lg:gap-14 sm:max-w-5xl sm:mx-auto sm:px-8">
+        <div className="relative hidden sm:grid sm:grid-cols-2 sm:gap-8 lg:gap-14 sm:max-w-5xl sm:mx-auto sm:px-8">
+          <img 
+                src={model1} 
+                alt="model1 sticker"
+                className="hidden lg:block absolute -left-40 top-1/2 transform -translate-y-1/2 w-50 h-84 pointer-events-none z-0"
+              />
+              <img 
+                src={model2} 
+                alt="model2 sticker"
+                className="hidden lg:block absolute -right-43 top-1/2 transform -translate-y-1/2 w-50 h-84 pointer-events-none z-0"
+              />
           {yearbookActivitiesData.map((activity, index) => {
             // Alternating rotation angles for visual interest
             const rotations = ['rotate-[-2deg]', 'rotate-[3deg]', 'rotate-[2deg]', 'rotate-[-3deg]'];
