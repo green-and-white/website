@@ -31,7 +31,7 @@ export default function Hero() {
         target: container, 
         offset: ['start end', 'end start']
     });
-    const sm = useTransform(scrollYProgress, [0, 1], [0, -50]);
+    const sm = useTransform(scrollYProgress, [0, 1], [0, -100]);
     const md = useTransform(scrollYProgress, [0, 1], [0, -150]);
     const lg = useTransform(scrollYProgress, [0, 1], [0, -250]);
 
