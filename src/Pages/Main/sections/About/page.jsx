@@ -7,7 +7,8 @@ export default function About() {
   return (
     <>
         {/* Cardboard Section */}
-        <section className={styles.cardboard} style={{ backgroundImage: `url(${cardboardBackground})` }}>
+        <section className={styles.cardboard} style={{ backgroundImage: `url(${cardboardBackground})` }}
+            id='about'>
             <img src={whiteVertical} alt="whiteVertical" className={styles.whiteVertical} />
             <div className={`${styles.description} text-white`}>
             <strong>Green & White</strong> is the official yearbook publication of De La Salle University.

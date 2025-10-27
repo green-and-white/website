@@ -2,7 +2,7 @@
   {
     "id": 1,
     "activity": "Registration",
-    "description": "The official start of the yearbook journey, where students confirmed their slots, filled out details, and got their first glimpse of the production process. Excitement mixed with anticipation as everyone prepared to make their mark in this year's publication.",
+    "description": "Be sure to register to Green & White to get your yearbook and exclusive Graduation Photos! This is the first step to treasuring your memories. Here, students pay and fill out their details to secure their place on the pages.",
     "bgColor": "bg-retro-lightblue",
     "sticker": {
       "src": "taft",
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "activity": "Pictorials",
-    "description": "From candid smiles to polished portraits, students stepped in front of the camera to capture moments that would define their batch. The sessions were filled with laughter, style choices, and the shared joy of immortalizing college memories.",
+    "description": "Your Graduation Photos are included in the yearbook package. From toga, business, and creative shots, Green & White is with you every step of the way to make sure you get that picture-perfect portait!", 
     "bgColor": "bg-retro-green",
     "sticker": {
       "src": "camera",
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "activity": "Online Verification",
-    "description": "After the photoshoots, students reviewed and verified their information and portraits online. This stage ensured that every name, detail, and image reflected each graduate accurately—because every story deserved to be told right.",
+    "description": "After all is done, students verify their details and portraits online—ensuring every name, image, and memory appeared exactly as it should because every graduates' story deserves to be told right.",
     "bgColor": "bg-retro-orange",
     "sticker": {
       "src": "laptop",
@@ -35,7 +35,7 @@
   {
     "id": 4,
     "activity": "Releasing",
-    "description": "The highlight of the journey—graduates finally received their yearbooks. As pages turned, memories resurfaced and milestones were celebrated. The release marked both an ending and a reminder that these moments will live on in print.",
+    "description": "Hold your memories in the palm of your hand, as you pick up your Graduation Photos on campus and receive your yearbook at home. While your journey in school ends, remember the moments that made you.",
     "bgColor": "bg-retro-yellow",
     "sticker": {
       "src": "vitoCruz",

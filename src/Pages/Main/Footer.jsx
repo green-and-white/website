@@ -15,11 +15,10 @@ export default function Footer() {
         <div className="flex gap-2 items-center">
             {/* logo + sticker */}
             <img src={blackVertical} alt="Black Vertical Logo" className="mt-2 h-[70px]" />
-            <img src={yb2026} alt="Yearbook 2026 Sticker" className="h-[110px]" />
         </div>
         {/* Credits */}
         <div className = "text-center">
-            Website by <strong>Johan Marlo Cabili</strong>, <strong>Danielle Ang</strong>, <strong>Ramon Enciro Martinez</strong>, <strong>Alvin Sean Cua</strong>, and <strong>Jabin Guamos</strong>
+            Website by <strong>Johan Marlo Cabili</strong>, <strong>Danielle Ang</strong>, <strong>Ramon Enrico Martinez</strong>, <strong>Alvin Sean Cua</strong>, and <strong>Jabin Guamos</strong>
             <br/><br className = "block lg:hidden" />
             Visuals by <strong>Kiolo Marzan</strong>, <strong>Gabriel Gil Ang</strong>, <strong>Amber Laca</strong>, <strong>Zoila Caga</strong>, <strong>Angela Faith Dizon</strong>, and <strong>Maggy de Guzman</strong>
         </div>
