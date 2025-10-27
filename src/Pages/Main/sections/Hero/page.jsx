@@ -117,9 +117,7 @@ export default function Hero() {
               </a>
               <a
                 className="pointer-events-auto z-50"
-                href="https://google.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://greenandwhite.com.ph/primer"
               >
                 <div
                   className={`${styles.glassCard} px-4 py-3 cursor-pointer transition transform duration-200 ease-in-out hover:scale-105 hover:bg-white/20 border border-white/50`}
