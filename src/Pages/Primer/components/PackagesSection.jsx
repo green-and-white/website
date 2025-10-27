@@ -98,17 +98,17 @@ export default function PackagesSection() {
                 perks={pkg.perks}
               />
             ))}
+            <figure className={styles.lateFeeSticker}>
+              <img src={STAR_STICKER} alt="" aria-hidden="true" />
+              <figcaption>
+                <span>P400</span>
+                <small>late fee!</small>
+              </figcaption>
+            </figure>
           </div>
-
-          <figure className={styles.lateFeeSticker}>
-            <img src={STAR_STICKER} alt="" aria-hidden="true" />
-            <figcaption>
-              <span>P400</span>
-              <small>late fee!</small>
-            </figcaption>
-          </figure>
         </div>
       </div>
+      {/* ...existing code... */}
     </section>
   );
 }

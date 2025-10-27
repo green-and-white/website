@@ -555,15 +555,15 @@
 }
 
 .lateFeeSticker{
-    position: fixed;
-    left: 50%;
-    bottom: 11rem;
+    position: absolute;
+    left: 30%;
+    bottom: 1.25rem;
     transform: translateX(-50%);
     width: clamp(7rem, 10vw, 8.75rem);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 100;
+    z-index: 5
 }
 
 .lateFeeSticker img{
