@@ -124,7 +124,7 @@ export const REGISTRATION_STEPS = [
           [
             {
               type: "text",
-              content: "BPI, BDO, RCBC, and Union Bank",
+              content: "BDO, RCBC, and Union Bank",
             },
           ],
         ],
