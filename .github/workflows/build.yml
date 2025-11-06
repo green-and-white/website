@@ -1,0 +1,17 @@
+name: Vite Build
+
+#build on pull request 
+
+#inputs
+#jobs ->  name -> runs on -> steps (custom or github marketplace) [run -> command for shell depends on os (runs on)]
+on: 
+  pull_request:
+    branches:
+      - main
+
+  #allow to run action manually
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
