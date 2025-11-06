@@ -54,7 +54,7 @@ export const PAYMENT_DETAILS = [
   },
   {
     title: "Online-banking via official bank partners",
-    description: "BPI, BDO, Union Bank, and RCBC. Those who choose to do Online-banking must pay in full.",
+    description: "BDO, Union Bank, and RCBC. Those who choose to do Online-banking must pay in full.",
   },
   {
     title: "GCash",
