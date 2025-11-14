@@ -14,7 +14,7 @@ import bookletSticker from "@/assets/stickers/booklet.webp"
 
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useState, useEffect } from 'react';
-import { redirect } from 'react-router-dom';
+import { useBrowserDetection } from "@/hooks/useBrowserDetection";
 
 
 // <main className='relative min-h-screen'
@@ -26,8 +26,9 @@ import { redirect } from 'react-router-dom';
 
 
 export default function Hero() {
-
-    const container = useRef(null);
+  const { isSafari } = useBrowserDetection();
+  
+  const container = useRef(null);
     const { scrollYProgress } = useScroll({ 
         target: container, 
         offset: ['start end', 'end start']
@@ -57,8 +58,8 @@ export default function Hero() {
       */}
       <section
         className={`${styles.henry}`}
-        style={{ backgroundImage: `url(${henryBackground})`, 
-                    backgroundSize: "cover" }}
+        style={{ backgroundImage: `url(${henryBackground})`,
+                 backgroundAttachment: isSafari ? 'scroll' : 'fixed'}}
         ref={container}
         id='hero'
       >
@@ -139,7 +140,7 @@ export default function Hero() {
                 <img
                     src={whiteVertical}
                     alt="Green & White Logo"
-                    className="h-48"
+                    className="h-32 sm:h-48"
                 />
             <p className = "font-helvetica text-center text-sm sm:test-base lg:text-lg">
                     <strong>Green & White </strong>is the official yearbook publication of 

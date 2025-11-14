@@ -4,11 +4,14 @@ import Countdown from 'react-countdown'
 
 import skyBackground from "@/assets/home_page/sky.webp";
 
+import { useBrowserDetection } from '@/hooks/useBrowserDetection';
+
 export default function Countdownpage() {
     const targetTime = new Date('2025-11-05T00:00:00');
+    const { isSafari } = useBrowserDetection();
     const renderer = ({ days, hours, minutes, seconds }) => {
         return (
-        <div className="text-center">
+        <div className={`text-center`}>
             <div className={`flex justify-center items-center text-2xl sm:text-3xl md:text-4xl font-bold gap-4 sm:gap-6 text-white`}>
             <div className="flex flex-col items-center">
                 <span className="font-helvetica font-bold">{days}</span>
@@ -43,7 +46,8 @@ export default function Countdownpage() {
   return (
     <>
         {/*Sky Section*/}
-        <section className={styles.henry} style={{ backgroundImage: `url(${skyBackground})` }}
+        <section className={styles.henry} style={{ backgroundImage: `url(${skyBackground})`,
+                                                    backgroundAttachment: isSafari ? 'scroll' : 'fixed'}}
             id='countdown'>
             
             <div className="flex flex-col items-center gap-10 justify-center mt-12 sm:mt-20 md:mt-28 px-4">
@@ -60,29 +64,29 @@ export default function Countdownpage() {
                 See you there!
             </div>
            
-            <div className='mt-8 sm:mt-12 px-4 max-w-4xl mx-auto'>
-              <div className='grid grid-cols-2 gap-2 sm:gap-x-12 sm:gap-y-2'>
+            <div className={`mt-8 sm:mt-12 p-2 mx-auto max-w-[600px] ${styles.glassCard}`}>
+              <div className='grid grid-cols-2 gap-4 sm:gap-x-12 sm:gap-y-2'>
                 {/* Row 1 */}
-                <div className='text-white font-helvetica font-light text-center sm:text-right text-sm sm:text-lg'>
+                <div className='text-white font-helvetica font-light text-right sm:text-center text-sm sm:text-lg'>
                   November 5 to 8
                 </div>
-                <div className='text-white font-helvetica font-light text-center sm:text-left text-sm sm:text-lg '>
+                <div className='text-white font-helvetica font-light text-left sm:text-center text-sm sm:text-lg '>
                   6F Henry Sy Sr. Hall
                 </div>
                 
                 {/* Row 2 */}
-                <div className='text-white font-helvetica font-light text-center sm:text-right text-sm sm:text-lg'>
+                <div className='text-white font-helvetica font-light text-right sm:text-center text-sm sm:text-lg'>
                   November 10 to 15
                 </div>
-                <div className='text-white font-helvetica font-light text-center sm:text-left text-sm sm:text-lg'>
+                <div className='text-white font-helvetica font-light text-left sm:text-center text-sm sm:text-lg'>
                   Br. Andrew Gonzalez Hall Lobby
                 </div>
                 
                 {/* Row 3 */}
-                <div className='text-white font-helvetica font-light text-center sm:text-right text-sm sm:text-lg'>
+                <div className='text-white font-helvetica font-light text-right sm:text-center text-sm sm:text-lg'>
                   November 17 to 19
                 </div>
-                <div className='text-white font-helvetica font-light text-center sm:text-left text-sm sm:text-lg'>
+                <div className='text-white font-helvetica font-light text-left sm:text-center text-sm sm:text-lg'>
                   6F Henry Sy Sr. Hall
                 </div>
               </div>
