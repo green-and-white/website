@@ -14,7 +14,6 @@ import bookletSticker from "@/assets/stickers/booklet.webp"
 
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useState, useEffect } from 'react';
-import { redirect } from 'react-router-dom';
 
 
 // <main className='relative min-h-screen'
@@ -27,7 +26,9 @@ import { redirect } from 'react-router-dom';
 
 export default function Hero() {
 
-    const container = useRef(null);
+  const isSafari = (navigator.userAgent.indexOf("Safari") > -1 && navigator.userAgent.indexOf("Chrome") === -1)
+  
+  const container = useRef(null);
     const { scrollYProgress } = useScroll({ 
         target: container, 
         offset: ['start end', 'end start']
@@ -57,8 +58,8 @@ export default function Hero() {
       */}
       <section
         className={`${styles.henry}`}
-        style={{ backgroundImage: `url(${henryBackground})`, 
-                    backgroundSize: "cover" }}
+        style={{ backgroundImage: `url(${henryBackground})`,
+                 backgroundAttachment: isSafari ? 'scroll' : 'fixed'}}
         ref={container}
         id='hero'
       >

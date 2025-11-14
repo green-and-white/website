@@ -10,7 +10,6 @@
   @media (min-width: 640px) {
     padding-bottom: 80px;
     /* keep the background image fixed on desktop */
-    background-attachment: fixed;
   }
 }
 

@@ -87,35 +87,35 @@ body{
 
 @font-face {
   font-family: "Montserrat";
-  src: url("./assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "InsideOut";
-  src: url("./assets/fonts/InsideOut-DAp0.ttf") format("truetype");
+  src: url("./assets/fonts/InsideOut-DAp0.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Pixar";
-  src: url("./assets/fonts/Pixar.ttf") format("truetype");
+  src: url("./assets/fonts/Pixar.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Waltograph";
-  src: url("./assets/fonts/waltograph42.ttf") format("truetype");
+  src: url("./assets/fonts/waltograph42.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face{
     font-family: "Times New Roman";
-    src: url("./assets/fonts/Times-Regular.ttf") format("truetype");
+    src: url("./assets/fonts/Times-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
@@ -140,7 +140,7 @@ body{
 /* Static fallback for very old browsers or if you need exact Regular glyphs */
 @font-face {
   font-family: "libre";
-  src: url("./assets/fonts/LibreCaslonCondensed-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/LibreCaslonCondensed-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -148,7 +148,7 @@ body{
 
 @font-face {
   font-family: "helvetica";
-  src: url("./assets/fonts/Helvetica.ttf") format("truetype");
+  src: url("./assets/fonts/Helvetica.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -156,7 +156,7 @@ body{
 
 @font-face{
   font-family: "helvetica"; 
-  src: url("./assets/fonts/Helvetica-Bold-02.ttf") format("truetype");
+  src: url("./assets/fonts/Helvetica-Bold-02.woff") format("woff");
   font-weight: 700; 
   font-style: normal;
   font-display: swap;
@@ -164,7 +164,7 @@ body{
 
 @font-face{
   font-family: "helvetica"; 
-  src: url("./assets/fonts/Helvetica-Light-05.ttf") format("truetype");
+  src: url("./assets/fonts/Helvetica-Light-05.woff") format("woff");
   font-weight: 300; 
   font-style: normal;
   font-display: swap;
@@ -172,7 +172,7 @@ body{
 
 @font-face{
   font-family: "helvetica"; 
-  src: url("./assets/fonts/Helvetica-BoldOblique-04.ttf") format("truetype");
+  src: url("./assets/fonts/Helvetica-BoldOblique-04.woff") format("woff");
   font-style: oblique; 
   font-weight: 700;
   font-display: swap;
@@ -181,12 +181,12 @@ body{
 @font-face {
   font-family: "jost";
   font-weight: 100 900;
-  src: url("./assets/fonts/JostVariable.ttf") format("truetype");
+  src: url("./assets/fonts/JostVariable.woff") format("woff ");
 }
 
 @font-face{
   font-family:"jost"; 
-  src: url("./assets/fonts/JostItalic.ttf") format("truetype");
+  src: url("./assets/fonts/JostItalic.woff") format("woff");
   font-style: italic; 
 }
 
