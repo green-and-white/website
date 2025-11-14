@@ -49,8 +49,8 @@ const Navbar = () => {
       {/* Desktop Navigation */}
       <div className={`hidden md:flex max-w-[1080px] mx-auto py-2 px-8 items-center justify-center ${styles.glassCard} rounded-full`}>
         {/* Left: Logo and Sticker */}
-        <div className="flex items-center gap-2 ">
-          <img src={whiteVertical} alt="Logo" className="h-12" onClick={() => scrollTo(0, 0)} />
+        <div className="flex items-center gap-4 ">
+          <img src={whiteVertical} alt="Logo" className="h-10" onClick={() => scrollTo(0, 0)} />
           <img src={yearbook2026} alt="Yearbook 2026" className="h-12 pb-2"/>
         </div>
 

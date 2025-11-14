@@ -100,14 +100,15 @@
 
 .glassCard {
 
-  color: white;
+   color: white;
   font-weight: 600;
   font-size: 1rem;
   text-align: center;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .glassCardCarousel {
@@ -238,10 +239,6 @@
     height: 50vh;
 }
 
-.whiteVertical {
-    width: 15%;
-    height: auto;
-}
 
 .description {
     max-width: 400px;

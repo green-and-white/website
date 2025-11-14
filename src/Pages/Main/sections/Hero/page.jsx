@@ -140,7 +140,7 @@ export default function Hero() {
                 <img
                     src={whiteVertical}
                     alt="Green & White Logo"
-                    className="h-48"
+                    className="h-32 sm:h-48"
                 />
             <p className = "font-helvetica text-center text-sm sm:test-base lg:text-lg">
                     <strong>Green & White </strong>is the official yearbook publication of 
