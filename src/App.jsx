@@ -4,6 +4,7 @@ import Links from "./Pages/Links/Links.jsx"
 import Main from "./Pages/Main/Main.jsx"
 import Primer from "./Pages/Primer/Primer.jsx"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
+import smoothscroll from 'smoothscroll-polyfill';
 import { Analytics } from '@vercel/analytics/react';
 import '@/components/SparkleCursor.css';
 import "./App.css";
@@ -11,7 +12,8 @@ import "./App.css";
 function App() {
    
   window.reloadOnce = window.reloadOnce || false;                                             
- 
+
+
 
   return (
     <>

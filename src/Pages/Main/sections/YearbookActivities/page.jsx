@@ -16,6 +16,8 @@ import taftSticker from '@/assets/stickers/taft.png'
 import YearBookActivitiesCard from '@/components/YearBookActivitiesCard'
 import yearbookActivitiesData from '@/assets/data/yearbookActivities.json'
 
+import { useBrowserDetection } from '@/hooks/useBrowserDetection';
+
 // Map sticker names to imported images
 const stickerImages = {
   taft: taftSticker,
@@ -40,6 +42,7 @@ export default function YearbookActivities() {
   const [modelsVisible, setModelsVisible] = useState(false);
   const cardRefs = useRef([]);
   const modelsRef = useRef(null);
+  const { isSafari } = useBrowserDetection();
 
   useEffect(() => {
     const observers = cardRefs.current.map((ref, index) => {
@@ -86,8 +89,8 @@ export default function YearbookActivities() {
     <>
       <section 
         className={`${styles.henry} min-h-screen text-sm !py-20 sm:flex sm:flex-col sm:justify-center`} 
-        style={{ backgroundImage: `url(${photoBackground})`,
-                  }}
+       style={{ backgroundImage: `url(${photoBackground})`,
+                backgroundAttachment: isSafari ? 'scroll' : 'fixed'}}
         id='yearbookActs'
       >
         <div className={`${styles.heading} sm:mb-12`}>Yearbook Activities</div>

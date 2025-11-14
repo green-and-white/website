@@ -3,11 +3,15 @@ import styles from '../../home.module.css'
 import cardboardBackground from "@/assets/home_page/cardboard_bg.png";
 import whiteVertical from "@/assets/logos_updated/white-vertical.svg";
 
+import { useBrowserDetection } from '@/hooks/useBrowserDetection';
+
 export default function About() {
+  const {isSafari} = useBrowserDetection();
   return (
     <>
         {/* Cardboard Section */}
-        <section className={styles.cardboard} style={{ backgroundImage: `url(${cardboardBackground})` }}
+        <section className={styles.cardboard} style={{ backgroundImage: `url(${cardboardBackground})`,
+                                                        backgroundAttachment: isSafari ? 'scroll' : 'fixed'}}
             id='about'>
             <img src={whiteVertical} alt="whiteVertical" className={styles.whiteVertical} />
             <div className={`${styles.description} text-white`}>

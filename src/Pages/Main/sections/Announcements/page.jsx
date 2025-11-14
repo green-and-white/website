@@ -6,6 +6,8 @@ import yearbookClaiming from '@/assets/announcements/yearbook_claiming.jpg'
 import links from '@/assets/announcements/links.jpg'
 import primer from '@/assets/announcements/reg_primer.png'
 
+import { useBrowserDetection } from '@/hooks/useBrowserDetection';
+
 import './embla.css'
 
 const OPTIONS = { loop: true }
@@ -37,11 +39,13 @@ const SLIDES = [
 
 
 export default function Announcements() {
+    const { isSafari } = useBrowserDetection();
   return (
    <>
         {/* Audihall Section */}
         <section className={`${styles.henry} min-h-screen flex flex-col items-center justify-center gap-12`} 
-                style={{ backgroundImage: `url(${miguelBackground})`}}
+                style={{ backgroundImage: `url(${miguelBackground})`,
+                                 backgroundAttachment: isSafari ? 'scroll' : 'fixed'}}
                 id='announcements'>
             <h1 className={`${styles.heading} text-white text-4xl`}>Announcements</h1>
             <EmblaCarousel slides={SLIDES} options={OPTIONS}/>

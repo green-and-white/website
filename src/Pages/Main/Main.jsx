@@ -7,7 +7,6 @@ import Countdown from "./sections/Countdown/page";
 import Footer from "./Footer.jsx";
 
 export default function Main() {
-  
   return (
     <main className = "snap-proximity">
       <Navbar/>

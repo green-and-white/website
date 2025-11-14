@@ -14,6 +14,7 @@ import bookletSticker from "@/assets/stickers/booklet.webp"
 
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useState, useEffect } from 'react';
+import { useBrowserDetection } from "@/hooks/useBrowserDetection";
 
 
 // <main className='relative min-h-screen'
@@ -25,8 +26,7 @@ import { useRef, useState, useEffect } from 'react';
 
 
 export default function Hero() {
-
-  const isSafari = (navigator.userAgent.indexOf("Safari") > -1 && navigator.userAgent.indexOf("Chrome") === -1)
+  const { isSafari } = useBrowserDetection();
   
   const container = useRef(null);
     const { scrollYProgress } = useScroll({ 

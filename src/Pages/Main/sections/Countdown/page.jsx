@@ -4,8 +4,11 @@ import Countdown from 'react-countdown'
 
 import skyBackground from "@/assets/home_page/sky.webp";
 
+import { useBrowserDetection } from '@/hooks/useBrowserDetection';
+
 export default function Countdownpage() {
     const targetTime = new Date('2025-11-05T00:00:00');
+    const { isSafari } = useBrowserDetection();
     const renderer = ({ days, hours, minutes, seconds }) => {
         return (
         <div className="text-center">
@@ -43,7 +46,8 @@ export default function Countdownpage() {
   return (
     <>
         {/*Sky Section*/}
-        <section className={styles.henry} style={{ backgroundImage: `url(${skyBackground})` }}
+        <section className={styles.henry} style={{ backgroundImage: `url(${skyBackground})`,
+                                                    backgroundAttachment: isSafari ? 'scroll' : 'fixed'}}
             id='countdown'>
             
             <div className="flex flex-col items-center gap-10 justify-center mt-12 sm:mt-20 md:mt-28 px-4">
