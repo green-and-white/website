@@ -7,7 +7,7 @@ import skyBackground from "@/assets/home_page/sky.webp";
 import { useBrowserDetection } from '@/hooks/useBrowserDetection';
 
 export default function Countdownpage() {
-    const targetTime = new Date('2025-11-05T00:00:00');
+    const targetTime = new Date('2025-11-29T00:00:00');
     const { isSafari } = useBrowserDetection();
     const renderer = ({ days, hours, minutes, seconds }) => {
         return (
