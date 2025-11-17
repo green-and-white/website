@@ -7,7 +7,7 @@ import skyBackground from "@/assets/home_page/sky.webp";
 import { useBrowserDetection } from '@/hooks/useBrowserDetection';
 
 export default function Countdownpage() {
-    const targetTime = new Date('2025-11-05T00:00:00');
+    const targetTime = new Date('2025-11-29T00:00:00');
     const { isSafari } = useBrowserDetection();
     const renderer = ({ days, hours, minutes, seconds }) => {
         return (
@@ -84,10 +84,18 @@ export default function Countdownpage() {
                 
                 {/* Row 3 */}
                 <div className='text-white font-helvetica font-light text-right sm:text-center text-sm sm:text-lg'>
-                  November 17 to 19
+                  November 17 to 22
                 </div>
                 <div className='text-white font-helvetica font-light text-left sm:text-center text-sm sm:text-lg'>
                   6F Henry Sy Sr. Hall
+                </div>
+
+                 {/* Row 4 */}
+                <div className='text-white font-helvetica font-light text-right sm:text-center text-sm sm:text-lg'>
+                  November 24 to 29
+                </div>
+                <div className='text-white font-helvetica font-light text-left sm:text-center text-sm sm:text-lg'>
+                  5F Br. Connon Hall
                 </div>
               </div>
             </div>
