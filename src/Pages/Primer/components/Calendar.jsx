@@ -18,7 +18,7 @@ export default function Calendar() {
           ...item, 
           content: (
             <>
-              Registration starts on this day until <span style={{ color: 'var(--color-retro-orange)' }}>Nov 19</span>!
+              Registration starts on this day until <span style={{ color: 'var(--color-retro-orange)' }}>Nov 29</span>!
             </>
           )
         };
@@ -93,7 +93,7 @@ export default function Calendar() {
       <div 
         className="absolute text-white text-center z-10 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[20px] leading-tight"
         style={{
-          top: '35%',
+          top: '37%',
           left: '21%',
           width: '58%', // Spans 3 cells (11-13)
           transform: 'translateY(-50%)',
