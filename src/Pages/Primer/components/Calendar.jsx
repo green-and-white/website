@@ -1,9 +1,9 @@
 import React from 'react'
 
 export default function Calendar() {
-  // Generate day numbers from 05 to 19 with custom content
-  const days = Array.from({ length: 15 }, (_, i) => {
-    const dayNum = i + 5;
+  // Generate day numbers from 05 to 29 with custom content
+  const days = Array.from({ length: 28 }, (_, i) => {
+    const dayNum = i + 2;
     return {
       day: dayNum.toString().padStart(2, '0'),
       content: null
@@ -22,13 +22,13 @@ export default function Calendar() {
             </>
           )
         };
-      case '19': 
+      case '29': 
         return {
-            ...item, 
+            ...item,
             content: (
-                <>
-                See you in the locations indicated!
-                </>
+              <>
+                See you in the locations indicated
+              </>
             )
         }
       // Add more cases for other days as needed
@@ -43,57 +43,57 @@ export default function Calendar() {
       {/* Bar spanning from day 05 to 08 (positions 0-3 in grid, first row) */}
 
       <div 
-        className="absolute bg-retro-lightblue font-helvetica text-bold italic text-center px-2 rounded-full text-white z-10 text-[8px] sm:text-[10px] md:text-[14px] lg:text-[16px]"
+        className="absolute bg-retro-lightblue font-helvetica text-bold italic text-center px-2 rounded-full text-white z-10 text-[8px] sm:text-[10px] md:text-[12px]"
         style={{
-          top: '30%',
-          left: '2%',
-          width: '77%', // Spans 4 cells out of 5 columns
-          transform: 'translateY(-50%)'
-        }}
-      >6F Henry Sy Sr. Hall</div>
-
-       {/* Bar spanning from day 05 to 08 (positions 0-3 in grid, first row) */}
-
-      <div 
-        className="absolute bg-retro-purple font-helvetica text-bold italic text-center px-2 rounded-full text-white z-10 text-[8px] sm:text-[10px] md:text-[14px] lg:text-[16px]"
-        style={{
-          top: '63%',
-          left: '2%',
-          width: '95%', // Spans 4 cells out of 5 columns
-          transform: 'translateY(-50%)'
-        }}
-      >Br. Andrew Gonzalez Hall Lobby</div>
-
-      <div 
-        className="absolute bg-retro-purple font-helvetica text-bold italic text-center px-2 rounded-full text-white z-10 h-6"
-        style={{
-          bottom: '-1%',
-          left: '2%',
-          width: '15%', 
-          transform: 'translateY(-50%)'
-        }}
-      ></div>
-
-      {/* Bar spanning from day 05 to 08 (positions 0-3 in grid, first row) */}
-
-      <div 
-        className="absolute bg-retro-pink font-helvetica text-bold italic text-center px-2 rounded-full text-white z-10 text-[8px] sm:text-[10px] md:text-[14px] lg:text-[16px]"
-        style={{
-          bottom: '-1%',
-          left: '42%',
+          top: '22.5%',
+          right: "2%",
           width: '54%', // Spans 4 cells out of 5 columns
           transform: 'translateY(-50%)'
         }}
       >6F Henry Sy Sr. Hall</div>
+
+       {/* Bar spanning from day 10 to 14 (positions 0-3 in grid, first row) */}
+
+      <div 
+        className="absolute bg-retro-purple font-helvetica text-bold italic text-center px-2 rounded-full text-white z-10 text-[8px] sm:text-[10px] md:text-[12px]"
+        style={{
+          top: '47.5%',
+          right: '2%',
+          width: '82%', // Spans 4 cells out of 5 columns
+          transform: 'translateY(-50%)'
+        }}
+      >Br. Andrew Gonzalez Hall Lobby</div>
+
+      {/* Bar spanning from day 17 to 122 (positions 0-3 in grid, first row) */}
+
+      <div 
+        className="absolute bg-retro-lightblue font-helvetica text-bold italic text-center px-2 rounded-full text-white z-10 text-[8px] sm:text-[10px] md:text-[12px]"
+        style={{
+          bottom: '25%',
+          right: '2%',
+          width: '82%', // Spans 4 cells out of 5 columns
+          transform: 'translateY(-50%)'
+        }}
+      >6F Henry Sy Sr. Hall</div>
+
+      {/* Bar spanning from day 24 to 29 (positions 0-3 in grid, first row) */}
+
+      <div 
+        className="absolute bg-retro-pink font-helvetica text-bold italic text-center px-2 rounded-full text-white z-10 text-[8px] sm:text-[10px] md:text-[12px]"
+        style={{
+          bottom: '0%',
+          right: '2%',
+          width: '82%', // Spans 4 cells out of 5 columns
+          transform: 'translateY(-50%)'
+        }}
+      >5F Br. Connon Hall</div>
      
-
       
-
       {/* Text spanning from day 11 to 13 (positions 6-8, second row) */}
       <div 
         className="absolute text-white text-center z-10 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[20px] leading-tight"
         style={{
-          top: '50%',
+          top: '35%',
           left: '21%',
           width: '58%', // Spans 3 cells (11-13)
           transform: 'translateY(-50%)',
@@ -107,16 +107,16 @@ export default function Calendar() {
         <div>Saturdays from 9AM to 12PM</div>
       </div>
       
-      <div className="grid grid-cols-5 grid-rows-3 w-full">
+      <div className="grid grid-cols-7 grid-rows-4 w-full">
         {calendarData.map((item, index) => (
           <div
             key={index}
-            className="border border-white p-2 sm:p-3 md:p-4 w-auto h-full  relative bg-transparent overflow-visible flex flex-row justify-center items-center"
+            className="border border-white p-2 sm:p-3 md:p-4 w-auto h-full relative bg-transparent overflow-visible flex flex-row justify-center items-center"
           >
             <span className={`text-xs sm:text-sm md:text-lg text-white absolute top-1 left-1 sm:top-2 sm:left-2 font-helvetica italic font-bold ${
-              item.day === '05' || item.day === '19' ? 'z-20' : ''
+              item.day === '05' || item.day === '29' ? 'z-2' : ''
             }`}>
-              {item.day === '05' || item.day === '19' ? (
+              {item.day === '05' || item.day === '29' ? (
                 <span className="relative inline-block">
                   <svg 
                     viewBox="0 0 100 100" 
@@ -130,14 +130,14 @@ export default function Calendar() {
                   >
                     <path d="M50 0 L61 25 L85 15 L75 39 L100 50 L75 61 L85 85 L61 75 L50 100 L39 75 L15 85 L25 61 L0 50 L25 39 L15 15 L39 25 Z" />
                   </svg>
-                  <span className="relative z-10">{item.day}</span>
+                  <span className="relative z-1">{item.day}</span>
                 </span>
               ) : (
                 item.day
               )}
             </span>
             {item.content && (
-              <div className="py-2 md:py-4 text-white text-center w-[140%] text-[12px] sm:text-[12px] md:text-[20px] -rotate-6 overflow-visible z-10"
+              <div className="py-2 md:py-4 text-white text-center w-[240%] sm:w-[140%] text-[12px] sm:text-[12px]  -rotate-6 overflow-visible z-100"
                   style={{
                     color: '#FFFFFF',
                     WebkitTextStrokeColor: '#000',
