@@ -75,12 +75,11 @@ const EmblaCarousel = (props) => {
           <div className="embla__container">
             {slides.map((slide, index) => (
               <div className="embla__slide" key={index}>
-                <div className='flex flex-col sm:flex-row items-stretch justify-center'>
-                      <img src={slide.img} alt={slide.title} className={`${styles.image} w-full sm:w-1/3 h-auto sm:h-full object-fill rounded-t-md sm:rounded-l-md sm:rounded-tr-none aspect-4/5`} />
-                      <div className={`${getSlideColor(index).bg} sm:w-1/2 flex flex-col flex-1 justify-center px-4 py-6 rounded-b-md sm:rounded-r-md sm:rounded-bl-none text-white text-center`}>
-                          <h2 className={`font-libre-caslon text-3xl`}>{slide.title}</h2>
-                          <br />
-                          <p className={`font-helvetica text-sm sm:text-base`}>{slide.desc}</p>
+                <div className='flex flex-col min-h-[550px] sm:min-h-[0px] h-[70vh] sm:max-h-[70vh] sm:h-full sm:flex-row items-stretch justify-center'>
+                      <img src={slide.img} alt={slide.title} className={`${styles.image} w-full h-4/7 sm:w-1/3 sm:h-full object-fit rounded-t-md sm:rounded-l-md sm:rounded-tr-none flex-shrink-0`} />
+                      <div className={`${getSlideColor(index).bg} sm:w-1/2 flex flex-col flex-1 justify-center px-6 gap-2 sm:px-4 py-6 rounded-b-md sm:rounded-r-md sm:rounded-bl-none text-white text-center overflow-y-auto`}>
+                          <h2 className={`font-libre-caslon text-xl md:text-2xl lg:text-3xl`}>{slide.title}</h2>
+                          <p className={`font-helvetica text-xs lg:text-base`}>{slide.desc}</p>
                           {slide.url && (
                             <div className="mt-4">
                               <a 
