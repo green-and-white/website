@@ -13,6 +13,8 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "@tailwindcss/vite": "^4.1.12",
     "@vercel/analytics": "^1.5.0",
     "css-doodle": "^0.44.0",
@@ -27,7 +29,8 @@
     "react-router-dom": "^7.9.2",
     "react-spring": "^10.0.3",
     "smoothscroll-polyfill": "^0.4.4",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.1.12",
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
