@@ -1,36 +1,13 @@
 import React from 'react'
 import RealisticWater from './RealisticWater'
+import Header from '@/assets/catalog/Header.webp'
 
 export default function page() {
   return (
     <div>
         {/* Header Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-950">
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-            <div className="absolute top-40 right-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-            <div className="absolute bottom-20 left-1/2 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '4s' }}></div>
-          </div>
-          
-          <div className="relative z-10 text-center px-8 max-w-5xl">
-            <h1 className="text-7xl md:text-9xl font-bold text-white mb-6 tracking-tight">
-              Publication
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400">
-                Catalogue
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              Dive into our collection of creative works and memories
-            </p>
-            <div className="flex gap-4 justify-center">
-              <button className="px-8 py-4 bg-yellow-400 text-black font-semibold rounded-full hover:bg-yellow-300 transition-all transform hover:scale-105">
-                Explore Now
-              </button>
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/20 hover:bg-white/20 transition-all">
-                Learn More
-              </button>
-            </div>
-          </div>
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+           <img src={Header} alt="hero bg" className="absolute inset-0 w-full h-full object-cover"/>
         </section>
 
         {/* Water Effect Section */}
