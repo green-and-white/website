@@ -1,13 +1,31 @@
 import FooterBgImg from "@/assets/catalog/Footer.webp"
 
+const style = {
+  color: 'white',
+  background: 'rgba(255, 255, 255, 0.05)',
+  borderRadius: '16px',
+  border: '0.5px solid rgba(255, 255, 255, 0.8)',
+  backdropFilter: 'blur(12px)',
+  WebkitBackdropFilter: 'blur(12px)',
+  padding: '2rem', 
+  zIndex: 10
+}; 
+
 const Footer = () => {
   return (
-    <section 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      
+      {/* Image background */}
       <img 
         src={FooterBgImg} alt="footer bg"
         className="absolute inset-0 w-full h-full object-cover"
       />
+
+      <div style={style}>
+        Lorem Ipsum 
+      </div>
     </section>
   );
 }
