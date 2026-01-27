@@ -100,7 +100,7 @@ const Footer = () => {
 
         {/* Explore */}
         <div 
-          className={`md:ml-12 flex flex-col gap-6 sm:pb-8 md:pb-2 md:border-b-0 sm:border-b-2 border-white items-center sm:items-start transition-all duration-700 ease-out ${
+          className={`md:ml-12 flex flex-col gap-6 sm:pb-8 md:pb-2 md:border-b-0 border-white items-center sm:items-start transition-all duration-700 ease-out ${
             isVisible ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0'
           }`}
           style={{ transitionDelay: '400ms' }}
