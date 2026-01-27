@@ -14,7 +14,6 @@ const glassStyle = {
   border: '0.5px solid rgba(255, 255, 255, 0.8)',
   backdropFilter: 'blur(12px)',
   WebkitBackdropFilter: 'blur(12px)',
-  padding: '2rem', 
   zIndex: 10
 }; 
 
@@ -31,36 +30,35 @@ const fontStyle = {
 const Footer = () => {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden font-semibold font-libre-caslon"
+      className="relative px-12 min-h-screen flex items-center justify-center overflow-hidden font-semibold font-libre-caslon"
     >
-      
       {/* Image background */}
       <img 
         src={FooterBgImg} alt="footer bg"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      <div style={glassStyle} className="grid grid-cols-3">
+      <div style={glassStyle} className="grid grid-cols-3 py-8 px-18">
         {/* Logo */}
-        <div className="flex flex-col gap-2 border-r-2 border-white">
+        <div className="flex flex-col gap-2 pr-4 border-r-2 border-white">
           <img 
             src={Logo}
             alt="G&W Logo"
-            className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40"
-          />
+            className="w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32"          />
           <p
-            style={fontStyle} 
+            style={fontStyle}
+            className="text-sm"
           >
             Green & White is the official yearbook publication of De La Salle University.
           </p> 
         </div>   
         
         {/* Explore */}
-        <div className="flex flex-col gap-6">
-          <h3 className="border-b-2 border-white pr-14 w-fit">Explore</h3> 
+        <div className="ml-12 flex flex-col gap-6 pb-2">
+          <h3 className="text-xl border-b-2 border-white pr-14 w-fit">Explore</h3> 
 
           {/* Navlinks */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 text-sm">
             {/* TODO: ADD LINKS */}
             <Link to="/">Homepage</Link> 
             <Link to="/">GW Links</Link> 
@@ -71,8 +69,8 @@ const Footer = () => {
         </div>
         
         {/* Contact Info */}
-        <div className="flex flex-col gap-6">
-          <h3 className="border-b-2 border-white pr-14 w-fit">Contact</h3> 
+        <div className="flex flex-col gap-6 pb-2">
+          <h3 className="text-xl border-b-2 border-white pr-14 w-fit">Contact</h3> 
 
           <div className="flex flex-col gap-4">
             <p>RM502 Br. Connon Hall, De La Salle University</p> 
