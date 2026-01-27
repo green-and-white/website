@@ -1,6 +1,7 @@
 import FooterBgImg from "@/assets/catalog/Footer.webp"
+import Logo from "@/assets/icons/White-Vertical.svg"
 
-const style = {
+const glassStyle = {
   color: 'white',
   background: 'rgba(255, 255, 255, 0.05)',
   borderRadius: '16px',
@@ -10,6 +11,16 @@ const style = {
   padding: '2rem', 
   zIndex: 10
 }; 
+
+// Retrieved from main css module
+const fontStyle = {
+  textShadow: `
+    0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 4px rgba(0, 0, 0, 0.5),
+    0px 4px 20px #000000
+  `
+};
 
 const Footer = () => {
   return (
@@ -23,8 +34,31 @@ const Footer = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      <div style={style}>
-        Lorem Ipsum 
+      <div style={glassStyle} className="grid grid-cols-3">
+        {/* Logo */}
+        <div className="flex flex-col gap-2">
+          <img 
+            src={Logo}
+            alt="G&W Logo"
+            className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40"
+          />
+          <p
+            className="font-libre-caslon" 
+            style={fontStyle} 
+          >
+            Green & White is the official yearbook publication of De La Salle University.
+          </p> 
+        </div>   
+        
+        {/* Explore */}
+        <div>
+          Explore
+        </div>
+        
+        {/* Contact Info */}
+        <div>
+          Contact
+        </div>
       </div>
     </section>
   );
