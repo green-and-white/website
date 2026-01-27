@@ -2,10 +2,12 @@ import React from 'react'
 import RealisticWater from './RealisticWater'
 import Header from './Header'
 import Footer from './Footer'
+import Navbar from './Navbar'
 
 export default function page() {
   return (
     <div>
+        <Navbar />
         {/* Header Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
            <Header />

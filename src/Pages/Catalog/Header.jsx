@@ -24,7 +24,7 @@ const fontStyle = {
 
 export default function Header() {
     return (
-        <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-12"
+        <section id="header" className="relative w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-12"
             style={{
                 backgroundImage: `url(${HeaderBg})`,
                 backgroundSize: 'cover',
