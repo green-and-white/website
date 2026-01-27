@@ -1,5 +1,6 @@
 import FooterBgImg from "@/assets/catalog/Footer.webp"
 import Logo from "@/assets/icons/White-Vertical.svg"
+import { Link } from "react-router-dom";
 
 const glassStyle = {
   color: 'white',
@@ -25,7 +26,7 @@ const fontStyle = {
 const Footer = () => {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden font-semibold font-libre-caslon"
     >
       
       {/* Image background */}
@@ -43,7 +44,6 @@ const Footer = () => {
             className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40"
           />
           <p
-            className="font-libre-caslon" 
             style={fontStyle} 
           >
             Green & White is the official yearbook publication of De La Salle University.
@@ -51,8 +51,18 @@ const Footer = () => {
         </div>   
         
         {/* Explore */}
-        <div>
-          Explore
+        <div className="flex flex-col gap-6">
+          <h3 className="border-b-2 border-white pr-14 w-fit">Explore</h3> 
+
+          {/* Navlinks */}
+          <div className="flex flex-col gap-4">
+            {/* TODO: ADD LINKS */}
+            <Link to="/">Homepage</Link> 
+            <Link to="/">GW Links</Link> 
+            <Link to="/">Pre-Register to the 2026 Yearbook</Link> 
+            <Link to="/">Apply to Green & White</Link> 
+          </div> 
+        
         </div>
         
         {/* Contact Info */}
