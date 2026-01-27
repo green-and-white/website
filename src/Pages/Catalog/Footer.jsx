@@ -36,7 +36,7 @@ const Footer = () => {
 
       <div style={glassStyle} className="grid grid-cols-3">
         {/* Logo */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 border-r-2 border-white">
           <img 
             src={Logo}
             alt="G&W Logo"
