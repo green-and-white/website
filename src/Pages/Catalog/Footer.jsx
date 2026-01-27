@@ -1,6 +1,11 @@
 import FooterBgImg from "@/assets/catalog/Footer.webp"
 import Logo from "@/assets/icons/White-Vertical.svg"
 import { Link } from "react-router-dom";
+import facebook from "@/assets/icons/facebook.svg"
+import instagram from "@/assets/icons/instagram.svg"
+import telegram from "@/assets/icons/telegram-white.png" // need white asset
+import tiktok from "@/assets/icons/tiktok.svg"
+import globe from "@/assets/icons/globe-white.svg"
 
 const glassStyle = {
   color: 'white',
@@ -66,9 +71,34 @@ const Footer = () => {
         </div>
         
         {/* Contact Info */}
-        <div>
-          Contact
-        </div>
+        <div className="flex flex-col gap-6">
+          <h3 className="border-b-2 border-white pr-14 w-fit">Contact</h3> 
+
+          <div className="flex flex-col gap-4">
+            <p>RM502 Br. Connon Hall, De La Salle University</p> 
+            <p>gw@dlsu.edu.ph</p> 
+          </div>
+       
+          {/* Socials */}
+          {/* Exported from Main page */}
+          <div className="mx-auto flex flex-row w-full gap-1.5 ">
+            <a href="https://greenandwhite.com.ph" target="_blank" rel="noopener noreferrer">
+              <img src={globe} alt="Website" className="h-5 w-5 p-[px]"/>
+            </a>
+            <a href="https://fb.com/gwyearbookdlsu" target="_blank" rel="noopener noreferrer">
+              <img src={facebook} alt="Facebook" className="h-5 w-5"/>
+            </a>
+            <a href="https://instagram.com/gwyearbookdlsu" target="_blank" rel="noopener noreferrer">
+              <img src={instagram} alt="Instagram" className="h-5 w-5"/>
+            </a>
+            <a href="https://t.me/gwyearbookdlsu" target="_blank" rel="noopener noreferrer">
+              <img src={telegram} alt="Telegram" className="h-5 w-5"/>
+            </a>
+            <a href="https://tiktok.com/@gwyearbookdlsu" target="_blank" rel="noopener noreferrer">
+              <img src={tiktok} alt="TikTok" className=" h-5 w-5 p-[px] rounded-2xl"/>
+            </a>
+          </div>
+       </div>
       </div>
     </section>
   );
