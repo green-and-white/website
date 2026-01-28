@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import whiteVertical from '@/assets/logos_updated/white-vertical.svg';
 import yearbook2026 from '@/assets/stickers/YEARBOOK_2026.webp';
 
-import styles from './home.module.css';
+import styles from '../Main/home.module.css';
 
 import { Link } from 'react-router-dom';
 
@@ -16,21 +16,26 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const headerHeight = window.innerHeight - window.innerHeight * 0.7;
       
-      // Hide navbar when scrolling up, show when scrolling down
-      // But only show if we've scrolled past 10px
-      if (currentScrollY < lastScrollY) {
-        // Scrolling up - hide navbar
-        setShowNavbar(false);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 10) {
-        // Scrolling down - show navbar
+      // Always show navbar in the header section (first screen)
+      if (currentScrollY < headerHeight) {
         setShowNavbar(true);
+      } else {
+        // Apply scroll-based behavior only after header
+        if (currentScrollY < lastScrollY) {
+          // Scrolling up - show navbar
+          setShowNavbar(true);
+        } else if (currentScrollY > lastScrollY) {
+          // Scrolling down - hide navbar
+          setShowNavbar(false);
+        }
       }
       
       setLastScrollY(currentScrollY);
