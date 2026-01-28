@@ -1,14 +1,16 @@
 import React from 'react'
 import RealisticWater from './RealisticWater'
-import Header from '@/assets/catalog/Header.webp'
+import Header from './Header'
 import Footer from './Footer'
+import Navbar from './Navbar'
 
 export default function page() {
   return (
     <div>
+        <Navbar />
         {/* Header Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-           <img src={Header} alt="hero bg" className="absolute inset-0 w-full h-full object-cover"/>
+           <Header />
         </section>
 
         {/* Water Effect Section */}
