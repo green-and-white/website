@@ -4,7 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Navbar from './Navbar'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
-import image1 from '../../assets/catalog/1.png'
+import image1 from '../../assets/catalog/1.jpg'
 import image2 from '../../assets/catalog/2.png'
 import image3 from '../../assets/catalog/3.png'
 import image4 from '../../assets/catalog/4.png'
@@ -50,6 +50,7 @@ export default function page() {
         </section>
 
         {/* Pub Catalogue with Interactive Water Background */}
+        
         <section className="relative min-h-screen w-full overflow-hidden">
           {/* Interactive Water Background Layer - absolute positioning within this section only */}
           <div className="absolute inset-0 z-0">
