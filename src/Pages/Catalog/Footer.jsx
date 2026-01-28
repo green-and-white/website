@@ -7,6 +7,8 @@ import instagram from "@/assets/icons/instagram.svg"
 import telegram from "@/assets/icons/telegram-white.png" // need white asset
 import tiktok from "@/assets/icons/tiktok.svg"
 import globe from "@/assets/icons/globe-white.svg"
+import styles from '../Main/home.module.css';
+import { motion } from "framer-motion"
 
 const glassStyle = {
   color: 'white',
@@ -28,43 +30,26 @@ const fontStyle = {
   `
 };
 
-const Footer = () => {
+const Footer = ({ footerProgress = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const footerRef = useRef(null);
 
   useEffect(() => {
-    
-  // Docs for this if interested:
-  // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
-  // Inspired from YearBookActivies section
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px' 
-      }
-    );
-
-    if (footerRef.current) {
-      observer.observe(footerRef.current);
+    // Trigger animations only when footer is fully visible (footerProgress === 1)
+    if (footerProgress >= 0.95) {
+      // Small delay after reaching full opacity
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+      }, 200);
+      return () => clearTimeout(timer);
     }
-
-    return () => {
-      if (footerRef.current) {
-        observer.unobserve(footerRef.current);
-      }
-    };
-  }, []);
+  }, [footerProgress]);
 
   return (
     <section
       ref={footerRef}
-      className="relative px-6 md:px-12 min-h-screen flex items-center justify-center overflow-hidden font-semibold font-libre-caslon"
-    >
+      className="relative px-6 md:px-12 min-h-fit md:min-h-screen items-center overflow-hidden font-semibold font-libre-caslon flex flex-col justify-between py-12 md:py-32 lg:py-40 gap-8 md:gap-0"
+    > 
       {/* Image background */}
       <img 
         src={FooterBgImg} 
@@ -72,6 +57,19 @@ const Footer = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
+      {/* Literary Write Up */}
+      <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            className={`${styles.glassCard} py-4 px-4 sm:py-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 rounded-lg max-w-4xl text-white bg-white bg-opacity-20 backdrop-blur-md shadow-lg`}
+        >
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-center">
+          In each passing moment, memories of you wandering in empty halls and sitting at quiet tables resurface. May these memories remind you not of absence, but of growth. Behind the veil of uncertainty and change stands an alma mater that witnessed every becoming, carrying your growth and the echoes of the stories that once filled these walls.
+            </p>
+        </motion.div>
+
+      {/* Footer */}
       <div 
         style={glassStyle} 
         className={`grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 py-8 px-6 md:px-18 w-full max-w-7xl text-center sm:text-left transition-all duration-700 ease-out ${

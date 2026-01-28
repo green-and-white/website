@@ -92,7 +92,7 @@ export default function page() {
 
        
 
-        {/* Regular scrollable catalogue section */}
+        {/* Regular scrollable catalog section */}
         <section 
           className="relative min-h-screen w-full transition-all duration-700"
           style={{
@@ -104,7 +104,6 @@ export default function page() {
           <div className="relative z-10 container mx-auto py-20">
             <motion.h2 className="text-center text-4xl font-bold text-yellow-400 mb-10 font-libre-caslon" 
                       style={{ pointerEvents: 'none' }}>
-              Green & White 2026 Layout Catalogue
             </motion.h2>
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 px-4 max-w-5xl mx-auto">
@@ -133,7 +132,7 @@ export default function page() {
             transform: `scale(${0.95 + footerProgress * 0.05}) translateY(${-50 + footerProgress * 50}px)`
           }}
         >
-          <Footer />
+          <Footer footerProgress={footerProgress} />
         </div>
 
         {/* Pub Dialog Modal */}
