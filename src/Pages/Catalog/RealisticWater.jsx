@@ -129,15 +129,21 @@ const RealisticWater = () => {
     const mesh = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), physicsMaterial);
     scene.add(mesh);
 
-    // 5. Interaction
+    // 5. Interaction - Use window events to capture mouse even when over other elements
     const mouse = new THREE.Vector4();
     const onMouseMove = (e) => {
       const rect = container.getBoundingClientRect();
-      mouse.x = (e.clientX - rect.left) * 0.75; // Scale mouse coords to render resolution
-      mouse.y = (rect.height - (e.clientY - rect.top)) * 0.75;
-      mouse.z = 1.0; // Mouse down simulation
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      
+      // Always update mouse position if within bounds (removed the conditional)
+      if (mouseX >= 0 && mouseX <= rect.width && mouseY >= 0 && mouseY <= rect.height) {
+        mouse.x = mouseX * 0.75; // Scale mouse coords to render resolution
+        mouse.y = (rect.height - mouseY) * 0.75;
+        mouse.z = 1.0; // Mouse interaction active
+      }
     };
-    container.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mousemove', onMouseMove);
     container.addEventListener('mousedown', () => mouse.z = 1.0);
     container.addEventListener('mouseup', () => mouse.z = 0.0);
 
@@ -172,12 +178,16 @@ const RealisticWater = () => {
     animate();
 
     return () => {
+      window.removeEventListener('mousemove', onMouseMove);
       renderer.dispose();
       container.innerHTML = '';
     };
   }, []);
 
-  return <div ref={containerRef} className="w-full h-full absolute inset-0 bg-black" style={{ willChange: 'transform' }} />;
+  return <div ref={containerRef} className="w-full h-full absolute inset-0 bg-blue-900" 
+              style={{ willChange: 'transform', 
+                        backgroundImage: 'linear-gradient(to bottom, #051937, #072140, #0a2a49, #0d3352, #113c5b)'
+              }} />;
 };
 
 export default RealisticWater;
