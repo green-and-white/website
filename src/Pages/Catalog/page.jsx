@@ -10,6 +10,7 @@ import image3 from '../../assets/catalog/3.png'
 import image4 from '../../assets/catalog/4.png'
 import image5 from '../../assets/catalog/5.png'
 import image6 from '../../assets/catalog/6.png'
+import { motion, useScroll, useTransform } from "framer-motion"
 
 const pubsData = [
   { image: image1 },
@@ -23,15 +24,25 @@ const pubsData = [
 export default function page() {
   const [selectedPub, setSelectedPub] = useState(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [footerProgress, setFooterProgress] = useState(0);
 
   React.useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollableHeight = documentHeight - windowHeight;
       
       // Header fade transition (first 2 screens)
       const progress = Math.min(scrollPosition / (windowHeight * 0.8), 1);
       setScrollProgress(progress);
+      
+      // Footer sink transition - only when near the end
+      // Start at 80% of total scroll, complete at end
+      const footerTrigger = scrollableHeight * 0.8;
+      const footerRange = scrollableHeight - footerTrigger;
+      const footerProg = footerRange > 0 ? Math.max(0, Math.min((scrollPosition - footerTrigger) / footerRange, 1)) : 0;
+      setFooterProgress(footerProg);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -83,16 +94,18 @@ export default function page() {
 
         {/* Regular scrollable catalogue section */}
         <section 
-          className="relative h-[200vh] w-full transition-opacity duration-500"
+          className="relative min-h-screen w-full transition-all duration-700"
           style={{
             opacity: scrollProgress >= 0.85 ? (scrollProgress - 0.85) / 0.15 : 0,
-            pointerEvents: scrollProgress >= 0.9 ? 'auto' : 'none'
+            transform: `scale(${1 - footerProgress * 0.15}) translateY(${footerProgress * 100}px)`,
+            pointerEvents: scrollProgress >= 0.9 && footerProgress < 0.7 ? 'auto' : 'none'
           }}
         >
           <div className="relative z-10 container mx-auto py-20">
-            <h2 className="text-center text-4xl font-bold text-yellow-400 mb-10" style={{ pointerEvents: 'none' }}>
+            <motion.h2 className="text-center text-4xl font-bold text-yellow-400 mb-10 font-libre-caslon" 
+                      style={{ pointerEvents: 'none' }}>
               Green & White 2026 Layout Catalogue
-            </h2>
+            </motion.h2>
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-8 px-4 max-w-5xl mx-auto">
               {pubsData.map((pub, i) => (
@@ -113,7 +126,13 @@ export default function page() {
         </section>
 
         {/* Footer Section */}
-        <div className="relative z-20">
+        <div 
+          className="relative z-20 transition-all duration-700"
+          style={{
+            opacity: footerProgress,
+            transform: `scale(${0.95 + footerProgress * 0.05}) translateY(${-50 + footerProgress * 50}px)`
+          }}
+        >
           <Footer />
         </div>
 
