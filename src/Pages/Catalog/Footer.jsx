@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import FooterBgImg from "@/assets/catalog/Footer.webp"
 import Logo from "@/assets/icons/White-Vertical.svg"
 import { Link } from "react-router-dom";
-import facebook from "@/assets/icons/facebook.svg"
-import instagram from "@/assets/icons/instagram.svg"
-import telegram from "@/assets/icons/telegram-white.png" // need white asset
+import facebook from "@/assets/icons/facebook-black.svg"
+import instagram from "@/assets/icons/instagram-black.svg"
+import telegram from "@/assets/icons/telegram.svg"
 import tiktok from "@/assets/icons/tiktok.svg"
-import globe from "@/assets/icons/globe-white.svg"
+import globe from "@/assets/icons/globe.svg"
 import styles from '../Main/home.module.css';
 import { motion } from "framer-motion"
 
@@ -48,7 +48,7 @@ const Footer = ({ footerProgress = 0 }) => {
   return (
     <section
       ref={footerRef}
-      className="relative px-6 md:px-12 min-h-fit md:min-h-screen items-center overflow-hidden font-semibold font-libre-caslon flex flex-col justify-between py-12 md:py-32 lg:py-40 gap-8 md:gap-0"
+      className="relative px-6 md:px-12 min-h-screen md:min-h-screen items-center overflow-hidden font-semibold font-libre-caslon flex flex-col justify-center py-12 md:py-32 lg:py-40 gap-8 md:gap-12"
     > 
       {/* Image background */}
       <img 
@@ -72,13 +72,13 @@ const Footer = ({ footerProgress = 0 }) => {
       {/* Footer */}
       <div 
         style={glassStyle} 
-        className={`grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 py-8 px-6 md:px-18 w-full max-w-7xl text-center sm:text-left transition-all duration-700 ease-out ${
+        className={`grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-0 py-4 px-4 md:py-8 md:px-18 w-full max-w-7xl text-left transition-all duration-700 ease-out ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
         {/* Logo */}
         <div 
-          className={`flex flex-col items-center sm:items-start gap-2 md:pr-4 md:border-r-2 border-white transition-all duration-700 ease-out ${
+          className={`col-span-2 md:col-span-1 flex flex-col items-start gap-1 md:gap-2 md:pr-4 md:border-r-2 border-white transition-all duration-700 ease-out ${
             isVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
           }`}
           style={{ transitionDelay: '200ms' }}
@@ -86,11 +86,11 @@ const Footer = ({ footerProgress = 0 }) => {
           <img 
             src={Logo}
             alt="G&W Logo"
-            className="w-26 h-26 md:w-28 md:h-28 lg:w-32 lg:h-32 transition-transform duration-500 hover:scale-110"
+            className="w-16 h-16 md:w-28 md:h-28 lg:w-32 lg:h-32 transition-transform duration-500 hover:scale-110"
           />
           <p
             style={fontStyle}
-            className="text-xs px-4 sm:text-sm sm:px-0"
+            className="text-[10px] px-2 sm:text-xs md:text-sm sm:px-0"
           >
             Green & White is the official yearbook publication of De La Salle University.
           </p> 
@@ -98,14 +98,14 @@ const Footer = ({ footerProgress = 0 }) => {
 
         {/* Explore */}
         <div 
-          className={`md:ml-12 flex flex-col gap-6 sm:pb-8 md:pb-2 md:border-b-0 border-white items-center sm:items-start transition-all duration-700 ease-out ${
+          className={`md:ml-12 flex flex-col gap-2 md:gap-6 sm:pb-8 md:pb-2 md:border-b-0 border-white items-start transition-all duration-700 ease-out ${
             isVisible ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0'
           }`}
           style={{ transitionDelay: '400ms' }}
         >
-          <h3 style={fontStyle} className="text-xl border-b-2 border-white pb-1 sm:pb-0 px-8 sm:px-0 sm:pr-14 w-fit">Explore</h3> 
+          <h3 style={fontStyle} className="text-sm md:text-xl border-b-2 border-white pb-1 sm:pb-0 w-fit">Explore</h3> 
           {/* Navlinks */}
-          <div className="flex flex-col gap-4 text-sm underline sm:no-underline">
+          <div className="flex flex-col gap-1.5 md:gap-4 text-[10px] md:text-sm underline sm:no-underline">
             <Link 
               to="/" 
               className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
@@ -135,26 +135,25 @@ const Footer = ({ footerProgress = 0 }) => {
 
         {/* Contact Info */}
         <div 
-          className={`md:ml-5 lg:ml-0 flex flex-col gap-6 pb-2 items-center sm:items-start transition-all duration-700 ease-out ${
+          className={`md:ml-5 lg:ml-0 flex flex-col gap-2 md:gap-6 pb-2 items-start transition-all duration-700 ease-out ${
             isVisible ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0'
           }`}
           style={{ transitionDelay: '600ms' }}
         >
-          <h3 style={fontStyle}  className="text-xl border-b-2 border-white pb-1 sm:pb-0 px-8 sm:px-0 sm:pr-14 w-fit">Contact</h3> 
-          <div className="flex flex-col gap-4 text-sm">
-            <p>RM502 Br. Connon Hall, De La Salle University</p> 
-            <p className="underline">gw@dlsu.edu.ph</p> 
+          <h3 style={fontStyle}  className="text-sm md:text-xl border-b-2 border-white pb-1 sm:pb-0 w-fit">Website by:</h3> 
+          <div className="flex flex-col gap-1.5 md:gap-4 text-[10px] md:text-sm">
+            <p><strong>Johan Marlo Cabili, Alvin Sean Cua, Carl Linus Pauling, and Maggy de Guzman</strong></p>
           </div>
 
           {/* Socials */}
-          <div className="flex flex-row gap-3 md:gap-1.5">
+          <div className="flex flex-row gap-2.5 md:gap-3">
             <a 
               href="https://greenandwhite.com.ph" 
               target="_blank" 
               rel="noopener noreferrer"
               className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
             >
-              <img src={globe} alt="Website" className="h-5 w-5 p-[px]"/>
+              <img src={globe} alt="Website" className="h-6 w-6 p-[px]" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
             <a 
               href="https://fb.com/gwyearbookdlsu" 
@@ -162,7 +161,7 @@ const Footer = ({ footerProgress = 0 }) => {
               rel="noopener noreferrer"
               className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
             >
-              <img src={facebook} alt="Facebook" className="h-5 w-5"/>
+              <img src={facebook} alt="Facebook" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
             <a 
               href="https://instagram.com/gwyearbookdlsu" 
@@ -170,7 +169,7 @@ const Footer = ({ footerProgress = 0 }) => {
               rel="noopener noreferrer"
               className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
             >
-              <img src={instagram} alt="Instagram" className="h-5 w-5"/>
+              <img src={instagram} alt="Instagram" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
             <a 
               href="https://t.me/gwyearbookdlsu" 
@@ -178,15 +177,7 @@ const Footer = ({ footerProgress = 0 }) => {
               rel="noopener noreferrer"
               className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
             >
-              <img src={telegram} alt="Telegram" className="h-5 w-5"/>
-            </a>
-            <a 
-              href="https://tiktok.com/@gwyearbookdlsu" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
-            >
-              <img src={tiktok} alt="TikTok" className="h-5 w-5 p-[px] rounded-2xl"/>
+              <img src={telegram} alt="Telegram" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
           </div>
         </div>

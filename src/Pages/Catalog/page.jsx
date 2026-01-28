@@ -101,16 +101,17 @@ export default function page() {
             pointerEvents: scrollProgress >= 0.9 && footerProgress < 0.7 ? 'auto' : 'none'
           }}
         >
-          <div className="relative z-10 container mx-auto py-20">
-            <motion.h2 className="text-center text-4xl font-bold text-yellow-400 mb-10 font-libre-caslon" 
+          <div className="relative z-10 container mx-auto py-20 px-4">
+            <motion.h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-400 mb-8 md:mb-10 font-libre-caslon" 
                       style={{ pointerEvents: 'none' }}>
+
             </motion.h2>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 px-4 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
               {pubsData.map((pub, i) => (
                 <div 
                   key={pub.id} 
-                  className="w-[250px] h-[325px] mx-auto bg-white opacity-70 hover:opacity-100 rounded-lg border border-white/10 transition-all duration-300 hover:scale-105 cursor-pointer shadow-lg overflow-hidden"
+                  className="w-full max-w-[250px] h-[325px] mx-auto bg-white opacity-70 hover:opacity-100 rounded-lg border border-white/10 transition-all duration-300 hover:scale-105 cursor-pointer shadow-lg overflow-hidden"
                   style={{ pointerEvents: 'auto' }}
                   onClick={() => openPubDialog(i)}
                 >
@@ -145,13 +146,6 @@ export default function page() {
               className="relative w-[90vw] max-w-4xl h-[80vh] animate-zoomIn"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close Button */}
-              <button
-                onClick={closePubDialog}
-                className="absolute top-4 right-4 z-10 w-10 h-10 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
-              >
-                <X size={20} />
-              </button>
 
               {/* Navigation Buttons */}
               <button
