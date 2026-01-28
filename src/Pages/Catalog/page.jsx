@@ -22,6 +22,21 @@ const pubsData = [
 
 export default function page() {
   const [selectedPub, setSelectedPub] = useState(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      
+      // Header fade transition (first 2 screens)
+      const progress = Math.min(scrollPosition / (windowHeight * 0.8), 1);
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const openPubDialog = (index) => {
     setSelectedPub(index);
@@ -42,24 +57,39 @@ export default function page() {
   };
 
   return (
-    <div>
+    <div className="relative">
+        {/* Water Background - Behind everything */}
+        <div className="fixed inset-0 z-0">
+          <RealisticWater />
+        </div>
+
         <Navbar />
-        {/* Header Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-           <Header />
-        </section>
-
-        {/* Pub Catalogue with Interactive Water Background */}
         
-        <section className="relative min-h-screen w-full overflow-hidden">
-          {/* Interactive Water Background Layer - absolute positioning within this section only */}
-          <div className="absolute inset-0 z-0">
-            <RealisticWater />
-          </div>
+        {/* Header Section - Fixed, fades out */}
+        <div 
+          className="fixed inset-0 z-10 transition-opacity duration-300"
+          style={{ 
+            opacity: 1 - scrollProgress,
+            pointerEvents: scrollProgress > 0.5 ? 'none' : 'auto'
+          }}
+        >
+          <Header />
+        </div>
 
-        
-          {/* Pub Catalogue Content Layer (On Top) */}
-          <div className="relative min-h-screen z-10 container mx-auto py-20">
+        {/* Spacer for scroll */}
+        <div className="h-[100vh]"></div>
+
+       
+
+        {/* Regular scrollable catalogue section */}
+        <section 
+          className="relative h-[200vh] w-full transition-opacity duration-500"
+          style={{
+            opacity: scrollProgress >= 0.85 ? (scrollProgress - 0.85) / 0.15 : 0,
+            pointerEvents: scrollProgress >= 0.9 ? 'auto' : 'none'
+          }}
+        >
+          <div className="relative z-10 container mx-auto py-20">
             <h2 className="text-center text-4xl font-bold text-yellow-400 mb-10" style={{ pointerEvents: 'none' }}>
               Green & White 2026 Layout Catalogue
             </h2>
@@ -81,6 +111,11 @@ export default function page() {
             </div>
           </div>
         </section>
+
+        {/* Footer Section */}
+        <div className="relative z-20">
+          <Footer />
+        </div>
 
         {/* Pub Dialog Modal */}
         {selectedPub !== null && (
@@ -125,9 +160,6 @@ export default function page() {
             </div>
           </div>
         )}
-
-        {/* Footer Section */}
-        <Footer />
 
         <style jsx>{`
           @keyframes fadeIn {

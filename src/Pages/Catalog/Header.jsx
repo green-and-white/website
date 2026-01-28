@@ -1,18 +1,36 @@
 import HeaderBg from '@/assets/catalog/Header.webp'
 import styles from '../Main/home.module.css'
-import { motion } from "framer-motion"
-
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from 'react'
 
 export default function Header() {
+    const sectionRef = useRef(null)
+    
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start start", "end start"]
+    })
+    
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8])
+    const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0.3, 0])
+    
     return (
-        <section id="header" className="relative w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-12"
-            style={{
-                backgroundImage: `url(${HeaderBg})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-            }}
+        <motion.section 
+            ref={sectionRef}
+            id="header" 
+            className="relative w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 overflow-hidden"
+            style={{ opacity }}
         >
+            <motion.div
+                className="absolute inset-0 -z-10"
+                style={{
+                    backgroundImage: `url(${HeaderBg})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    scale
+                }}
+            />
         <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,6 +52,6 @@ export default function Header() {
                 their place in time through the yearbook.
             </p>
         </motion.div>
-        </section>
+        </motion.section>
     )
 }
