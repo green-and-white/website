@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import FooterBgImg from "@/assets/catalog/Footer.webp"
 import Logo from "@/assets/icons/White-Vertical.svg"
+import footerLogo from "@/assets/icons/white-horizontal.svg"
 import { Link } from "react-router-dom";
 import facebook from "@/assets/icons/facebook-black.svg"
 import instagram from "@/assets/icons/instagram-black.svg"
@@ -48,7 +49,7 @@ const Footer = ({ footerProgress = 0 }) => {
   return (
     <section
       ref={footerRef}
-      className="relative px-6 md:px-12 min-h-screen md:min-h-screen items-center overflow-hidden font-semibold font-libre-caslon flex flex-col justify-center py-12 md:py-32 lg:py-40 gap-8 md:gap-12"
+      className="relative px-6 md:px-12 min-h-screen items-center font-helvetica flex flex-col justify-center md:justify-start py-12 md:py-32 lg:py-40 gap-8 md:gap-12 text-[#FEC530]"
     > 
       {/* Image background */}
       <img 
@@ -58,16 +59,6 @@ const Footer = ({ footerProgress = 0 }) => {
       />
 
       {/* Literary Write Up */}
-      <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-            className={`${styles.glassCard} py-4 px-4 sm:py-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 rounded-lg max-w-4xl text-white bg-white bg-opacity-20 backdrop-blur-md shadow-lg`}
-        >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-center">
-          In each passing moment, memories of you wandering in empty halls and sitting at quiet tables resurface. May these memories remind you not of absence, but of growth. Behind the veil of uncertainty and change stands an alma mater that witnessed every becoming, carrying your growth and the echoes of the stories that once filled these walls.
-            </p>
-        </motion.div>
 
       {/* Footer */}
       <div 
@@ -90,7 +81,7 @@ const Footer = ({ footerProgress = 0 }) => {
           />
           <p
             style={fontStyle}
-            className="text-[10px] px-2 sm:text-xs md:text-sm sm:px-0"
+            className="text-[10px] px-2 text-base md:text-lg sm:px-0"
           >
             Green & White is the official yearbook publication of De La Salle University.
           </p> 
@@ -142,7 +133,7 @@ const Footer = ({ footerProgress = 0 }) => {
         >
           <h3 style={fontStyle}  className="text-sm md:text-xl border-b-2 border-white pb-1 sm:pb-0 w-fit">Website by:</h3> 
           <div className="flex flex-col gap-1.5 md:gap-4 text-[10px] md:text-sm">
-            <p><strong>Johan Marlo Cabili, Alvin Sean Cua, Carl Linus Pauling, and Maggy de Guzman</strong></p>
+            <p><strong>Johan Marlo Cabili, Alvin Sean Cua, Carl Linus Pauling, Maggy de Guzman, and Mica Santos</strong></p>
           </div>
 
           {/* Socials */}
@@ -151,7 +142,7 @@ const Footer = ({ footerProgress = 0 }) => {
               href="https://greenandwhite.com.ph" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
+              className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1 bg-white/30 p-2 rounded"
             >
               <img src={globe} alt="Website" className="h-6 w-6 p-[px]" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
@@ -159,7 +150,7 @@ const Footer = ({ footerProgress = 0 }) => {
               href="https://fb.com/gwyearbookdlsu" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
+              className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1 bg-white/30 p-2 rounded"
             >
               <img src={facebook} alt="Facebook" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
@@ -167,7 +158,7 @@ const Footer = ({ footerProgress = 0 }) => {
               href="https://instagram.com/gwyearbookdlsu" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
+              className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1 bg-white/30 p-2 rounded"
             >
               <img src={instagram} alt="Instagram" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
@@ -175,12 +166,21 @@ const Footer = ({ footerProgress = 0 }) => {
               href="https://t.me/gwyearbookdlsu" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1"
+              className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1 bg-white/30 p-2 rounded"
             >
               <img src={telegram} alt="Telegram" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
           </div>
         </div>
+      </div>
+
+      {/* White rectangle at bottom of screen */}
+      <div className="absolute bottom-0 left-0 right-0 w-full h-32 bg-white/40 flex items-center justify-center">
+        <img 
+          src={footerLogo}
+          alt="G&W Logo"
+          className="w-64 transition-opacity duration-300"
+        />
       </div>
     </section>
   );

@@ -107,12 +107,15 @@ export default function page() {
 
             </motion.h2>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
               {pubsData.map((pub, i) => (
                 <div 
                   key={pub.id} 
-                  className="w-full max-w-[250px] h-[325px] mx-auto bg-white opacity-70 hover:opacity-100 rounded-lg border border-white/10 transition-all duration-300 hover:scale-105 cursor-pointer shadow-lg overflow-hidden"
-                  style={{ pointerEvents: 'auto' }}
+                  className="w-full max-w-[250px] h-[325px] mx-auto bg-white opacity-70 hover:opacity-100 rounded-lg border-4 border-white/10 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden"
+                  style={{ 
+                    pointerEvents: 'auto',
+                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.7))'
+                  }}
                   onClick={() => openPubDialog(i)}
                 >
                   <img 

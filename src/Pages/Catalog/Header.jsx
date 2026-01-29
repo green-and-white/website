@@ -35,18 +35,27 @@ export default function Header() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`mb-15 z-20 font-extrabold ${styles.CTA} text-[#EEDB49] font-libre-caslon mb-8 text-center`}
+            className={`z-20 font-extrabold ${styles.CTA} text-[#EEDB49] font-libre-caslon mb-8 text-center`}
         >
-            Layout Catalog
+            Visual Archive
         </motion.h1>
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className={`mb-10 z-20 max-w-3xl text-center text-white font-helvetica text-sm sm:text-base md:text-lg lg:text-xl `}
+        >
+              This catalog showcases works inspired by the design of Yearbook 2026. It reflects the places and hallmarks of student life that were ever-familiar sights during your time in the University.
+        </motion.div>
         <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className={`${styles.glassCard} py-8 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 rounded-lg max-w-4xl text-white bg-white bg-opacity-20 backdrop-blur-md shadow-lg`}
+            className={`py-8 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 rounded-lg max-w-4xl text-white bg-opacity-20 shadow-lg font-helvetica`}
         >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-center mt-2">
-                The catalog is a reflection of works that reflect the design of Yearbook 2026. It mirrors the places that were an ever-familiar sight of your time in the university. Each decision is an accumulation that lets you arrive in the now.
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-center mt-2 backdrop-blur-lg rounded-lg p-8">
+               Memories of wandering empty halls resurface in moments of solitude, where absence is nothing but a reminder of the space you once echoed with life.
+               The alma mater that witnessed your every becoming has transformed into a home, shaped by the memories you made between its halls.
             </p>
         </motion.div>
         </motion.section>

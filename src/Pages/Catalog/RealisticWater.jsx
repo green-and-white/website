@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import pubs from "../../assets/catalog/pubs.webp";
 
 const RealisticWater = () => {
   const containerRef = useRef();
@@ -186,7 +187,9 @@ const RealisticWater = () => {
 
   return <div ref={containerRef} className="w-full h-full absolute inset-0 bg-blue-900" 
               style={{ willChange: 'transform', 
-                        backgroundImage: 'linear-gradient(to bottom, #051937, #072140, #0a2a49, #0d3352, #113c5b)'
+                        backgroundImage: `url(${pubs})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
               }} />;
 };
 
