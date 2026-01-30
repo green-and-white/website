@@ -51,24 +51,40 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full transition-transform duration-300 z-50 px-4 sm:px-6 md:px-8
-        ${showNavbar ? "translate-y-4" : "-translate-y-full"}`}
+        ${showNavbar ? "translate-y-12" : "-translate-y-full"}`}
     >
       {/* Desktop Navigation */}
-      <div className={`hidden md:flex max-w-[1080px] mx-auto py-2 px-8 items-center justify-center ${styles.glassCard} rounded-full`}>
+      <div className={`hidden md:flex max-w-[1280px] mx-auto py-4 px-8 items-center justify-between ${styles.glassCard} rounded-full`}>
         {/* Left: Logo and Sticker */}
         <div className="flex items-center gap-4 ">
-          <img src={whiteVertical} alt="Logo" className="h-10" onClick={() => scrollTo(0, 0)} />
-          <img src={yearbook2026} alt="Yearbook 2026" className="h-12 pb-2"/>
+          <img src={yearbook2026} alt="Yearbook 2026" className="h-12 py-0.5"/>
+
+           {/* Beside : Pre-register Link */}
+          <div className="flex">
+            <a
+              className="text-[#EED849] font-helvetica font-bold text-xl cursor-pointer transition-colors duration-300 hover:text-gray-300"
+              href="https://forms.gle/xNBJWFrup67DRsjP8"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                WebkitTextStrokeColor: '#000',
+                WebkitTextStrokeWidth: '1px',
+                paintOrder: 'stroke fill'
+              }}
+            >
+              Pre-register for 2026
+            </a>
+          </div>
         </div>
 
         {/* Center: Nav Links */}
-        <div className="flex gap-8 flex-1 justify-center">
+        <div className="flex gap-8 flex-1 justify-end">
           {navLinks.map((link, index) => (
             link.type === 'route' ? (
             <Link
                 key={index}
                 to={link.href}
-                className="text-white font-helvetica font-bold text-base cursor-pointer transition-colors duration-300 hover:text-gray-300"
+                className="text-white font-helvetica text-xl cursor-pointer transition-colors duration-300 hover:text-gray-300"
             >
                 {link.name}
             </Link>
@@ -76,29 +92,12 @@ const Navbar = () => {
             <a
                 key={index}
                 href={link.href}
-                className="text-white font-helvetica font-bold text-base cursor-pointer transition-colors duration-300 hover:text-gray-300"
+                className="text-white font-helvetica text-xl cursor-pointer transition-colors duration-300 hover:text-gray-300"
             >
                 {link.name}
             </a>
             )
         ))}
-        </div>
-
-        {/* Right: Pre-register Link */}
-        <div className="flex justify-end">
-          <a
-            className="text-[#EED849] font-helvetica font-bold text-base cursor-pointer transition-colors duration-300 hover:text-gray-300"
-            href="https://forms.gle/xNBJWFrup67DRsjP8"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              WebkitTextStrokeColor: '#000',
-              WebkitTextStrokeWidth: '2px',
-              paintOrder: 'stroke fill'
-            }}
-          >
-            Pre-register for 2026
-          </a>
         </div>
       </div>
 
@@ -107,7 +106,6 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo and Sticker */}
           <div className="flex items-center gap-2">
-            <img src={whiteVertical} alt="Logo" className="h-10" />
             <img src={yearbook2026} alt="Yearbook 2026" className="h-10" />
           </div>
 
