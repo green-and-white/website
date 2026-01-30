@@ -5,22 +5,20 @@ import Header from './Header'
 import Footer from './Footer'
 import Navbar from './Navbar'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
-import image1 from '../../assets/catalog/1.jpg'
-import image2 from '../../assets/catalog/2.png'
-import image3 from '../../assets/catalog/3.png'
-import image4 from '../../assets/catalog/4.png'
-import image5 from '../../assets/catalog/5.png'
-import image6 from '../../assets/catalog/6.png'
 import { motion, useScroll, useTransform } from "framer-motion"
 
-const pubsData = [
-  { image: image1 },
-  { image: image2 },
-  { image: image3 },
-  { image: image4 },
-  { image: image5 },
-  { image: image6 },
-];
+// Import all catalog images dynamically
+const catalogImages = import.meta.glob('../../assets/catalog/*.avif', { eager: true });
+
+// Create pubsData array from imported images, sorted numerically
+const pubsData = Object.keys(catalogImages)
+  .filter(path => /\/\d+\.avif$/.test(path)) // Only include numbered files (1.avif, 2.avif, etc.)
+  .sort((a, b) => {
+    const numA = parseInt(a.match(/\/(\d+)\.avif$/)[1]);
+    const numB = parseInt(b.match(/\/(\d+)\.avif$/)[1]);
+    return numA - numB;
+  })
+  .map(path => ({ image: catalogImages[path].default }));
 
 export default function page() {
   const [selectedPub, setSelectedPub] = useState(null);

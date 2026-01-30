@@ -87,19 +87,25 @@ const Footer = () => {
               Homepage
             </Link> 
             <Link 
-              to="/" 
+              to="/links" 
               className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
             >
               GW Links
             </Link> 
+            <a 
+              href="#header" 
+              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
+            >
+              Catalog
+            </a> 
             <Link 
-              to="/" 
+              to="/primer" 
               className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
             >
               Pre-Register to the 2026 Yearbook
             </Link> 
             <Link 
-              to="/" 
+              to="/apply" 
               className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
             >
               Apply to Green & White

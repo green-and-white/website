@@ -370,17 +370,25 @@ body{
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  padding: 1rem; /* Add padding on mobile for easier closing */
+}
+
+@media (min-width: 768px) {
+  .modal-overlay {
+    padding: 3rem; /* More padding on tablet/desktop */
+  }
 }
 
 .modal-content {
+  position: relative;
   background-color: var(--color-modal-bg);
   color: var(--color-blue-900);
   padding: 2rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
-  padding-bottom: 5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 3rem;
   border-radius: 16px;
-  width: 70vw;
+  width: 100%;
   max-width: 800px;
   display: flex;
   flex-direction: column;
@@ -388,6 +396,52 @@ body{
   justify-content: center; /* center vertically within min-height */
   gap: 1rem;
   min-height: 60vh; /* make modal taller */
+  max-height: calc(100vh - 2rem); /* Ensure modal doesn't exceed viewport */
+  overflow-y: auto; /* Allow scrolling if content is too tall */
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    width: 70vw;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 5rem;
+    max-height: calc(100vh - 6rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal-content {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-blue-900);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close-button:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+}
+
+.modal-close-button:active {
+  transform: scale(0.95);
 }
 
 .modal-orb-container {
