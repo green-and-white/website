@@ -70,6 +70,9 @@ export default function page() {
 
   return (
     <div className="relative">
+        {/* Scroll anchor for header */}
+        <div id="hero" className="absolute top-0"></div>
+        
         {/* Water Background - Behind everything */}
         <div className="fixed inset-0 z-0"
           style={{

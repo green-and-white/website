@@ -8,9 +8,9 @@ import styles from '../Main/home.module.css';
 import { Link } from 'react-router-dom';
 
 const navLinks = [
-    { name: 'Home', href: '#header', type: 'section' },
+    { name: 'Home', href: '/', type: 'route' },
     { name: 'Links', href: '/links', type: 'route' },
-    { name: 'Catalog', href: '#catalog', type: 'section'},
+    { name: 'Catalog', href: '#hero', type: 'section'},
     { name: 'Apply', href: '/apply', type: 'route'}    
 ];
 

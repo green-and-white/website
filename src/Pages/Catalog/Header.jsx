@@ -18,7 +18,7 @@ export default function Header() {
     return (
         <>
             <motion.section ref={sectionRef}
-                id="header" 
+                id="hero" 
                 className="relative w-full min-h-[100vh] overflow-y-scroll flex flex-col justify-beginning items-center"
                 style={{ opacity }}
             >
