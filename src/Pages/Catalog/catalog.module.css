@@ -1,0 +1,17 @@
+.CTA {
+    font-family: 'Libre Caslon Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    /* identical to box height */
+    text-align: center;
+    color: #FEC530;
+    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-width: 3px;
+    paint-order: stroke fill;
+}
+/* VISUAL CATALOG */
+
+
+
+

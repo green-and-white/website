@@ -50,7 +50,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full transition-transform duration-300 z-50 px-4 sm:px-6 md:px-8
+      className={`fixed top-0 left-0 w-full transition-transform duration-300 z-50  px-4 sm:px-6
         ${showNavbar ? "translate-y-12" : "-translate-y-full"}`}
     >
       {/* Desktop Navigation */}
@@ -84,7 +84,7 @@ const Navbar = () => {
             <Link
                 key={index}
                 to={link.href}
-                className="text-white font-helvetica text-xl cursor-pointer transition-colors duration-300 hover:text-gray-300"
+                className="text-white font-helvetica font-bold text-xl cursor-pointer transition-colors duration-300 hover:text-gray-300"
             >
                 {link.name}
             </Link>
@@ -92,7 +92,7 @@ const Navbar = () => {
             <a
                 key={index}
                 href={link.href}
-                className="text-white font-helvetica text-xl cursor-pointer transition-colors duration-300 hover:text-gray-300"
+                className="text-white font-helvetica font-bold text-xl cursor-pointer transition-colors duration-300 hover:text-gray-300"
             >
                 {link.name}
             </a>
@@ -138,6 +138,20 @@ const Navbar = () => {
           }`}
         >
           <div className="flex flex-col gap-4 py-4">
+            <a
+              className="text-[#EED849] font-helvetica font-bold text-base cursor-pointer transition-colors duration-300 hover:text-gray-300"
+              href="https://forms.gle/xNBJWFrup67DRsjP8"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              style={{
+                WebkitTextStrokeColor: '#000',
+                WebkitTextStrokeWidth: '1px',
+                paintOrder: 'stroke fill'
+              }}
+            >
+              Pre-register for 2026
+            </a>
             {navLinks.map((link, index) => (
                 link.type === 'route' ? (
                 <Link
@@ -159,20 +173,6 @@ const Navbar = () => {
                 </a>
                 )
             ))}
-            <a
-              className="text-[#EED849] font-helvetica font-bold text-base cursor-pointer transition-colors duration-300 hover:text-gray-300"
-              href="https://forms.gle/xNBJWFrup67DRsjP8"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
-              style={{
-                WebkitTextStrokeColor: '#000',
-                WebkitTextStrokeWidth: '2px',
-                paintOrder: 'stroke fill'
-              }}
-            >
-              Pre-register for 2026
-            </a>
           </div>
         </div>
       </div>

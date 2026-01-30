@@ -8,7 +8,7 @@ import instagram from "@/assets/icons/instagram-black.svg"
 import telegram from "@/assets/icons/telegram.svg"
 import tiktok from "@/assets/icons/tiktok.svg"
 import globe from "@/assets/icons/globe.svg"
-import styles from '../Main/home.module.css';
+import yearbook from "@/assets/stickers/YEARBOOK_2026.webp"
 import { motion } from "framer-motion"
 
 const glassStyle = {
@@ -31,113 +31,11 @@ const fontStyle = {
   `
 };
 
-const Footer = ({ footerProgress = 0 }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const footerRef = useRef(null);
-
-  useEffect(() => {
-    // Trigger animations only when footer is fully visible (footerProgress === 1)
-    if (footerProgress >= 0.95) {
-      // Small delay after reaching full opacity
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-      }, 200);
-      return () => clearTimeout(timer);
-    }
-  }, [footerProgress]);
-
-  return (
-    <section
-      ref={footerRef}
-      className="relative px-6 md:px-12 min-h-screen items-center font-helvetica flex flex-col justify-center md:justify-start py-12 md:py-32 lg:py-40 gap-8 md:gap-12 text-[#FEC530]"
-    > 
-      {/* Image background */}
-      <img 
-        src={FooterBgImg} 
-        alt="footer bg"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-
-      {/* Literary Write Up */}
-
-      {/* Footer */}
-      <div 
-        style={glassStyle} 
-        className={`grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-0 py-4 px-4 md:py-8 md:px-18 w-full max-w-7xl text-left transition-all duration-700 ease-out ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}
-      >
-        {/* Logo */}
-        <div 
-          className={`col-span-2 md:col-span-1 flex flex-col items-start gap-1 md:gap-2 md:pr-4 md:border-r-2 border-white transition-all duration-700 ease-out ${
-            isVisible ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
-          }`}
-          style={{ transitionDelay: '200ms' }}
-        >
-          <img 
-            src={Logo}
-            alt="G&W Logo"
-            className="w-16 h-16 md:w-28 md:h-28 lg:w-32 lg:h-32 transition-transform duration-500 hover:scale-110"
-          />
-          <p
-            style={fontStyle}
-            className="text-[10px] px-2 text-base md:text-lg sm:px-0"
-          >
-            Green & White is the official yearbook publication of De La Salle University.
-          </p> 
-        </div>   
-
-        {/* Explore */}
-        <div 
-          className={`md:ml-12 flex flex-col gap-2 md:gap-6 sm:pb-8 md:pb-2 md:border-b-0 border-white items-start transition-all duration-700 ease-out ${
-            isVisible ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0'
-          }`}
-          style={{ transitionDelay: '400ms' }}
-        >
-          <h3 style={fontStyle} className="text-sm md:text-xl border-b-2 border-white pb-1 sm:pb-0 w-fit">Explore</h3> 
-          {/* Navlinks */}
-          <div className="flex flex-col gap-1.5 md:gap-4 text-[10px] md:text-sm underline sm:no-underline">
-            <Link 
-              to="/" 
-              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
-            >
-              Homepage
-            </Link> 
-            <Link 
-              to="/" 
-              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
-            >
-              GW Links
-            </Link> 
-            <Link 
-              to="/" 
-              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
-            >
-              Pre-Register to the 2026 Yearbook
-            </Link> 
-            <Link 
-              to="/" 
-              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
-            >
-              Apply to Green & White
-            </Link> 
-          </div> 
-        </div>
-
-        {/* Contact Info */}
-        <div 
-          className={`md:ml-5 lg:ml-0 flex flex-col gap-2 md:gap-6 pb-2 items-start transition-all duration-700 ease-out ${
-            isVisible ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0'
-          }`}
-          style={{ transitionDelay: '600ms' }}
-        >
-          <h3 style={fontStyle}  className="text-sm md:text-xl border-b-2 border-white pb-1 sm:pb-0 w-fit">Website by:</h3> 
-          <div className="flex flex-col gap-1.5 md:gap-4 text-[10px] md:text-sm">
-            <p><strong>Johan Marlo Cabili, Alvin Sean Cua, Carl Linus Pauling, Maggy de Guzman, and Mica Santos</strong></p>
-          </div>
-
-          {/* Socials */}
-          <div className="flex flex-row gap-2.5 md:gap-3">
+const Socials = () => {
+  return(
+    <>
+      {/* Socials */}
+          <div className="flex flex-row py-4 gap-2.5 md:gap-3">
             <a 
               href="https://greenandwhite.com.ph" 
               target="_blank" 
@@ -171,16 +69,94 @@ const Footer = ({ footerProgress = 0 }) => {
               <img src={telegram} alt="Telegram" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
           </div>
+    </>
+  )
+}
+const Footer = () => {
+  return (
+    <section
+      className="relative px-6 md:px-12 items-center font-helvetica flex flex-col justify-center md:justify-start pt-12 md:pt-32 lg:pt-40 gap-8 md:gap-12 text-white"
+    > 
+      {/* Footer */}
+      <div className='flex flex-col gap-12 md:gap-10 md:flex-row md:justify-between w-full'>
+        <div className="flex flex-col gap-4 md:gap-6 text-base md:text-xl lg:text-2xl underline font-libre-caslon">
+            <Link 
+              to="/" 
+              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
+            >
+              Homepage
+            </Link> 
+            <Link 
+              to="/" 
+              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
+            >
+              GW Links
+            </Link> 
+            <Link 
+              to="/" 
+              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
+            >
+              Pre-Register to the 2026 Yearbook
+            </Link> 
+            <Link 
+              to="/" 
+              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
+            >
+              Apply to Green & White
+            </Link> 
+          </div>
+          <div className="flex flex-col md:items-end gap-1.5 md:gap-6 text-base md:text-xl lg:text-2xl font-libre-caslon">
+            <div>
+              RM502 Br. Connon Hall, De La Salle University
+            </div>
+            <div>
+              <a href="mailto:gw@dlsu.edu.ph" className='underline'>gw@dlsu.edu.ph</a>
+            </div>
+            <Socials />
+          </div>
+      </div>
+
+      {/* Glass Credits */}
+      <div 
+        style={glassStyle} 
+        className="flex flex-wrap py-2 px-4 md:p-8  w-full max-w-7xl text-left"
+      >
+        {/* Contact Info */}
+        <div 
+          className="flex flex-col gap-2 md:gap-6 pb-2 items-start font-helvetica font-light" 
+        >
+          <h3 className="text-sm md:text-xl border-b-2 border-white pb-1 sm:pb-0 w-fit">Website by:</h3> 
+          <div className="flex flex-row gap-1.5 md:gap-4 text-sm md:text-lg">
+            <p><strong>Johan Marlo Cabili, Alvin Sean Cua, Carl Linus Pauling, Maggy de Guzman, and Mica Santos</strong></p>
+          </div>
         </div>
       </div>
 
-      {/* White rectangle at bottom of screen */}
-      <div className="absolute bottom-0 left-0 right-0 w-full h-32 bg-white/40 flex items-center justify-center">
-        <img 
-          src={footerLogo}
-          alt="G&W Logo"
-          className="w-64 transition-opacity duration-300"
-        />
+      {/* White rectangle at bottom of screen - full width */}
+      <div className="relative w-screen -mx-6 md:-mx-12 min-h-[10rem] md:min-h-32 bg-white/40 flex items-center justify-center">
+
+        {/* Width limited container */}
+        <div className="max-w-[1280px] flex flex-col lg:flex-row justify-between items-center w-full mx-auto px-6 md:px-12 py-4 md:py-6 gap-6 md:gap-8">
+          {/* Logo and yb */}
+          <div className='flex flex-row gap-4 px-4 sm:px-6'>
+            <img 
+                src={footerLogo}
+                alt="G&W Logo"
+                className="w-48 lg:w-64 transition-opacity duration-300"
+              />
+              <img src={yearbook} alt="Yearbook 2026" className="w-16 sm:w-20 md:w-24"/>
+          </div>
+          {/* About */}
+          <div className='flex-1 text-xs md:text-base font-helvetica font-light text-center'>
+            <p>
+                Green & White is the official yearbook publication of De La Salle University. 
+                Celebrating its 101st year, the publication lives as the record-keeper of Lasallian memories. 
+                From portraits to pages, Green & White brings the Lasallian community together and etches their place in time through the yearbook.
+            </p>
+          </div>
+        </div>
+        
+         
       </div>
     </section>
   );

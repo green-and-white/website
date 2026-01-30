@@ -1,5 +1,6 @@
 import HeaderBg from '@/assets/catalog/Header.webp'
-import styles from '../Main/home.module.css'
+import styles from './catalog.module.css'
+import horizontalLogo from '@/assets/icons/white-horizontal.svg'
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from 'react'
 
@@ -15,49 +16,61 @@ export default function Header() {
     const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0.3, 0])
     
     return (
-        <motion.section 
-            ref={sectionRef}
-            id="header" 
-            className="relative w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 overflow-hidden"
-            style={{ opacity }}
-        >
-            <motion.div
-                className="absolute inset-0 -z-10"
-                style={{
-                    backgroundImage: `url(${HeaderBg})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                    scale
-                }}
-            />
-        <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className={`z-20 font-extrabold ${styles.CTA} text-[#EEDB49] font-libre-caslon mb-8 text-center`}
-        >
-            Visual Archive
-        </motion.h1>
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className={`mb-10 z-20 max-w-3xl text-center text-white font-helvetica text-sm sm:text-base md:text-lg lg:text-xl `}
-        >
-              This catalog showcases works inspired by the design of Yearbook 2026. It reflects the places and hallmarks of student life that were ever-familiar sights during your time in the University.
-        </motion.div>
-        <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className={`py-8 px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 rounded-lg max-w-4xl text-white bg-opacity-20 shadow-lg font-helvetica`}
-        >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-center mt-2 backdrop-blur-lg rounded-lg p-8">
-               Memories of wandering empty halls resurface in moments of solitude, where absence is nothing but a reminder of the space you once echoed with life.
-               The alma mater that witnessed your every becoming has transformed into a home, shaped by the memories you made between its halls.
-            </p>
-        </motion.div>
+        <>
+            <motion.section ref={sectionRef}
+                id="header" 
+                className="relative w-full min-h-[100vh] overflow-y-scroll flex flex-col justify-beginning items-center"
+                style={{ opacity }}
+            >
+                {/* White rectangle at bottom of screen */}
+                <div className="absolute top-0 left-0 right-0 w-full h-24 bg-white/40 flex items-center justify-center">
+                </div>
+                <div className='w-full max-w-[1280px] min-h-[100vh] flex flex-col items-start justify-center px-6 sm:px-8 md:px-12'>
+                    {/* logo */}
+                    <motion.img 
+                        src={horizontalLogo} 
+                        alt="Yearbook 2026" 
+                        className="h-12 sm:h-14 md:h-16 mb-4 sm:mb-6 md:mb-8"
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    />
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                        className={`mb-6 sm:mb-8 md:mb-10 z-20 max-w-3xl text-left text-white font-helvetica font-light text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed`}
+                        style={{
+                            WebkitTextStrokeColor: '#000',
+                            WebkitTextStrokeWidth: '1.5px',
+                            paintOrder: 'stroke fill'
+                        }}
+                    >
+                    This catalog showcases works inspired by the design of Yearbook 2026. It reflects the places and hallmarks of student life that were ever-familiar sights during your time in the University. 
+                    </motion.div>
+                    <img
+                        src={HeaderBg}
+                        alt="Header Background"
+                        className="absolute inset-0 -z-10 w-full h-full object-cover"
+                    />
+                    <motion.h1 
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className={`z-20 font-extrabold text-[#EEDB49] font-libre-caslon mb-6 sm:mb-8 text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl`}
+                        style={{
+                            WebkitTextStrokeColor: '#000',
+                            WebkitTextStrokeWidth: '2px',
+                            paintOrder: 'stroke fill'
+                    }}
+                    >
+                        VISUAL CATALOG
+                    </motion.h1>
+                </div>
+                
         </motion.section>
+        </>
+       
+        
     )
 }

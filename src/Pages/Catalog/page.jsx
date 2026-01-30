@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import RealisticWater from './RealisticWater'
+import pubs from "../../assets/catalog/pubs.webp"
 import Header from './Header'
 import Footer from './Footer'
 import Navbar from './Navbar'
@@ -33,8 +34,8 @@ export default function page() {
       const documentHeight = document.documentElement.scrollHeight;
       const scrollableHeight = documentHeight - windowHeight;
       
-      // Header fade transition (first 2 screens)
-      const progress = Math.min(scrollPosition / (windowHeight * 0.8), 1);
+      // Header fade transition - trigger at 200vh
+      const progress = Math.min(scrollPosition / (windowHeight * 2), 1);
       setScrollProgress(progress);
       
       // Footer sink transition - only when near the end
@@ -70,8 +71,14 @@ export default function page() {
   return (
     <div className="relative">
         {/* Water Background - Behind everything */}
-        <div className="fixed inset-0 z-0">
-          <RealisticWater />
+        <div className="fixed inset-0 z-0"
+          style={{
+            backgroundImage: `url(${pubs})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            pointerEvents: 'none'
+          }}>
+          
         </div>
 
         <Navbar />
@@ -80,15 +87,36 @@ export default function page() {
         <div 
           className="fixed inset-0 z-10 transition-opacity duration-300"
           style={{ 
-            opacity: 1 - scrollProgress,
-            pointerEvents: scrollProgress > 0.5 ? 'none' : 'auto'
+            opacity: scrollProgress < 0.3 ? 1 : scrollProgress < 0.5 ? 1 - ((scrollProgress - 0.3) / 0.2) : 0,
+            pointerEvents: scrollProgress > 0.4 ? 'none' : 'auto'
           }}
         >
           <Header />
         </div>
 
         {/* Spacer for scroll */}
-        <div className="h-[100vh]"></div>
+        <div className="h-[200vh]">
+        </div>
+
+        {/* Subtext section - visible during scroll, before transition */}
+        <div 
+          className="fixed inset-0 z-10 w-full flex items-center justify-center"
+          style={{
+            opacity: scrollProgress >= 0.4 && scrollProgress < 0.8 ? 1 : 0,
+            transition: 'opacity 0.5s ease',
+            pointerEvents: 'none'
+          }}
+        >
+          <div className='w-full max-w-[950px] px-6 sm:px-8 md:px-12'>
+            <p 
+              className="text-white text-center font-helvetica font-light text-base md:text-xl lg:text-2xl leading-relaxed drop-shadow-xl text-shadow-lg"
+
+            >
+              Memories of wandering empty halls resurface in moments of solitude, where absence is nothing but a reminder of the space you once echoed with life. 
+              The alma mater that witnessed your every becoming has transformed into a home, shaped by the memories you made between its halls.
+            </p>
+          </div>
+        </div>
 
        
 
@@ -96,9 +124,9 @@ export default function page() {
         <section 
           className="relative min-h-screen w-full transition-all duration-700"
           style={{
-            opacity: scrollProgress >= 0.85 ? (scrollProgress - 0.85) / 0.15 : 0,
+            opacity: scrollProgress >= 0.8 ? Math.min((scrollProgress - 0.8) / 0.1, 1) : 0,
             transform: `scale(${1 - footerProgress * 0.15}) translateY(${footerProgress * 100}px)`,
-            pointerEvents: scrollProgress >= 0.9 && footerProgress < 0.7 ? 'auto' : 'none'
+            pointerEvents: scrollProgress >= 0.85 && footerProgress < 0.7 ? 'auto' : 'none'
           }}
         >
           <div className="relative z-10 container mx-auto py-20 px-4">
@@ -129,14 +157,8 @@ export default function page() {
         </section>
 
         {/* Footer Section */}
-        <div 
-          className="relative z-20 transition-all duration-700"
-          style={{
-            opacity: footerProgress,
-            transform: `scale(${0.95 + footerProgress * 0.05}) translateY(${-50 + footerProgress * 50}px)`
-          }}
-        >
-          <Footer footerProgress={footerProgress} />
+        <div className="relative z-20">
+          <Footer />
         </div>
 
         {/* Pub Dialog Modal */}
