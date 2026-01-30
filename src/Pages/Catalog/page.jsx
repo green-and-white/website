@@ -139,7 +139,7 @@ export default function page() {
               {pubsData.map((pub, i) => (
                 <div 
                   key={pub.id} 
-                  className="w-full max-w-[250px] h-[325px] mx-auto bg-white opacity-70 hover:opacity-100 rounded-lg border-4 border-white/10 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden"
+                  className="w-full max-w-[250px] h-[325px] mx-auto bg-white lg:opacity-70 hover:opacity-100 rounded-lg border-4 border-white/10 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden"
                   style={{ 
                     pointerEvents: 'auto',
                     filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.7))'
