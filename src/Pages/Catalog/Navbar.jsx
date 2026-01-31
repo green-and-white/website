@@ -11,7 +11,7 @@ const navLinks = [
     { name: 'Home', href: '/', type: 'route' },
     { name: 'Links', href: '/links', type: 'route' },
     { name: 'Catalog', href: '#hero', type: 'section'},
-    { name: 'Apply', href: '/apply', type: 'route'}    
+    //{ name: 'Apply', href: '/apply', type: 'route'}    
 ];
 
 const Navbar = () => {
@@ -62,7 +62,7 @@ const Navbar = () => {
            {/* Beside : Pre-register Link */}
           <div className="flex">
             <a
-              className="text-[#EED849] font-helvetica font-bold text-xl cursor-pointer transition-colors duration-300 hover:text-gray-300"
+              className="text-[#FEC530] font-libre-caslon font-bold text-xl cursor-pointer transition-colors duration-300 hover:text-gray-300"
               href="https://forms.gle/xNBJWFrup67DRsjP8"
               target="_blank"
               rel="noopener noreferrer"
@@ -102,33 +102,30 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`md:hidden py-4 px-6 ${styles.glassCard} rounded-3xl`}>
-        <div className="flex items-center justify-between">
-          {/* Logo and Sticker */}
-          <div className="flex items-center gap-2">
-            <img src={yearbook2026} alt="Yearbook 2026" className="h-10" />
-          </div>
-
-          {/* Mobile menu button */}
+      <div className={`md:hidden py-4 px-6 rounded-3xl ${styles.glassCard}`}>
+        <div className="flex items-center justify-center gap-4">
+          {/* Logo and Sticker - Now clickable to open menu */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none"
+            className="flex items-center gap-2 focus:outline-none"
           >
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
-              />
-            </svg>
+            <img src={yearbook2026} alt="Yearbook 2026" className="h-10" />
           </button>
+
+          {/* Pre-register Link */}
+          <a
+            className="text-[#FEC530] font-bold text-sm cursor-pointer transition-colors duration-300 hover:text-gray-300 font-libre-caslon"
+            href="https://forms.gle/xNBJWFrup67DRsjP8"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              WebkitTextStrokeColor: '#000',
+              WebkitTextStrokeWidth: '1px',
+              paintOrder: 'stroke fill'
+            }}
+          >
+            Pre-register for Yearbook 2026
+          </a>
         </div>
 
         {/* Mobile Menu */}
@@ -138,20 +135,6 @@ const Navbar = () => {
           }`}
         >
           <div className="flex flex-col gap-4 py-4">
-            <a
-              className="text-[#EED849] font-helvetica font-bold text-base cursor-pointer transition-colors duration-300 hover:text-gray-300"
-              href="https://forms.gle/xNBJWFrup67DRsjP8"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
-              style={{
-                WebkitTextStrokeColor: '#000',
-                WebkitTextStrokeWidth: '1px',
-                paintOrder: 'stroke fill'
-              }}
-            >
-              Pre-register for 2026
-            </a>
             {navLinks.map((link, index) => (
                 link.type === 'route' ? (
                 <Link

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import facebook from "@/assets/icons/facebook-black.svg"
 import instagram from "@/assets/icons/instagram-black.svg"
 import telegram from "@/assets/icons/telegram.svg"
+import mail from "@/assets/icons/mail.svg"
 import tiktok from "@/assets/icons/tiktok.svg"
 import globe from "@/assets/icons/globe.svg"
 import yearbook from "@/assets/stickers/YEARBOOK_2026.webp"
@@ -68,18 +69,40 @@ const Socials = () => {
             >
               <img src={telegram} alt="Telegram" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
+            <a 
+              href="mailto:gw@dlsu.edu.ph" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1 bg-white/30 p-2 rounded"
+            >
+              <img src={mail} alt="email" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
+            </a>
           </div>
     </>
   )
 }
+
+const Credits = () => {
+  return(
+    <>
+      <div className="flex flex-col gap-2 md:gap-6 pb-2 items-start md:items-end font-helvetica text-sm md:text-lg lg:text-xl">
+          <h3 className="w-fit text-base md:text-xl lg:text-2xl">Website by:</h3> 
+          <div className="flex flex-row gap-1.5 md:gap-4 md:text-end">
+            <p><strong>Johan Marlo Cabili</strong>, <strong>Alvin Sean Cua</strong>, <strong>Carl Linus Pauling</strong>, <strong>Maggy de Guzman</strong>, and <strong>Mica Santos</strong></p>
+          </div>
+        </div>
+    </>)
+}
+
 const Footer = () => {
   return (
     <section
       className="relative px-6 md:px-12 items-center font-helvetica flex flex-col justify-center md:justify-start pt-12 md:pt-32 lg:pt-40 gap-8 md:gap-12 text-white"
     > 
       {/* Footer */}
-      <div className='flex flex-col gap-12 md:gap-10 md:flex-row md:justify-between w-full'>
-        <div className="flex flex-col gap-4 md:gap-6 text-base md:text-xl lg:text-2xl underline font-libre-caslon">
+      <div className='flex flex-col gap-12 md:gap-10 md:flex-row md:justify-between w-full p-6 md:p-8 lg:p-10'
+          style={glassStyle}>
+        <div className="flex flex-col gap-4 text-base md:text-xl lg:text-2xl font-libre-caslon">
             <Link 
               to="/" 
               className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
@@ -90,7 +113,7 @@ const Footer = () => {
               to="/links" 
               className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
             >
-              GW Links
+              GW Linktree
             </Link> 
             <a 
               href="#header" 
@@ -102,40 +125,23 @@ const Footer = () => {
               to="/primer" 
               className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
             >
-              Pre-Register to the 2026 Yearbook
+              Pre-register for Yearbook 2026
             </Link> 
-            <Link 
+            {/* <Link (removed apply for now)
               to="/apply" 
               className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
             >
               Apply to Green & White
-            </Link> 
+            </Link>  */}
           </div>
-          <div className="flex flex-col md:items-end gap-1.5 md:gap-6 text-base md:text-xl lg:text-2xl font-libre-caslon">
+          <div className="flex flex-col md:items-end md:w-1/2 gap-1.5 md:gap-6 text-base md:text-xl lg:text-2xl font-libre-caslon">
             <div>
-              RM502 Br. Connon Hall, De La Salle University
-            </div>
-            <div>
-              <a href="mailto:gw@dlsu.edu.ph" className='underline'>gw@dlsu.edu.ph</a>
+              RM503 Br. Connon Hall, De La Salle University
             </div>
             <Socials />
+            <Credits/>
           </div>
-      </div>
-
-      {/* Glass Credits */}
-      <div 
-        style={glassStyle} 
-        className="flex flex-wrap py-2 px-4 md:p-8  w-full max-w-7xl text-left"
-      >
-        {/* Contact Info */}
-        <div 
-          className="flex flex-col gap-2 md:gap-6 pb-2 items-start font-helvetica font-light" 
-        >
-          <h3 className="text-sm md:text-xl border-b-2 border-white pb-1 sm:pb-0 w-fit">Website by:</h3> 
-          <div className="flex flex-row gap-1.5 md:gap-4 text-sm md:text-lg">
-            <p><strong>Johan Marlo Cabili, Alvin Sean Cua, Carl Linus Pauling, Maggy de Guzman, and Mica Santos</strong></p>
-          </div>
-        </div>
+          
       </div>
 
       {/* White rectangle at bottom of screen - full width */}
@@ -155,9 +161,9 @@ const Footer = () => {
           {/* About */}
           <div className='flex-1 text-xs md:text-base font-helvetica font-light text-center'>
             <p>
-                Green & White is the official yearbook publication of De La Salle University. 
+                <strong>Green & White</strong> is the official yearbook publication of De La Salle University. 
                 Celebrating its 101st year, the publication lives as the record-keeper of Lasallian memories. 
-                From portraits to pages, Green & White brings the Lasallian community together and etches their place in time through the yearbook.
+                From portraits to pages, <strong>Green & White</strong> brings the Lasallian community together and etches their place in time through the yearbook.
             </p>
           </div>
         </div>

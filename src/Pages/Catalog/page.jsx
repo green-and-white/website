@@ -111,7 +111,11 @@ export default function page() {
           <div className='w-full max-w-[950px] px-6 sm:px-8 md:px-12'>
             <p 
               className="text-white text-center font-helvetica font-light text-base md:text-xl lg:text-2xl leading-relaxed drop-shadow-xl text-shadow-lg"
-
+              style={{
+                WebkitTextStrokeColor: '#000',
+                WebkitTextStrokeWidth: '1.5px',
+                paintOrder: 'stroke fill'
+              }}
             >
               Memories of wandering empty halls resurface in moments of solitude, where absence is nothing but a reminder of the space you once echoed with life. 
               The alma mater that witnessed your every becoming has transformed into a home, shaped by the memories you made between its halls.
@@ -136,7 +140,7 @@ export default function page() {
 
             </motion.h2>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl">
               {pubsData.map((pub, i) => (
                 <div 
                   key={pub.id} 
