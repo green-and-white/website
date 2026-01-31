@@ -5,7 +5,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Navbar from './Navbar'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 
 // Import all catalog images dynamically
 const catalogImages = import.meta.glob('../../assets/catalog/*.avif', { eager: true });
@@ -167,64 +167,51 @@ export default function page() {
         </div>
 
         {/* Pub Dialog Modal */}
-        {selectedPub !== null && (
-          <div 
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-fadeIn"
-            onClick={closePubDialog}
-          >
-            <div 
-              className="relative w-[90vw] max-w-4xl h-[80vh] animate-zoomIn"
-              onClick={(e) => e.stopPropagation()}
+        <AnimatePresence>
+          {selectedPub !== null && (
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+              onClick={closePubDialog}
             >
-
-              {/* Navigation Buttons */}
-              <button
-                onClick={() => navigatePub('prev')}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="relative w-[90vw] max-w-4xl h-[80vh]"
+                onClick={(e) => e.stopPropagation()}
               >
-                <ChevronLeft size={24} />
-              </button>
-              <button
-                onClick={() => navigatePub('next')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
-              >
-                <ChevronRight size={24} />
-              </button>
 
-              {/* Pub Content */}
-              <div className="h-full flex items-center justify-center p-8">
-                <img 
-                  src={pubsData[selectedPub].image} 
-                  alt={pubsData[selectedPub].title}
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        )}
+                {/* Navigation Buttons */}
+                <button
+                  onClick={() => navigatePub('prev')}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <button
+                  onClick={() => navigatePub('next')}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
+                >
+                  <ChevronRight size={24} />
+                </button>
 
-        <style jsx>{`
-          @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-          @keyframes zoomIn {
-            from { 
-              opacity: 0;
-              transform: scale(0.8);
-            }
-            to { 
-              opacity: 1;
-              transform: scale(1);
-            }
-          }
-          .animate-fadeIn {
-            animation: fadeIn 0.3s ease-out;
-          }
-          .animate-zoomIn {
-            animation: zoomIn 0.3s ease-out;
-          }
-        `}</style>
+                {/* Pub Content */}
+                <div className="h-full flex items-center justify-center p-8">
+                  <img 
+                    src={pubsData[selectedPub].image} 
+                    alt={pubsData[selectedPub].title}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
     </div>
   )
 }
