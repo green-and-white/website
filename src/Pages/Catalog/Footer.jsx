@@ -36,7 +36,7 @@ const Socials = () => {
   return(
     <>
       {/* Socials */}
-          <div className="flex flex-row justify-center lg:justify-end py-4 gap-2.5 md:gap-3">
+          <div className="flex flex-row justify-center md:justify-end py-4 gap-2.5 md:gap-3">
             <a 
               href="https://greenandwhite.com.ph" 
               target="_blank" 
@@ -85,7 +85,6 @@ const Socials = () => {
 const Credits = () => {
   return(
     <>
-
           <div className="flex flex-row gap-1.5 md:gap-4 text-center md:text-end text-xs">
             <p>Website by <strong>Johan Marlo Cabili</strong>, <strong>Alvin Sean Cua</strong>, <strong>Linus Carl Perdon</strong>, <strong>Maggy de Guzman</strong>, and <strong>Mica Santos</strong></p>
           </div>
@@ -101,13 +100,13 @@ const Footer = () => {
       <div className='flex flex-col w-fit gap-12 md:gap-10 justify-start items-center pb-4 md:py-20'>
 
         {/* Pre-register Button */}
-        <div className="mx-auto text-base md:text-xl lg:text-xl font-helvetica font-bold transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer"
+        <div className="mx-auto text-sm sm:text-base md:text-xl lg:text-xl font-helvetica font-bold transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer"
           style={glassStyle}>
             <Link 
               to="https://forms.gle/xNBJWFrup67DRsjP8"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#FEC530] px-4 py-8 sm:px-4 sm:py-9 md:px-10 md:py-5 block"
+              className="text-[#FEC530] text-center px-4 py-8 sm:px-4 sm:py-9 md:px-10 md:py-5 block"
               style={{
                 WebkitTextStrokeColor: '#000',
                 WebkitTextStrokeWidth: '1.5px',
@@ -136,17 +135,19 @@ const Footer = () => {
       <div className="relative w-screen -mx-6 md:-mx-12 min-h-[10rem] md:min-h-32 bg-white/40 flex items-center justify-center">
 
         {/* Width limited container */}
-        <div className="max-w-[1280px] flex flex-col lg:flex-row justify-between items-center w-full mx-auto px-6 md:px-12 py-4 md:py-6 gap-6 md:gap-8">
+        <div className="max-w-[1280px] flex flex-col md:flex-row justify-between items-center w-full mx-auto px-6 md:px-12 py-4 md:py-6 gap-6 md:gap-8">
           {/* Logo and yb */}
-          <div className='flex flex-row gap-4 px-4 sm:px-6'>
-            <img 
-                src={footerLogo}
-                alt="G&W Logo"
-                className="w-48 lg:w-64 transition-opacity duration-300"
-              />
+          <div className='flex flex-row justify-center items-center gap-4 px-4 sm:px-6'>
+            <Link to="/">
+              <img 
+                  src={footerLogo}
+                  alt="G&W Logo"
+                  className="w-48 lg:w-64 transition-opacity duration-300 hover:opacity-80 cursor-pointer"
+                />
+            </Link>
               <img src={yearbook} alt="Yearbook 2026" className="w-16 sm:w-20 md:w-24"/>
           </div>
-          <div>
+          <div className='flex flex-col justify-center'>
               {/* Socials */}
               <Socials />
               {/* Credits */}
