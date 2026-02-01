@@ -94,7 +94,7 @@ const Credits = () => {
 const Footer = () => {
   return (
     <section
-      className="relative px-6 md:px-12 font-helvetica flex flex-col justify-start items-center gap-8 md:gap-12 text-white"
+      className="relative mt-12 px-6 md:px-12 font-helvetica flex flex-col justify-start items-center gap-8 md:gap-12 text-white"
     > 
       {/* Footer */}
       <div className='flex flex-col w-fit gap-12 md:gap-10 justify-start items-center pb-4 md:py-20'>

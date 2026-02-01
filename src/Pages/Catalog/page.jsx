@@ -181,20 +181,27 @@ export default function page() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="relative w-[90vw] max-w-4xl h-[80vh]"
+                className="relative w-[85vw] h-[70vh] md:w-[90vw] md:max-w-4xl md:h-[80vh]"
                 onClick={(e) => e.stopPropagation()}
               >
+                {/* Close Button */}
+                <button
+                  onClick={closePubDialog}
+                  className="absolute top-0 right-4 z-20 w-10 h-10 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
+                >
+                  <X size={20} />
+                </button>
 
                 {/* Navigation Buttons */}
                 <button
                   onClick={() => navigatePub('prev')}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
+                  className="absolute left-1/4 -translate-x-1/2 -bottom-2 md:left-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:bottom-auto z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
                 >
                   <ChevronLeft size={24} />
                 </button>
                 <button
                   onClick={() => navigatePub('next')}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
+                  className="absolute right-1/4 translate-x-1/2 -bottom-2 md:right-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:bottom-auto z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
                 >
                   <ChevronRight size={24} />
                 </button>
