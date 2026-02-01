@@ -134,13 +134,13 @@ export default function page() {
             pointerEvents: scrollProgress >= 0.85 && footerProgress < 0.7 ? 'auto' : 'none'
           }}
         >
-          <div className="relative z-10 container mx-auto py-20 px-4">
+          <div className="relative z-10 container mx-auto py-12 md:py-16 px-4">
             <motion.h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-400 mb-8 md:mb-10 font-libre-caslon" 
                       style={{ pointerEvents: 'none' }}>
 
             </motion.h2>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
               {pubsData.map((pub, i) => (
                 <div 
                   key={pub.id} 
@@ -201,7 +201,7 @@ export default function page() {
                 </button>
 
                 {/* Pub Content */}
-                <div className="h-full flex items-center justify-center p-8">
+                <div className="h-full flex items-center justify-center p-4">
                   <img 
                     src={pubsData[selectedPub].image} 
                     alt={pubsData[selectedPub].title}

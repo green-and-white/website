@@ -15,7 +15,7 @@ import { motion } from "framer-motion"
 const glassStyle = {
   color: 'white',
   background: 'rgba(255, 255, 255, 0.05)',
-  borderRadius: '16px',
+  borderRadius: '50px',
   border: '0.5px solid rgba(255, 255, 255, 0.8)',
   backdropFilter: 'blur(12px)',
   WebkitBackdropFilter: 'blur(12px)',
@@ -36,7 +36,7 @@ const Socials = () => {
   return(
     <>
       {/* Socials */}
-          <div className="flex flex-row py-4 gap-2.5 md:gap-3">
+          <div className="flex flex-row justify-center lg:justify-end py-4 gap-2.5 md:gap-3">
             <a 
               href="https://greenandwhite.com.ph" 
               target="_blank" 
@@ -85,64 +85,52 @@ const Socials = () => {
 const Credits = () => {
   return(
     <>
-      <div className="flex flex-col gap-2 md:gap-6 pb-2 items-start md:items-end font-helvetica text-sm md:text-lg lg:text-xl">
-          <h3 className="w-fit text-base md:text-xl lg:text-2xl">Website by:</h3> 
-          <div className="flex flex-row gap-1.5 md:gap-4 md:text-end">
-            <p><strong>Johan Marlo Cabili</strong>, <strong>Alvin Sean Cua</strong>, <strong>Carl Linus Pauling</strong>, <strong>Maggy de Guzman</strong>, and <strong>Mica Santos</strong></p>
+
+          <div className="flex flex-row gap-1.5 md:gap-4 text-center md:text-end text-xs">
+            <p>Website by <strong>Johan Marlo Cabili</strong>, <strong>Alvin Sean Cua</strong>, <strong>Linus Carl Perdon</strong>, <strong>Maggy de Guzman</strong>, and <strong>Mica Santos</strong></p>
           </div>
-        </div>
     </>)
 }
 
 const Footer = () => {
   return (
     <section
-      className="relative px-6 md:px-12 items-center font-helvetica flex flex-col justify-center md:justify-start pt-12 md:pt-32 lg:pt-40 gap-8 md:gap-12 text-white"
+      className="relative px-6 md:px-12 font-helvetica flex flex-col justify-start items-center gap-8 md:gap-12 text-white"
     > 
       {/* Footer */}
-      <div className='flex flex-col gap-12 md:gap-10 md:flex-row md:justify-between w-full p-6 md:p-8 lg:p-10'
+      <div className='flex flex-col w-fit gap-12 md:gap-10 justify-start items-center pb-4 md:py-20'>
+
+        {/* Pre-register Button */}
+        <div className="mx-auto text-base md:text-xl lg:text-xl font-helvetica font-bold transition-all duration-300 hover:-translate-y-2 hover:cursor-pointer"
           style={glassStyle}>
-        <div className="flex flex-col gap-4 text-base md:text-xl lg:text-2xl font-libre-caslon">
             <Link 
-              to="/" 
-              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
+              to="https://forms.gle/xNBJWFrup67DRsjP8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#FEC530] px-4 py-8 sm:px-4 sm:py-9 md:px-10 md:py-5 block"
+              style={{
+                WebkitTextStrokeColor: '#000',
+                WebkitTextStrokeWidth: '1.5px',
+                paintOrder: 'stroke fill'
+              }}
             >
-              Homepage
+              Pre-register for the 2026 Yearbook
             </Link> 
-            <Link 
-              to="/links" 
-              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
-            >
-              GW Linktree
-            </Link> 
-            <a 
-              href="#header" 
-              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
-            >
-              Catalog
-            </a> 
-            <Link 
-              to="/primer" 
-              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
-            >
-              Pre-register for Yearbook 2026
-            </Link> 
-            {/* <Link (removed apply for now)
-              to="/apply" 
-              className="transition-all duration-300 hover:translate-x-2 hover:text-gray-200"
-            >
-              Apply to Green & White
-            </Link>  */}
           </div>
-          <div className="flex flex-col md:items-end md:w-1/2 gap-1.5 md:gap-6 text-base md:text-xl lg:text-2xl font-libre-caslon">
-            <div>
-              RM503 Br. Connon Hall, De La Salle University
-            </div>
-            <Socials />
-            <Credits/>
+
+          {/* Footer msg */}
+          <div className='font-helvetica text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl max-w-[600px]'
+              style={{
+                WebkitTextStrokeColor:"#000",
+                WebkitTextStrokeWidth:"2px", 
+                paintOrder:"stroke fill"
+              }}>
+            Actual registration will open on March 11 to 28 and April 8 to 13. Times and venues are to be announced—stay tuned! 
           </div>
           
       </div>
+      
+
 
       {/* White rectangle at bottom of screen - full width */}
       <div className="relative w-screen -mx-6 md:-mx-12 min-h-[10rem] md:min-h-32 bg-white/40 flex items-center justify-center">
@@ -158,14 +146,13 @@ const Footer = () => {
               />
               <img src={yearbook} alt="Yearbook 2026" className="w-16 sm:w-20 md:w-24"/>
           </div>
-          {/* About */}
-          <div className='flex-1 text-xs md:text-base font-helvetica font-light text-center'>
-            <p>
-                <strong>Green & White</strong> is the official yearbook publication of De La Salle University. 
-                Celebrating its 101st year, the publication lives as the record-keeper of Lasallian memories. 
-                From portraits to pages, <strong>Green & White</strong> brings the Lasallian community together and etches their place in time through the yearbook.
-            </p>
+          <div>
+              {/* Socials */}
+              <Socials />
+              {/* Credits */}
+              <Credits />
           </div>
+         
         </div>
         
          
