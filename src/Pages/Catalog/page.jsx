@@ -127,11 +127,10 @@ export default function page() {
 
         {/* Regular scrollable catalog section */}
         <section 
-          className="relative min-h-screen w-full transition-all duration-700"
+          className="relative md:min-h-screen w-full transition-all duration-700"
           style={{
             opacity: scrollProgress >= 0.8 ? Math.min((scrollProgress - 0.8) / 0.1, 1) : 0,
-            transform: `scale(${1 - footerProgress * 0.15}) translateY(${footerProgress * 100}px)`,
-            pointerEvents: scrollProgress >= 0.85 && footerProgress < 0.7 ? 'auto' : 'none'
+            pointerEvents: scrollProgress >= 0.85 ? 'auto' : 'none'
           }}
         >
           <div className="relative z-10 container mx-auto py-12 md:py-16 px-4">
@@ -140,11 +139,11 @@ export default function page() {
 
             </motion.h2>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-x-4 md:gap-x-12 gap-y-6 max-w-[900px] mx-auto">
               {pubsData.map((pub, i) => (
                 <div 
                   key={pub.id} 
-                  className="w-full max-w-[250px] h-[325px] mx-auto bg-white lg:opacity-70 hover:opacity-100 rounded-lg border-4 border-white/10 transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden"
+                  className="w-[250px] h-[325px] bg-white lg:opacity-70 hover:opacity-100 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden"
                   style={{ 
                     pointerEvents: 'auto',
                     filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.7))'

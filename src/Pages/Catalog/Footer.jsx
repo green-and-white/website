@@ -36,14 +36,14 @@ const Socials = () => {
   return(
     <>
       {/* Socials */}
-          <div className="flex flex-row justify-center md:justify-end py-4 gap-2.5 md:gap-3">
+          <div className="flex flex-row justify-center lg:justify-end py-4 gap-2.5 md:gap-3">
             <a 
               href="https://greenandwhite.com.ph" 
               target="_blank" 
               rel="noopener noreferrer"
               className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1 bg-white/30 p-2 rounded"
             >
-              <img src={globe} alt="Website" className="h-6 w-6 p-[px]" style={{ filter: 'brightness(0) invert(1)' }}/>
+              <img src={globe} alt="Website" className="h-4 w-4 md:h-6 md:w-6 p-[px]" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
             <a 
               href="https://fb.com/gwyearbookdlsu" 
@@ -51,7 +51,7 @@ const Socials = () => {
               rel="noopener noreferrer"
               className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1 bg-white/30 p-2 rounded"
             >
-              <img src={facebook} alt="Facebook" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
+              <img src={facebook} alt="Facebook" className="h-4 w-4 md:h-6 md:w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
             <a 
               href="https://instagram.com/gwyearbookdlsu" 
@@ -59,7 +59,7 @@ const Socials = () => {
               rel="noopener noreferrer"
               className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1 bg-white/30 p-2 rounded"
             >
-              <img src={instagram} alt="Instagram" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
+              <img src={instagram} alt="Instagram" className="h-4 w-4 md:h-6 md:w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
             <a 
               href="https://t.me/gwyearbookdlsu" 
@@ -67,7 +67,7 @@ const Socials = () => {
               rel="noopener noreferrer"
               className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1 bg-white/30 p-2 rounded"
             >
-              <img src={telegram} alt="Telegram" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
+              <img src={telegram} alt="Telegram" className="h-4 w-4 md:h-6 md:w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
             <a 
               href="mailto:gw@dlsu.edu.ph" 
@@ -75,7 +75,7 @@ const Socials = () => {
               rel="noopener noreferrer"
               className="transition-transform duration-300 hover:scale-125 hover:-translate-y-1 bg-white/30 p-2 rounded"
             >
-              <img src={mail} alt="email" className="h-6 w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
+              <img src={mail} alt="email" className="h-4 w-4 md:h-6 md:w-6" style={{ filter: 'brightness(0) invert(1)' }}/>
             </a>
           </div>
     </>
@@ -85,7 +85,7 @@ const Socials = () => {
 const Credits = () => {
   return(
     <>
-          <div className="flex flex-row gap-1.5 md:gap-4 text-center md:text-end text-xs">
+          <div className="flex flex-row gap-1.5 md:gap-4 text-center lg:text-end text-xs">
             <p>Website by <strong>Johan Marlo Cabili</strong>, <strong>Alvin Sean Cua</strong>, <strong>Linus Carl Perdon</strong>, <strong>Maggy de Guzman</strong>, and <strong>Mica Santos</strong></p>
           </div>
     </>)
@@ -132,10 +132,10 @@ const Footer = () => {
 
 
       {/* White rectangle at bottom of screen - full width */}
-      <div className="relative w-screen -mx-6 md:-mx-12 min-h-[10rem] md:min-h-32 bg-white/40 flex items-center justify-center">
+      <div className="relative w-screen p-7 md:p-2 min-h-[10rem] md:min-h-32 bg-white/40 flex items-center justify-center">
 
         {/* Width limited container */}
-        <div className="max-w-[1280px] flex flex-col md:flex-row justify-between items-center w-full mx-auto px-6 md:px-12 py-4 md:py-6 gap-6 md:gap-8">
+        <div className="max-w-[1280px] flex flex-col lg:flex-row justify-between items-center w-full mx-auto px-6 md:px-12 py-4 md:py-6 gap-6 md:gap-8">
           {/* Logo and yb */}
           <div className='flex flex-row justify-center items-center gap-4 px-4 sm:px-6'>
             <Link to="/">
@@ -145,7 +145,7 @@ const Footer = () => {
                   className="w-48 lg:w-64 transition-opacity duration-300 hover:opacity-80 cursor-pointer"
                 />
             </Link>
-              <img src={yearbook} alt="Yearbook 2026" className="w-16 sm:w-20 md:w-24"/>
+              <img src={yearbook} alt="Yearbook 2026" className="w-16 sm:w-20 md:w-24 lg:w-28"/>
           </div>
           <div className='flex flex-col justify-center'>
               {/* Socials */}
@@ -153,7 +153,7 @@ const Footer = () => {
               {/* Credits */}
               <Credits />
           </div>
-         
+
         </div>
         
          
