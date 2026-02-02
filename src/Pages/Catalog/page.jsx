@@ -6,6 +6,7 @@ import Footer from './Footer'
 import Navbar from './Navbar'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
+import { redirect } from 'react-router-dom'
 
 // Import all catalog images dynamically
 const catalogImages = import.meta.glob('../../assets/catalog/*.avif', { eager: true });
@@ -245,12 +246,12 @@ export default function page() {
                       href={pubsData[selectedPub].link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full h-full cursor-pointer"
+                      className="h-3/4 md:h-5/6 cursor-pointer"
                     >
                       <img 
                         src={pubsData[selectedPub].image} 
                         alt={pubsData[selectedPub].title}
-                        className="w-full h-full object-contain hover:opacity-90 transition-opacity"
+                        className="w-full h-full object-fit hover:opacity-90 transition-opacity"
                       />
                     </a>
                   ) : (

@@ -106,7 +106,7 @@ const Footer = () => {
               to="https://forms.gle/xNBJWFrup67DRsjP8"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#FEC530] text-center px-4 py-8 sm:px-4 sm:py-9 md:px-10 md:py-5 block"
+              className="text-[#FEC530] text-center px-4 py-3 sm:px-4 sm:py-6 md:px-10 md:py-5 block"
               style={{
                 WebkitTextStrokeColor: '#000',
                 WebkitTextStrokeWidth: '1.5px',
