@@ -28,14 +28,14 @@ export default function Header() {
                         src={horizontalLogo} 
                         alt="Yearbook 2026" 
                         className="h-10 sm:h-14 md:h-16"
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: -40 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     />
                     <motion.h1 
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 1 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        transition={{ duration: 2, ease: "easeOut" }}
                         className={`z-20 w-full font-extrabold text-[#FEC530] font-libre-caslon text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-wide`}
                         style={{
                             WebkitTextStrokeColor: '#000',
@@ -48,7 +48,7 @@ export default function Header() {
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+                        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                         className={`md:block hidden z-20 max-w-3xl text-white font-helvetica font-light text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-center leading-relaxed text-shadow-lg`}
                         style={{
                              WebkitTextStrokeColor: '#000',
