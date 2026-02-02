@@ -12,31 +12,31 @@ export default function Countdownpage() {
     const renderer = ({ days, hours, minutes, seconds }) => {
         return (
         <div className={`text-center`}>
-            <div className={`flex justify-center items-center text-2xl sm:text-3xl md:text-4xl font-bold gap-4 sm:gap-6 text-white`}>
+            <div className={`flex justify-center items-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold gap-2 sm:gap-4 md:gap-6 text-white`}>
             <div className="flex flex-col items-center">
                 <span className="font-helvetica font-bold">{days}</span>
-                <span className="helvetica text-xs sm:text-sm mt-1">Days</span>
+                <span className="helvetica text-[10px] sm:text-xs md:text-sm mt-1">Days</span>
             </div>
-            <div className="flex flex-col items-center mx-1 sm:mx-2">
+            <div className="flex flex-col items-center mx-0.5 sm:mx-1 md:mx-2">
                 <span className="font-helvetica font-bold">:</span>
             </div>
             <div className="flex flex-col items-center">
                 <span className="font-helvetica font-bold">{hours}</span>
-                <span className="helvetica text-xs sm:text-sm mt-1">Hours</span>
+                <span className="helvetica text-[10px] sm:text-xs md:text-sm mt-1">Hours</span>
             </div>
-            <div className="flex flex-col items-center mx-1 sm:mx-2">
+            <div className="flex flex-col items-center mx-0.5 sm:mx-1 md:mx-2">
                 <span className="font-helvetica font-bold">:</span>
             </div>
             <div className="flex flex-col items-center">
                 <span className="font-helvetica font-bold">{minutes}</span>
-                <span className="helvetica text-xs sm:text-sm mt-1">Minutes</span>
+                <span className="helvetica text-[10px] sm:text-xs md:text-sm mt-1">Minutes</span>
             </div>
-            <div className="flex flex-col items-center mx-1 sm:mx-2">
+            <div className="flex flex-col items-center mx-0.5 sm:mx-1 md:mx-2">
                 <span className="font-helvetica font-bold">:</span>
             </div>
             <div className="flex flex-col items-center">
                 <span className="font-helvetica font-bold">{seconds}</span>
-                <span className="helvetica text-xs sm:text-sm mt-1">Seconds</span>
+                <span className="helvetica text-[10px] sm:text-xs md:text-sm mt-1">Seconds</span>
             </div>
             </div>
         </div>
@@ -51,7 +51,7 @@ export default function Countdownpage() {
             id='countdown'>
             
             <div className="flex flex-col items-center gap-10 justify-center mt-12 sm:mt-20 md:mt-28 px-4">
-                <h1 className={`font-extrabold text-[#EEDB49] font-libre-caslon flex justify-center mt-8 sm:mt-12 md:mt-16 text-3xl sm:text-4xl md:text-5xl px-4 text-center`} 
+                <h1 className={`font-extrabold text-[#EEDB49] font-libre-caslon flex justify-center mt-8 sm:mt-12 md:mt-16 text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-4 text-center`} 
                     style={{textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 4px 20px #000000'}}>
                     Ready to be part of the yearbook?
                 </h1>
@@ -65,36 +65,36 @@ export default function Countdownpage() {
             </div>
            
             <div className={`mt-8 sm:mt-12 p-2 mx-auto max-w-[600px] ${styles.glassCard}`}>
-              <div className='grid grid-cols-2 gap-4 sm:gap-x-12 sm:gap-y-2'>
+              <div className='grid grid-cols-2 gap-2 sm:gap-4 md:gap-x-12 sm:gap-y-2'>
                 {/* Row 1 */}
-                <div className='text-white font-helvetica font-light text-right sm:text-center text-sm sm:text-lg'>
+                <div className='text-white font-helvetica font-light text-right sm:text-center text-xs sm:text-sm md:text-lg'>
                   November 5 to 8
                 </div>
-                <div className='text-white font-helvetica font-light text-left sm:text-center text-sm sm:text-lg '>
+                <div className='text-white font-helvetica font-light text-left sm:text-center text-xs sm:text-sm md:text-lg'>
                   6F Henry Sy Sr. Hall
                 </div>
                 
                 {/* Row 2 */}
-                <div className='text-white font-helvetica font-light text-right sm:text-center text-sm sm:text-lg'>
+                <div className='text-white font-helvetica font-light text-right sm:text-center text-xs sm:text-sm md:text-lg'>
                   November 10 to 15
                 </div>
-                <div className='text-white font-helvetica font-light text-left sm:text-center text-sm sm:text-lg'>
+                <div className='text-white font-helvetica font-light text-left sm:text-center text-xs sm:text-sm md:text-lg'>
                   Br. Andrew Gonzalez Hall Lobby
                 </div>
                 
                 {/* Row 3 */}
-                <div className='text-white font-helvetica font-light text-right sm:text-center text-sm sm:text-lg'>
+                <div className='text-white font-helvetica font-light text-right sm:text-center text-xs sm:text-sm md:text-lg'>
                   November 17 to 22
                 </div>
-                <div className='text-white font-helvetica font-light text-left sm:text-center text-sm sm:text-lg'>
+                <div className='text-white font-helvetica font-light text-left sm:text-center text-xs sm:text-sm md:text-lg'>
                   6F Henry Sy Sr. Hall
                 </div>
 
                  {/* Row 4 */}
-                <div className='text-white font-helvetica font-light text-right sm:text-center text-sm sm:text-lg'>
+                <div className='text-white font-helvetica font-light text-right sm:text-center text-xs sm:text-sm md:text-lg'>
                   November 24 to 29
                 </div>
-                <div className='text-white font-helvetica font-light text-left sm:text-center text-sm sm:text-lg'>
+                <div className='text-white font-helvetica font-light text-left sm:text-center text-xs sm:text-sm md:text-lg'>
                   5F Br. Connon Hall
                 </div>
               </div>
