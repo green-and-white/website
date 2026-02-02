@@ -6,36 +6,13 @@ import Footer from './Footer'
 import Navbar from './Navbar'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
-import { redirect } from 'react-router-dom'
+import pubLinksData from "../../assets/catalog/pubLinks.json"
 
 // Import all catalog images dynamically
 const catalogImages = import.meta.glob('../../assets/catalog/*.avif', { eager: true });
 
 // Facebook post URLs mapped by pub number
-const pubLinks = {
-  1: "https://fb.com/gwyearbookdlsu/posts/1335933848323397",
-  2: "https://fb.com/gwyearbookdlsu/posts/1405786991338082",
-  3: "https://fb.com/gwyearbookdlsu/posts/1377637320819716",
-  4: "https://fb.com/gwyearbookdlsu/posts/1364805358769579",
-  5: "https://fb.com/gwyearbookdlsu/posts/1347074927209289",
-  6: "https://fb.com/gwyearbookdlsu/posts/1375280967722018",
-  7: "https://fb.com/gwyearbookdlsu/posts/1376786110904837",
-  8: "https://fb.com/gwyearbookdlsu/posts/1345116050738510",
-  9: "https://fb.com/gwyearbookdlsu/posts/1366674618582653",
-  10: "https://fb.com/gwyearbookdlsu/posts/1371142848135830",
-  12: "https://fb.com/gwyearbookdlsu/posts/1343313314252117",
-  13: "https://fb.com/gwyearbookdlsu/posts/1355712633012185",
-  14: "https://fb.com/gwyearbookdlsu/posts/1356595966257185",
-  15: "https://fb.com/gwyearbookdlsu/posts/1357528499497265",
-  16: "https://fb.com/gwyearbookdlsu/posts/1378472687402846",
-  17: "https://fb.com/gwyearbookdlsu/posts/368932981690150",
-  18: "https://fb.com/gwyearbookdlsu/posts/1351496216767160",
-  19: "https://fb.com/gwyearbookdlsu/posts/1376971294219652",
-  20: "https://fb.com/gwyearbookdlsu/posts/1377699417480173",
-  21: "https://fb.com/gwyearbookdlsu/posts/1378154200768028",
-  22: "https://fb.com/gwyearbookdlsu/posts/1424443542805760",
-  23: "https://fb.com/gwyearbookdlsu/posts/1424443509472430"
-};
+const pubLinks = pubLinksData
 
 // Create pubsData array from imported images, sorted numerically
 const pubsData = Object.keys(catalogImages)
