@@ -217,24 +217,18 @@ export default function page() {
                 className="relative w-[75vw] h-[60vh] md:w-[70vw] md:max-w-3xl md:h-[70vh]"
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* Close Button */}
-                <button
-                  onClick={closePubDialog}
-                  className="absolute top-0 right-0 z-20 w-10 h-10 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
-                >
-                  <X size={20} />
-                </button>
+                
 
                 {/* Navigation Buttons */}
                 <button
                   onClick={() => navigatePub('prev')}
-                  className="absolute left-1/4 -translate-x-1/2 -bottom-8 md:left-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:bottom-auto z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
+                  className="absolute left-1/4 -translate-x-1/2 -bottom-8 md:-left-6 lg:left-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:bottom-auto z-10 w-12 h-12 bg-white text-black rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
                 >
                   <ChevronLeft size={24} />
                 </button>
                 <button
                   onClick={() => navigatePub('next')}
-                  className="absolute right-1/4 translate-x-1/2 -bottom-8 md:right-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:bottom-auto z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
+                  className="absolute right-1/4 translate-x-1/2 -bottom-8 md:-right-6 lg:right-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:bottom-auto z-10 w-12 h-12 bg-white text-black rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
                 >
                   <ChevronRight size={24} />
                 </button>
@@ -260,7 +254,20 @@ export default function page() {
                       alt={pubsData[selectedPub].title}
                       className="w-full h-full object-contain"
                     />
+                    
                   )}
+                  {/* Counter */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 px-4 py-2 bg-white/90 text-black rounded-full text-sm font-medium">
+                  {selectedPub + 1} of {pubsData.length}
+                </div>
+                
+                  {/* Close Button */}
+                <button
+                  onClick={closePubDialog}
+                  className="absolute top-0 right-0 z-20 w-10 h-10 bg-white text-black rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
+                >
+                  <X size={20} />
+                </button>
                 </div>
               </motion.div>
             </motion.div>
