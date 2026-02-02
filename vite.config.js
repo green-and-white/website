@@ -11,8 +11,15 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'), // Maps '@' to your 'src' directory
+      '@': path.resolve(__dirname, './src'), // Maps '@' to 'src' directory
     },
+  },
+  server: {
+    host: true, //for ngrok to connect to  local server
+    port: 5173,
+    allowedHosts: [
+      'protractedly-idioblastic-toni.ngrok-free.dev' // ngrok host link
+    ]
   },
   base: "/",
 })

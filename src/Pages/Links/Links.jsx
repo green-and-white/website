@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from "@/components/Link.jsx"
+import { Link as RouterLink } from 'react-router-dom'
 
 import logo from "@/assets/logos_updated/black-vertical.svg"
 import facebook from "@/assets/icons/facebook-black.svg"
@@ -12,11 +13,12 @@ import globe from "@/assets/icons/globe.svg"
 export default function Links() {
 return (
     <section className='grid justify-center items-center text-black p-8'>
+                
             <div className = " flex flex-col gap-5 max-w-[400px]">
-                    <div className="logo-container w-full  flex flex-col gap-3 items-center max-w-[225px] mx-auto">
+                    <RouterLink to="/" className="logo-container w-full  flex flex-col gap-3 items-center max-w-[225px] mx-auto cursor-pointer">
                             <img src={logo} alt="Logo" className="logo mx-auto w-[147px]"/>
                             <p className = "text-center font-jost-regular">The official yearbook publication of De La Salle University</p>
-                    </div>
+                    </RouterLink>
                     <div className=" mx-auto flex flex-row w-full justify-center gap-1.5 ">
                                     <a href="https://greenandwhite.com.ph" target="_blank" rel="noopener noreferrer">
                                             <img src={globe} alt="Website" className="h-5 w-5 p-[1px]"/>

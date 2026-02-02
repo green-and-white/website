@@ -4,7 +4,7 @@ import styles from '../../home.module.css'
 import miguelBackground from "@/assets/home_page/miguel.webp";
 import yearbookClaiming from '@/assets/announcements/yearbook_claiming.jpg'
 import links from '@/assets/announcements/links.jpg'
-import primer from '@/assets/announcements/reg_primer.png'
+import primer from '@/assets/announcements/reg_primer.avif'
 
 import { useBrowserDetection } from '@/hooks/useBrowserDetection';
 
