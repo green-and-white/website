@@ -10,6 +10,32 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 // Import all catalog images dynamically
 const catalogImages = import.meta.glob('../../assets/catalog/*.avif', { eager: true });
 
+// Facebook post URLs mapped by pub number
+const pubLinks = {
+  1: "https://fb.com/gwyearbookdlsu/posts/1335933848323397",
+  2: "https://fb.com/gwyearbookdlsu/posts/1405786991338082",
+  3: "https://fb.com/gwyearbookdlsu/posts/1377637320819716",
+  4: "https://fb.com/gwyearbookdlsu/posts/1364805358769579",
+  5: "https://fb.com/gwyearbookdlsu/posts/1347074927209289",
+  6: "https://fb.com/gwyearbookdlsu/posts/1375280967722018",
+  7: "https://fb.com/gwyearbookdlsu/posts/1376786110904837",
+  8: "https://fb.com/gwyearbookdlsu/posts/1345116050738510",
+  9: "https://fb.com/gwyearbookdlsu/posts/1366674618582653",
+  10: "https://fb.com/gwyearbookdlsu/posts/1371142848135830",
+  12: "https://fb.com/gwyearbookdlsu/posts/1343313314252117",
+  13: "https://fb.com/gwyearbookdlsu/posts/1355712633012185",
+  14: "https://fb.com/gwyearbookdlsu/posts/1356595966257185",
+  15: "https://fb.com/gwyearbookdlsu/posts/1357528499497265",
+  16: "https://fb.com/gwyearbookdlsu/posts/1378472687402846",
+  17: "https://fb.com/gwyearbookdlsu/posts/368932981690150",
+  18: "https://fb.com/gwyearbookdlsu/posts/1351496216767160",
+  19: "https://fb.com/gwyearbookdlsu/posts/1376971294219652",
+  20: "https://fb.com/gwyearbookdlsu/posts/1377699417480173",
+  21: "https://fb.com/gwyearbookdlsu/posts/1378154200768028",
+  22: "https://fb.com/gwyearbookdlsu/posts/1424443542805760",
+  23: "https://fb.com/gwyearbookdlsu/posts/1424443509472430"
+};
+
 // Create pubsData array from imported images, sorted numerically
 const pubsData = Object.keys(catalogImages)
   .filter(path => /\/\d+\.avif$/.test(path)) // Only include numbered files (1.avif, 2.avif, etc.)
@@ -18,7 +44,13 @@ const pubsData = Object.keys(catalogImages)
     const numB = parseInt(b.match(/\/(\d+)\.avif$/)[1]);
     return numA - numB;
   })
-  .map(path => ({ image: catalogImages[path].default }));
+  .map(path => {
+    const pubNumber = parseInt(path.match(/\/(\d+)\.avif$/)[1]);
+    return {
+      image: catalogImages[path].default,
+      link: pubLinks[pubNumber] || null
+    };
+  });
 
 export default function page() {
   const [selectedPub, setSelectedPub] = useState(null);
@@ -181,13 +213,13 @@ export default function page() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="relative w-[85vw] h-[70vh] md:w-[90vw] md:max-w-4xl md:h-[80vh]"
+                className="relative w-[75vw] h-[60vh] md:w-[70vw] md:max-w-3xl md:h-[70vh]"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button */}
                 <button
                   onClick={closePubDialog}
-                  className="absolute top-0 right-4 z-20 w-10 h-10 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
+                  className="absolute top-0 right-0 z-20 w-10 h-10 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
                 >
                   <X size={20} />
                 </button>
@@ -195,24 +227,39 @@ export default function page() {
                 {/* Navigation Buttons */}
                 <button
                   onClick={() => navigatePub('prev')}
-                  className="absolute left-1/4 -translate-x-1/2 -bottom-2 md:left-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:bottom-auto z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
+                  className="absolute left-1/4 -translate-x-1/2 -bottom-8 md:left-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:bottom-auto z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
                 >
                   <ChevronLeft size={24} />
                 </button>
                 <button
                   onClick={() => navigatePub('next')}
-                  className="absolute right-1/4 translate-x-1/2 -bottom-2 md:right-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:bottom-auto z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
+                  className="absolute right-1/4 translate-x-1/2 -bottom-8 md:right-12 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:bottom-auto z-10 w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors flex items-center justify-center"
                 >
                   <ChevronRight size={24} />
                 </button>
 
                 {/* Pub Content */}
-                <div className="h-full flex items-center justify-center p-4">
-                  <img 
-                    src={pubsData[selectedPub].image} 
-                    alt={pubsData[selectedPub].title}
-                    className="max-w-full max-h-full object-contain"
-                  />
+                <div className="h-full flex items-center justify-center">
+                  {pubsData[selectedPub].link ? (
+                    <a 
+                      href={pubsData[selectedPub].link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full h-full cursor-pointer"
+                    >
+                      <img 
+                        src={pubsData[selectedPub].image} 
+                        alt={pubsData[selectedPub].title}
+                        className="w-full h-full object-contain hover:opacity-90 transition-opacity"
+                      />
+                    </a>
+                  ) : (
+                    <img 
+                      src={pubsData[selectedPub].image} 
+                      alt={pubsData[selectedPub].title}
+                      className="w-full h-full object-contain"
+                    />
+                  )}
                 </div>
               </motion.div>
             </motion.div>
