@@ -1,4 +1,4 @@
-import HeaderBg from '@/assets/catalog/Header.webp'
+import HeaderBg from '@/assets/catalog/Header.avif'
 import styles from './catalog.module.css'
 import horizontalLogo from '@/assets/icons/white-horizontal.svg'
 import { motion, useScroll, useTransform } from "framer-motion"

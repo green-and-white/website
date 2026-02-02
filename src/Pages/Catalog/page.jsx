@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import RealisticWater from './RealisticWater'
-import pubs from "../../assets/catalog/pubs.webp"
+import pubs from "../../assets/catalog/pubs.avif"
 import Header from './Header'
 import Footer from './Footer'
 import Navbar from './Navbar'
