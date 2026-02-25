@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 const navLinks = [
     { name: 'Home', href: '#hero', type: 'section' },
+    { name: 'Primer', href: '/primer', type: 'route'}, 
     { name: 'Links', href: '/links', type: 'route' },
     { name: 'Catalog', href: '/catalog', type: 'route'},
     //{ name: 'Apply', href: '/apply', type: 'route'}    
