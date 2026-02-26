@@ -31,33 +31,41 @@ export default function PackagesSection() {
         </div>
 
         <div className={styles.primerPackagesLayout}>
-          <div className={styles.primerPackagesCards}>
-            {PACKAGE_CARDS.map((pkg) => (
-              <PackageCard
-                key={pkg.tier}
-                tier={pkg.tier}
-                title={pkg.title}
-                price={pkg.price}
-                accent={pkg.accent}
-                perks={pkg.perks}
-              />
-            ))}
+          <div className="flex flex-col items-center gap-5 w-full">
+            <div className={styles.accordionItem}>
+              <div className={`${styles.basicInclusion}`}>
+                <span>Basic Inclusions</span>
+              </div>
+
+              <div className={styles.accordionContentInner}>
+                <p className={styles.accordionSubtitle}>
+                  (All packages come with these services)
+                </p>
+                <ul className={styles.accordionList}>
+                  {BASIC_INCLUSIONS.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className={styles.primerPackagesCards}>
+              {PACKAGE_CARDS.map((pkg) => (
+                <PackageCard
+                  key={pkg.tier}
+                  tier={pkg.tier}
+                  title={pkg.title}
+                  price={pkg.price}
+                  accent={pkg.accent}
+                  perks={pkg.perks}
+                />
+              ))}
+            </div>
           </div>
 
-          <div className = "w-full flex justify-center">
+          <div className = "w-full flex flex-row justify-center">
             <div className={styles.primerPackagesAside}>
                         <Accordion>
-                          <AccordionItem title="Basic Inclusions">
-                            <p className={styles.accordionSubtitle}>
-                              (All packages come with these services)
-                            </p>
-                            <ul className={styles.accordionList}>
-                              {BASIC_INCLUSIONS.map((item) => (
-                                <li key={item}>{item}</li>
-                              ))}
-                            </ul>
-                          </AccordionItem>
-
                           <AccordionItem title="Payment Details">
                             <div className={styles.paymentDetails}>
                               {PAYMENT_DETAILS.map((detail, index) => (

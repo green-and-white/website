@@ -98,7 +98,8 @@
 
 .primerPackagesLayout{
     position: relative;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
     gap: clamp(1.5rem, 4vw, 3.5rem);
     align-items: center;
@@ -107,7 +108,7 @@
 .primerPackagesAside{
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: clamp(1.25rem, 3vw, 1.75rem);
     max-width: 403px;
     width: 100%;
@@ -118,69 +119,24 @@
     width: 100%;
 }
 
-.basicInclusionsCard{
-    position: relative;
+.basicInclusion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
     border: 3px solid #000;
     border-radius: 20px;
-    background: #fff;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 0.85rem;
-}
-
-.basicInclusionsCard::before{
-    content: "";
-    position: absolute;
-    inset: 9px;
-    border-radius: 15px;
+    padding: 0.65rem 1.5rem;
     background: #058cd7;
-    z-index: 1;
-}
-
-.basicInclusionsCardTitle,
-.basicInclusionsCardList{
-    position: relative;
-    z-index: 2;
-}
-
-.basicInclusionsCardTitle{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
+    box-shadow: inset 0 0 0 6px #058cd7, 0 4px 4px rgba(0, 0, 0, 0.25);
     color: #fff;
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 1rem;
     font-weight: 700;
-    text-align: center;
-    margin-bottom: 1rem;
+    border-radius: 20px 20px 0 0;
 }
 
-.basicInclusionsCardHighlight{
-    font-size: 1.4rem;
-}
-
-.basicInclusionsCardSubtitle{
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.basicInclusionsCardList{
-    list-style: disc;
-    margin: 0;
-    padding: 0 1.5rem 1.5rem 2rem;
-    list-style-position: outside;
-    color: #fff;
-    font-family: var(--font-helvetica, "Helvetica", sans-serif);
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-.basicInclusionsCardList li{
-    margin-bottom: 0.4rem;
-}
-
-.basicInclusionsCardList li:last-child{
-    margin-bottom: 0;
-}
 
 /* Accordion Styles */
  .accordion{
@@ -427,8 +383,7 @@
     align-items: flex-end;
     gap: clamp(1.25rem, 2.5vw, 2.25rem);
     max-width: 960px;
-    margin: 0 auto;
-    padding-bottom: clamp(5rem, 8vw, 6rem);
+    margin: 2rem;
 }
 
 .packageCard{
