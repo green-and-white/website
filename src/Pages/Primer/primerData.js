@@ -49,16 +49,8 @@ export const PACKAGE_CARDS = [
 
 export const PAYMENT_DETAILS = [
   {
-    title: "On-site via Cash or Card",
+    title: "On-site",
     description: null,
-  },
-  {
-    title: "Online-banking via official bank partners",
-    description: "BDO, Union Bank, and RCBC. Those who choose to do Online-banking must pay in full.",
-  },
-  {
-    title: "GCash",
-    description: "Gcash is not an available option.",
   },
   {
     title: "Late payments",
@@ -73,9 +65,7 @@ export const PAYMENT_SCHEMES = {
     details: "50% by November 19 and 50% by January 14",
     instructions: "Drop off your second installments at the dropbox in Rm. 503, 5/F Br. Connon Hall and fill up the QR Code to confirm your submission. If registration is ongoing, you may drop off your Official Receipt at the booth.",
   },
-  note: "Those who choose to do Online-banking must pay in full. ",
-  bullet: "If you will pay beyond the registration period, drop off your second installment official receipts at the dropbox in Rm. 503, 5/F Br. Connon Hall and accomplish the form through the QR Code to confirm your submission."
-};
+}
 
 export const REGISTRATION_STEPS = [
   {
@@ -100,7 +90,6 @@ export const REGISTRATION_STEPS = [
     title: "CHOOSE YOUR PAYMENT METHOD",
     cards: [
       {
-        heading: "ON-SITE",
         body: [
           [
             {
@@ -118,17 +107,6 @@ export const REGISTRATION_STEPS = [
           ],
         ],
       },
-      {
-        heading: "ONLINE BANKING",
-        body: [
-          [
-            {
-              type: "text",
-              content: "BDO, RCBC, and Union Bank",
-            },
-          ],
-        ],
-      },
     ],
   },
   {
@@ -136,24 +114,12 @@ export const REGISTRATION_STEPS = [
     title: "RETURN TO G&W BOOTH AND PROVIDE YOUR PROOF OF PAYMENT",
     cards: [
       {
-        heading: "ON-SITE",
         body: [
           [
             {
               type: "text",
               content:
                 "Submit Official Receipt (OR) and ensure that you get a copy of the OR",
-            },
-          ],
-        ],
-      },
-      {
-        heading: "ONLINE BANKING",
-        body: [
-          [
-            {
-              type: "text",
-              content: "Fill up confirmation form for the Accounting Office",
             },
           ],
         ],

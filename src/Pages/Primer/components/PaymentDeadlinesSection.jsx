@@ -73,7 +73,7 @@ export default function PaymentDeadlinesSection() {
                 className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-right text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Libre_Caslon_Condensed] font-bold italic"
                 style={{ gridArea: "2 / 1 / 4 / 2" }}
               >
-                November 19
+                April 13
               </div>
               <div
                 className="border-[3px] border-black py-5 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica]"
@@ -143,7 +143,7 @@ export default function PaymentDeadlinesSection() {
                 className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-right text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-[#fd464e] font-[Libre_Caslon_Condensed] font-bold italic rounded-bl-[20px]"
                 style={{ gridArea: "4 / 1 / 5 / 2" }}
               >
-                January 14
+                May 30
               </div>
               <div
                 className="border-[3px] border-black py-5 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica]"
