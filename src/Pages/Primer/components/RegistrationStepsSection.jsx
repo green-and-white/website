@@ -14,7 +14,7 @@ export default function RegistrationStepsSection() {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
-      </div>
+      </div> 
 
       <div className="relative z-10 mx-auto py-20 w-full">
         <div className={styles.registrationLayout}>
