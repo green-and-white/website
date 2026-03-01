@@ -71,7 +71,7 @@ export default function Countdownpage() {
                   March 11 to 21
                 </div>
                 <div className='text-white font-helvetica font-light text-left sm:text-center text-xs sm:text-sm md:text-lg'>
-                  Yuchengo Cave
+                  Yuchengco Cave
                 </div>
                 
                 {/* Row 2 */}

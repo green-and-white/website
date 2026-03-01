@@ -15,7 +15,7 @@ const CalendarLabels = ({selectedMonth}) => {
             width: '54%', // Spans 4 cells out of 5 columns
             transform: 'translateY(-50%)'
           }}
-        >Yuchengo Cave</div>
+        >Yuchengco Cave</div>
 
         {/* Bar spanning from day 10 to 14 (positions 0-3 in grid, first row) */}
 
@@ -27,7 +27,7 @@ const CalendarLabels = ({selectedMonth}) => {
             width: '82%', // Spans 4 cells out of 5 columns
             transform: 'translateY(-50%)'
           }}
-        >Yuchengo Cave</div>
+        >Yuchengco Cave</div>
 
       <div 
           className="absolute bg-retro-purple font-helvetica text-bold italic text-center px-2 rounded-full text-white z-2 text-[8px] sm:text-[10px] md:text-[12px]"

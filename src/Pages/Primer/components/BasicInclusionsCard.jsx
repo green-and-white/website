@@ -8,7 +8,7 @@ export default function BasicInclusionsCard({ items }) {
           + Basic Inclusions
         </span>
         <span className={styles.basicInclusionsCardSubtitle}>
-          (All packages come with these services)
+          (All packages come with these items and services)
         </span>
       </div>
 

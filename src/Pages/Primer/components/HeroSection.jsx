@@ -28,8 +28,8 @@ function Notes(){
           </li>
 
           <li style = {{textShadow: '1.5px 1.5px 4px rgba(0, 0, 0, 1)'}}>
-            There is a pre-registration process, which will allow you to pre-fill your information beforehand to expedite the process on-site. However, registration must still be verified at the Green & White booth. Access the forms here:
-            <a href="https://forms.gle/xNBJWFrup67DRsjP8"> Pre-registration Forms</a>
+            There is a pre-registration process, which will allow you to pre-fill your information beforehand to expedite the process on-site. However, registration must still be verified at the <strong>Green & White</strong> booth. Access the forms here:
+            <a href="https://forms.gle/xNBJWFrup67DRsjP8" className="text-retro-yellow underline"> Pre-registration Forms</a>
           </li>
         </ul>
       </div>

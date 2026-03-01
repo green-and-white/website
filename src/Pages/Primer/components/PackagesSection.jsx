@@ -32,7 +32,7 @@ export default function PackagesSection() {
 
         <div className={styles.primerPackagesLayout}>
           <div className="flex flex-col items-center gap-5 w-full">
-            <div className={styles.accordionItem}>
+            <div className="relative w-fit">
               <div className={`${styles.basicInclusion}`}>
                 <span>Basic Inclusions</span>
               </div>

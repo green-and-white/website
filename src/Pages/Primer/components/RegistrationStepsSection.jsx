@@ -20,11 +20,8 @@ export default function RegistrationStepsSection() {
         <div className={styles.registrationLayout}>
           <div className={styles.registrationHeader}>
             <h2 className={styles.h2} data-text="Registration">
-              Registration
+              Registration Steps
             </h2>
-            <h3 className={styles.h3} data-text="Steps">
-              Steps
-            </h3>
           </div>
 
           <div className={styles.registrationContent}>
