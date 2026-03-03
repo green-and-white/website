@@ -32,7 +32,7 @@ const SLIDES = [
         desc: `Join us and remember this chapter before it ends.
                 Check out Green & White’s registration primer and subscribe to the Yearbook of 2026 on March 11 to 28 and April 8 to 13!`,
         img: primer,
-        url: "https://www.canva.com/design/DAG0a18IVvU/TNZxzIIP-W4BRtU1sTIaVw/view?utlId=he59fe8ba06#1",
+        url: "https://drive.google.com/file/d/1V-f_XySz_YEAo9Ig35fdsFbGoyormsvh/view",
         buttonText: "View Registration Primer",
     },
 ]
