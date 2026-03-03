@@ -9,8 +9,13 @@ import Navbar from '@/components/Navbar';
 
 const primerNavLinks = [
   { name: 'Home', href: '/', type: 'route' },
+<<<<<<< HEAD
   { name: 'Primer', href: "#hero", type: 'section'},
   { name: 'Links', href: '/links', type: 'route' },
+=======
+  { name: 'Primer', href: "#hero", type: "section"},
+  { name: 'Links', href: '/links', type: 'section' },
+>>>>>>> 96bf120 (refactor: navbar link on primer and spacing for banner on hero on primer)
   { name: 'Catalog', href: '/catalog', type: 'route' },
 ];
 
