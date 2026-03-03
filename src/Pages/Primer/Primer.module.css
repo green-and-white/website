@@ -383,7 +383,7 @@
     align-items: flex-end;
     gap: clamp(1.25rem, 2.5vw, 2.25rem);
     max-width: 960px;
-    margin: 2rem;
+
 }
 
 .packageCard{

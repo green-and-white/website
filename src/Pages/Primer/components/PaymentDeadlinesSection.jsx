@@ -163,15 +163,15 @@ export default function PaymentDeadlinesSection() {
               </div>
               <div className="p-4 space-y-3">
                 <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">Full Payment (Nov 19)</span>
+                  <span className="font-[Helvetica] font-semibold">Full Payment (April 13)</span>
                   <span className="font-[Helvetica] text-lg font-bold">P5,000</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">1st Installment (Nov 19)</span>
+                  <span className="font-[Helvetica] font-semibold">1st Installment (May 30)</span>
                   <span className="font-[Helvetica] text-lg font-bold">P2,500</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="font-[Helvetica] font-semibold text-[#fd464e]">2nd Installment (Jan 14)</span>
+                  <span className="font-[Helvetica] font-semibold text-[#fd464e]">2nd Installment (May 30)</span>
                   <span className="font-[Helvetica] text-lg font-bold">P2,500</span>
                 </div>
               </div>
@@ -184,15 +184,15 @@ export default function PaymentDeadlinesSection() {
               </div>
               <div className="p-4 space-y-3">
                 <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">Full Payment (Nov 19)</span>
+                  <span className="font-[Helvetica] font-semibold">Full Payment (April 13)</span>
                   <span className="font-[Helvetica] text-lg font-bold">P5,150</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">1st Installment (Nov 19)</span>
+                  <span className="font-[Helvetica] font-semibold">1st Installment (April 13)</span>
                   <span className="font-[Helvetica] text-lg font-bold">P2,575</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="font-[Helvetica] font-semibold text-[#fd464e]">2nd Installment (Jan 14)</span>
+                  <span className="font-[Helvetica] font-semibold text-[#fd464e]">2nd Installment (May 30)</span>
                   <span className="font-[Helvetica] text-lg font-bold">P2,575</span>
                 </div>
               </div>
@@ -205,15 +205,15 @@ export default function PaymentDeadlinesSection() {
               </div>
               <div className="p-4 space-y-3">
                 <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">Full Payment (Nov 19)</span>
+                  <span className="font-[Helvetica] font-semibold">Full Payment (April 13)</span>
                   <span className="font-[Helvetica] text-lg font-bold">P5,300</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">1st Installment (Nov 19)</span>
+                  <span className="font-[Helvetica] font-semibold">1st Installment (April 13)</span>
                   <span className="font-[Helvetica] text-lg font-bold">P2,650</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="font-[Helvetica] font-semibold text-[#fd464e]">2nd Installment (Jan 14)</span>
+                  <span className="font-[Helvetica] font-semibold text-[#fd464e]">2nd Installment (May 30)</span>
                   <span className="font-[Helvetica] text-lg font-bold">P2,650</span>
                 </div>
               </div>
@@ -226,15 +226,15 @@ export default function PaymentDeadlinesSection() {
               </div>
               <div className="p-4 space-y-3">
                 <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">Full Payment (Nov 19)</span>
+                  <span className="font-[Helvetica] font-semibold">Full Payment (April 13)</span>
                   <span className="font-[Helvetica] text-lg font-bold">P4,800</span>
                 </div>
                 <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">1st Installment (Nov 19)</span>
+                  <span className="font-[Helvetica] font-semibold">1st Installment (April 13)</span>
                   <span className="font-[Helvetica] text-lg font-bold">P2,400</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="font-[Helvetica] font-semibold text-[#fd464e]">2nd Installment (Jan 14)</span>
+                  <span className="font-[Helvetica] font-semibold text-[#fd464e]">2nd Installment (May 30)</span>
                   <span className="font-[Helvetica] text-lg font-bold">P2,400</span>
                 </div>
               </div>

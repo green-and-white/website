@@ -33,6 +33,16 @@ function StandardRegistrationCard({ heading, body, list, isRotated }) {
                 ) : (
                   <React.Fragment key={segmentIndex}>
                     {segment.content}
+                    <br /> <br />
+                    {segment.linkText && segment.link ? (
+                        <a href={segment.link} className="text-blue-400 underline"
+                          target="_blank"
+                          rel="noopener noreferrer">
+                          {segment.linkText}
+                        </a>
+                      ) : segment.linkText ? (
+                        <span>{segment.linkText}</span>
+                      ) : null}
                   </React.Fragment>
                 )
               )}
@@ -84,6 +94,13 @@ export default function RegistrationInfoCard({
                   ) : (
                     <React.Fragment key={segmentIndex}>
                       {segment.content}
+                      {segment.linkText && segment.link ? (
+                        <a href={segment.link} target="_blank" rel="noopener noreferrer">
+                          {segment.linkText}
+                        </a>
+                      ) : segment.linkText ? (
+                        <span>{segment.linkText}</span>
+                      ) : null}
                     </React.Fragment>
                   )
                 )}

@@ -28,7 +28,7 @@ export default function PackagesSection() {
         </div>
 
         <div className={styles.primerPackagesLayout}>
-          <div className="flex flex-col xl:flex-row items-center gap-5 w-full">
+          <div className="flex flex-col gap-20 lg:flex-row lg:gap-10 justify-center items-center w-full">
             <div className="relative w-fit">
               <div className={`${styles.basicInclusion}`}>
                 <span>Basic Inclusions</span>
@@ -78,11 +78,10 @@ export default function PackagesSection() {
                                 </div>
                               ))}
                                <p className={styles.paymentSchemeNote}>
-                                <strong>Note:</strong> {PAYMENT_SCHEMES.note}
+                                <strong>Advisory:</strong> {PAYMENT_SCHEMES.note}
                                 {PAYMENT_SCHEMES.advisory}
                             </p>
                             </div>
-                           
                           </AccordionItem>
 
                           <AccordionItem title="Payment Schemes">
