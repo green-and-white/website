@@ -10,6 +10,7 @@
     z-index: 2;
     text-align: center;
     font-style: italic;
+    line-height: 3.5rem;
 }
 
 .h3{
@@ -69,7 +70,6 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: clamp(2rem, 4vw, 3rem);
 }
 
 .packagesHeader{
@@ -106,7 +106,7 @@
 }
 
 .primerPackagesAside{
-
+    padding-top: 12px; 
     display: flex;
     flex-direction: row;
     gap: clamp(1.25rem, 3vw, 1.75rem);
@@ -720,7 +720,7 @@
     align-items: center;
     text-align: center;
     gap: 0.5rem;
-    padding: 1.25rem 1rem 1.25rem;
+    padding: 1.5rem 0.75rem 1.5rem;
     min-height: 100%;
     height: 100%;
 }

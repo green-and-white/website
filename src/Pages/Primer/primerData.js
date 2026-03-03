@@ -97,7 +97,7 @@ export const REGISTRATION_STEPS = [
           [
             {
               type: "text",
-              content: "Pay On-site at the Accounting Cashier––please get a Referral Slip from the Green & White booth first. You may pay at your most convenient time. ",
+              content: "Pay On-site at the Accounting Cashier––please get a Referral Slip from the "
             },
             {
               type: "emphasis",
@@ -105,7 +105,7 @@ export const REGISTRATION_STEPS = [
             },
             {
               type: "text",
-              content: " booth",
+              content: " booth first. You may pay at your most convenient time.",
             },
           ],
         ],

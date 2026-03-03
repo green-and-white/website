@@ -20,10 +20,13 @@ export default function PackagesSection() {
         className={styles.primerTexture}
       />
 
-      <div className={styles.primerPackagesContent}>
+      <div className={`${styles.primerPackagesContent} gap-16`}>
         <div className={`flex flex-col items-center justify-center`}>
           <h2 className={styles.h2} data-text="Yearbook">
-            Yearbook <br /> Packages & Payment
+            Yearbook
+          </h2>
+          <h2 className={styles.h2} data-text="Yearbook">
+             Packages & Payment
           </h2>
         </div>
 

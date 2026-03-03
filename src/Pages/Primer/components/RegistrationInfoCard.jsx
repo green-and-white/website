@@ -33,13 +33,17 @@ function StandardRegistrationCard({ heading, body, list, isRotated }) {
                 ) : (
                   <React.Fragment key={segmentIndex}>
                     {segment.content}
-                    <br /> <br />
+
                     {segment.linkText && segment.link ? (
-                        <a href={segment.link} className="text-blue-400 underline"
-                          target="_blank"
-                          rel="noopener noreferrer">
-                          {segment.linkText}
-                        </a>
+                        <>
+                          <div className="m-2"></div>
+                          <a href={segment.link} className="text-retro-yellow underline"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            {segment.linkText}
+                          </a>
+                        </>
+                        
                       ) : segment.linkText ? (
                         <span>{segment.linkText}</span>
                       ) : null}

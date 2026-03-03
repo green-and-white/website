@@ -1,5 +1,4 @@
 import HeroSection from "./components/HeroSection";
-import StickerBanner from "./components/StickerBanner";
 import PackagesSection from "./components/PackagesSection";
 import TimelineSection from "./components/TimelineSection";
 import PaymentDeadlinesSection from "./components/PaymentDeadlinesSection";
@@ -17,7 +16,6 @@ export default function Primer() {
   return (
     <main>
       <Navbar links={primerNavLinks} />
-      <StickerBanner/>
       <HeroSection />
       <PackagesSection />
       <TimelineSection />
