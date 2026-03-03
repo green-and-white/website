@@ -5,7 +5,7 @@ import RegistrationInfoCard from "./RegistrationInfoCard";
 
 export default function RegistrationStepsSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-linear-to-b from-[#5332a3] via-[#5332a3] to-[#261351]" />
         <img

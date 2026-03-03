@@ -59,7 +59,6 @@
     background-color: #bd8833;
     background-image: radial-gradient(ellipse at 50% 38%, #ffc567 0%, #dea74d 50%, #bd8833 75%, #a87900 100%);
     background-size: cover;
-    padding: clamp(0.5rem, 2vw, 1.5rem) clamp(1.5rem, 5vw, 4rem) clamp(8rem, 5vw, 6rem);
     z-index: 15;
 }
 

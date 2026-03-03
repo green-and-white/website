@@ -49,8 +49,10 @@ export const PACKAGE_CARDS = [
 
 export const PAYMENT_DETAILS = [
   {
-    title: "On-site",
-    description: null,
+    title: "On-site (Cash Only)",
+    description: "Please get a referral slip from the ",
+    emphasis:"Green & White",
+    descriptoin2:" booth first before proceeding to Accounting.",
   },
   {
     title: "Late payments",
@@ -60,12 +62,18 @@ export const PAYMENT_DETAILS = [
 
 export const PAYMENT_SCHEMES = {
   intro: "You may opt to pay in Full or Partial",
+  full:{
+    title: "Full Payment",
+    details: "100% by April 13",
+  },
   partial: {
     title: "Partial (Two Installments)",
     details: "50% by April 13 and 50% by May 30",
     instructions: "Drop off your second installments at the dropbox in Rm. 503, 5/F Br. Connon Hall and fill up the QR Code to confirm your submission. If registration is ongoing, you may drop off your Official Receipt at the booth.",
   },
-  advisory: "Please be advised that DLSU has updated its payment channels. As of January 31, the Accounting Cashier only accepts Cash payments on-site and has migrated its Card payments to Archers Hub. As a result, Card and Online Banking are no longer accepted as a mode of payment for the yearbook."
+  advisory: "Please be advised that DLSU has updated its payment channels. As of January 31, the Accounting Cashier only accepts Cash payments on-site and has migrated its Card payments to Archers Hub. As a result,",
+  emphasis:" Card and Online Banking are no longer accepted",
+  advisory2: "  as a mode of payment for the yearbook."
 }
 
 export const REGISTRATION_STEPS = [

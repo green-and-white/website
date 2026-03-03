@@ -1,6 +1,16 @@
 import React from "react";
 import styles from "../Primer.module.css";
 
+function highlightText(text, keyword = "Green & White") {
+  if (typeof text !== "string") return text;
+  const parts = text.split(keyword);
+  return parts.flatMap((part, i) =>
+    i < parts.length - 1
+      ? [part, <strong key={i}>{keyword}</strong>]
+      : [part]
+  );
+}
+
 function StandardRegistrationCard({ heading, body, list, isRotated }) {
   const cardWrapperClass = isRotated 
     ? `${styles.registrationCard} ${styles.registrationCardRotated}`
@@ -16,7 +26,7 @@ function StandardRegistrationCard({ heading, body, list, isRotated }) {
         {list ? (
           <ol className={styles.registrationCardList}>
             {list.map((item, index) => (
-              <li key={index}>{item}</li>
+              <li key={index}>{highlightText(item)}</li>
             ))}
           </ol>
         ) : (
@@ -81,7 +91,7 @@ export default function RegistrationInfoCard({
           {list ? (
             <ol className={styles.registrationCardList}>
               {list.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>{highlightText(item)}</li>
               ))}
             </ol>
           ) : (

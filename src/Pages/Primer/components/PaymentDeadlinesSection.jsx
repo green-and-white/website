@@ -5,7 +5,7 @@ import texture from "../../../assets/textures/texture.png";
 
 export default function PaymentDeadlinesSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-linear-to-b from-[#00653e] to-[#008d57]" />
         <img

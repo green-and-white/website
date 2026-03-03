@@ -12,7 +12,7 @@ import PackageCard from "./PackageCard";
 
 export default function PackagesSection() {
   return (
-    <section className={`${styles.primerPackages} pt-20`}>
+    <section className={`${styles.primerPackages} py-30`}>
       <img
         src={texture}
         alt=""
@@ -75,14 +75,23 @@ export default function PackagesSection() {
                                   </strong>
                                   {detail.description && (
                                     <p className={styles.paymentDetailDescription}>
-                                      {detail.description}
+                                      {detail.description}  <strong>{detail.emphasis}</strong>
                                     </p>
                                   )}
+                                 
+                                   {detail.descriptoin2 && (
+                                    <p className={styles.paymentDetailDescription}>
+                                      {detail.descriptoin2}
+                                    </p>
+                                  )}
+
                                 </div>
                               ))}
                                <p className={styles.paymentSchemeNote}>
                                 <strong>Advisory:</strong> {PAYMENT_SCHEMES.note}
                                 {PAYMENT_SCHEMES.advisory}
+                                <strong>{PAYMENT_SCHEMES.emphasis}</strong>
+                                {PAYMENT_SCHEMES.advisory2}
                             </p>
                             </div>
                           </AccordionItem>
@@ -92,7 +101,14 @@ export default function PackagesSection() {
                               <p className={styles.paymentSchemesIntro}>
                                 {PAYMENT_SCHEMES.intro}
                               </p>
-                              
+                              <div className={styles.paymentSchemeItem}>
+                                <strong className={styles.paymentSchemeMethod}>
+                                  {PAYMENT_SCHEMES.full.title}
+                                </strong>
+                                <p className={styles.paymentSchemeDescription}>
+                                  {PAYMENT_SCHEMES.full.details}
+                                </p>
+                              </div>
                               <div className={styles.paymentSchemeItem}>
                                 <strong className={styles.paymentSchemeMethod}>
                                   {PAYMENT_SCHEMES.partial.title}
