@@ -3,7 +3,7 @@ import styles from "../Primer.module.css";
 export default function PackageCard({ tier, title, price, accent, perks }) {
   return (
     <article
-      className={styles.packageCard}
+      className={`min-h-fit sm:min-h-[350px] md:min-h-[390px] h-full ${styles.packageCard}`}
       style={{ "--package-accent": accent }}
     >
       <div className={styles.packageCardSurface}>
@@ -13,6 +13,7 @@ export default function PackageCard({ tier, title, price, accent, perks }) {
           <div className={styles.packageCardTitle}>{title}</div>
         </div>
         <ul className={styles.packageCardList}>
+          <li>Basic inclusions</li>
           {perks.map((perk) => (
             <li key={perk}>{perk}</li>
           ))}

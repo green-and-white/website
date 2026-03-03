@@ -23,15 +23,12 @@ export default function PackagesSection() {
       <div className={styles.primerPackagesContent}>
         <div className={`flex flex-col items-center justify-center`}>
           <h2 className={styles.h2} data-text="Yearbook">
-            Yearbook
+            Yearbook <br /> Packages & Payment
           </h2>
-          <h3 className={styles.h3} data-text="Packages & Payment">
-            Packages & Payment
-          </h3>
         </div>
 
         <div className={styles.primerPackagesLayout}>
-          <div className="flex flex-col items-center gap-5 w-full">
+          <div className="flex flex-col xl:flex-row items-center gap-5 w-full">
             <div className="relative w-fit">
               <div className={`${styles.basicInclusion}`}>
                 <span>Basic Inclusions</span>
@@ -80,7 +77,12 @@ export default function PackagesSection() {
                                   )}
                                 </div>
                               ))}
+                               <p className={styles.paymentSchemeNote}>
+                                <strong>Note:</strong> {PAYMENT_SCHEMES.note}
+                                {PAYMENT_SCHEMES.advisory}
+                            </p>
                             </div>
+                           
                           </AccordionItem>
 
                           <AccordionItem title="Payment Schemes">
@@ -100,11 +102,6 @@ export default function PackagesSection() {
                                   {PAYMENT_SCHEMES.partial.instructions}
                                 </p>
                               </div>
-
-                              <p className={styles.paymentSchemeNote}>
-                                <strong>Note:</strong> {PAYMENT_SCHEMES.note}
-                                {PAYMENT_SCHEMES.bullet}
-                              </p>
                             </div>
                           </AccordionItem>
                         </Accordion>

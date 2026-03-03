@@ -41,9 +41,8 @@ const CalendarLabels = ({selectedMonth}) => {
         
         {/* Text spanning from day 11 to 13 (positions 6-8, second row) */}
         <div 
-          className="absolute text-white text-center z-10 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[20px] leading-tight"
+          className="absolute text-white text-center z-10 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[20px] leading-tight top-40 md:top-50"
           style={{
-            top: '28%',
             left: '21%',
             width: '58%', // Spans 3 cells (11-13)
             transform: 'translateY(-50%)',

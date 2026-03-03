@@ -65,6 +65,7 @@ export const PAYMENT_SCHEMES = {
     details: "50% by November 19 and 50% by January 14",
     instructions: "Drop off your second installments at the dropbox in Rm. 503, 5/F Br. Connon Hall and fill up the QR Code to confirm your submission. If registration is ongoing, you may drop off your Official Receipt at the booth.",
   },
+  advisory: "Please be advised that DLSU has updated its payment channels. As of January 31, the Accounting Cashier only accepts Cash payments on-site and has migrated its Card payments to Archers Hub. As a result, Card and Online Banking are no longer accepted as a mode of payment for the yearbook."
 }
 
 export const REGISTRATION_STEPS = [
