@@ -20,8 +20,6 @@ const Navbar = ({
   const [showNavbar, setShowNavbar] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const isPrimer = links.some(link => link.name === 'Primer' && link.type === 'section');
-
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -50,7 +48,7 @@ const Navbar = ({
 
     <nav
       className={`fixed top-0 left-0 w-full transition-transform duration-300 z-50 px-4 sm:px-6
-        ${showNavbar ? (isPrimer ? "translate-y-20" : "translate-y-12") : "-translate-y-full"}`}
+        ${showNavbar ? "translate-y-12" : "-translate-y-full"}`}
     >
       
       {/* Desktop Navigation */}
