@@ -5,11 +5,12 @@
     -webkit-text-stroke-width: 4px;
     paint-order: stroke fill;
     font-weight: 700;
-    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-size: clamp(2.5rem, 8vw, 3rem);
     font-family: var(--font-libre-caslon);
     z-index: 2;
     text-align: center;
     font-style: italic;
+    line-height: 3.5rem;
 }
 
 .h3{
@@ -58,7 +59,6 @@
     background-color: #bd8833;
     background-image: radial-gradient(ellipse at 50% 38%, #ffc567 0%, #dea74d 50%, #bd8833 75%, #a87900 100%);
     background-size: cover;
-    padding: clamp(0.5rem, 2vw, 1.5rem) clamp(1.5rem, 5vw, 4rem) clamp(8rem, 5vw, 6rem);
     z-index: 15;
 }
 
@@ -69,7 +69,6 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: clamp(2rem, 4vw, 3rem);
 }
 
 .packagesHeader{
@@ -98,16 +97,17 @@
 
 .primerPackagesLayout{
     position: relative;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
     gap: clamp(1.5rem, 4vw, 3.5rem);
     align-items: center;
 }
 
 .primerPackagesAside{
-
+    padding-top: 12px; 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: clamp(1.25rem, 3vw, 1.75rem);
     max-width: 403px;
     width: 100%;
@@ -118,69 +118,24 @@
     width: 100%;
 }
 
-.basicInclusionsCard{
-    position: relative;
+.basicInclusion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
     border: 3px solid #000;
     border-radius: 20px;
-    background: #fff;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 0.85rem;
-}
-
-.basicInclusionsCard::before{
-    content: "";
-    position: absolute;
-    inset: 9px;
-    border-radius: 15px;
+    padding: 0.65rem 1.5rem;
     background: #058cd7;
-    z-index: 1;
-}
-
-.basicInclusionsCardTitle,
-.basicInclusionsCardList{
-    position: relative;
-    z-index: 2;
-}
-
-.basicInclusionsCardTitle{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
+    box-shadow: inset 0 0 0 6px #058cd7, 0 4px 4px rgba(0, 0, 0, 0.25);
     color: #fff;
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 1rem;
     font-weight: 700;
-    text-align: center;
-    margin-bottom: 1rem;
+    border-radius: 20px 20px 0 0;
 }
 
-.basicInclusionsCardHighlight{
-    font-size: 1.4rem;
-}
-
-.basicInclusionsCardSubtitle{
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.basicInclusionsCardList{
-    list-style: disc;
-    margin: 0;
-    padding: 0 1.5rem 1.5rem 2rem;
-    list-style-position: outside;
-    color: #fff;
-    font-family: var(--font-helvetica, "Helvetica", sans-serif);
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-.basicInclusionsCardList li{
-    margin-bottom: 0.4rem;
-}
-
-.basicInclusionsCardList li:last-child{
-    margin-bottom: 0;
-}
 
 /* Accordion Styles */
  .accordion{
@@ -427,13 +382,11 @@
     align-items: flex-end;
     gap: clamp(1.25rem, 2.5vw, 2.25rem);
     max-width: 960px;
-    margin: 0 auto;
-    padding-bottom: clamp(5rem, 8vw, 6rem);
+
 }
 
 .packageCard{
     position: relative;
-    min-height: 370px; 
     width: 250px;
     border: 3px solid #000;
     border-radius: 20px;
@@ -766,7 +719,7 @@
     align-items: center;
     text-align: center;
     gap: 0.5rem;
-    padding: 1.25rem 1rem 1.25rem;
+    padding: 1.5rem 0.75rem 1.5rem;
     min-height: 100%;
     height: 100%;
 }

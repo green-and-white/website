@@ -3,7 +3,7 @@ import texture from "../../../assets/textures/texture.png";
 
 export default function TimelineSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-linear-to-b from-[#00995e] via-[#00995e] to-[#00653e]" />
         <img

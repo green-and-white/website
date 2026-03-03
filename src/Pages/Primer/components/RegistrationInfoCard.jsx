@@ -1,6 +1,16 @@
 import React from "react";
 import styles from "../Primer.module.css";
 
+function highlightText(text, keyword = "Green & White") {
+  if (typeof text !== "string") return text;
+  const parts = text.split(keyword);
+  return parts.flatMap((part, i) =>
+    i < parts.length - 1
+      ? [part, <strong key={i}>{keyword}</strong>]
+      : [part]
+  );
+}
+
 function StandardRegistrationCard({ heading, body, list, isRotated }) {
   const cardWrapperClass = isRotated 
     ? `${styles.registrationCard} ${styles.registrationCardRotated}`
@@ -16,7 +26,7 @@ function StandardRegistrationCard({ heading, body, list, isRotated }) {
         {list ? (
           <ol className={styles.registrationCardList}>
             {list.map((item, index) => (
-              <li key={index}>{item}</li>
+              <li key={index}>{highlightText(item)}</li>
             ))}
           </ol>
         ) : (
@@ -33,6 +43,20 @@ function StandardRegistrationCard({ heading, body, list, isRotated }) {
                 ) : (
                   <React.Fragment key={segmentIndex}>
                     {segment.content}
+
+                    {segment.linkText && segment.link ? (
+                        <>
+                          <div className="m-2"></div>
+                          <a href={segment.link} className="text-retro-yellow underline"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            {segment.linkText}
+                          </a>
+                        </>
+                        
+                      ) : segment.linkText ? (
+                        <span>{segment.linkText}</span>
+                      ) : null}
                   </React.Fragment>
                 )
               )}
@@ -67,7 +91,7 @@ export default function RegistrationInfoCard({
           {list ? (
             <ol className={styles.registrationCardList}>
               {list.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>{highlightText(item)}</li>
               ))}
             </ol>
           ) : (
@@ -84,6 +108,13 @@ export default function RegistrationInfoCard({
                   ) : (
                     <React.Fragment key={segmentIndex}>
                       {segment.content}
+                      {segment.linkText && segment.link ? (
+                        <a href={segment.link} target="_blank" rel="noopener noreferrer">
+                          {segment.linkText}
+                        </a>
+                      ) : segment.linkText ? (
+                        <span>{segment.linkText}</span>
+                      ) : null}
                     </React.Fragment>
                   )
                 )}

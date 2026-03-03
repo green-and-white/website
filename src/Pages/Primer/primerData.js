@@ -49,16 +49,10 @@ export const PACKAGE_CARDS = [
 
 export const PAYMENT_DETAILS = [
   {
-    title: "On-site via Cash or Card",
-    description: null,
-  },
-  {
-    title: "Online-banking via official bank partners",
-    description: "BDO, Union Bank, and RCBC. Those who choose to do Online-banking must pay in full.",
-  },
-  {
-    title: "GCash",
-    description: "Gcash is not an available option.",
+    title: "On-site (Cash Only)",
+    description: "Please get a referral slip from the ",
+    emphasis:"Green & White",
+    descriptoin2:" booth first before proceeding to Accounting.",
   },
   {
     title: "Late payments",
@@ -68,14 +62,19 @@ export const PAYMENT_DETAILS = [
 
 export const PAYMENT_SCHEMES = {
   intro: "You may opt to pay in Full or Partial",
+  full:{
+    title: "Full Payment",
+    details: "100% by April 13",
+  },
   partial: {
     title: "Partial (Two Installments)",
-    details: "50% by November 19 and 50% by January 14",
+    details: "50% by April 13 and 50% by May 30",
     instructions: "Drop off your second installments at the dropbox in Rm. 503, 5/F Br. Connon Hall and fill up the QR Code to confirm your submission. If registration is ongoing, you may drop off your Official Receipt at the booth.",
   },
-  note: "Those who choose to do Online-banking must pay in full. ",
-  bullet: "If you will pay beyond the registration period, drop off your second installment official receipts at the dropbox in Rm. 503, 5/F Br. Connon Hall and accomplish the form through the QR Code to confirm your submission."
-};
+  advisory: "Please be advised that DLSU has updated its payment channels. As of January 31, the Accounting Cashier only accepts Cash payments on-site and has migrated its Card payments to Archers Hub. As a result,",
+  emphasis:" Card and Online Banking are no longer accepted",
+  advisory2: "  as a mode of payment for the yearbook."
+}
 
 export const REGISTRATION_STEPS = [
   {
@@ -89,6 +88,8 @@ export const REGISTRATION_STEPS = [
               type: "text",
               content:
                 "Pre-registration is completely optional but will expedite the registration process",
+              linkText:"Access the pre-registration link here",
+              link: "https://forms.gle/xNBJWFrup67DRsjP8"
             },
           ],
         ],
@@ -100,12 +101,11 @@ export const REGISTRATION_STEPS = [
     title: "CHOOSE YOUR PAYMENT METHOD",
     cards: [
       {
-        heading: "ON-SITE",
         body: [
           [
             {
               type: "text",
-              content: "Pay via Cash or Card at the Accounting Cashier—please get a Referral Slip from the ",
+              content: "Pay On-site at the Accounting Cashier––please get a Referral Slip from the "
             },
             {
               type: "emphasis",
@@ -113,18 +113,7 @@ export const REGISTRATION_STEPS = [
             },
             {
               type: "text",
-              content: " booth",
-            },
-          ],
-        ],
-      },
-      {
-        heading: "ONLINE BANKING",
-        body: [
-          [
-            {
-              type: "text",
-              content: "BDO, RCBC, and Union Bank",
+              content: " booth first. You may pay at your most convenient time.",
             },
           ],
         ],
@@ -136,24 +125,12 @@ export const REGISTRATION_STEPS = [
     title: "RETURN TO G&W BOOTH AND PROVIDE YOUR PROOF OF PAYMENT",
     cards: [
       {
-        heading: "ON-SITE",
         body: [
           [
             {
               type: "text",
               content:
                 "Submit Official Receipt (OR) and ensure that you get a copy of the OR",
-            },
-          ],
-        ],
-      },
-      {
-        heading: "ONLINE BANKING",
-        body: [
-          [
-            {
-              type: "text",
-              content: "Fill up confirmation form for the Accounting Office",
             },
           ],
         ],

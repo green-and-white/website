@@ -8,8 +8,8 @@ import Navbar from '@/components/Navbar';
 
 const primerNavLinks = [
   { name: 'Home', href: '/', type: 'route' },
-  { name: 'Primer', href: "#hero", type: "section"},
-  { name: 'Links', href: '/links', type: 'section' },
+  { name: 'Primer', href: "#hero", type: 'section'},
+  { name: 'Links', href: '/links', type: 'route' },
   { name: 'Catalog', href: '/catalog', type: 'route' },
 ];
 

@@ -48,8 +48,6 @@ const Navbar = ({
 
   return (
 
-   <>
-
     <nav
       className={`fixed top-0 left-0 w-full transition-transform duration-300 z-50 px-4 sm:px-6
         ${showNavbar ? (isPrimer ? "translate-y-20" : "translate-y-12") : "-translate-y-full"}`}
@@ -162,7 +160,6 @@ const Navbar = ({
         </div>
       </div>
     </nav>
-    </>
   );
 };
 

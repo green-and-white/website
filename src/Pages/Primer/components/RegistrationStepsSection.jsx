@@ -5,7 +5,7 @@ import RegistrationInfoCard from "./RegistrationInfoCard";
 
 export default function RegistrationStepsSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-linear-to-b from-[#5332a3] via-[#5332a3] to-[#261351]" />
         <img
@@ -14,17 +14,14 @@ export default function RegistrationStepsSection() {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
-      </div>
+      </div> 
 
       <div className="relative z-10 mx-auto py-20 w-full">
         <div className={styles.registrationLayout}>
           <div className={styles.registrationHeader}>
             <h2 className={styles.h2} data-text="Registration">
-              Registration
+              Registration Steps
             </h2>
-            <h3 className={styles.h3} data-text="Steps">
-              Steps
-            </h3>
           </div>
 
           <div className={styles.registrationContent}>

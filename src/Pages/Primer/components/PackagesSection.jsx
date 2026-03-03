@@ -12,7 +12,7 @@ import PackageCard from "./PackageCard";
 
 export default function PackagesSection() {
   return (
-    <section className={`${styles.primerPackages} pt-20`}>
+    <section className={`${styles.primerPackages} py-30`}>
       <img
         src={texture}
         alt=""
@@ -20,44 +20,52 @@ export default function PackagesSection() {
         className={styles.primerTexture}
       />
 
-      <div className={styles.primerPackagesContent}>
+      <div className={`${styles.primerPackagesContent} gap-16`}>
         <div className={`flex flex-col items-center justify-center`}>
           <h2 className={styles.h2} data-text="Yearbook">
             Yearbook
           </h2>
-          <h3 className={styles.h3} data-text="Packages & Payment">
-            Packages & Payment
-          </h3>
+          <h2 className={styles.h2} data-text="Yearbook">
+             Packages & Payment
+          </h2>
         </div>
 
         <div className={styles.primerPackagesLayout}>
-          <div className={styles.primerPackagesCards}>
-            {PACKAGE_CARDS.map((pkg) => (
-              <PackageCard
-                key={pkg.tier}
-                tier={pkg.tier}
-                title={pkg.title}
-                price={pkg.price}
-                accent={pkg.accent}
-                perks={pkg.perks}
-              />
-            ))}
+          <div className="flex flex-col gap-20 lg:flex-row lg:gap-10 justify-center items-center w-full">
+            <div className="relative w-fit">
+              <div className={`${styles.basicInclusion}`}>
+                <span>Basic Inclusions</span>
+              </div>
+
+              <div className={styles.accordionContentInner}>
+                <p className={styles.accordionSubtitle}>
+                  (All packages come with these services)
+                </p>
+                <ul className={styles.accordionList}>
+                  {BASIC_INCLUSIONS.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className={styles.primerPackagesCards}>
+              {PACKAGE_CARDS.map((pkg) => (
+                <PackageCard
+                  key={pkg.tier}
+                  tier={pkg.tier}
+                  title={pkg.title}
+                  price={pkg.price}
+                  accent={pkg.accent}
+                  perks={pkg.perks}
+                />
+              ))}
+            </div>
           </div>
 
-          <div className = "w-full flex justify-center">
+          <div className = "w-full flex flex-row justify-center">
             <div className={styles.primerPackagesAside}>
                         <Accordion>
-                          <AccordionItem title="Basic Inclusions">
-                            <p className={styles.accordionSubtitle}>
-                              (All packages come with these services)
-                            </p>
-                            <ul className={styles.accordionList}>
-                              {BASIC_INCLUSIONS.map((item) => (
-                                <li key={item}>{item}</li>
-                              ))}
-                            </ul>
-                          </AccordionItem>
-
                           <AccordionItem title="Payment Details">
                             <div className={styles.paymentDetails}>
                               {PAYMENT_DETAILS.map((detail, index) => (
@@ -67,11 +75,24 @@ export default function PackagesSection() {
                                   </strong>
                                   {detail.description && (
                                     <p className={styles.paymentDetailDescription}>
-                                      {detail.description}
+                                      {detail.description}  <strong>{detail.emphasis}</strong>
                                     </p>
                                   )}
+                                 
+                                   {detail.descriptoin2 && (
+                                    <p className={styles.paymentDetailDescription}>
+                                      {detail.descriptoin2}
+                                    </p>
+                                  )}
+
                                 </div>
                               ))}
+                               <p className={styles.paymentSchemeNote}>
+                                <strong>Advisory:</strong> {PAYMENT_SCHEMES.note}
+                                {PAYMENT_SCHEMES.advisory}
+                                <strong>{PAYMENT_SCHEMES.emphasis}</strong>
+                                {PAYMENT_SCHEMES.advisory2}
+                            </p>
                             </div>
                           </AccordionItem>
 
@@ -80,7 +101,14 @@ export default function PackagesSection() {
                               <p className={styles.paymentSchemesIntro}>
                                 {PAYMENT_SCHEMES.intro}
                               </p>
-                              
+                              <div className={styles.paymentSchemeItem}>
+                                <strong className={styles.paymentSchemeMethod}>
+                                  {PAYMENT_SCHEMES.full.title}
+                                </strong>
+                                <p className={styles.paymentSchemeDescription}>
+                                  {PAYMENT_SCHEMES.full.details}
+                                </p>
+                              </div>
                               <div className={styles.paymentSchemeItem}>
                                 <strong className={styles.paymentSchemeMethod}>
                                   {PAYMENT_SCHEMES.partial.title}
@@ -92,11 +120,6 @@ export default function PackagesSection() {
                                   {PAYMENT_SCHEMES.partial.instructions}
                                 </p>
                               </div>
-
-                              <p className={styles.paymentSchemeNote}>
-                                <strong>Note:</strong> {PAYMENT_SCHEMES.note}
-                                {PAYMENT_SCHEMES.bullet}
-                              </p>
                             </div>
                           </AccordionItem>
                         </Accordion>

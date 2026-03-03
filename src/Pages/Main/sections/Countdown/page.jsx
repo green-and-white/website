@@ -7,7 +7,7 @@ import skyBackground from "@/assets/home_page/sky.webp";
 import { useBrowserDetection } from '@/hooks/useBrowserDetection';
 
 export default function Countdownpage() {
-    const targetTime = new Date('2025-11-29T00:00:00');
+    const targetTime = new Date('2026-03-11T00:00:00');
     const { isSafari } = useBrowserDetection();
     const renderer = ({ days, hours, minutes, seconds }) => {
         return (
@@ -68,34 +68,26 @@ export default function Countdownpage() {
               <div className='grid grid-cols-2 gap-2 sm:gap-4 md:gap-x-12 sm:gap-y-2'>
                 {/* Row 1 */}
                 <div className='text-white font-helvetica font-light text-right sm:text-center text-xs sm:text-sm md:text-lg'>
-                  November 5 to 8
+                  March 11 to 21
                 </div>
                 <div className='text-white font-helvetica font-light text-left sm:text-center text-xs sm:text-sm md:text-lg'>
-                  6F Henry Sy Sr. Hall
+                  Yuchengco Cave
                 </div>
                 
                 {/* Row 2 */}
                 <div className='text-white font-helvetica font-light text-right sm:text-center text-xs sm:text-sm md:text-lg'>
-                  November 10 to 15
-                </div>
-                <div className='text-white font-helvetica font-light text-left sm:text-center text-xs sm:text-sm md:text-lg'>
-                  Br. Andrew Gonzalez Hall Lobby
-                </div>
-                
-                {/* Row 3 */}
-                <div className='text-white font-helvetica font-light text-right sm:text-center text-xs sm:text-sm md:text-lg'>
-                  November 17 to 22
+                  March 23 to 28
                 </div>
                 <div className='text-white font-helvetica font-light text-left sm:text-center text-xs sm:text-sm md:text-lg'>
                   6F Henry Sy Sr. Hall
                 </div>
-
-                 {/* Row 4 */}
+                
+                {/* Row 3 */}
                 <div className='text-white font-helvetica font-light text-right sm:text-center text-xs sm:text-sm md:text-lg'>
-                  November 24 to 29
+                  April 8 to 13
                 </div>
                 <div className='text-white font-helvetica font-light text-left sm:text-center text-xs sm:text-sm md:text-lg'>
-                  5F Br. Connon Hall
+                  Rm. 502, 5F Br. Connon Hall
                 </div>
               </div>
             </div>
