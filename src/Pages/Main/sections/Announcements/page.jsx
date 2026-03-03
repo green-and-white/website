@@ -4,7 +4,7 @@ import styles from '../../home.module.css'
 import miguelBackground from "@/assets/home_page/miguel.webp";
 import yearbookClaiming from '@/assets/announcements/yearbook_claiming.jpg'
 import links from '@/assets/announcements/links.jpg'
-import primer from '@/assets/announcements/reg_primer.avif'
+import primer from '@/assets/announcements/reg_primer2.avif'
 
 import { useBrowserDetection } from '@/hooks/useBrowserDetection';
 
@@ -30,7 +30,7 @@ const SLIDES = [
     {
         title: "Registration Primer",
         desc: `Join us and remember this chapter before it ends.
-                Check out Green & White’s registration primer and subscribe to the Yearbook of 2026 on November 5 to 19!`,
+                Check out Green & White’s registration primer and subscribe to the Yearbook of 2026 on March 11 to 28 and April 8 to 13!`,
         img: primer,
         url: "https://www.canva.com/design/DAG0a18IVvU/TNZxzIIP-W4BRtU1sTIaVw/view?utlId=he59fe8ba06#1",
         buttonText: "View Registration Primer",

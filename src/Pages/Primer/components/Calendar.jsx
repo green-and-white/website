@@ -239,7 +239,7 @@ export default function Calendar() {
             </span>
             )}
             {!item.isEmpty && item.content && (
-              <div className=" text-white pb-3 text-center text-[12px] sm:text-[12px] overflow-visible z-100 flex flex-col items-end justify-end"
+              <div className=" text-white pb-3 text-center text-[12px] sm:text-[12px] overflow-visible z-40 flex flex-col items-end justify-end"
                   style={{
                     color: '#FFFFFF',
                     WebkitTextStrokeColor: '#000',
