@@ -137,7 +137,7 @@ export default function Calendar() {
               )}
             </span>
             {item.content && (
-              <div className="py-2 md:py-4 text-white text-center w-[240%] sm:w-[140%] text-[12px] sm:text-[12px]  -rotate-6 overflow-visible z-100"
+              <div className="py-2 md:py-4 text-white text-center w-[240%] sm:w-[140%] text-[12px] sm:text-[12px]  -rotate-6 overflow-visible z-30"
                   style={{
                     color: '#FFFFFF',
                     WebkitTextStrokeColor: '#000',
