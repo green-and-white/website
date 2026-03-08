@@ -152,7 +152,7 @@ export default function page() {
               {pubsData.map((pub, i) => (
                 <div 
                   key={pub.id} 
-                  className="w-[250px] h-[325px] bg-white lg:opacity-70 hover:opacity-100 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden"
+                  className="w-[250px] max-w-[250px] flex-shrink-0 h-[325px] bg-white lg:opacity-70 hover:opacity-100 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer overflow-hidden"
                   style={{ 
                     pointerEvents: 'auto',
                     filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.7))'
@@ -210,7 +210,7 @@ export default function page() {
                 </button>
 
                 {/* Pub Content */}
-                <div className="h-full flex items-center justify-center">
+                <div className="h-full items-center justify-center">
                   {pubsData[selectedPub].link ? (
                     <a 
                       href={pubsData[selectedPub].link}
@@ -221,7 +221,7 @@ export default function page() {
                       <img 
                         src={pubsData[selectedPub].image} 
                         alt={pubsData[selectedPub].title}
-                        className="w-full h-full object-fit hover:opacity-90 transition-opacity"
+                        className="w-full h-full object-contain hover:opacity-90 transition-opacity"
                       />
                     </a>
                   ) : (
