@@ -15,7 +15,7 @@ const mainNavLinks = [
 
 export default function Main() {
   return (
-    <main className = "snap-proximity">
+    <main className = "snap-proximity overflow-x-hidden">
       <Navbar links={mainNavLinks} />
       <Hero />
       <Announcements />
