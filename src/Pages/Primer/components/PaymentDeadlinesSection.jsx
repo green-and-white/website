@@ -1,7 +1,48 @@
 import styles from "../Primer.module.css";
 import texture from "../../../assets/textures/texture.png";
 
+const PACKAGES = ['A', 'B', 'C', 'D'];
 
+const DEADLINE_ROWS = [
+  {
+    deadline: 'April 13',
+    deadlineColorClass: 'text-black',
+    deadlineRowSpan: 2,
+    terms: [
+      { label: 'Full Payment',    prices: ['P5,000', 'P5,150', 'P5,300', 'P4,800'], priceRowSpan: 1 },
+      { label: '1st Installment', prices: ['P2,500', 'P2,575', 'P2,650', 'P2,400'], priceRowSpan: 2 },
+    ],
+  },
+  {
+    deadline: 'May 30',
+    deadlineColorClass: 'text-[#fd464e]',
+    deadlineRowSpan: 1,
+    terms: [
+      { label: '2nd Installment', prices: null, priceRowSpan: 1 },
+    ],
+  },
+];
+
+const MOBILE_ROWS = [
+  { label: 'A', full: 'P5,000', first: 'P2,500', second: 'P2,500' },
+  { label: 'B', full: 'P5,150', first: 'P2,575', second: 'P2,575' },
+  { label: 'C', full: 'P5,300', first: 'P2,650', second: 'P2,650' },
+  { label: 'D', full: 'P4,800', first: 'P2,400', second: 'P2,400' },
+];
+
+// Desktop shared cell classes
+const dtBase   = "border-[3px] border-black text-center text-[17px] min-h-[60px] leading-[1.2]";
+const dtHeader = `${dtBase} py-3 px-2 text-white font-[Libre_Caslon_Condensed] font-bold italic`;
+const dtDate   = `${dtBase} py-3 px-2 bg-[#f4f4f4] font-[Libre_Caslon_Condensed] font-bold italic`;
+const dtTerm   = `${dtBase} py-5 px-2 bg-[#f4f4f4] text-black font-[Helvetica]`;
+const dtPrice  = `${dtBase} py-3 px-2 bg-[#f4f4f4] text-black font-[Helvetica] font-bold`;
+
+// Mobile shared cell classes
+const mbHeader = "border border-black py-2 px-2 text-center font-[Libre_Caslon_Condensed] font-bold italic";
+const mbLabel  = "border border-black bg-[#f4f4f4] text-black font-[Libre_Caslon_Condensed] font-bold italic py-3 px-3 text-center";
+const mbPrice  = "border border-black bg-[#f4f4f4] text-black font-bold py-3 px-2 text-center";
+
+const LAST_ROW_INDEX = MOBILE_ROWS.length - 1;
 
 export default function PaymentDeadlinesSection() {
   return (
@@ -26,222 +67,88 @@ export default function PaymentDeadlinesSection() {
         <div className="max-w-4xl mx-auto">
           {/* Desktop Table */}
           <div className="hidden md:block">
-            <div
-              className="grid grid-cols-6 gap-1.5 bg-transparent"
-              style={{ gridTemplateRows: "auto auto auto auto" }}
-            >
-              {/* Row 1: Headers */}
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#bd1d54] text-white font-[Libre_Caslon_Condensed] font-bold italic rounded-tl-[20px]"
-                style={{ gridArea: "1 / 1 / 2 / 2" }}
-              >
-                Deadlines
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#fb7da8] text-white font-[Libre_Caslon_Condensed] font-bold italic whitespace-nowrap"
-                style={{ gridArea: "1 / 2 / 2 / 3" }}
-              >
-                Term of Payment
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#fb7da8] text-white font-[Libre_Caslon_Condensed] font-bold italic"
-                style={{ gridArea: "1 / 3 / 2 / 4" }}
-              >
-                A
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#fb7da8] text-white font-[Libre_Caslon_Condensed] font-bold italic"
-                style={{ gridArea: "1 / 4 / 2 / 5" }}
-              >
-                B
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#fb7da8] text-white font-[Libre_Caslon_Condensed] font-bold italic"
-                style={{ gridArea: "1 / 5 / 2 / 6" }}
-              >
-                C
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#fb7da8] text-white font-[Libre_Caslon_Condensed] font-bold italic rounded-tr-[20px]"
-                style={{ gridArea: "1 / 6 / 2 / 7" }}
-              >
-                D
-              </div>
-
-              {/* Row 2: November 19 (spans 2 rows) + Full Payment + Full Payment Prices */}
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-right text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Libre_Caslon_Condensed] font-bold italic"
-                style={{ gridArea: "2 / 1 / 4 / 2" }}
-              >
-                April 13
-              </div>
-              <div
-                className="border-[3px] border-black py-5 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica]"
-                style={{ gridArea: "2 / 2 / 3 / 3" }}
-              >
-                Full Payment
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica] font-bold"
-                style={{ gridArea: "2 / 3 / 3 / 4" }}
-              >
-                P5,000
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica] font-bold"
-                style={{ gridArea: "2 / 4 / 3 / 5" }}
-              >
-                P5,150
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica] font-bold"
-                style={{ gridArea: "2 / 5 / 3 / 6" }}
-              >
-                P5,300
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica] font-bold"
-                style={{ gridArea: "2 / 6 / 3 / 7" }}
-              >
-                P4,800
-              </div>
-
-              {/* Row 3 & 4: 1st Installment + 2nd Installment + Installment Prices (span 2 rows) */}
-              <div
-                className="border-[3px] border-black py-5 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica]"
-                style={{ gridArea: "3 / 2 / 4 / 3" }}
-              >
-                1st Installment
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica] font-bold"
-                style={{ gridArea: "3 / 3 / 5 / 4" }}
-              >
-                P2,500
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica] font-bold"
-                style={{ gridArea: "3 / 4 / 5 / 5" }}
-              >
-                P2,575
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica] font-bold"
-                style={{ gridArea: "3 / 5 / 5 / 6" }}
-              >
-                P2,650
-              </div>
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica] font-bold rounded-br-[20px]"
-                style={{ gridArea: "3 / 6 / 5 / 7" }}
-              >
-                P2,400
-              </div>
-
-              {/* Row 4: January 14 + 2nd Installment */}
-              <div
-                className="border-[3px] border-black py-3 px-2 flex items-center justify-center text-right text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-[#fd464e] font-[Libre_Caslon_Condensed] font-bold italic rounded-bl-[20px]"
-                style={{ gridArea: "4 / 1 / 5 / 2" }}
-              >
-                May 30
-              </div>
-              <div
-                className="border-[3px] border-black py-5 px-2 flex items-center justify-center text-center text-[17px] min-h-[60px] leading-[1.2] bg-[#f4f4f4] text-black font-[Helvetica]"
-                style={{ gridArea: "4 / 2 / 5 / 3" }}
-              >
-                2nd Installment
-              </div>
-            </div>
+            <table className="w-full border-collapse">
+              <thead>
+                <tr>
+                  <th className={`${dtHeader} bg-[#bd1d54] rounded-tl-[20px]`}>Deadlines</th>
+                  <th className={`${dtHeader} bg-[#fb7da8] whitespace-nowrap`}>Term of Payment</th>
+                  {PACKAGES.map((pkg, i) => (
+                    <th
+                      key={pkg}
+                      className={`${dtHeader} bg-[#fb7da8]${i === PACKAGES.length - 1 ? ' rounded-tr-[20px]' : ''}`}
+                    >
+                      {pkg}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {DEADLINE_ROWS.map((deadlineRow, dIndex) =>
+                  deadlineRow.terms.map((term, tIndex) => {
+                    const isLastDeadline = dIndex === DEADLINE_ROWS.length - 1;
+                    return (
+                      <tr key={`${dIndex}-${tIndex}`}>
+                        {tIndex === 0 && (
+                          <td
+                            rowSpan={deadlineRow.deadlineRowSpan}
+                            className={`${dtDate} ${deadlineRow.deadlineColorClass}${isLastDeadline ? ' rounded-bl-[20px]' : ''}`}
+                          >
+                            {deadlineRow.deadline}
+                          </td>
+                        )}
+                        <td className={dtTerm}>{term.label}</td>
+                        {term.prices?.map((price, pIndex) => {
+                          const isLastPkg = pIndex === PACKAGES.length - 1;
+                          return (
+                            <td
+                              key={pIndex}
+                              rowSpan={term.priceRowSpan}
+                              className={`${dtPrice}${isLastPkg && term.priceRowSpan > 1 ? ' rounded-br-[20px]' : ''}`}
+                            >
+                              {price}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })
+                )}
+              </tbody>
+            </table>
           </div>
 
-          {/* Mobile Layout */}
-          <div className="md:hidden flex flex-col gap-6">
-            {/* Package A */}
-            <div className="border-[3px] border-black rounded-[20px] overflow-hidden bg-white shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-              <div className="bg-retro-green text-white font-[Libre_Caslon_Condensed] font-bold italic text-center py-3 text-lg">
-                Package A
-              </div>
-              <div className="p-4 space-y-3">
-                <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">Full Payment (April 13)</span>
-                  <span className="font-[Helvetica] text-lg font-bold">P5,000</span>
-                </div>
-                <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">1st Installment (May 30)</span>
-                  <span className="font-[Helvetica] text-lg font-bold">P2,500</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-[Helvetica] font-semibold text-[#fd464e]">2nd Installment (May 30)</span>
-                  <span className="font-[Helvetica] text-lg font-bold">P2,500</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Package B */}
-            <div className="border-[3px] border-black rounded-[20px] overflow-hidden bg-white shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-              <div className="bg-retro-purple text-white font-[Libre_Caslon_Condensed] font-bold italic text-center py-3 text-lg">
-                Package B
-              </div>
-              <div className="p-4 space-y-3">
-                <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">Full Payment (April 13)</span>
-                  <span className="font-[Helvetica] text-lg font-bold">P5,150</span>
-                </div>
-                <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">1st Installment (April 13)</span>
-                  <span className="font-[Helvetica] text-lg font-bold">P2,575</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-[Helvetica] font-semibold text-[#fd464e]">2nd Installment (May 30)</span>
-                  <span className="font-[Helvetica] text-lg font-bold">P2,575</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Package C */}
-            <div className="border-[3px] border-black rounded-[20px] overflow-hidden bg-white shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-              <div className="bg-retro-orange text-white font-[Libre_Caslon_Condensed] font-bold italic text-center py-3 text-lg">
-                Package C
-              </div>
-              <div className="p-4 space-y-3">
-                <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">Full Payment (April 13)</span>
-                  <span className="font-[Helvetica] text-lg font-bold">P5,300</span>
-                </div>
-                <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">1st Installment (April 13)</span>
-                  <span className="font-[Helvetica] text-lg font-bold">P2,650</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-[Helvetica] font-semibold text-[#fd464e]">2nd Installment (May 30)</span>
-                  <span className="font-[Helvetica] text-lg font-bold">P2,650</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Package D */}
-            <div className="border-[3px] border-black rounded-[20px] overflow-hidden bg-white shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-              <div className="bg-retro-pink text-white font-[Libre_Caslon_Condensed] font-bold italic text-center py-3 text-lg">
-                Package D
-              </div>
-              <div className="p-4 space-y-3">
-                <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">Full Payment (April 13)</span>
-                  <span className="font-[Helvetica] text-lg font-bold">P4,800</span>
-                </div>
-                <div className="flex justify-between items-center pb-2 border-b-2 border-gray-200">
-                  <span className="font-[Helvetica] font-semibold">1st Installment (April 13)</span>
-                  <span className="font-[Helvetica] text-lg font-bold">P2,400</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-[Helvetica] font-semibold text-[#fd464e]">2nd Installment (May 30)</span>
-                  <span className="font-[Helvetica] text-lg font-bold">P2,400</span>
-                </div>
-              </div>
-            </div>
+          {/* Mobile Layout — transposed table */}
+          <div className="md:hidden overflow-x-auto">
+            <table className="w-full border-separate border-spacing-0 text-[13px] font-[Helvetica]">
+              <thead>
+                <tr>
+                  <th className={`${mbHeader} bg-[#bd1d54] text-white rounded-tl-[12px]`}>Package</th>
+                  <th className={`${mbHeader} bg-[#fb7da8] text-white`}>
+                    Full Payment<br /><span className="font-normal not-italic text-[11px]">April 13</span>
+                  </th>
+                  <th className={`${mbHeader} bg-[#fb7da8] text-white`}>
+                    1st Install.<br /><span className="font-normal not-italic text-[11px]">April 13</span>
+                  </th>
+                  <th className={`${mbHeader} bg-[#fb7da8] text-white rounded-tr-[12px]`}>
+                    2nd Install.<br /><span className="font-normal not-italic text-[11px] text-[#ffd6e0]">May 30</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {MOBILE_ROWS.map((row, i) => (
+                  <tr key={row.label}>
+                    <td className={`${mbLabel}${i === LAST_ROW_INDEX ? ' rounded-bl-[12px]' : ''}`}>{row.label}</td>
+                    <td className={mbPrice}>{row.full}</td>
+                    <td className={mbPrice}>{row.first}</td>
+                    <td className={`${mbPrice}${i === LAST_ROW_INDEX ? ' rounded-br-[12px]' : ''}`}>{row.second}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </section>
   );
 }
+         
