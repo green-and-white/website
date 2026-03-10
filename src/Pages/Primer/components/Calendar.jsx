@@ -8,9 +8,8 @@ const CalendarLabels = ({selectedMonth}) => {
       <>
         {/* Bar spanning from day 05 to 08 (positions 0-3 in grid, first row) */}
         <div 
-          className="absolute bg-retro-lightblue font-helvetica text-bold italic text-center px-2 rounded-full text-white z-2 text-[8px] sm:text-[10px] md:text-[12px]"
+          className="absolute top-[37%] sm:top-[40.5%] bg-retro-lightblue font-helvetica text-bold italic text-center px-2 py-1.5 sm:py-1 md:py-0.5 rounded-full text-white z-2 text-[12px] sm:text-[14px]"
           style={{
-            top: '40.5%',
             right: "2%",
             width: '54%', // Spans 4 cells out of 5 columns
             transform: 'translateY(-50%)'
@@ -20,9 +19,8 @@ const CalendarLabels = ({selectedMonth}) => {
         {/* Bar spanning from day 10 to 14 (positions 0-3 in grid, first row) */}
 
         <div 
-          className="absolute bg-retro-lightblue font-helvetica text-bold italic text-center px-2 rounded-full text-white z-2 text-[8px] sm:text-[10px] md:text-[12px]"
+          className="absolute top-[54.5%] sm:top-[57.5%] bg-retro-lightblue font-helvetica text-bold italic text-center px-2 py-1.5 sm:py-1 md:py-0.5 rounded-full text-white z-2 text-[12px] sm:text-[14px]"
           style={{
-            top: '57.5%',
             right: '2%',
             width: '82%', // Spans 4 cells out of 5 columns
             transform: 'translateY(-50%)'
@@ -30,9 +28,8 @@ const CalendarLabels = ({selectedMonth}) => {
         >Yuchengco Cave</div>
 
       <div 
-          className="absolute bg-retro-purple font-helvetica text-bold italic text-center px-2 rounded-full text-white z-2 text-[8px] sm:text-[10px] md:text-[12px]"
+          className="absolute top-[71.5%] sm:top-[74%] bg-retro-purple font-helvetica text-bold italic text-center px-2 py-1.5 sm:py-1 md:py-0.5 rounded-full text-white z-2 text-[12px] sm:text-[14px]"
           style={{
-            top: '74%',
             right: '2%',
             width: '82%', // Spans 4 cells out of 5 columns
             transform: 'translateY(-50%)'
@@ -41,10 +38,10 @@ const CalendarLabels = ({selectedMonth}) => {
         
         {/* Text spanning from day 11 to 13 (positions 6-8, second row) */}
         <div 
-          className="absolute text-white text-center z-10 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[20px] leading-tight top-40 md:top-50"
+          className="absolute text-white text-center z-10 text-[14px] sm:text-[14px] md:text-[16px] lg:text-[20px] leading-tight top-40 md:top-50"
           style={{
             left: '21%',
-            width: '58%', // Spans 3 cells (11-13)
+            width: '60%', 
             transform: 'translateY(-50%)',
             color: '#FFFFFF',
             WebkitTextStrokeColor: '#000',
@@ -64,9 +61,8 @@ const CalendarLabels = ({selectedMonth}) => {
       <>
       {/* Bar spanning from day 05 to 08 (positions 0-3 in grid, first row) */}
       <div 
-        className="absolute bg-retro-lightblue font-helvetica text-bold italic text-center px-2 rounded-full text-white z-2 text-[8px] sm:text-[10px] md:text-[12px]"
+        className="absolute top-[37%] sm:top-[40.5%]  bg-retro-lightblue font-helvetica text-bold italic text-center px-2 py-1.5 sm:py-1 md:py-0.5 rounded-full text-white z-2 text-[10px] sm:text-[14px]"
         style={{
-          top: '40.5%',
           right: "2%",
           width: '54%', // Spans 4 cells out of 5 columns
           transform: 'translateY(-50%)'
@@ -74,7 +70,7 @@ const CalendarLabels = ({selectedMonth}) => {
       >Rm. 502, 5F Br. Connon Hall</div>
       {/* Bar spanning from day 05 to 08 (positions 0-3 in grid, first row) */}
       <div 
-        className="absolute bg-retro-lightblue font-helvetica text-bold italic text-center px-2 rounded-full text-retro-lightblue z-2 text-[8px] sm:text-[10px] md:text-[12px]"
+        className="absolute bg-retro-lightblue font-helvetica text-bold italic text-center px-2 rounded-full text-retro-lightblue z-2 text-[12px] sm:text-[14px]"
         style={{
           top: '59%',
           left: "15%",
@@ -111,7 +107,7 @@ export default function Calendar() {
       //event -> text on calendar cell 
       events: {
         '11': 'Start of registration!',
-        '28': 'See you in the locations indicated!',
+        '27': 'See you in the locations indicated!',
       },
       //higlight -> icon on date number
       highlights: {
@@ -239,7 +235,7 @@ export default function Calendar() {
             </span>
             )}
             {!item.isEmpty && item.content && (
-              <div className=" text-white pb-3 text-center text-[12px] sm:text-[12px] overflow-visible z-40 flex flex-col items-end justify-end"
+              <div className="absolute top-[54%] hidden text-white pb-3 text-center text-[14px] sm:text-[14px] overflow-visible z-40 md:flex flex-col items-end justify-end"
                   style={{
                     color: '#FFFFFF',
                     WebkitTextStrokeColor: '#000',

@@ -16,7 +16,7 @@ export default function PaymentDeadlinesSection() {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-8 py-12 sm:py-20">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-20">
         <div className="relative mb-8 sm:mb-16">
           <h3 className={styles.h3} data-text="Payment Deadlines">
             Payment Deadlines

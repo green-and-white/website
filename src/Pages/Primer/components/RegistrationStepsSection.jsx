@@ -16,7 +16,7 @@ export default function RegistrationStepsSection() {
         />
       </div> 
 
-      <div className="relative z-10 mx-auto py-20 w-full">
+      <div className="relative z-10 mx-auto py-20 w-full px-4 sm:px-6 md:px-8 lg:px-12">
         <div className={styles.registrationLayout}>
           <div className={styles.registrationHeader}>
             <h2 className={styles.h2} data-text="Registration">
