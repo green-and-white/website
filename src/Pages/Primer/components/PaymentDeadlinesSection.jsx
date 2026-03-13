@@ -30,11 +30,11 @@ const MOBILE_ROWS = [
   { label: 'D', full: 'P4,800', first: 'P2,400', second: 'P2,400' },
 ];
 
-// Desktop shared cell classes
-const dtBase   = "border-[3px] border-black text-center text-[17px] min-h-[60px] leading-[1.2]";
-const dtHeader = `${dtBase} py-3 px-2 text-white font-[Libre_Caslon_Condensed] font-bold italic`;
-const dtDate   = `${dtBase} py-3 px-2 bg-[#f4f4f4] font-[Libre_Caslon_Condensed] font-bold italic`;
-const dtTerm   = `${dtBase} py-5 px-2 bg-[#f4f4f4] text-black font-[Helvetica]`;
+// Desktop shared cell classes (border-separate: right+bottom only avoids doubled borders)
+const dtBase   = "border-r-[2px] border-b-[2px] border-black text-center text-[17px] min-h-[60px] leading-[1.2]";
+const dtHeader = `${dtBase} border-t-[2px] py-3 px-2 text-white font-[Libre_Caslon_Condensed] font-bold italic`;
+const dtDate   = `${dtBase} border-l-[2px] py-3 px-2 bg-[#f4f4f4] font-[Libre_Caslon_Condensed] italic`;
+const dtTerm   = `${dtBase} py-5 px-2 bg-[#f4f4f4] text-black font-[Helvetica] `;
 const dtPrice  = `${dtBase} py-3 px-2 bg-[#f4f4f4] text-black font-[Helvetica] font-bold`;
 
 // Mobile shared cell classes
@@ -67,10 +67,10 @@ export default function PaymentDeadlinesSection() {
         <div className="max-w-4xl mx-auto">
           {/* Desktop Table */}
           <div className="hidden md:block">
-            <table className="w-full border-collapse">
+            <table className="w-full border-separate border-spacing-0">
               <thead>
                 <tr>
-                  <th className={`${dtHeader} bg-[#bd1d54] rounded-tl-[20px]`}>Deadlines</th>
+                  <th className={`${dtHeader} bg-[#bd1d54] border-l-[2px] rounded-tl-[20px]`}>Deadlines</th>
                   <th className={`${dtHeader} bg-[#fb7da8] whitespace-nowrap`}>Term of Payment</th>
                   {PACKAGES.map((pkg, i) => (
                     <th
@@ -124,13 +124,13 @@ export default function PaymentDeadlinesSection() {
                 <tr>
                   <th className={`${mbHeader} bg-[#bd1d54] text-white rounded-tl-[12px]`}>Package</th>
                   <th className={`${mbHeader} bg-[#fb7da8] text-white`}>
-                    Full Payment<br /><span className="font-normal not-italic text-[11px]">April 13</span>
+                    Full Payment<br /><span className="font-normal  not-italic text-[14px]">April 13</span>
                   </th>
                   <th className={`${mbHeader} bg-[#fb7da8] text-white`}>
-                    1st Install.<br /><span className="font-normal not-italic text-[11px]">April 13</span>
+                    1st Install.<br /><span className="font-normal not-italic text-[14px]">April 13</span>
                   </th>
                   <th className={`${mbHeader} bg-[#fb7da8] text-white rounded-tr-[12px]`}>
-                    2nd Install.<br /><span className="font-normal not-italic text-[11px] text-[#ffd6e0]">May 30</span>
+                    2nd Install.<br /><span className="font-normal not-italic text-[14px] ">May 30</span>
                   </th>
                 </tr>
               </thead>
