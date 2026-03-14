@@ -1,7 +1,39 @@
 import styles from "../Primer.module.css";
 import texture from "../../../assets/textures/texture.png";
 import { REGISTRATION_STEPS } from "../primerData";
-import RegistrationInfoCard from "./RegistrationInfoCard";
+
+function renderSegments(line, lineIndex) {
+  return (
+    <p key={lineIndex} className={styles.registrationStepText}>
+      {line.map((segment, segmentIndex) =>
+        segment.type === "emphasis" ? (
+          <span key={segmentIndex} className={styles.registrationCardHighlight}>
+            {segment.content}
+          </span>
+        ) : (
+          <span key={segmentIndex}>
+            {segment.content}
+            {segment.linkText && segment.link ? (
+              <>
+                <span>{" "}</span>
+                <a
+                  href={segment.link}
+                  className={styles.registrationStepLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {segment.linkText}
+                </a>
+              </>
+            ) : segment.linkText ? (
+              <span>{segment.linkText}</span>
+            ) : null}
+          </span>
+        )
+      )}
+    </p>
+  );
+}
 
 export default function RegistrationStepsSection() {
   return (
@@ -27,26 +59,30 @@ export default function RegistrationStepsSection() {
           <div className={styles.registrationContent}>
             {REGISTRATION_STEPS.map((step) => (
               <div key={step.step} className={styles.registrationColumn}>
-                <div className={styles.registrationStepBadge}>
-                  <h3 className={styles.h3} data-text={step.step}>
-                    {step.step}
-                  </h3>
-                </div>
-                <p className={styles.registrationStepTitle}>{step.title}</p>
-                <div className={styles.registrationColumnCards}>
-                  {step.cards.map((card, index) => (
-                    <RegistrationInfoCard
-                      key={`${step.step}-${index}`}
-                      heading={card.heading}
-                      body={card.body}
-                      list={card.list}
-                      variant={
-                        card.variant ||
-                        (step.columnVariant === "wide" ? "wide" : "standard")
-                      }
-                      isRotated={false}
-                    />
-                  ))}
+                <div className={styles.registrationStepRow}>
+                  <div className={styles.registrationStepBadge}>
+                    <h3 className={styles.h3} data-text={step.step}>
+                      {step.step}
+                    </h3>
+                  </div>
+                  <div className={styles.registrationStepBody}>
+                    <p className={styles.registrationStepTitle}>{step.title}</p>
+                    {step.cards.map((card, index) => (
+                      <div key={`${step.step}-${index}`} className={styles.registrationStepDetail}>
+                        {card.heading ? (
+                          <p className={styles.registrationCardHeading}>{card.heading}</p>
+                        ) : null}
+                        {card.body?.map((line, lineIndex) => renderSegments(line, lineIndex))}
+                        {card.list ? (
+                          <ol className={`${styles.registrationStepList}`}>
+                            {card.list.map((item, itemIndex) => (
+                              <li key={itemIndex}>{item}</li>
+                            ))}
+                          </ol>
+                        ) : null}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
