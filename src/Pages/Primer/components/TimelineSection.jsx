@@ -1,7 +1,69 @@
+import { useEffect, useRef, useState } from "react";
 import styles from "../Primer.module.css";
 import texture from "../../../assets/textures/texture.png";
 
 export default function TimelineSection() {
+  const timelineContent = {
+    items: [
+      {
+        title: "PICTORIALS",
+        subtitle: null,
+        bullets: [
+          "Hair & Make-Up",
+          "Live-editing",
+          "Additional P500 for the raw and edited files of all your portraits (graduate, business, and creative)",
+        ],
+      },
+      {
+        title: "ONLINE VERIFICATION",
+        subtitle: "2 to 3 months after pictorials",
+        bullets: ["Digital copy of the Graduate portrait"],
+      },
+      {
+        title: "RELEASING",
+        subtitle: "3 to 4 months after pictorials",
+        bullets: [
+          "The framed image together with all the printouts",
+          "Subscribers must pick up their frames on campus",
+        ],
+      },
+      {
+        title: "Yearbook Distribution",
+        subtitle: "End of 2026 to start of 2027",
+        bullets: ["Physical Yearbook delivered to your home"],
+      },
+    ],
+  };
+
+  const [item1, item2, item3, item4] = timelineContent.items;
+
+  const mobileTimelineRef = useRef(null);
+  const [isMobileTimelineVisible, setIsMobileTimelineVisible] = useState(false);
+
+  useEffect(() => {
+    const node = mobileTimelineRef.current;
+
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsMobileTimelineVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(node);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const mobileAnimClass = isMobileTimelineVisible ? "timelineFadeInLeft" : "timelineHidden";
+
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
@@ -15,7 +77,7 @@ export default function TimelineSection() {
       </div>
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-20">
-        <div className="flex pb-32">
+        <div className="flex pb-8">
           <h3 className={`${styles.h3} text-center w-full`} data-text="Timeline">
             Timeline
           </h3>
@@ -59,47 +121,43 @@ export default function TimelineSection() {
           
           {/* Item 1: DURING PICTORIALS (top left) */}
           <div className="absolute left-[22%] top-[-5%] ml-3 w-[195px] text-white text-[17px]">
-            <p className="font-bold mb-2">DURING PICTORIALS</p>
+            <p className="font-bold mb-2">{item1.title}</p>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Hair & Make-Up</li>
-              <li>Live-editing</li>
-              <li>
-                Additional P500 for the raw and edited files of all your
-                portraits (graduate, business, and creative)
-              </li>
+              {item1.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
             </ul>
           </div>
 
           {/* Item 2: 2 to 3 MONTHS (bottom, after 40% line) */}
           <div className="absolute left-[41%] top-[54%] ml-3 w-[200px] text-white text-[17px]">
-            <p className="font-bold mb-2">
-              2 to 3 MONTHS AFTER PICTORIALS
-            </p>
-            <p className="font-bold mb-2">ONLINE VERIFICATION</p>
+            <p className="font-bold mb-2">{item2.title}</p>
+            <p className="font-bold mb-2">{item2.subtitle}</p>
             <ul className="list-disc pl-5">
-              <li>Digital copy of the Graduate portrait</li>
+              {item2.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
             </ul>
           </div>
 
           {/* Item 3: 3 to 4 MONTHS (top right, after 60% line) */}
           <div className="absolute left-[61%] top-[-5%] ml-3 w-[220px] text-white text-[17px]">
-            <p className="font-bold mb-2 ">
-              3 to 4 MONTHS AFTER PICTORIALS
-            </p>
-            <p className="font-bold mb-2">RELEASING</p>
+            <p className="font-bold mb-2 ">{item3.title}</p>
+            <p className="font-bold mb-2">{item3.subtitle}</p>
             <ul className="list-disc pl-5 space-y-1">
-              <li>The framed image together with all the printouts</li>
-              <li>Subscribers must pick up their frames on campus</li>
+              {item3.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
             </ul>
           </div>
 
           {/* Item 4: END OF '26 (bottom right, after 80% line) */}
           <div className="absolute left-[81%] top-[54%] ml-3 w-[180px] text-white text-[17px]">
-            <p className="font-bold mb-2">
-              END OF 2026 TO START OF 2027
-            </p>
+            <p className="font-bold mb-2">{item4.title}</p>
             <ul className="list-disc pl-5">
-              <li>Physical Yearbook delivered to your home</li>
+              {item4.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
             </ul>
           </div>
         </div>
@@ -134,142 +192,114 @@ export default function TimelineSection() {
           
           {/* Item 1: DURING PICTORIALS (top left) */}
           <div className="absolute left-[22%] top-0 ml-2 w-[150px] text-white text-[14px]">
-            <p className="font-bold mb-1 text-[13px]">DURING PICTORIALS</p>
+            <p className="font-bold mb-1 text-[13px]">{item1.title}</p>
             <ul className="list-disc pl-4 space-y-0.5 text-[12px]">
-              <li>Hair & Make-Up</li>
-              <li>Live-editing</li>
-              <li>
-                Additional P500 for the raw and edited files of all your
-                portraits (graduate, business, and creative)
-              </li>
+              {item1.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
             </ul>
           </div>
 
           {/* Item 2: 2 to 3 MONTHS (bottom) */}
           <div className="absolute left-[41%] top-[55%] ml-2 w-[150px] text-white text-[14px]">
-            <p className="font-bold mb-1 text-[13px] whitespace-nowrap">
-              2 to 3 MONTHS AFTER
-            </p>
-            <p className="font-bold mb-1 text-[13px]">PICTORIALS</p>
-            <p className="font-bold mb-1 text-[13px]">ONLINE VERIFICATION</p>
+            <p className="font-bold mb-1 text-[13px]">{item2.title}</p>
+            <p className="font-bold mb-1 text-[13px]">{item2.subtitle}</p>
             <ul className="list-disc pl-4 text-[12px]">
-              <li>Digital copy of the Graduate portrait</li>
+              {item2.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
             </ul>
           </div>
 
           {/* Item 3: 3 to 4 MONTHS (top right) */}
           <div className="absolute left-[61%] top-0 ml-2 w-[160px] text-white text-[14px]">
-            <p className="hidden md:block font-bold mb-1 text-[13px] whitespace-nowrap">
-              3 to 4 MONTHS AFTER
-            </p>
-            <p className="font-bold mb-1 text-[13px]">PICTORIALS</p>
-            <p className="font-bold mb-1 text-[13px]">RELEASING</p>
+            <p className="font-bold mb-1 text-[13px]">{item3.title}</p>
+            <p className="font-bold mb-1 text-[13px]">{item3.subtitle}</p>
             <ul className="list-disc pl-4 space-y-0.5 text-[12px]">
-              <li>The framed image together with all the printouts</li>
-              <li>Subscribers must pick up their frames on campus</li>
+              {item3.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
             </ul>
           </div>
 
           {/* Item 4: END OF '26 (bottom right) */}
           <div className="absolute left-[81%] top-[55%] ml-2 w-[140px] text-white text-[14px]">
-            <p className="font-bold mb-1 text-[13px] whitespace-nowrap">
-              END OF 2026 TO
-            </p>
-            <p className="font-bold mb-1 text-[13px]">START OF 2027</p>
+            <p className="font-bold mb-1 text-[13px]">{item4.title}</p>
             <ul className="list-disc pl-4 text-[12px]">
-              <li>Physical Yearbook delivered to your home</li>
+              {item4.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
             </ul>
           </div>
         </div>
 
         {/* MOBILE VERTICAL TIMELINE (<768px) */}
-        <div className="md:hidden relative w-full max-w-[400px] mx-auto px-4">
-          {/* Vertical main line down the center - adjust top-[Xpx] to start line higher/lower */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-[-80px] bottom-0 w-[3px] bg-white" />
-          
-          {/* Timeline items with alternating horizontal lines */}
-          
-          {/* Item 1: DURING PICTORIALS (line to right, text on right) */}
-          <div className="relative pt-8 pb-12 min-h-[180px]">
-            {/* Top dot - adjust top-[Xpx] to move starting dot higher (use negative values) */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-[-80px] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
-            {/* Junction dot (where horizontal line meets vertical) - adjust top-[X%] to move dot up/down */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-[32%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
-            {/* Horizontal line to right - adjust top-[X%] to move line up/down, w-X to change length */}
-            <div className="absolute left-1/2 top-[40%] w-12 h-[3px] bg-white" />
-            {/* Text content on right - adjust top-[X%] to move vertically, ml-[calc(50%+Xrem)] to move horizontally */}
-            <div className="absolute left-0 top-[-20%] ml-[calc(47%+4rem)] text-white text-[1.2rem]">
-              <p className="font-bold mb-2">DURING PICTORIALS</p>
-              <ul className="list-disc pl-5 space-y-1 text-[.8rem]">
-                <li>Hair & Make-Up</li>
-                <li>Live-editing</li>
-                <li>
-                  Additional P500 for the raw and edited files of all your
-                  portraits (graduate, business, and creative)
-                </li>
+        <div ref={mobileTimelineRef} className="md:hidden relative w-full max-w-[400px] mx-auto px-4">
+          {/* Vertical main line starts from left side */}
+          <div className="absolute left-4 top-[38px] bottom-0 w-[3px] bg-white" />
+
+          {/* Item 1: DURING PICTORIALS */}
+          <div className="relative pt-7 pb-12 min-h-[180px]">
+            <div className="absolute left-[-15px] top-[12%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
+            <div className="absolute left-4 top-[18%] w-12 h-[3px] bg-white" />
+            <div className="relative ml-20 text-white text-[1.2rem]">
+              <p className={`font-bold mb-2 ${mobileAnimClass}`}>{item1.title}</p>
+              <ul className={`list-disc pl-5 space-y-1 text-[.8rem] ${mobileAnimClass} timelineDelay1`}>
+                {item1.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
               </ul>
             </div>
           </div>
 
-          {/* Item 2: 2 to 3 MONTHS (line to left, text on left) */}
-          <div className="relative pb-12 min-h-[140px] mt-14 md:mt-0">
-            {/* Dot - adjust top-[Xpx] or top-[X%] to move dot up/down */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-[5%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
-            {/* Horizontal line to left - adjust top-[Xpx] or top-[X%] to move line up/down, w-X to change length */}
-            <div className="absolute right-1/2 top-[15%] w-12 h-[3px] bg-white" />
-            {/* Text content on left - adjust top-[Xpx] to move vertically, mr-[calc(50%+Xrem)] to move horizontally */}
-            <div className="absolute right-0 top-[-50%] mr-[calc(44%+3.5rem)] text-right text-white text-[1.2rem]">
-              <p className="font-bold mb-2 hidden md:block">
-                2 to 3 MONTHS AFTER PICTORIALS
-              </p>
-              <p className="font-bold mb-2 text-left md:text-start">ONLINE VERIFICATION</p>
-              <ul className="list-disc text-[.8rem] text-left md:text-start space-y-1">
-                <li><strong>2 to 3 months after pictorials</strong></li>
-                <li>Digital copy of the Graduate portrait</li>
+          {/* Item 2: 2 to 3 MONTHS */}
+          <div className="relative min-h-[140px] pb-6 my-6md:mt-0">
+            <div className="absolute left-[-15px]  w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
+            <div className="absolute left-4 top-[9%] w-12 h-[3px] bg-white" />
+            <div className="relative ml-20 text-white text-[1.2rem]">
+              <p className={`font-bold ${mobileAnimClass}`}>{item2.title}</p>
+              <p className={`font-bold mb-2 text-sm ${mobileAnimClass} timelineDelay1`}>({item2.subtitle})</p>
+              <ul className={`list-disc pl-5 text-[.8rem] space-y-1 ${mobileAnimClass} timelineDelay2`}>
+                {item2.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
               </ul>
             </div>
           </div>
 
-          {/* Item 3: 3 to 4 MONTHS (line to right, text on right) */}
-          <div className="relative pb-12 min-h-[160px] mt-14 md:mt-0">
-            {/* Dot - adjust top-[Xpx] or top-[X%] to move dot up/down */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-[10%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
-            {/* Horizontal line to right - adjust top-[Xpx] or top-[X%] to move line up/down, w-X to change length */}
-            <div className="absolute left-1/2 top-[20%] w-12 h-[3px] bg-white" />
-            {/* Text content on right - adjust top-[Xpx] to move vertically, ml-[calc(50%+Xrem)] to move horizontally */}
-            <div className="absolute left-0 top-[-60%] ml-[calc(55%+3.5rem)] text-white text-[1.2rem]">
-              <p className="font-bold mb-2 hidden md:block">
-                3 to 4 MONTHS AFTER PICTORIALS
-              </p>
-              <p className="font-bold mb-2">RELEASING</p>
-              <ul className="list-disc pl-5 space-y-1 text-[.8rem]">
-                <li className="md:hidden"><strong>3 to 4 months after pictorials</strong></li>
-                <li>The framed image together with all the printouts</li>
-                <li>Subscribers must pick up their frames on campus</li>
+          {/* Item 3: 3 to 4 MONTHS */}
+          <div className="relative pb-6 min-h-[160px] my-6 md:mt-0">
+            <div className="absolute left-[-15px] top-[-1.5%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
+            <div className="absolute left-4 top-[8%] w-12 h-[3px] bg-white" />
+            <div className="relative ml-20 text-white text-[1.2rem]">
+              <p className={`font-bold ${mobileAnimClass}`}>{item3.title}</p>
+              <p className={`font-bold mb-2 text-sm ${mobileAnimClass} timelineDelay1`}>({item3.subtitle})</p>
+              <ul className={`list-disc pl-5 space-y-1 text-[.8rem] ${mobileAnimClass} timelineDelay2`}>
+                {item3.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
               </ul>
             </div>
           </div>
 
-          {/* Item 4: END OF '26 (line to left, text on left) */}
-          <div className="relative pb-12 min-h-[120px] mt-14 md:mt-0">
-            {/* Dot - adjust top-[Xpx] or top-[X%] to move dot up/down */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-[-2%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
-            {/* Horizontal line to left - adjust top-[Xpx] or top-[X%] to move line up/down, w-X to change length */}
-            <div className="absolute right-1/2 top-[10%] w-12 h-[3px] bg-white" />
-            {/* Text content on left - adjust top-[Xpx] to move vertically, mr-[calc(50%+Xrem)] to move horizontally */}
-            <div className="absolute right-0 top-[-50%] mr-[calc(50%+3.5rem)] text-right text-white text-[1.2rem]">
-              <p className="font-bold mb-2 text-left">
-                END OF 2026 TO START OF 2027
-              </p>
-              <ul className="list-disc text-left text-[.8rem] space-y-1">
-                <li> Physical Yearbook delivered to your home</li>
+          {/* Item 4: END OF '26 */}
+          <div className="relative pb-6 min-h-[120px] my-6 md:mt-0">
+            <div className="absolute left-[-15px] top-[-1.5%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
+            <div className="absolute left-4 top-[10%] w-12 h-[3px] bg-white" />
+            <div className="relative ml-20 text-white text-[1.2rem]">
+              <p className={`font-bold mb-2 ${mobileAnimClass}`}>{item4.title}</p>
+              <p className={`font-bold mb-2 text-sm ${mobileAnimClass} timelineDelay1`}>({item4.subtitle})</p>
+              <ul className={`list-disc pl-5 text-[.8rem] space-y-1 ${mobileAnimClass} timelineDelay1`}>
+                {item4.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
               </ul>
             </div>
           </div>
 
           {/* Bottom dot */}
           <div className="relative pb-8">
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
+            <div className="absolute left-[-15px] top-0 w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
           </div>
         </div>
       </div>

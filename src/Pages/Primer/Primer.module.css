@@ -946,3 +946,32 @@
 .tableGrid > div:nth-child(17) {
     border-bottom-right-radius: 20px;
 }
+
+/* Timeline Mobile Animation Utilities */
+:global(.timelineHidden) {
+    opacity: 0;
+    transform: translateX(-24px);
+}
+
+:global(.timelineFadeInLeft) {
+    animation: timelineFadeInLeft 0.8s ease-out forwards;
+}
+
+:global(.timelineDelay1) {
+    animation-delay: 0.2s;
+}
+
+:global(.timelineDelay2) {
+    animation-delay: 0.4s;
+}
+
+@keyframes timelineFadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
