@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import styles from "../Primer.module.css";
 import texture from "../../../assets/textures/texture.png";
 import { REGISTRATION_STEPS } from "../primerData";
@@ -36,6 +37,27 @@ function renderSegments(line, lineIndex) {
 }
 
 export default function RegistrationStepsSection() {
+  const contentRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const node = contentRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
@@ -56,9 +78,13 @@ export default function RegistrationStepsSection() {
             </h2>
           </div>
 
-          <div className={styles.registrationContent}>
-            {REGISTRATION_STEPS.map((step) => (
-              <div key={step.step} className={styles.registrationColumn}>
+          <div ref={contentRef} className={styles.registrationContent}>
+            {REGISTRATION_STEPS.map((step, index) => (
+              <div
+                key={step.step}
+                className={`${styles.registrationColumn} ${isVisible ? styles.registrationStepVisible : styles.registrationStepHidden}`}
+                style={{ "--step-i": index }}
+              >
                 <div className={styles.registrationStepRow}>
                   <div className={styles.registrationStepBadge}>
                     <h3 className={styles.h3} data-text={step.step}>

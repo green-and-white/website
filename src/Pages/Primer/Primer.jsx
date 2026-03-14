@@ -18,9 +18,10 @@ export default function Primer() {
       <Navbar links={primerNavLinks} />
       <HeroSection />
       <PackagesSection />
+      <RegistrationStepsSection />
       <TimelineSection />
       <PaymentDeadlinesSection />
-      <RegistrationStepsSection />
+     
     </main>
   );
 }

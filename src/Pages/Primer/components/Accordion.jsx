@@ -40,14 +40,15 @@ export function AccordionItem({ title, children, isOpen, onToggle }) {
           {isOpen ? "−" : "+"}
         </span>
       </button>
-      
-      {isOpen && (
-        <div className={styles.accordionContent}>
-          <div className={styles.accordionContentInner}>
-            {children}
-          </div>
+
+      <div
+        className={`${styles.accordionContent} ${isOpen ? styles.accordionContentOpen : ""}`}
+        aria-hidden={!isOpen}
+      >
+        <div className={styles.accordionContentInner}>
+          {children}
         </div>
-      )}
+      </div>
     </div>
   );
 }

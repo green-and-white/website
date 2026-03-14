@@ -40,11 +40,12 @@ export default function TimelineSection() {
   const mobileTimelineRef = useRef(null);
   const [isMobileTimelineVisible, setIsMobileTimelineVisible] = useState(false);
 
+  const desktopTimelineRef = useRef(null);
+  const [isDesktopTimelineVisible, setIsDesktopTimelineVisible] = useState(false);
+
   useEffect(() => {
     const node = mobileTimelineRef.current;
-
     if (!node) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -54,15 +55,33 @@ export default function TimelineSection() {
       },
       { threshold: 0.2 }
     );
-
     observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
-    return () => {
-      observer.disconnect();
-    };
+  useEffect(() => {
+    const node = desktopTimelineRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsDesktopTimelineVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
   }, []);
 
   const mobileAnimClass = isMobileTimelineVisible ? "timelineFadeInLeft" : "timelineHidden";
+  const dt = isDesktopTimelineVisible;
+  const dtHidden = "timelineDesktopHidden";
+  const item1Anim = dt ? "timelineFadeInTop" : dtHidden;
+  const item2Anim = dt ? "timelineFadeInBottom timelineDesktopDelay1" : dtHidden;
+  const item3Anim = dt ? "timelineFadeInTop timelineDesktopDelay2" : dtHidden;
+  const item4Anim = dt ? "timelineFadeInBottom timelineDesktopDelay3" : dtHidden;
 
   return (
     <section className="relative overflow-hidden">
@@ -82,6 +101,9 @@ export default function TimelineSection() {
             Timeline
           </h3>
         </div>
+
+        {/* DESKTOP + TABLET TIMELINE wrapper — single observer */}
+        <div ref={desktopTimelineRef}>
 
         {/* DESKTOP HORIZONTAL TIMELINE (>1024px) */}
         <div className="hidden xl:block relative w-full max-w-[1075px] h-[490px] mx-auto">
@@ -120,7 +142,7 @@ export default function TimelineSection() {
           */}
           
           {/* Item 1: DURING PICTORIALS (top left) */}
-          <div className="absolute left-[22%] top-[-5%] ml-3 w-[195px] text-white text-[17px]">
+          <div className={`absolute left-[22%] top-[-5%] ml-3 w-[195px] text-white text-[17px] ${item1Anim}`}>
             <p className="font-bold mb-2">{item1.title}</p>
             <ul className="list-disc pl-5 space-y-1">
               {item1.bullets.map((bullet) => (
@@ -130,7 +152,7 @@ export default function TimelineSection() {
           </div>
 
           {/* Item 2: 2 to 3 MONTHS (bottom, after 40% line) */}
-          <div className="absolute left-[41%] top-[54%] ml-3 w-[200px] text-white text-[17px]">
+          <div className={`absolute left-[41%] top-[54%] ml-3 w-[200px] text-white text-[17px] ${item2Anim}`}>
             <p className="font-bold mb-2">{item2.title}</p>
             <p className="font-bold mb-2">{item2.subtitle}</p>
             <ul className="list-disc pl-5">
@@ -141,7 +163,7 @@ export default function TimelineSection() {
           </div>
 
           {/* Item 3: 3 to 4 MONTHS (top right, after 60% line) */}
-          <div className="absolute left-[61%] top-[-5%] ml-3 w-[220px] text-white text-[17px]">
+          <div className={`absolute left-[61%] top-[-5%] ml-3 w-[220px] text-white text-[17px] ${item3Anim}`}>
             <p className="font-bold mb-2 ">{item3.title}</p>
             <p className="font-bold mb-2">{item3.subtitle}</p>
             <ul className="list-disc pl-5 space-y-1">
@@ -152,7 +174,7 @@ export default function TimelineSection() {
           </div>
 
           {/* Item 4: END OF '26 (bottom right, after 80% line) */}
-          <div className="absolute left-[81%] top-[54%] ml-3 w-[180px] text-white text-[17px]">
+          <div className={`absolute left-[81%] top-[54%] ml-3 w-[180px] text-white text-[17px] ${item4Anim}`}>
             <p className="font-bold mb-2">{item4.title}</p>
             <ul className="list-disc pl-5">
               {item4.bullets.map((bullet) => (
@@ -191,7 +213,7 @@ export default function TimelineSection() {
           {/* Timeline items - TABLET (scaled down, adjust positions here) */}
           
           {/* Item 1: DURING PICTORIALS (top left) */}
-          <div className="absolute left-[22%] top-0 ml-2 w-[150px] text-white text-[14px]">
+          <div className={`absolute left-[22%] top-0 ml-2 w-[150px] text-white text-[14px] ${item1Anim}`}>
             <p className="font-bold mb-1 text-[13px]">{item1.title}</p>
             <ul className="list-disc pl-4 space-y-0.5 text-[12px]">
               {item1.bullets.map((bullet) => (
@@ -201,7 +223,7 @@ export default function TimelineSection() {
           </div>
 
           {/* Item 2: 2 to 3 MONTHS (bottom) */}
-          <div className="absolute left-[41%] top-[55%] ml-2 w-[150px] text-white text-[14px]">
+          <div className={`absolute left-[41%] top-[55%] ml-2 w-[150px] text-white text-[14px] ${item2Anim}`}>
             <p className="font-bold mb-1 text-[13px]">{item2.title}</p>
             <p className="font-bold mb-1 text-[13px]">{item2.subtitle}</p>
             <ul className="list-disc pl-4 text-[12px]">
@@ -212,7 +234,7 @@ export default function TimelineSection() {
           </div>
 
           {/* Item 3: 3 to 4 MONTHS (top right) */}
-          <div className="absolute left-[61%] top-0 ml-2 w-[160px] text-white text-[14px]">
+          <div className={`absolute left-[61%] top-0 ml-2 w-[160px] text-white text-[14px] ${item3Anim}`}>
             <p className="font-bold mb-1 text-[13px]">{item3.title}</p>
             <p className="font-bold mb-1 text-[13px]">{item3.subtitle}</p>
             <ul className="list-disc pl-4 space-y-0.5 text-[12px]">
@@ -223,7 +245,7 @@ export default function TimelineSection() {
           </div>
 
           {/* Item 4: END OF '26 (bottom right) */}
-          <div className="absolute left-[81%] top-[55%] ml-2 w-[140px] text-white text-[14px]">
+          <div className={`absolute left-[81%] top-[55%] ml-2 w-[140px] text-white text-[14px] ${item4Anim}`}>
             <p className="font-bold mb-1 text-[13px]">{item4.title}</p>
             <ul className="list-disc pl-4 text-[12px]">
               {item4.bullets.map((bullet) => (
@@ -232,6 +254,8 @@ export default function TimelineSection() {
             </ul>
           </div>
         </div>
+
+        </div> {/* end desktop+tablet observer wrapper */}
 
         {/* MOBILE VERTICAL TIMELINE (<768px) */}
         <div ref={mobileTimelineRef} className="md:hidden relative w-full max-w-[400px] mx-auto px-4">
@@ -269,7 +293,7 @@ export default function TimelineSection() {
 
           {/* Item 3: 3 to 4 MONTHS */}
           <div className="relative pb-6 min-h-[160px] my-6 md:mt-0">
-            <div className="absolute left-[-15px] top-[-1.5%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
+            <div className="absolute left-[-15px] top-[1.5%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
             <div className="absolute left-4 top-[8%] w-12 h-[3px] bg-white" />
             <div className="relative ml-20 text-white text-[1.2rem]">
               <p className={`font-bold ${mobileAnimClass}`}>{item3.title}</p>
@@ -284,7 +308,7 @@ export default function TimelineSection() {
 
           {/* Item 4: END OF '26 */}
           <div className="relative pb-6 min-h-[120px] my-6 md:mt-0">
-            <div className="absolute left-[-15px] top-[-1.5%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
+            <div className="absolute left-[-15px] top-[1.5%] w-8 h-8 bg-white rounded-full border-[3px] border-white z-10" />
             <div className="absolute left-4 top-[10%] w-12 h-[3px] bg-white" />
             <div className="relative ml-20 text-white text-[1.2rem]">
               <p className={`font-bold mb-2 ${mobileAnimClass}`}>{item4.title}</p>

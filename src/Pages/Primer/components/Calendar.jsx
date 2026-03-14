@@ -8,7 +8,7 @@ const CalendarLabels = ({selectedMonth}) => {
       <>
         {/* Bar spanning from day 05 to 08 (positions 0-3 in grid, first row) */}
         <div 
-          className="absolute top-[37%] sm:top-[40.5%] bg-retro-lightblue font-helvetica text-bold italic text-center px-2 py-1.5 sm:py-1 md:py-0.5 rounded-full text-white z-2 text-[12px] sm:text-[14px]"
+          className="calendar-label-fade-in absolute top-[37%] sm:top-[40.5%] bg-retro-lightblue font-helvetica text-bold italic text-center px-2 py-1.5 sm:py-1 md:py-0.5 rounded-full text-white z-2 text-[12px] sm:text-[14px]"
           style={{
             right: "2%",
             width: '54%', // Spans 4 cells out of 5 columns
@@ -19,7 +19,7 @@ const CalendarLabels = ({selectedMonth}) => {
         {/* Bar spanning from day 10 to 14 (positions 0-3 in grid, first row) */}
 
         <div 
-          className="absolute top-[54.5%] sm:top-[57.5%] bg-retro-lightblue font-helvetica text-bold italic text-center px-2 py-1.5 sm:py-1 md:py-0.5 rounded-full text-white z-2 text-[12px] sm:text-[14px]"
+          className="calendar-label-fade-in absolute top-[54.5%] sm:top-[57.5%] bg-retro-lightblue font-helvetica text-bold italic text-center px-2 py-1.5 sm:py-1 md:py-0.5 rounded-full text-white z-2 text-[12px] sm:text-[14px]"
           style={{
             right: '2%',
             width: '82%', // Spans 4 cells out of 5 columns
@@ -28,7 +28,7 @@ const CalendarLabels = ({selectedMonth}) => {
         >Yuchengco Cave</div>
 
       <div 
-          className="absolute top-[71.5%] sm:top-[74%] bg-retro-purple font-helvetica text-bold italic text-center px-2 py-1.5 sm:py-1 md:py-0.5 rounded-full text-white z-2 text-[12px] sm:text-[14px]"
+          className="calendar-label-fade-in absolute top-[71.5%] sm:top-[74%] bg-retro-purple font-helvetica text-bold italic text-center px-2 py-1.5 sm:py-1 md:py-0.5 rounded-full text-white z-2 text-[12px] sm:text-[14px]"
           style={{
             right: '2%',
             width: '82%', // Spans 4 cells out of 5 columns
@@ -38,7 +38,7 @@ const CalendarLabels = ({selectedMonth}) => {
         
         {/* Text spanning from day 11 to 13 (positions 6-8, second row) */}
         <div 
-          className="absolute text-white text-center z-10 text-[14px] sm:text-[14px] md:text-[16px] lg:text-[20px] leading-tight top-40 md:top-50"
+          className="calendar-label-fade-in absolute text-white text-center z-10 text-[14px] sm:text-[14px] md:text-[16px] lg:text-[20px] leading-tight top-40 md:top-50"
           style={{
             left: '21%',
             width: '60%', 
@@ -61,7 +61,7 @@ const CalendarLabels = ({selectedMonth}) => {
       <>
       {/* Bar spanning from day 05 to 08 (positions 0-3 in grid, first row) */}
       <div 
-        className="absolute top-[37%] sm:top-[40.5%]  bg-retro-lightblue font-helvetica text-bold italic text-center px-2 py-1.5 sm:py-1 md:py-0.5 rounded-full text-white z-2 text-[10px] sm:text-[14px]"
+        className="calendar-label-fade-in absolute top-[37%] sm:top-[40.5%]  bg-retro-lightblue font-helvetica text-bold italic text-center px-2 py-1.5 sm:py-1 md:py-0.5 rounded-full text-white z-2 text-[10px] sm:text-[14px]"
         style={{
           right: "2%",
           width: '54%', // Spans 4 cells out of 5 columns
@@ -70,7 +70,7 @@ const CalendarLabels = ({selectedMonth}) => {
       >Rm. 502, 5F Br. Connon Hall</div>
       {/* Bar spanning from day 05 to 08 (positions 0-3 in grid, first row) */}
       <div 
-        className="absolute bg-retro-lightblue font-helvetica text-bold italic text-center px-2 rounded-full text-retro-lightblue z-2 text-[12px] sm:text-[14px]"
+        className="calendar-label-fade-in absolute bg-retro-lightblue font-helvetica text-bold italic text-center px-2 rounded-full text-retro-lightblue z-2 text-[12px] sm:text-[14px]"
         style={{
           top: '59%',
           left: "15%",
@@ -203,7 +203,7 @@ export default function Calendar() {
         ))}
       </div>
       
-      <CalendarLabels selectedMonth = {selectedMonth}/>
+      <CalendarLabels key={selectedMonth} selectedMonth = {selectedMonth}/>
       
       <div className="grid grid-cols-7 w-full">
         {alignedCalendarCells.map((item, index) => (

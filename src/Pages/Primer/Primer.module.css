@@ -136,6 +136,51 @@
     border-radius: 20px 20px 0 0;
 }
 
+.basicInclusionsCard{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 3px solid #000;
+    border-radius: 20px;
+    background: #fff;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+}
+
+.basicInclusionsCardTitle{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.basicInclusionsCardHighlight{
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-weight: 700;
+    font-size: 1rem;
+    color: #058cd7;
+}
+
+.basicInclusionsCardSubtitle{
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #666;
+}
+
+.basicInclusionsCardList{
+    list-style: disc;
+    padding-left: 1.3rem;
+    margin: 0;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
 
 /* Accordion Styles */
  .accordion{
@@ -189,29 +234,33 @@
     transform: rotate(180deg);
 }
 
- .accordionContent{
-    animation: accordionSlideDown 0.3s ease-out;
+.accordionContent{
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    overflow: hidden;
+    transition: grid-template-rows 0.42s ease, opacity 0.28s ease 0.18s;
 }
 
-@keyframes accordionSlideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.accordionContentOpen{
+    grid-template-rows: 1fr;
+    opacity: 1;
 }
 
 .accordionContentInner{
     min-height: 0;
+    overflow: hidden;
     border: 3px solid #000;
     border-top: none;
     border-radius: 0 0 20px 20px;
     background: #fff;
     padding: 1.5rem;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: padding 0.42s ease;
+}
+
+.accordionContentOpen .accordionContentInner{
+    padding: 1.5rem;
 }
 
 .accordionList{
@@ -482,6 +531,43 @@
     margin-bottom: 0;
 }
 
+.packageTypeSlot{
+    display: inline-grid;
+}
+
+.packageTypeGhost,
+.packageTypeLive{
+    grid-area: 1 / 1;
+}
+
+.packageTypeGhost{
+    visibility: hidden;
+}
+
+.packageTypeLive{
+    white-space: pre-wrap;
+}
+
+.packageCardList .packageTypeSlot{
+    display: grid;
+    width: 100%;
+}
+
+.packageTypeCaret{
+    display: inline-block;
+    margin-left: 0.08em;
+    animation: packageTypeCaretBlink 0.85s step-end infinite;
+}
+
+@keyframes packageTypeCaretBlink {
+    0%, 45% {
+        opacity: 1;
+    }
+    46%, 100% {
+        opacity: 0;
+    }
+}
+
 .lateFeeSticker{
     position: absolute;
     left: -2rem;
@@ -632,10 +718,10 @@
 }
 
 .registrationContent{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    gap: clamp(2rem, 4vw, 3.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(1rem, 2.2vw, 1.5rem);
     max-width: 1200px;
     margin: 0 auto;
     padding: 0;
@@ -644,20 +730,71 @@
 
 .registrationColumn{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: clamp(0.75rem, 2vw, 1.5rem);
-    text-align: center;
+    gap: clamp(0.75rem, 1.4vw, 1rem);
+    text-align: left;
     color: #fff;
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
+    position: relative;
+    padding: clamp(0.8rem, 1.8vw, 1rem) 0;
+}
+
+.registrationColumn:not(:last-child)::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #fff;
+    opacity: 0.25;
+}
+
+.registrationStepHidden{
+    opacity: 0;
+    transform: translateY(18px);
+}
+
+.registrationStepVisible{
+    animation: registrationStepFadeIn 0.55s ease-out both;
+    animation-delay: calc(var(--step-i) * 0.14s);
+}
+
+@keyframes registrationStepFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.registrationStepRow{
+    display: flex;
+    align-items: center;
+    gap: clamp(0.8rem, 1.8vw, 1.15rem);
+    width: 100%;
 }
 
 .registrationStepBadge{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.25rem;
+    width: clamp(64px, 9vw, 92px);
+    min-width: clamp(64px, 9vw, 92px);
+    flex-shrink: 0;
+}
+
+.registrationStepBody{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    width: 100%;
 }
 
 .registrationStepTitle{
@@ -667,18 +804,50 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     line-height: 1.3;
-    margin-bottom: 0.5rem;
+    margin: 0;
 }
 
-.registrationColumnCards{
+.registrationStepDetail{
     display: flex;
-    flex-direction: row;
-    gap: clamp(0.75rem, 2vw, 1.25rem);
-    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
     width: 100%;
-    flex-wrap: nowrap;
-    justify-content: center;
+    max-width: 620px;
+}
 
+.registrationStepText{
+    margin: 0;
+    font-size: clamp(13px, 1.8vw, 15px);
+    line-height: 1.45;
+    font-family: var(--font-helvetica, "Helvetica", sans-serif);
+}
+
+.registrationStepList{
+    margin: 0 auto;
+    padding-left: 1.15rem;
+    font-size: clamp(13px, 1.8vw, 15px);
+    line-height: 1.45;
+    list-style-type: decimal;
+    list-style-position: outside;
+    width: 100%;
+    max-width: 620px;
+    text-align: justify;
+    text-justify: inter-word;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.registrationStepList li{
+    display: list-item;
+}
+
+.registrationStepLink{
+    color: #ffe66d;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 700;
 }
 
 
@@ -774,11 +943,18 @@
 /* Tablet: 2 columns (same as desktop now) */
 @media (max-width: 1024px){
     .registrationContent{
-        gap: clamp(1.5rem, 3vw, 2.5rem);
+        gap: 0.75rem;
     }
 
     .registrationColumn{
+        width: 100%;
         max-width: 100%;
+    }
+
+    .registrationColumn:not(:last-child)::after{
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     .registrationCard{
@@ -812,20 +988,44 @@
     }
 
     .registrationContent{
-        grid-template-columns: 1fr;
-        gap: clamp(2.5rem, 5vw, 3.5rem);
+        gap: 0.65rem;
     }
 
     .registrationColumn{
-        align-items: center;
-        text-align: center;
+        width: 100%;
         max-width: 100%;
+        align-items: flex-start;
     }
 
-    .registrationColumnCards{
+    .registrationStepRow{
         flex-direction: column;
-        align-items: stretch;
-        gap: clamp(1rem, 3vw, 1.5rem);
+        align-items: center;
+        text-align: center;
+    }
+
+    .registrationStepBadge{
+        width: auto;
+        min-width: auto;
+        margin-top: 0.1rem;
+    }
+
+    .registrationStepBody{
+        align-items: center;
+    }
+
+    .registrationStepDetail{
+        align-items: center;
+    }
+
+    .registrationStepTitle,
+    .registrationStepText{
+        text-align: center;
+    }
+
+    .registrationColumn:not(:last-child)::after{
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     .registrationCard{
@@ -853,6 +1053,19 @@
 
     .registrationCardWide .registrationCardInner{
         padding: 1.5rem;
+    }
+
+    .registrationStepBody{
+        gap: 0.35rem;
+    }
+
+    .registrationStepTitle{
+        font-size: clamp(13px, 3.5vw, 16px);
+    }
+
+    .registrationStepText,
+    .registrationStepList{
+        font-size: clamp(12px, 3.1vw, 14px);
     }
 }
 
@@ -947,10 +1160,56 @@
     border-bottom-right-radius: 20px;
 }
 
-/* Timeline Mobile Animation Utilities */
+/* Timeline Animation Utilities */
 :global(.timelineHidden) {
     opacity: 0;
     transform: translateX(-24px);
+}
+
+:global(.timelineDesktopHidden) {
+    opacity: 0;
+}
+
+:global(.timelineFadeInTop) {
+    animation: timelineFadeInTop 0.7s ease-out forwards;
+}
+
+:global(.timelineFadeInBottom) {
+    animation: timelineFadeInBottom 0.7s ease-out forwards;
+}
+
+:global(.timelineDesktopDelay1) {
+    animation-delay: 0.18s;
+}
+
+:global(.timelineDesktopDelay2) {
+    animation-delay: 0.36s;
+}
+
+:global(.timelineDesktopDelay3) {
+    animation-delay: 0.54s;
+}
+
+@keyframes timelineFadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes timelineFadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 :global(.timelineFadeInLeft) {
