@@ -266,8 +266,10 @@
     transition: padding 0.42s ease;
 }
 
-.accordionContentOpen .accordionContentInner{
+.accordionContentOpen .accordionContentInner {
+    border-width: 0 3px 3px 3px;
     padding: 1.5rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .accordionList {
