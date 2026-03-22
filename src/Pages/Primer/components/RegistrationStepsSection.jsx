@@ -3,35 +3,39 @@ import styles from "../Primer.module.css";
 import texture from "../../../assets/textures/texture.png";
 import { REGISTRATION_STEPS } from "../primerData";
 
+function renderInlineSegments(segments) {
+  return segments.map((segment, segmentIndex) =>
+    segment.type === "emphasis" ? (
+      <span key={segmentIndex} className={styles.registrationCardHighlight}>
+        {segment.content}
+      </span>
+    ) : (
+      <span key={segmentIndex}>
+        {segment.content}
+        {segment.linkText && segment.link ? (
+          <>
+            <span>{" "}</span>
+            <a
+              href={segment.link}
+              className={styles.registrationStepLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {segment.linkText}
+            </a>
+          </>
+        ) : segment.linkText ? (
+          <span>{segment.linkText}</span>
+        ) : null}
+      </span>
+    )
+  );
+}
+
 function renderSegments(line, lineIndex) {
   return (
     <p key={lineIndex} className={styles.registrationStepText}>
-      {line.map((segment, segmentIndex) =>
-        segment.type === "emphasis" ? (
-          <span key={segmentIndex} className={styles.registrationCardHighlight}>
-            {segment.content}
-          </span>
-        ) : (
-          <span key={segmentIndex}>
-            {segment.content}
-            {segment.linkText && segment.link ? (
-              <>
-                <span>{" "}</span>
-                <a
-                  href={segment.link}
-                  className={styles.registrationStepLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {segment.linkText}
-                </a>
-              </>
-            ) : segment.linkText ? (
-              <span>{segment.linkText}</span>
-            ) : null}
-          </span>
-        )
-      )}
+      {renderInlineSegments(line)}
     </p>
   );
 }
@@ -102,7 +106,9 @@ export default function RegistrationStepsSection() {
                         {card.list ? (
                           <ol className={`${styles.registrationStepList}`}>
                             {card.list.map((item, itemIndex) => (
-                              <li key={itemIndex}>{item}</li>
+                              <li key={itemIndex}>
+                                {Array.isArray(item) ? renderInlineSegments(item) : item}
+                              </li>
                             ))}
                           </ol>
                         ) : null}

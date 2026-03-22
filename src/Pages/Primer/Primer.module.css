@@ -1,4 +1,4 @@
-.h2{
+.h2 {
     color: #FFF;
     position: relative;
     -webkit-text-stroke-color: #000;
@@ -13,7 +13,7 @@
     line-height: 3.5rem;
 }
 
-.h3{
+.h3 {
     color: #FFF;
     position: relative;
     -webkit-text-stroke-color: #000;
@@ -27,7 +27,7 @@
     text-align: center;
 }
 
-.primerHero{
+.primerHero {
     position: relative;
     overflow: hidden;
     background-color: #bd8833;
@@ -36,24 +36,24 @@
     background-repeat: no-repeat;
 }
 
-.heroInner{
-    position: relative; 
+.heroInner {
+    position: relative;
     z-index: 2;
 }
 
-.primerTexture{
+.primerTexture {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    opacity: 0.2; 
+    opacity: 0.2;
     pointer-events: none;
-    mix-blend-mode: normal; 
+    mix-blend-mode: normal;
 }
 
-.primerPackages{
+.primerPackages {
     position: relative;
     overflow: visible;
     background-color: #bd8833;
@@ -62,16 +62,16 @@
     z-index: 15;
 }
 
-.primerPackagesContent{
+.primerPackagesContent {
     position: relative;
     z-index: 15;
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
-.packagesHeader{
+.packagesHeader {
     position: relative;
     min-height: 220px;
     display: flex;
@@ -80,22 +80,22 @@
 }
 
 .packagesHeader .h2,
-.packagesHeader .h3{
+.packagesHeader .h3 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
 }
 
-.packagesHeader .h2{
+.packagesHeader .h2 {
     top: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-.packagesHeader .h3{
+.packagesHeader .h3 {
     top: clamp(5.5rem, 8vw, 6.5rem);
 }
 
-.primerPackagesLayout{
+.primerPackagesLayout {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -104,8 +104,8 @@
     align-items: center;
 }
 
-.primerPackagesAside{
-    padding-top: 12px; 
+.primerPackagesAside {
+    padding-top: 12px;
     display: flex;
     flex-direction: row;
     gap: clamp(1.25rem, 3vw, 1.75rem);
@@ -114,11 +114,11 @@
     align-items: center;
 }
 
-.primerPackagesAside > *{
+.primerPackagesAside>* {
     width: 100%;
 }
 
-.basicInclusion{
+.basicInclusion {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -136,7 +136,7 @@
     border-radius: 20px 20px 0 0;
 }
 
-.basicInclusionsCard{
+.basicInclusionsCard {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -148,27 +148,27 @@
     width: 100%;
 }
 
-.basicInclusionsCardTitle{
+.basicInclusionsCardTitle {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
 }
 
-.basicInclusionsCardHighlight{
+.basicInclusionsCardHighlight {
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
     font-weight: 700;
     font-size: 1rem;
     color: #058cd7;
 }
 
-.basicInclusionsCardSubtitle{
+.basicInclusionsCardSubtitle {
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
     font-size: 0.85rem;
     font-style: italic;
     color: #666;
 }
 
-.basicInclusionsCardList{
+.basicInclusionsCardList {
     list-style: disc;
     padding-left: 1.3rem;
     margin: 0;
@@ -183,20 +183,20 @@
 
 
 /* Accordion Styles */
- .accordion{
+.accordion {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: clamp(1.25rem, 3vw, 1.75rem);
+    gap: 0.25rem;
     width: 100%;
 }
 
-.accordionItem{
+.accordionItem {
     position: relative;
     width: 100%;
 }
 
-.accordionToggle{
+.accordionToggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -215,26 +215,26 @@
     transition: all 0.3s ease;
 }
 
-.accordionIcon{
+.accordionIcon {
     font-size: 1.4rem;
     line-height: 1;
     transition: transform 0.3s ease;
 }
 
-.accordionToggle:hover{
+.accordionToggle:hover {
     transform: translateY(-2px);
     box-shadow: inset 0 0 0 6px #058cd7, 0 6px 8px rgba(0, 0, 0, 0.25);
 }
 
-.accordionToggleOpen{
+.accordionToggleOpen {
     border-radius: 20px 20px 0 0;
 }
 
-.accordionToggleOpen .accordionIcon{
+.accordionToggleOpen .accordionIcon {
     transform: rotate(180deg);
 }
 
-.accordionContent{
+.accordionContent {
     display: grid;
     grid-template-rows: 0fr;
     opacity: 0;
@@ -242,28 +242,30 @@
     transition: grid-template-rows 0.42s ease, opacity 0.28s ease 0.18s;
 }
 
-.accordionContentOpen{
+.accordionContentOpen {
     grid-template-rows: 1fr;
     opacity: 1;
 }
 
-.accordionContentInner{
+.accordionContentInner {
     min-height: 0;
     overflow: hidden;
     border: 3px solid #000;
     border-top: none;
     border-radius: 0 0 20px 20px;
     background: #fff;
+    padding: 0.5rem 1.5rem;
+    box-shadow: none;
+    transition: padding 0.42s ease, border-width 0.42s ease, box-shadow 0.42s ease;
+}
+
+.accordionContentOpen .accordionContentInner {
+    border-width: 0 3px 3px 3px;
     padding: 1.5rem;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transition: padding 0.42s ease;
 }
 
-.accordionContentOpen .accordionContentInner{
-    padding: 1.5rem;
-}
-
-.accordionList{
+.accordionList {
     list-style: disc;
     margin: 0;
     padding-left: 1.5rem;
@@ -273,15 +275,15 @@
     color: #333;
 }
 
-.accordionList li{
+.accordionList li {
     margin-bottom: 0.5rem;
 }
 
-.accordionList li:last-child{
+.accordionList li:last-child {
     margin-bottom: 0;
 }
 
-.accordionSubtitle{
+.accordionSubtitle {
     margin: 0 0 1rem 0;
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
     font-size: 0.9rem;
@@ -290,23 +292,23 @@
     text-align: center;
 }
 
-.paymentDetails{
+.paymentDetails {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.paymentDetailItem{
+.paymentDetailItem {
     padding-bottom: 1rem;
     border-bottom: 1px solid #e0e0e0;
 }
 
-.paymentDetailItem:last-child{
+.paymentDetailItem:last-child {
     padding-bottom: 0;
     border-bottom: none;
 }
 
-.paymentDetailTitle{
+.paymentDetailTitle {
     display: block;
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
     font-size: 0.95rem;
@@ -315,7 +317,7 @@
     margin-bottom: 0.25rem;
 }
 
-.paymentDetailDescription{
+.paymentDetailDescription {
     margin: 0;
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
     font-size: 0.9rem;
@@ -323,13 +325,13 @@
     color: #555;
 }
 
-.paymentSchemes{
+.paymentSchemes {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.paymentSchemesIntro{
+.paymentSchemesIntro {
     margin: 0;
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
     font-size: 0.95rem;
@@ -339,17 +341,17 @@
     border-bottom: 2px solid #058cd7;
 }
 
-.paymentSchemeItem{
+.paymentSchemeItem {
     padding-bottom: 1rem;
     border-bottom: 1px solid #e0e0e0;
 }
 
-.paymentSchemeItem:last-child{
+.paymentSchemeItem:last-child {
     padding-bottom: 0;
     border-bottom: none;
 }
 
-.paymentSchemeMethod{
+.paymentSchemeMethod {
     display: block;
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
     font-size: 1rem;
@@ -358,7 +360,7 @@
     margin-bottom: 0.35rem;
 }
 
-.paymentSchemeDescription{
+.paymentSchemeDescription {
     margin: 0 0 0.5rem 0;
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
     font-size: 0.9rem;
@@ -366,7 +368,7 @@
     color: #555;
 }
 
-.paymentSchemeInstructions{
+.paymentSchemeInstructions {
     margin: 0;
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
     font-size: 0.85rem;
@@ -378,7 +380,7 @@
     border-left: 3px solid #058cd7;
 }
 
-.paymentSchemeNote{
+.paymentSchemeNote {
     margin: 0;
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
     font-size: 0.9rem;
@@ -390,11 +392,11 @@
     border-left: 3px solid #ffc107;
 }
 
-.paymentSchemeNote strong{
+.paymentSchemeNote strong {
     color: #856404;
 }
 
-.packagesToggle{
+.packagesToggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -413,17 +415,17 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.packagesToggle span:last-child{
+.packagesToggle span:last-child {
     font-size: 1.4rem;
     line-height: 1;
 }
 
-.packagesToggle:hover{
+.packagesToggle:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
 }
 
-.primerPackagesCards{
+.primerPackagesCards {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -434,7 +436,7 @@
 
 }
 
-.packageCard{
+.packageCard {
     position: relative;
     width: 250px;
     border: 3px solid #000;
@@ -445,11 +447,11 @@
     overflow: hidden;
 }
 
-.packageCard:first-child{
+.packageCard:first-child {
     position: relative;
 }
 
-.packageCard::before{
+.packageCard::before {
     content: "";
     position: absolute;
     inset: 8px;
@@ -458,7 +460,7 @@
     z-index: 0;
 }
 
-.packageCardSurface{
+.packageCardSurface {
     position: relative;
     z-index: 1;
     height: 100%;
@@ -472,7 +474,7 @@
     gap: 1.25rem;
 }
 
-.packageCardPrice{
+.packageCardPrice {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -489,7 +491,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.packageCardHeading{
+.packageCardHeading {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -497,13 +499,13 @@
     margin-top: 1.1rem;
 }
 
-.packageCardTier{
+.packageCardTier {
     font-family: var(--font-libre-caslon);
     font-size: clamp(3.2rem, 4.3vw, 4.1rem);
     line-height: 1;
 }
 
-.packageCardTitle{
+.packageCardTitle {
     font-family: var(--font-libre-caslon);
     font-style: italic;
     font-weight: 700;
@@ -512,7 +514,7 @@
     margin-top: -0.45rem;
 }
 
-.packageCardList{
+.packageCardList {
     list-style: disc;
     margin: 0;
     padding-left: 1.3rem;
@@ -523,52 +525,56 @@
     text-align: left;
 }
 
-.packageCardList li{
+.packageCardList li {
     margin-bottom: 0.4rem;
 }
 
-.packageCardList li:last-child{
+.packageCardList li:last-child {
     margin-bottom: 0;
 }
 
-.packageTypeSlot{
+.packageTypeSlot {
     display: inline-grid;
 }
 
 .packageTypeGhost,
-.packageTypeLive{
+.packageTypeLive {
     grid-area: 1 / 1;
 }
 
-.packageTypeGhost{
+.packageTypeGhost {
     visibility: hidden;
 }
 
-.packageTypeLive{
+.packageTypeLive {
     white-space: pre-wrap;
 }
 
-.packageCardList .packageTypeSlot{
+.packageCardList .packageTypeSlot {
     display: grid;
     width: 100%;
 }
 
-.packageTypeCaret{
+.packageTypeCaret {
     display: inline-block;
     margin-left: 0.08em;
     animation: packageTypeCaretBlink 0.85s step-end infinite;
 }
 
 @keyframes packageTypeCaretBlink {
-    0%, 45% {
+
+    0%,
+    45% {
         opacity: 1;
     }
-    46%, 100% {
+
+    46%,
+    100% {
         opacity: 0;
     }
 }
 
-.lateFeeSticker{
+.lateFeeSticker {
     position: absolute;
     left: -2rem;
     bottom: -2rem;
@@ -580,14 +586,14 @@
     pointer-events: none;
 }
 
-.lateFeeSticker img{
+.lateFeeSticker img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
 }
 
-.lateFeeSticker figcaption{
+.lateFeeSticker figcaption {
     position: absolute;
     inset: 0;
     display: flex;
@@ -599,28 +605,28 @@
     font-family: var(--font-libre-caslon);
 }
 
-.lateFeeSticker span{
+.lateFeeSticker span {
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
     font-weight: 700;
     font-style: italic;
     font-size: clamp(1.8rem, 3vw, 2.35rem);
 }
 
-.lateFeeSticker small{
+.lateFeeSticker small {
     font-size: clamp(1.1rem, 2vw, 1.5rem);
     font-weight: 600;
 }
 
-@media (max-width: 1100px){
-    .primerPackagesLayout{
+@media (max-width: 1100px) {
+    .primerPackagesLayout {
         grid-template-columns: 1fr;
     }
 
-    .primerPackagesCards{
+    .primerPackagesCards {
         max-width: 540px;
     }
 
-    .lateFeeSticker{
+    .lateFeeSticker {
         position: relative;
         left: 50%;
         bottom: auto;
@@ -628,79 +634,79 @@
     }
 }
 
-@media (max-width: 900px){
-    .packageCard{
+@media (max-width: 900px) {
+    .packageCard {
         flex: 1 1 calc(50% - 1.25rem);
         width: min(100%, 240px);
         height: auto;
     }
 }
 
-@media (min-width: 1100px){
-    .primerPackagesCards{
+@media (min-width: 1100px) {
+    .primerPackagesCards {
         flex-wrap: nowrap;
         gap: 0;
     }
 
-    .packageCard{
+    .packageCard {
         flex: 0 0 210px;
         transition: transform 0.3s ease;
     }
 
-    .packageCard + .packageCard{
+    .packageCard+.packageCard {
         margin-left: -1.85rem;
     }
 
-    .packageCard:nth-child(1){
+    .packageCard:nth-child(1) {
         transform: translateY(30px);
         z-index: 3;
     }
 
-    .packageCard:nth-child(2){
+    .packageCard:nth-child(2) {
         transform: translateY(-20px);
         z-index: 1;
     }
 
-    .packageCard:nth-child(3){
+    .packageCard:nth-child(3) {
         transform: translateY(30px);
         z-index: 3;
     }
 
-    .packageCard:nth-child(4){
+    .packageCard:nth-child(4) {
         transform: translateY(-20px);
         z-index: 1;
     }
 
-    .packageCard:hover{
+    .packageCard:hover {
         transform: translateY(-40px) !important;
         z-index: 4 !important;
     }
 }
 
-@media (max-width: 650px){
-    .primerPackages{
+@media (max-width: 650px) {
+    .primerPackages {
         padding-bottom: clamp(5rem, 12vw, 7rem);
     }
 
-    .primerPackagesCards{
+    .primerPackagesCards {
         flex-direction: column;
         align-items: stretch;
         max-width: 100%;
     }
 
-    .packageCard{
+    .packageCard {
         flex: 1 1 auto;
         width: 100%;
         height: auto;
         width: 100%;
     }
 
-    .packagesToggle{
+    .packagesToggle {
         font-size: 0.95rem;
     }
 }
 
-.registrationLayout{
+.registrationLayout {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -709,7 +715,7 @@
     padding: 0;
 }
 
-.registrationHeader{
+.registrationHeader {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -717,18 +723,18 @@
     flex-wrap: wrap;
 }
 
-.registrationContent{
+.registrationContent {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: clamp(1rem, 2.2vw, 1.5rem);
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0;
     width: 100%;
 }
 
-.registrationColumn{
+.registrationColumn {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -741,7 +747,7 @@
     padding: clamp(0.8rem, 1.8vw, 1rem) 0;
 }
 
-.registrationColumn:not(:last-child)::after{
+.registrationColumn:not(:last-child)::after {
     content: "";
     position: absolute;
     left: 0;
@@ -752,12 +758,12 @@
     opacity: 0.25;
 }
 
-.registrationStepHidden{
+.registrationStepHidden {
     opacity: 0;
     transform: translateY(18px);
 }
 
-.registrationStepVisible{
+.registrationStepVisible {
     animation: registrationStepFadeIn 0.55s ease-out both;
     animation-delay: calc(var(--step-i) * 0.14s);
 }
@@ -767,20 +773,24 @@
         opacity: 0;
         transform: translateY(18px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.registrationStepRow{
+.registrationStepRow {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: clamp(0.8rem, 1.8vw, 1.15rem);
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.registrationStepBadge{
+.registrationStepBadge {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -789,7 +799,7 @@
     flex-shrink: 0;
 }
 
-.registrationStepBody{
+.registrationStepBody {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -797,7 +807,7 @@
     width: 100%;
 }
 
-.registrationStepTitle{
+.registrationStepTitle {
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
     font-weight: 700;
     font-size: clamp(14px, 2.5vw, 17px);
@@ -807,7 +817,7 @@
     margin: 0;
 }
 
-.registrationStepDetail{
+.registrationStepDetail {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -816,14 +826,16 @@
     max-width: 620px;
 }
 
-.registrationStepText{
+.registrationStepText {
     margin: 0;
     font-size: clamp(13px, 1.8vw, 15px);
     line-height: 1.45;
     font-family: var(--font-helvetica, "Helvetica", sans-serif);
+    text-align: justify;
+    text-wrap: pretty;
 }
 
-.registrationStepList{
+.registrationStepList {
     margin: 0 auto;
     padding-left: 1.15rem;
     font-size: clamp(13px, 1.8vw, 15px);
@@ -834,16 +846,17 @@
     max-width: 620px;
     text-align: justify;
     text-justify: inter-word;
+    text-wrap: pretty;
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
 }
 
-.registrationStepList li{
+.registrationStepList li {
     display: list-item;
 }
 
-.registrationStepLink{
+.registrationStepLink {
     color: #ffe66d;
     text-decoration: underline;
     text-underline-offset: 2px;
@@ -851,7 +864,7 @@
 }
 
 
-.registrationCard{
+.registrationCard {
     position: relative;
     width: 184px;
     height: 235px;
@@ -864,20 +877,20 @@
     flex-shrink: 0;
 }
 
-.registrationCardRotated{
+.registrationCardRotated {
     transform: none;
     margin-left: 0;
     z-index: 1;
 }
 
-.registrationCardWide{
+.registrationCardWide {
     width: 336px;
 
     min-height: 235px;
     padding: 5px;
 }
 
-.registrationCardInner{
+.registrationCardInner {
     background: #00653e;
     border-radius: 15px;
     color: #fff;
@@ -893,14 +906,14 @@
     height: 100%;
 }
 
-.registrationCardWide .registrationCardInner{
+.registrationCardWide .registrationCardInner {
     padding: 1.25rem 1.5rem;
     text-align: left;
     align-items: flex-start;
     gap: 0.75rem;
 }
 
-.registrationCardHeading{
+.registrationCardHeading {
     font-weight: 700;
     font-size: clamp(15px, 2.5vw, 17px);
     text-transform: uppercase;
@@ -909,18 +922,18 @@
     line-height: 1.2;
 }
 
-.registrationCardBody{
+.registrationCardBody {
     margin: 0;
     font-size: clamp(13px, 2vw, 15px);
     line-height: 1.4;
     text-align: center;
 }
 
-.registrationCardHighlight{
+.registrationCardHighlight {
     font-weight: 700;
 }
 
-.registrationCardList{
+.registrationCardList {
     margin: 0;
     padding-left: 1.25rem;
     font-size: clamp(12px, 2vw, 14px);
@@ -933,7 +946,7 @@
     width: 100%;
 }
 
-.registrationCardList li{
+.registrationCardList li {
     margin: 0;
     padding-left: 0.25rem;
 }
@@ -941,37 +954,37 @@
 
 
 /* Tablet: 2 columns (same as desktop now) */
-@media (max-width: 1024px){
-    .registrationContent{
+@media (max-width: 1024px) {
+    .registrationContent {
         gap: 0.75rem;
     }
 
-    .registrationColumn{
+    .registrationColumn {
         width: 100%;
         max-width: 100%;
     }
 
-    .registrationColumn:not(:last-child)::after{
+    .registrationColumn:not(:last-child)::after {
         left: 0;
         right: 0;
         bottom: 0;
     }
 
-    .registrationCard{
+    .registrationCard {
         width: 160px;
         height: 220px;
     }
 
-    .registrationCardWide{
+    .registrationCardWide {
         width: 300px;
         min-height: 220px;
     }
 
-    .registrationCardWide .registrationCardInner{
+    .registrationCardWide .registrationCardInner {
         padding: 1rem 1.25rem;
     }
 
-    .registrationCardList{
+    .registrationCardList {
         font-size: clamp(11px, 1.8vw, 13px);
         line-height: 1.4;
         gap: 0.35rem;
@@ -980,55 +993,62 @@
 }
 
 /* Mobile: 1 column (stack all steps) */
-@media (max-width: 768px){
-    .registrationHeader{
+@media (max-width: 768px) {
+    .registrationHeader {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
 
-    .registrationContent{
+    .registrationContent {
         gap: 0.65rem;
     }
 
-    .registrationColumn{
+    .registrationColumn {
         width: 100%;
         max-width: 100%;
         align-items: flex-start;
     }
 
-    .registrationStepRow{
+    .registrationStepRow {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    .registrationStepBadge{
+    .registrationStepBadge {
         width: auto;
         min-width: auto;
         margin-top: 0.1rem;
     }
 
-    .registrationStepBody{
+    .registrationStepBody {
         align-items: center;
     }
 
-    .registrationStepDetail{
+    .registrationStepDetail {
         align-items: center;
+        max-width: 300px;
     }
 
     .registrationStepTitle,
-    .registrationStepText{
+    .registrationStepText {
         text-align: center;
     }
 
-    .registrationColumn:not(:last-child)::after{
+    .registrationStepList {
+        padding-left: 0;
+        list-style-position: inside;
+        text-align: center;
+    }
+
+    .registrationColumn:not(:last-child)::after {
         left: 0;
         right: 0;
         bottom: 0;
     }
 
-    .registrationCard{
+    .registrationCard {
         width: 100%;
         max-width: 340px;
         height: auto;
@@ -1036,35 +1056,35 @@
         margin: 0 auto;
     }
 
-    .registrationCardRotated{
+    .registrationCardRotated {
         transform: none;
         margin-left: 0;
     }
 
-    .registrationCardWide{
+    .registrationCardWide {
         width: 100%;
         max-width: 400px;
         min-height: auto;
     }
 
-    .registrationCardInner{
+    .registrationCardInner {
         padding: 1.5rem 1.25rem;
     }
 
-    .registrationCardWide .registrationCardInner{
+    .registrationCardWide .registrationCardInner {
         padding: 1.5rem;
     }
 
-    .registrationStepBody{
+    .registrationStepBody {
         gap: 0.35rem;
     }
 
-    .registrationStepTitle{
+    .registrationStepTitle {
         font-size: clamp(13px, 3.5vw, 16px);
     }
 
     .registrationStepText,
-    .registrationStepList{
+    .registrationStepList {
         font-size: clamp(12px, 3.1vw, 14px);
     }
 }
@@ -1121,7 +1141,7 @@
 }
 
 /* Top-right header cell (D) */
-.tableGrid > div:nth-child(6) {
+.tableGrid>div:nth-child(6) {
     border-top-right-radius: 20px;
 }
 
@@ -1156,7 +1176,7 @@
 }
 
 /* Bottom-right cell (P2400 that spans rows 3-4, column 6) - 17th child */
-.tableGrid > div:nth-child(17) {
+.tableGrid>div:nth-child(17) {
     border-bottom-right-radius: 20px;
 }
 
@@ -1195,6 +1215,7 @@
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1206,6 +1227,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1229,6 +1251,7 @@
         opacity: 0;
         transform: translateX(-24px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);

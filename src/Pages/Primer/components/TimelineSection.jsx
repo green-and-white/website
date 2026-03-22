@@ -95,9 +95,9 @@ export default function TimelineSection() {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-20">
+      <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-20">
         <div className="flex pb-8">
-          <h3 className={`${styles.h3} text-center w-full`} data-text="Timeline">
+          <h3 className={`${styles.h3} text-center w-full sm:mb-8`} data-text="Timeline">
             Timeline
           </h3>
         </div>

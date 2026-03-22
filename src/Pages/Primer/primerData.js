@@ -87,7 +87,7 @@ export const REGISTRATION_STEPS = [
             {
               type: "text",
               content:
-                "Pre-registration is completely optional but will expedite the registration process",
+                "Pre-registration is completely optional but will expedite the registration process.",
               linkText:"Access the pre-registration link here",
               link: "https://forms.gle/xNBJWFrup67DRsjP8"
             },
@@ -145,7 +145,11 @@ export const REGISTRATION_STEPS = [
       {
         list: [
           "Accomplish the registration form.",
-          "Wait for the print-out of your Green & White Registration Form.",
+          [
+            { type: "text", content: "Wait for the print-out of your " },
+            { type: "emphasis", content: "Green & White" },
+            { type: "text", content: " Registration Form." }
+          ],
           "Read and sign two copies of the form.",
           "Join the Telegram channel!",
         ],
