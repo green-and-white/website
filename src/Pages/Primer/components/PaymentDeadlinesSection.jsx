@@ -33,8 +33,8 @@ const MOBILE_ROWS = [
 // Desktop shared cell classes (border-separate: right+bottom only avoids doubled borders)
 const dtBase   = "border-r-[2px] border-b-[2px] border-black text-center text-[17px] min-h-[60px] leading-[1.2]";
 const dtHeader = `${dtBase} border-t-[2px] py-3 px-2 text-white font-[Libre_Caslon_Condensed] font-bold italic`;
-const dtDate   = `${dtBase} border-l-[2px] py-3 px-2 bg-[#f4f4f4] font-[Libre_Caslon_Condensed] italic`;
-const dtTerm   = `${dtBase} py-5 px-2 bg-[#f4f4f4] text-black font-[Helvetica] `;
+const dtDate   = `${dtBase} border-l-[2px] py-3 px-2 bg-[#f4f4f4] font-[Libre_Caslon_Condensed] italic font-bold`;
+const dtTerm   = `${dtBase} py-5 px-2 bg-[#f4f4f4] text-black font-[Helvetica] font-bold`;
 const dtPrice  = `${dtBase} py-3 px-2 bg-[#f4f4f4] text-black font-[Helvetica] font-bold`;
 
 // Mobile shared cell classes
@@ -124,13 +124,13 @@ export default function PaymentDeadlinesSection() {
                 <tr>
                   <th className={`${mbHeader} bg-[#bd1d54] text-white rounded-tl-[12px]`}>Package</th>
                   <th className={`${mbHeader} bg-[#fb7da8] text-white`}>
-                    Full Payment<br /><span className="font-normal  not-italic text-[14px]">April 13</span>
+                    Full Payment<br /><span className="font-bold  not-italic text-[14px]">April 13</span>
                   </th>
                   <th className={`${mbHeader} bg-[#fb7da8] text-white`}>
-                    1st Install.<br /><span className="font-normal not-italic text-[14px]">April 13</span>
+                    1st Install.<br /><span className="font-bold not-italic text-[14px]">April 13</span>
                   </th>
                   <th className={`${mbHeader} bg-[#fb7da8] text-white rounded-tr-[12px]`}>
-                    2nd Install.<br /><span className="font-normal not-italic text-[14px] ">May 30</span>
+                    2nd Install.<br /><span className="font-bold not-italic text-[14px] ">May 30</span>
                   </th>
                 </tr>
               </thead>
