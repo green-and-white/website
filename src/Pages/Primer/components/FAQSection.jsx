@@ -32,7 +32,12 @@ function CustomFAQItem({ faq }) {
               <React.Fragment key={i}>
                 {line.split('Green & White').map((part, index, array) => (
                   <React.Fragment key={index}>
-                    {part}
+                    {part.split('fb.com/gwyearbookdlsu').map((subpart, j, subArray) => (
+                      <React.Fragment key={j}>
+                        {subpart}
+                        {j < subArray.length - 1 && <a href="https://fb.com/gwyearbookdlsu" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#ffc567] transition-colors duration-300">fb.com/gwyearbookdlsu</a>}
+                      </React.Fragment>
+                    ))}
                     {index < array.length - 1 && <strong className="font-bold">Green &amp; White</strong>}
                   </React.Fragment>
                 ))}
