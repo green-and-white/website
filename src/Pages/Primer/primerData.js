@@ -158,3 +158,50 @@ export const REGISTRATION_STEPS = [
     ],
   },
 ];
+
+export const FAQs = [
+  {
+    question: "Can I avail of a yearbook even if I already graduated?",
+    answer: "Yes, you may! However, please note that you will be part of the 2026 Yearbook, which may not align with the year you graduated."
+  },
+  {
+    question: "I still have 3 terms left, do I need to register now?",
+    answer: "We highly recommend registering within one year from your anticipated graduation date so that you can have your pictures before your ceremony, as our pictorial timeline does not align with the termly calendar of the school."
+  },
+  {
+    question: "Can I register for the 2026 Yearbook even if I haven’t done my Application to Graduate yet?",
+    answer: "Yes! So long as you have 4 terms or less left, you can already subscribe. Subscribing to the yearbook is a separate process and payment from the Application to Graduate (ATG). The ATG is handled by the Office of the University Registrar (OUR). Meanwhile, Green & White is a Student Media Group under the Student Media Office."
+  },
+  {
+    question: "Are the pictorials here the same as the ones offered by OUR? Would you accept the images from OUR?",
+    answer: "Our pictorial services are not the same, as ours is catered toward publishing the yearbook. With that, no, we do not accept photos from OUR or any other photo supplier for editorial consistency."
+  },
+  {
+    question: "Can I change my chosen package once I’ve paid?",
+    answer: "Once you have paid for your package, you may no longer change it. However, you can get the most basic package and avail additional services on the day of your pictorial."
+  },
+  {
+    question: "Can we submit our own graduation photos?",
+    answer: "Unfortunately, we do not accept photo submissions for editorial consistency."
+  },
+  {
+    question: "Can I avail of the yearbook and graduation photos separately?",
+    answer: "Green & White Yearbooks and Graduation Photos are a package deal and cannot be availed of separately."
+  },
+  {
+    question: "Can we opt out of the hair and make-up services?",
+    answer: "Yes, you may. However, there will be no change in price. The make-up artist will also continue to accommodate you for touch-ups and dress-changes."
+  },
+  {
+    question: "What’s next after registering?",
+    answer: "Please be sure to join our Telegram Subscriber-only announcement channel—if not, we will release a mailing list as well, but our announcements here may be easy to miss. Once subscribed, expect to receive updates and the full guidelines regarding all the 2026 Yearbook activities: write-ups, pictorials, online verification, and releasing."
+  },
+  {
+    question: "Will there be a third batch of registration?",
+    answer: "No, this will be the last ever batch of registration for Yearbook 2026. And yes, no more extensions beyond the announced dates. So if you want to be a part of this yearbook, register by April 13."
+  },
+  {
+    question: "Why isn’t the release of the graduation photos on the day itself or sooner?",
+    answer: "As a yearbook publication, our operations and production is founded on the consolidation of information. The data and schedule of activities is organized in batches to ensure that no data is lost in the process, as we do our best to accommodate the scale of students subscribing."
+  }
+];

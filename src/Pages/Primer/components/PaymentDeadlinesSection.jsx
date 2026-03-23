@@ -1,5 +1,6 @@
 import styles from "../Primer.module.css";
 import texture from "../../../assets/textures/texture.png";
+import FAQSection from "./FAQSection";
 
 const PACKAGES = ['A', 'B', 'C', 'D'];
 
@@ -147,6 +148,9 @@ export default function PaymentDeadlinesSection() {
             </table>
           </div>
         </div>
+
+        {/* FAQs */}
+        <FAQSection />
 
         {/* Download Button */}
         <div className="flex justify-center mt-12">
