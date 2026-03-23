@@ -1,9 +1,67 @@
+import { useEffect, useRef, useState } from "react";
 import styles from "../Primer.module.css";
 import texture from "../../../assets/textures/texture.png";
 import { REGISTRATION_STEPS } from "../primerData";
-import RegistrationInfoCard from "./RegistrationInfoCard";
+
+function renderInlineSegments(segments) {
+  return segments.map((segment, segmentIndex) =>
+    segment.type === "emphasis" ? (
+      <span key={segmentIndex} className={styles.registrationCardHighlight}>
+        {segment.content}
+      </span>
+    ) : (
+      <span key={segmentIndex}>
+        {segment.content}
+        {segment.linkText && segment.link ? (
+          <>
+            <span>{" "}</span>
+            <a
+              href={segment.link}
+              className={styles.registrationStepLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {segment.linkText}
+            </a>
+          </>
+        ) : segment.linkText ? (
+          <span>{segment.linkText}</span>
+        ) : null}
+      </span>
+    )
+  );
+}
+
+function renderSegments(line, lineIndex) {
+  return (
+    <p key={lineIndex} className={styles.registrationStepText}>
+      {renderInlineSegments(line)}
+    </p>
+  );
+}
 
 export default function RegistrationStepsSection() {
+  const contentRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const node = contentRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
@@ -16,7 +74,7 @@ export default function RegistrationStepsSection() {
         />
       </div> 
 
-      <div className="relative z-10 mx-auto py-20 w-full">
+      <div className="relative z-10 mx-auto py-20 w-full px-4 sm:px-6 md:px-8 lg:px-12">
         <div className={styles.registrationLayout}>
           <div className={styles.registrationHeader}>
             <h2 className={styles.h2} data-text="Registration">
@@ -24,29 +82,39 @@ export default function RegistrationStepsSection() {
             </h2>
           </div>
 
-          <div className={styles.registrationContent}>
-            {REGISTRATION_STEPS.map((step) => (
-              <div key={step.step} className={styles.registrationColumn}>
-                <div className={styles.registrationStepBadge}>
-                  <h3 className={styles.h3} data-text={step.step}>
-                    {step.step}
-                  </h3>
-                </div>
-                <p className={styles.registrationStepTitle}>{step.title}</p>
-                <div className={styles.registrationColumnCards}>
-                  {step.cards.map((card, index) => (
-                    <RegistrationInfoCard
-                      key={`${step.step}-${index}`}
-                      heading={card.heading}
-                      body={card.body}
-                      list={card.list}
-                      variant={
-                        card.variant ||
-                        (step.columnVariant === "wide" ? "wide" : "standard")
-                      }
-                      isRotated={false}
-                    />
-                  ))}
+          <div ref={contentRef} className={styles.registrationContent}>
+            {REGISTRATION_STEPS.map((step, index) => (
+              <div
+                key={step.step}
+                className={`${styles.registrationColumn} ${isVisible ? styles.registrationStepVisible : styles.registrationStepHidden}`}
+                style={{ "--step-i": index }}
+              >
+                <div className={styles.registrationStepRow}>
+                  <div className={styles.registrationStepBadge}>
+                    <h3 className={styles.h3} data-text={step.step}>
+                      {step.step}
+                    </h3>
+                  </div>
+                  <div className={styles.registrationStepBody}>
+                    <p className={styles.registrationStepTitle}>{step.title}</p>
+                    {step.cards.map((card, index) => (
+                      <div key={`${step.step}-${index}`} className={styles.registrationStepDetail}>
+                        {card.heading ? (
+                          <p className={styles.registrationCardHeading}>{card.heading}</p>
+                        ) : null}
+                        {card.body?.map((line, lineIndex) => renderSegments(line, lineIndex))}
+                        {card.list ? (
+                          <ol className={`${styles.registrationStepList}`}>
+                            {card.list.map((item, itemIndex) => (
+                              <li key={itemIndex}>
+                                {Array.isArray(item) ? renderInlineSegments(item) : item}
+                              </li>
+                            ))}
+                          </ol>
+                        ) : null}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
