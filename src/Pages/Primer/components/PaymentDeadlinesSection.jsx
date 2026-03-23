@@ -158,7 +158,7 @@ export default function PaymentDeadlinesSection() {
             href="https://drive.google.com/file/d/1V-f_XySz_YEAo9Ig35fdsFbGoyormsvh/view"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#00653e] font-[Libre_Caslon_Condensed] font-bold italic text-[18px] rounded-full border-[3px] border-white shadow-lg hover:bg-[#00653e] hover:text-white hover:border-white transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#00653e] font-helvetica font-bold italic text-[18px] rounded-full border-[3px] border-white shadow-lg hover:bg-[#00653e] hover:text-white hover:border-white transition-all duration-300"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/>

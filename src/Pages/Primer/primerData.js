@@ -88,7 +88,7 @@ export const REGISTRATION_STEPS = [
               type: "text",
               content:
                 "Pre-registration is completely optional but will expedite the registration process.",
-              linkText:"Access the pre-registration link here",
+              linkText:"Access the pre-registration link here.",
               link: "https://forms.gle/xNBJWFrup67DRsjP8"
             },
           ],
@@ -130,7 +130,7 @@ export const REGISTRATION_STEPS = [
             {
               type: "text",
               content:
-                "Submit Official Receipt (OR) and ensure that you get a copy of the OR",
+                "Submit Official Receipt (OR) and ensure that you get a copy of the OR.",
             },
           ],
         ],
@@ -203,5 +203,9 @@ export const FAQs = [
   {
     question: "Why isn’t the release of the graduation photos on the day itself or sooner?",
     answer: "As a yearbook publication, our operations and production is founded on the consolidation of information. The data and schedule of activities is organized in batches to ensure that no data is lost in the process, as we do our best to accommodate the scale of students subscribing."
+  },
+  {
+    question: "Got more questions?",
+    answer: "Contact us at fb.com/gwyearbookdlsu."
   }
 ];
