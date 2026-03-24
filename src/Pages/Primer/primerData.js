@@ -88,7 +88,7 @@ export const REGISTRATION_STEPS = [
               type: "text",
               content:
                 "Pre-registration is completely optional but will expedite the registration process.",
-              linkText:"Access the pre-registration link here.",
+              linkText:"Access the pre-registration link here",
               link: "https://forms.gle/xNBJWFrup67DRsjP8"
             },
           ],
