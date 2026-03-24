@@ -11,8 +11,8 @@ import styles from '../Pages/Main/home.module.css';
  * @param {string} preRegisterText - Text for pre-register button (default: "Pre-register for 2026")
  * @param {string} preRegisterUrl - URL for pre-register button
  */
-const Navbar = ({ 
-  links = [], 
+const Navbar = ({
+  links = [],
   preRegisterText = "Pre-register for 2026",
   preRegisterUrl = "https://forms.gle/xNBJWFrup67DRsjP8"
 }) => {
@@ -23,7 +23,7 @@ const Navbar = ({
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Hide navbar when scrolling up, show when scrolling down
       // But only show if we've scrolled past 10px
       if (currentScrollY < lastScrollY) {
@@ -33,7 +33,7 @@ const Navbar = ({
         // Scrolling down - show navbar
         setShowNavbar(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -50,12 +50,12 @@ const Navbar = ({
       className={`fixed top-0 left-0 w-full transition-transform duration-300 z-50 px-4 sm:px-6
         ${showNavbar ? "translate-y-12" : "-translate-y-full"}`}
     >
-      
+
       {/* Desktop Navigation */}
       <div className={`hidden md:flex max-w-[1280px] mx-auto py-4 px-8 items-center justify-between ${styles.glassCard} rounded-full`}>
         {/* Left: Logo and Sticker */}
         <div className="flex items-center gap-4">
-          <img src={yearbook2026} alt="Yearbook 2026" className="h-12 py-0.5"/>
+          <img src={yearbook2026} alt="Yearbook 2026" className="h-12 py-0.5" />
 
           {/* Beside: Pre-register Link */}
           <div className="flex">
@@ -128,9 +128,8 @@ const Navbar = ({
 
         {/* Mobile Menu */}
         <div
-          className={`overflow-hidden transition-all duration-300 ease-in-out ${
-            isOpen ? 'max-h-96' : 'max-h-0'
-          }`}
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96' : 'max-h-0'
+            }`}
         >
           <div className="flex flex-col gap-4 py-4">
             {links.map((link, index) => (
