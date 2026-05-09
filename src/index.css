@@ -9,6 +9,8 @@
   --font-libre-caslon: "libre", sans-serif;
   --font-helvetica: "helvetica", sans-serif;
   --font-jost: "jost", sans-serif;
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-micu: "Micu", serif;
 
   --color-retro-yellow: #FFC567;
   --color-retro-pink: #FB7DA8;
@@ -71,6 +73,9 @@ html {
   --color-photo: #C5ADEC;
   --color-modal-bg: #F2F0EF;
 
+  --color-appwhite: "#F5F0E8";
+  --color-appgreen: "#2D6A3F";
+  
 }
 
 
@@ -118,6 +123,13 @@ body{
     src: url("./assets/fonts/Times-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+  font-family: "Micu";
+  src: url("./assets/fonts/MicuRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Libre Caslon Condensed: use variable WOFF2 primary with static fallback */
