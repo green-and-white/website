@@ -80,9 +80,9 @@ html {
 }
 
 body{
-   
-    /* color: white; */
     overflow-x: hidden;
+    background-color: white;
+    color-scheme: light;
 }
 
 

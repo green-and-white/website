@@ -63,9 +63,16 @@ function CldImage({
 export default function T3Apply() {
   return (
     <div 
-      className="relative min-h-screen bg-white flex flex-col justify-center items-center font-futura overflow-hidden bg-center bg-blend-difference bg-repeat"
-      style={{ backgroundImage: `url(${grainTexture})`, backgroundSize: '50%' }}
+      className="relative min-h-screen bg-white flex flex-col justify-center items-center font-futura overflow-hidden"
+      style={{ colorScheme: 'light' }}
     >
+      {/* Grain overlay */}
+      <img
+        src={grainTexture}
+        aria-hidden="true"
+        alt=""
+        className="pointer-events-none select-none absolute inset-0 w-full h-full object-cover opacity-25 mix-blend-multiply z-10"
+      />
 
       {/* Cat Image */}
       <div className="relative z-0 mb-4">
