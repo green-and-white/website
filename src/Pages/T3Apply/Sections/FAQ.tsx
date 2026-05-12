@@ -56,6 +56,22 @@ const faqs = [
   {
     question: "Are Green & White application exams difficult?",
     answer: "Don't worry, the workload fits right into a student's schedule! Here in Green & White, we take our workload and time management holistically, always with the student in mind. We know some tasks may seem time consuming but with time and practice, we are able to manage work at a breathable and competent pace. These exams are also meant to test your technical skills and commitment and help us identify which committee you best belong to."
+  }, 
+  {
+    question: "Have any more questions?",
+    answer: (
+      <p>
+        For any other questions or concerns, kindly message our Facebook inbox through{" "}
+        <a href="https://fb.com/gwyearbookdlsu" className="underline" onClick={(e) => e.stopPropagation()}>
+          fb.com/gwyearbookdlsu
+        </a>{" "}
+        or send us an email at{" "}
+        <a href="mailto:gw@dlsu.edu.ph" className="underline" onClick={(e) => e.stopPropagation()}>
+          gw@dlsu.edu.ph
+        </a>{" "}
+        with the subject line "[GW26] T3 Recruitment Concern".
+      </p>
+    )
   }
 ] 
 
