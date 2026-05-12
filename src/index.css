@@ -13,13 +13,14 @@
   --font-jost: "jost", sans-serif;
   --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-micu: "Micu", serif;
-  --font-futura-light: 'Futura PT Light', sans-serif;
-  --font-futura-book: 'Futura PT Book', sans-serif;
-  --font-futura-medium: 'Futura PT Medium', sans-serif;
-  --font-futura-demibold: 'Futura PT DemiBold', sans-serif;
-  --font-futura-bold: 'Futura PT Bold', sans-serif;
-  --font-futura-heavy: 'Futura PT Heavy', sans-serif;
-  --font-futura-condensed: 'Futura Condensed PT Medium', sans-serif;
+  --font-futura-light: 'Futura PT Cond Book', 'Futura PT Light', sans-serif;
+  --font-futura-book: 'Futura PT Cond Book', 'Futura PT Book', sans-serif;
+  --font-futura-medium: 'Futura PT Cond Medium', 'Futura PT Medium', sans-serif;
+  --font-futura-demibold: 'Futura PT Cond Bold', 'Futura PT DemiBold', sans-serif;
+  --font-futura-bold: 'Futura PT Cond Bold', 'Futura PT Bold', sans-serif;
+  --font-futura-heavy: 'Futura PT Cond Extra Bold', 'Futura PT Heavy', sans-serif;
+  --font-futura-extrabold: 'Futura PT Cond Extra Bold', sans-serif;
+  --font-futura-condensed: 'Futura PT Cond Medium', 'Futura Condensed PT Medium', sans-serif;
 
   --color-retro-yellow: #FFC567;
   --color-retro-pink: #FB7DA8;
@@ -28,14 +29,17 @@
   --color-retro-green: #009953;
   --color-retro-lightblue: #058CD7;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 /* Utility: clamp text lines (mobile) */
 .clamp-4 {
   display: -webkit-box;
   -webkit-line-clamp: 4;
-  line-clamp: 4; /* standard property for compatibility */
+  line-clamp: 4;
+  /* standard property for compatibility */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -43,7 +47,8 @@ html {
 .clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  line-clamp: 3; /* standard property for compatibility */
+  line-clamp: 3;
+  /* standard property for compatibility */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -56,12 +61,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --color-retro-yellow:#FFC567; 
-  --color-retro-pink:#FB7DA8;
-  --color-retro-orange:#FD5A46;
-  --color-retro-purple:#552CB7;
-  --color-retro-green:#009953;
-  --color-retro-lightblue:#058CD7;
+  --color-retro-yellow: #FFC567;
+  --color-retro-pink: #FB7DA8;
+  --color-retro-orange: #FD5A46;
+  --color-retro-purple: #552CB7;
+  --color-retro-green: #009953;
+  --color-retro-lightblue: #058CD7;
 
   --color-blue-900: #0A0823;
   --color-blue-800: #171052;
@@ -84,7 +89,7 @@ html {
 
   --color-appwhite: "#F5F0E8";
   --color-appgreen: "#2D6A3F";
-  
+
 }
 
 
@@ -92,10 +97,10 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
-body{
-   
-    /* color: white; */
-    overflow-x: hidden;
+body {
+
+  /* color: white; */
+  overflow-x: hidden;
 }
 
 
@@ -127,11 +132,11 @@ body{
   font-style: normal;
 }
 
-@font-face{
-    font-family: "Times New Roman";
-    src: url("./assets/fonts/Times-Regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
+@font-face {
+  font-family: "Times New Roman";
+  src: url("./assets/fonts/Times-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
@@ -175,26 +180,26 @@ body{
   font-display: swap;
 }
 
-@font-face{
-  font-family: "helvetica"; 
+@font-face {
+  font-family: "helvetica";
   src: url("./assets/fonts/Helvetica-Bold-02.woff") format("woff");
-  font-weight: 700; 
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face{
-  font-family: "helvetica"; 
+@font-face {
+  font-family: "helvetica";
   src: url("./assets/fonts/Helvetica-Light-05.woff") format("woff");
-  font-weight: 300; 
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
-@font-face{
-  font-family: "helvetica"; 
+@font-face {
+  font-family: "helvetica";
   src: url("./assets/fonts/Helvetica-BoldOblique-04.woff") format("woff");
-  font-style: oblique; 
+  font-style: oblique;
   font-weight: 700;
   font-display: swap;
 }
@@ -205,135 +210,89 @@ body{
   src: url("./assets/fonts/JostVariable.woff") format("woff ");
 }
 
-@font-face{
-  font-family:"jost"; 
+@font-face {
+  font-family: "jost";
   src: url("./assets/fonts/JostItalic.woff") format("woff");
-  font-style: italic; 
+  font-style: italic;
 }
 
 @font-face {
-  font-family: 'Futura Condensed PT Medium';
+  font-family: 'Futura PT Cond Book';
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: url('./assets/fonts/futura-condensed-pt-medium-589e44ed1e3a5.woff') format('woff');
+  src: url('./assets/fonts/futura-pt-cond-book.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Futura Condensed PT Medium Oblique';
-  font-style: normal;
+  font-family: 'Futura PT Cond Book';
+  font-style: oblique;
   font-weight: normal;
   font-display: swap;
-  src: url('./assets/fonts/futura-condensed-pt-medium-oblique-589e4507d391c.woff') format('woff');
+  src: url('./assets/fonts/futura-pt-cond-book-oblique.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Futura PT Book';
+  font-family: 'Futura PT Cond Medium';
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: url('./assets/fonts/futura-pt-book-589a6dec272c3.woff') format('woff');
+  src: url('./assets/fonts/futura-pt-cond-medium.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Futura PT Book Oblique';
-  font-style: normal;
+  font-family: 'Futura PT Cond Medium';
+  font-style: oblique;
   font-weight: normal;
   font-display: swap;
-  src: url('./assets/fonts/futura-pt-book-oblique-589e44623c7b4.woff') format('woff');
+  src: url('./assets/fonts/futura-pt-cond-medium-oblique.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Futura PT Light';
+  font-family: 'Futura PT Cond Bold';
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: url('./assets/fonts/futura-pt-light-589a6e187563a.woff') format('woff');
+  src: url('./assets/fonts/futura-pt-cond-bold.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Futura PT Light Oblique';
-  font-style: normal;
+  font-family: 'Futura PT Cond Bold';
+  font-style: oblique;
   font-weight: normal;
   font-display: swap;
-  src: url('./assets/fonts/futura-pt-light-oblique-589e448ae90e2.woff') format('woff');
+  src: url('./assets/fonts/futura-pt-cond-bold-oblique.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Futura PT Medium';
+  font-family: 'Futura PT Cond Extra Bold';
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: url('./assets/fonts/futura-pt-medium-589e45b956de4.woff') format('woff');
+  src: url('./assets/fonts/futura-pt-cond-extrabold.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Futura PT Medium Oblique';
-  font-style: normal;
+  font-family: 'Futura PT Cond Extra Bold';
+  font-style: oblique;
   font-weight: normal;
   font-display: swap;
-  src: url('./assets/fonts/futura-pt-medium-oblique-589e460871ec2.woff') format('woff');
+  src: url('./assets/fonts/futura-pt-cond-extrabold-oblique.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Futura PT DemiBold';
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('./assets/fonts/futura-pt-demibold-589e43b852117.woff') format('woff');
+.font-jost-regular {
+  font-family: "jost";
+  font-weight: 400;
 }
 
-@font-face {
-  font-family: 'Futura PT DemiBold Oblique';
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('./assets/fonts/futura-pt-demibold-oblique-589e43ec3ea82.woff') format('woff');
+.font-jost-medium {
+  font-family: "jost";
+  font-weight: 500;
 }
 
-@font-face {
-  font-family: 'Futura PT Bold';
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('./assets/fonts/futura-pt-bold-589e44b6aacd3.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Futura PT Bold Oblique';
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('./assets/fonts/futura-pt-bold-oblique-589e453384a18.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Futura PT Heavy';
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('./assets/fonts/futura-pt-heavy-589a6dd12187e.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Futura PT Heavy Oblique';
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('./assets/fonts/futura-pt-heavy-oblique-589a6e480ab16.woff') format('woff');
-}
-
-.font-jost-regular{
-    font-family: "jost";
-    font-weight: 400;
-}
-.font-jost-medium{
-    font-family: "jost";
-    font-weight: 500;
-}
-.font-jost-italic{
-    font-family: "jost";
-    font-style: italic;
+.font-jost-italic {
+  font-family: "jost";
+  font-style: italic;
 }
 
 
@@ -347,8 +306,10 @@ body{
   height: 110px;
   border-radius: 50%;
   position: relative;
-  overflow: hidden; /* clip inner image */
-  pointer-events: none; /* purely decorative */
+  overflow: hidden;
+  /* clip inner image */
+  pointer-events: none;
+  /* purely decorative */
   will-change: transform;
   border: 1.5px solid var(--orb-border, transparent);
   box-shadow:
@@ -359,7 +320,7 @@ body{
 }
 
 /* spinning ring that sits behind the orb for a subtle motion effect */
-.committee-orbs .orb-ring{
+.committee-orbs .orb-ring {
   position: absolute;
   width: calc(100% + 34px);
   height: calc(100% + 34px);
@@ -368,16 +329,22 @@ body{
   top: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: -1; /* behind the orb */
-  background: conic-gradient(from 90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.12) 15%, rgba(255,255,255,0.02) 30%, rgba(255,255,255,0.02) 70%, rgba(255,255,255,0.08) 85%, rgba(255,255,255,0.02) 100%);
+  z-index: -1;
+  /* behind the orb */
+  background: conic-gradient(from 90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.12) 15%, rgba(255, 255, 255, 0.02) 30%, rgba(255, 255, 255, 0.02) 70%, rgba(255, 255, 255, 0.08) 85%, rgba(255, 255, 255, 0.02) 100%);
   filter: blur(6px) saturate(110%);
   animation: orb-ring-spin linear infinite;
   animation-duration: var(--orb-ring-spin, 8s);
 }
 
-@keyframes orb-ring-spin{
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(360deg); }
+@keyframes orb-ring-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .orb-container-clickable:hover .orb {
@@ -389,7 +356,7 @@ body{
 .committee-orbs .orb-image {
   width: 100%;
   height: 100%;
-  background-image: url('https://www.cru.org/content/experience-fragments/shared-library/language-masters/en/train-and-grow/leading-a-small-group/four-key-components-of-a-small-group-meeting/master/_jcr_content/root/image.coreimg.png/1752346812818/four-key-components-small-group.png'); 
+  background-image: url('https://www.cru.org/content/experience-fragments/shared-library/language-masters/en/train-and-grow/leading-a-small-group/four-key-components-of-a-small-group-meeting/master/_jcr_content/root/image.coreimg.png/1752346812818/four-key-components-small-group.png');
   background-size: cover;
   background-position: center;
   /* Force a circular clipping on the image so it never overflows the orb.
@@ -405,7 +372,7 @@ body{
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 120%, rgba(255,255,255,0.2), rgba(255,255,255,0) 70%);
+  background: radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 70%);
   z-index: 2;
 }
 
@@ -415,7 +382,7 @@ body{
   inset: 0;
   border-radius: 50%;
   background: radial-gradient(circle at center, transparent 0%, color-mix(in srgb, var(--orb-base) 70%, transparent) 70%),
-              radial-gradient(circle at center, transparent 30%, var(--orb-tint, rgba(255, 215, 0, 0.28)) 80%);
+    radial-gradient(circle at center, transparent 30%, var(--orb-tint, rgba(255, 215, 0, 0.28)) 80%);
   z-index: 1;
 }
 
@@ -425,7 +392,7 @@ body{
   left: 25%;
   width: 50%;
   height: 25%;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
   border-radius: 50%;
   transform: rotate(20deg);
   z-index: 3;
@@ -433,16 +400,39 @@ body{
 
 /* subtle, not-too-much float */
 @keyframes orb-float-var {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(var(--float-x, 4px), calc(var(--float-y, 8px) * -1)); }
-  100% { transform: translate(0, 0); }
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(var(--float-x, 4px), calc(var(--float-y, 8px) * -1));
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 /* size variants if needed */
-.committee-orbs .orb.xs { width: 64px; height: 64px; }
-.committee-orbs .orb.sm { width: 80px; height: 80px; }
-.committee-orbs .orb.md { width: 110px; height: 110px; }
-.committee-orbs .orb.lg { width: 130px; height: 130px; }
+.committee-orbs .orb.xs {
+  width: 64px;
+  height: 64px;
+}
+
+.committee-orbs .orb.sm {
+  width: 80px;
+  height: 80px;
+}
+
+.committee-orbs .orb.md {
+  width: 110px;
+  height: 110px;
+}
+
+.committee-orbs .orb.lg {
+  width: 130px;
+  height: 130px;
+}
 
 /* Floater wrapper to animate orb and its label together */
 .orb-container-clickable {
@@ -470,13 +460,40 @@ body{
 }
 
 /* Support both descendant and same-element theme assignment */
-.committee-orbs .orb-theme--marketing, .committee-orbs.orb-theme--marketing { --orb-base: var(--color-marketing); }
-.committee-orbs .orb-theme--customer-care, .committee-orbs.orb-theme--customer-care { --orb-base: var(--color-customer-care); }
-.committee-orbs .orb-theme--literary, .committee-orbs.orb-theme--literary { --orb-base: var(--color-literary); }
-.committee-orbs .orb-theme--office, .committee-orbs.orb-theme--office { --orb-base: var(--color-office); }
-.committee-orbs .orb-theme--layout, .committee-orbs.orb-theme--layout { --orb-base: var(--color-layout); }
-.committee-orbs .orb-theme--web, .committee-orbs.orb-theme--web { --orb-base: var(--color-web); }
-.committee-orbs .orb-theme--photo, .committee-orbs.orb-theme--photo { --orb-base: var(--color-photo); }
+.committee-orbs .orb-theme--marketing,
+.committee-orbs.orb-theme--marketing {
+  --orb-base: var(--color-marketing);
+}
+
+.committee-orbs .orb-theme--customer-care,
+.committee-orbs.orb-theme--customer-care {
+  --orb-base: var(--color-customer-care);
+}
+
+.committee-orbs .orb-theme--literary,
+.committee-orbs.orb-theme--literary {
+  --orb-base: var(--color-literary);
+}
+
+.committee-orbs .orb-theme--office,
+.committee-orbs.orb-theme--office {
+  --orb-base: var(--color-office);
+}
+
+.committee-orbs .orb-theme--layout,
+.committee-orbs.orb-theme--layout {
+  --orb-base: var(--color-layout);
+}
+
+.committee-orbs .orb-theme--web,
+.committee-orbs.orb-theme--web {
+  --orb-base: var(--color-web);
+}
+
+.committee-orbs .orb-theme--photo,
+.committee-orbs.orb-theme--photo {
+  --orb-base: var(--color-photo);
+}
 
 /* Labels for orbs */
 .committee-orbs .orb-label {
@@ -502,12 +519,14 @@ body{
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 1rem; /* Add padding on mobile for easier closing */
+  padding: 1rem;
+  /* Add padding on mobile for easier closing */
 }
 
 @media (min-width: 768px) {
   .modal-overlay {
-    padding: 3rem; /* More padding on tablet/desktop */
+    padding: 3rem;
+    /* More padding on tablet/desktop */
   }
 }
 
@@ -524,12 +543,17 @@ body{
   max-width: 800px;
   display: flex;
   flex-direction: column;
-  align-items: stretch; /* stretch children so hr/text share boundaries */
-  justify-content: center; /* center vertically within min-height */
+  align-items: stretch;
+  /* stretch children so hr/text share boundaries */
+  justify-content: center;
+  /* center vertically within min-height */
   gap: 1rem;
-  min-height: 60vh; /* make modal taller */
-  max-height: calc(100vh - 2rem); /* Ensure modal doesn't exceed viewport */
-  overflow-y: auto; /* Allow scrolling if content is too tall */
+  min-height: 60vh;
+  /* make modal taller */
+  max-height: calc(100vh - 2rem);
+  /* Ensure modal doesn't exceed viewport */
+  overflow-y: auto;
+  /* Allow scrolling if content is too tall */
 }
 
 @media (min-width: 768px) {
@@ -579,11 +603,13 @@ body{
 .modal-orb-container {
   width: 100%;
   display: flex;
-  justify-content: center; /* center the orb horizontally */
+  justify-content: center;
+  /* center the orb horizontally */
 }
 
 .modal-orb-container .orb {
-  box-shadow: none; /* remove outer glow inside modal */
+  box-shadow: none;
+  /* remove outer glow inside modal */
 }
 
 .modal-separator {
@@ -605,47 +631,54 @@ body{
   font-size: 1rem;
   text-align: center;
 }
+
 .cta {
   font-size: 80px;
   color: #fff;
   text-align: center;
   animation: glow 1.5s ease-in-out infinite alternate;
   font-size: 3rem;
-   @media (min-width: 780px) {
+
+  @media (min-width: 780px) {
     font-size: 4rem;
   }
-   @media (min-width: 1024px) {
+
+  @media (min-width: 1024px) {
     font-size: 4.5rem;
   }
 }
 
-@keyframes glow{
+@keyframes glow {
   from {
-    text-shadow: 
+    text-shadow:
       0 0 1px #fff;
   }
+
   to {
-    text-shadow: 
-     0 0 5px rgba(255, 255, 255, 0.7),
-     0 0 10px rgba(255, 255, 255, 0.5), 
-     0 0 15px rgba(255, 255, 255, 0.3);
+    text-shadow:
+      0 0 5px rgba(255, 255, 255, 0.7),
+      0 0 10px rgba(255, 255, 255, 0.5),
+      0 0 15px rgba(255, 255, 255, 0.3);
   }
 }
 
 .glow {
-  text-shadow: 
+  text-shadow:
     0 0 10px #fff
 }
 
 .radial-gradient {
-   background: #182D6A;
-   background: radial-gradient(circle, #182d6a 0%, #171052 54%, #0a0823 100%);
+  background: #182D6A;
+  background: radial-gradient(circle, #182d6a 0%, #171052 54%, #0a0823 100%);
 }
 
-.section-header{
-    font-size: 2.25rem; /* 36px */
-    font-weight: 700; /* bold */
-    @media (min-width: 1024px) {
+.section-header {
+  font-size: 2.25rem;
+  /* 36px */
+  font-weight: 700;
+
+  /* bold */
+  @media (min-width: 1024px) {
     font-size: 3.75rem
   }
 }
@@ -659,44 +692,45 @@ body{
   transform: scale(1.05);
 }
 
-.about-gradient{
-    background-image: linear-gradient(to bottom,
-    rgba(22,16,80, 1),
-    rgba(0, 0, 0, 0), 
-    rgba(10, 8, 36, 1)
-    );
+.about-gradient {
+  background-image: linear-gradient(to bottom,
+      rgba(22, 16, 80, 1),
+      rgba(0, 0, 0, 0),
+      rgba(10, 8, 36, 1));
 }
 
-.applynow{
+.applynow {
   color: #cf8fbe;
   text-align: center;
   animation: applyGlow 1.5s ease-in-out infinite alternate;
 }
 
-@keyframes applyGlow{
+@keyframes applyGlow {
   from {
-    text-shadow: 
+    text-shadow:
       0 0 1px rgba(197, 75, 140, 0.7);
   }
+
   to {
-    text-shadow: 
-     0 0 5px rgba(197, 75, 140, 0.7),
-     0 0 10px rgba(197, 75, 140, 0.5), 
-     0 0 15px rgba(197, 75, 140, 0.3);
+    text-shadow:
+      0 0 5px rgba(197, 75, 140, 0.7),
+      0 0 10px rgba(197, 75, 140, 0.5),
+      0 0 15px rgba(197, 75, 140, 0.3);
   }
 }
+
 .process-glow {
-  transition: text-shadow 0.3s ease-in-out; 
-  text-shadow: 0 0 5px var(--glow-color), 
-                0 0 10px var(--glow-color) 
+  transition: text-shadow 0.3s ease-in-out;
+  text-shadow: 0 0 5px var(--glow-color),
+    0 0 10px var(--glow-color)
 }
 
 .group:hover .process-glow {
   text-shadow:
-      0 0 25px var(--glow-color),
-      0 0 20px var(--glow-color),
-      0 0 15px var(--glow-color), 
-      0 0 10px var(--glow-color); 
+    0 0 25px var(--glow-color),
+    0 0 20px var(--glow-color),
+    0 0 15px var(--glow-color),
+    0 0 10px var(--glow-color);
 }
 
 .process-glow.active {
@@ -719,63 +753,69 @@ body{
  * animation puff-in-center
  * ----------------------------------------
  */
- @-webkit-keyframes puff-in-center {
+@-webkit-keyframes puff-in-center {
   0% {
     -webkit-transform: scale(2);
-            transform: scale(2);
+    transform: scale(2);
     -webkit-filter: blur(4px);
-            filter: blur(4px);
+    filter: blur(4px);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     -webkit-filter: blur(0px);
-            filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
+
 @keyframes puff-in-center {
   0% {
     -webkit-transform: scale(2);
-            transform: scale(2);
+    transform: scale(2);
     -webkit-filter: blur(4px);
-            filter: blur(4px);
+    filter: blur(4px);
     opacity: 0;
   }
+
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     -webkit-filter: blur(0px);
-            filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
 
 .puff-in-center {
-	-webkit-animation: 
-      puff-in-center 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both,
-      applyGlow 1.5s ease-in-out infinite alternate 1.5s;
-    animation: 
-      puff-in-center 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both,
-      applyGlow 1.5s ease-in-out infinite alternate 1.5s;;
-          
+  -webkit-animation:
+    puff-in-center 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both,
+    applyGlow 1.5s ease-in-out infinite alternate 1.5s;
+  animation:
+    puff-in-center 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both,
+    applyGlow 1.5s ease-in-out infinite alternate 1.5s;
+  ;
+
 }
 
-.island{
-  animation: float 4s ease-in-out infinite ; 
+.island {
+  animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
-	0% {
-		transform: translatey(0px);
-	}
-	50% {
-		transform: translatey(-20px);
-	}
-	100% {
-		transform: translatey(0px);
-	}
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(-20px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
 }
 
 /* Calendar label fade-in utility */
@@ -788,6 +828,7 @@ body{
     opacity: 0;
     transform: translateY(-50%) translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(-50%) translateY(0);
