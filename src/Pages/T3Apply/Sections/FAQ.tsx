@@ -13,6 +13,14 @@ function FAQ() {
             question="Do I need formal brutalist desing experience?"
             answer="No formal experience is require, just a strong alignment with our manifesto and a willingness to break conventions purposefully"
           /> 
+          <FaqDropdown
+            question="Do I need formal brutalist desing experience?"
+            answer="No formal experience is require, just a strong alignment with our manifesto and a willingness to break conventions purposefully"
+          /> 
+          <FaqDropdown
+            question="Do I need formal brutalist desing experience?"
+            answer="No formal experience is require, just a strong alignment with our manifesto and a willingness to break conventions purposefully"
+          />
         </div>
       </div>
     </section>

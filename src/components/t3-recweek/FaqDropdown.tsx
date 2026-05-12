@@ -9,7 +9,7 @@ export default function FaqDropdown(
   return (
     <div className="flex flex-col border-b-2 border-b-[#B34865] px-2 py-4 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
       <div className="flex flex-row items-center justify-between">
-        <h3 className="text-[#B34865] font-bold text-xl md:text-lg lg:text-xl">
+        <h3 className={`font-bold transition-all duration-300 ${isOpen ? "text-[#48B39A] text-2xl md:text-xl lg:text-2xl" : "text-[#B34865] text-xl md:text-lg lg:text-xl"}`}>
           {question}
         </h3>
         <span
@@ -19,8 +19,9 @@ export default function FaqDropdown(
           <ChevronUp />
         </span>
       </div>
+      
       {isOpen && (
-        <p className="text-[#48B39A] text-lg md:text-base lg:text-lg mt-2">
+        <p className="text-[#B34865] text-lg md:text-base lg:text-lg mt-2">
           {answer}
         </p>
       )}
