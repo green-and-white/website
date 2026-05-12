@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { ChevronUp } from "lucide-react";
+import { ReactNode } from "react"
 
 export default function FaqDropdown(
-  { question, answer }: { question: string; answer: string }
+  { question, answer }: { question: string; answer: ReactNode }
 ) {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -19,11 +20,11 @@ export default function FaqDropdown(
           <ChevronUp />
         </span>
       </div>
-      
+
       {isOpen && (
-        <p className="text-[#B34865] text-lg md:text-base lg:text-lg mt-2">
+        <div className="text-[#B34865] text-lg md:text-base lg:text-lg mt-2">
           {answer}
-        </p>
+        </div>
       )}
     </div>
   )
