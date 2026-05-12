@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { ChevronUp } from "lucide-react";
 import { ReactNode } from "react"
 
@@ -6,6 +6,14 @@ export default function FaqDropdown(
   { question, answer }: { question: string; answer: ReactNode }
 ) {
   const [isOpen, setIsOpen] = useState(false)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const [height, setHeight] = useState(0)
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(isOpen ? contentRef.current.scrollHeight : 0)
+    }
+  }, [isOpen])
 
   return (
     <div className="flex flex-col border-b-2 border-b-[#B34865] px-2 py-4 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
@@ -20,12 +28,15 @@ export default function FaqDropdown(
           <ChevronUp />
         </span>
       </div>
-
-      {isOpen && (
-        <div className="font-futura-medium text-[#B34865] text-lg md:text-base lg:text-lg mt-2 ">
+      <div
+        ref={contentRef}
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+        style={{ height: `${height}px` }}
+      >
+        <div className="font-futura-medium text-[#B34865] text-lg md:text-base lg:text-lg mt-2">
           {answer}
         </div>
-      )}
+      </div>
     </div>
   )
 }
