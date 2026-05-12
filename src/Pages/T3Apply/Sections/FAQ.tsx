@@ -3,7 +3,7 @@ import FaqDropdown from "../../../components/t3-recweek/FaqDropdown"
 const faqs = [
   {
     question: "Who can apply?",
-    answer: "All Manila and Laguna Campus undergraduate students with a minimum of three (3) terms left are eligible to apply for Green & White."
+    answer: "All undergraduate students from all campuses under DLSU-Manila, with a minimum of three (3) terms left are eligible to apply for Green & White."
   },
   {
     question: "What committees may I apply for?",
