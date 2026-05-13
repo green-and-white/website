@@ -19,7 +19,7 @@ export function buildCloudinaryUrl(
   publicId: string,
   { width, height }: CloudinaryTransforms = {}
 ): string {
-  const parts: string[] = ["f_avif"];
+  const parts: string[] = ["f_avif", "q_auto"];
   if (width) parts.push(`w_${width}`);
   if (height) parts.push(`h_${height}`);
 

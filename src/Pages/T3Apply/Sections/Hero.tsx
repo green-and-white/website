@@ -19,6 +19,7 @@ function Hero() {
         publicId="Hero_tcg8tg"
         alt="Hero Background"
         className="absolute inset-0 w-full h-full object-cover z-0 filter brightness-[0.9]"
+        width={1000}
       />
 
 
@@ -30,6 +31,7 @@ function Hero() {
             publicId={whiteLogo.public_id}
             alt={whiteLogo.display_name}
             className="h-22 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+            width={200}
           />
         </div>
 

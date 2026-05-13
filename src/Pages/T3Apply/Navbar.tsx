@@ -108,6 +108,7 @@ function Navbar() {
         <CloudinaryImage
           publicId={greenLogo.public_id}
           alt={greenLogo.display_name}
+          width={100}
           className="h-14 w-auto object-contain"
         />
       </a>

@@ -9,7 +9,7 @@ function About() {
 
   return (
     <section id="about" className="min-h-screen bg-app-white flex flex-col items-center justify-center text-app-red px-6 md:px-16 py-12 md:py-24 gap-4">
-      <div className="font-micu text-[40px] md:text-[64px] leading-10 md:leading-20 text-center">
+      <div className="font-micu text-[40px] md:text-[64px] leading-10 md:leading-20 text-center text-app-red">
         Green & White
       </div>
       <div className="flex flex-col gap-5">
@@ -28,6 +28,7 @@ function About() {
           publicId={aboutImage.public_id}
           alt={aboutImage.display_name}
           className="w-full h-auto object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)]"
+          width={1000}
         />
       </div>
     </section>
