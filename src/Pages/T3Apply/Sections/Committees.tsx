@@ -30,8 +30,8 @@ function Committees() {
             <div className="w-full pl-4 md:pl-8 max-w-7xl">
                 <div className="flex gap-6 overflow-x-auto pb-8 pt-4 scrollbar-hide scroll-smooth snap-x mr-4">
                     {committeesData.committees.map((committee) => (
-                        <div 
-                            key={committee.id} 
+                        <div
+                            key={committee.id}
                             className=" flex-shrink-0 snap-start"
                         >
                             <CommitteeCard
@@ -41,11 +41,6 @@ function Committees() {
                             />
                         </div>
                     ))}
-                </div>
-
-                {/* Subtle mobile indicator/hint */}
-                <div className="flex justify-center items-center gap-2 mt-2 text-app-green text-xs uppercase font-futura-bold md:hidden pr-4">
-                    <span>← Swipe to explore committees →</span>
                 </div>
             </div>
         </section>

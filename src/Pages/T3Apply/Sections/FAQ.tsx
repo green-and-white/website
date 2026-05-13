@@ -3,11 +3,7 @@ import FaqDropdown from "../../../components/t3-recweek/FaqDropdown"
 const faqs = [
   {
     question: "Who can apply?",
-    answer: (
-      <span>
-        All undergraduate students from all campuses under DLSU-Manila, with a minimum of three (3) terms left are eligible to apply for <span className="text-app-green font-futura-extrabold">Green & White</span>.
-      </span>
-    )
+    answer: "All undergraduate students from all campuses under DLSU-Manila, with a minimum of three (3) terms left are eligible to apply for Green & White."
   },
   {
     question: "What committees may I apply for?",
@@ -35,11 +31,7 @@ const faqs = [
     answer: "Yes, you can! Aspiring applicants from other organizations may still apply, as long as you are not an officer or member of any political organization within the university."
   },
   {
-    question: (
-      <span>
-        What are the expectations for a <span className="text-app-green font-futura-extrabold">Green & White</span> staffer?
-      </span>
-    ),
+    question: "What are the expectations for a Green & White staffer?",
     answer: "Members of the publication are expected to be active contributors with a nose for initiative. Outside of section-specific deliverables, staffers are expected to be available on-site to man the publication's booths and assist subscribers with yearbook concerns."
   },
   {
@@ -50,7 +42,7 @@ const faqs = [
     question: "What does the application process look like?",
     answer: (
       <div className="flex flex-col gap-1">
-        <p><span className="text-app-green font-futura-extrabold">Green & White</span>'s application process is conducted in five (5) stages:</p>
+        <p>Green & White's application process is conducted in five (5) stages:</p>
         <ol className="list-decimal list-inside flex flex-col gap-1 mt-1">
           <li><span className="font-bold">Application:</span> Fill out the application form at <a href="http://bit.ly/GW26-T3-Application" className="underline" onClick={(e) => e.stopPropagation()}>bit.ly/GW26-T3-Application</a> by Saturday, May 23.</li>
           <li><span className="font-bold">Examination:</span> Wait for the details of your committee exam and practical exam to be sent to you by May 25. Submit your exam deliverables, resume, and portfolio within the given time period.</li>
@@ -62,17 +54,9 @@ const faqs = [
     )
   },
   {
-    question: (
-      <span>
-        Are <span className="text-app-green font-futura-extrabold">Green & White</span> application exams difficult?
-      </span>
-    ),
-    answer: (
-      <span>
-        Don't worry, the workload fits right into a student's schedule! Here in <span className="text-app-green font-futura-extrabold">Green & White</span>, we take our workload and time management holistically, always with the student in mind. We know some tasks may seem time consuming but with time and practice, we are able to manage work at a breathable and competent pace. These exams are also meant to test your technical skills and commitment and help us identify which committee you best belong to.
-      </span>
-    )
-  }, 
+    question: "Are Green & White application exams difficult?",
+    answer: "Don't worry, the workload fits right into a student's schedule! Here in Green & White, we take our workload and time management holistically, always with the student in mind. We know some tasks may seem time consuming but with time and practice, we are able to manage work at a breathable and competent pace. These exams are also meant to test your technical skills and commitment and help us identify which committee you best belong to."
+  },
   {
     question: "Have any more questions?",
     answer: (
@@ -89,26 +73,26 @@ const faqs = [
       </p>
     )
   }
-] 
+]
 
 function FAQ() {
   return (
-    <section id="faq" className="min-h-screen flex flex-col justify-center items-center px-6 bg-[#E8E4DD] py-16">
+    <section className="min-h-screen flex flex-col justify-center items-center px-6 bg-[#E8E4DD] py-16">
       <div className="w-full max-w-sm md:max-w-2xl lg:max-w-4xl xl:max-w-5xl">
         <h1 className="font-micu text-[#B34865] text-5xl md:text-6xl lg:text-7xl text-center mb-16 md:mb-20">
-          FAQS 
+          FAQS
         </h1>
 
         <div className="flex flex-col gap-3 w-full">
-          { faqs.map((faq, index) => {
-              return <FaqDropdown
-                key={index} 
-                question={faq.question} 
-                answer={faq.answer} 
-              />
-            })
-          } 
-          
+          {faqs.map((faq, index) => {
+            return <FaqDropdown
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+            />
+          })
+          }
+
         </div>
       </div>
     </section>

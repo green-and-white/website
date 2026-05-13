@@ -3,7 +3,7 @@ import { ChevronUp } from "lucide-react";
 import { ReactNode } from "react"
 
 export default function FaqDropdown(
-  { question, answer }: { question: ReactNode; answer: ReactNode }
+  { question, answer }: { question: string; answer: ReactNode }
 ) {
   const [isOpen, setIsOpen] = useState(false)
   const contentRef = useRef<HTMLDivElement>(null)
