@@ -18,7 +18,7 @@ export default function FaqDropdown(
   return (
     <div className="flex flex-col border-b-2 border-b-[#B34865] px-2 py-4 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
       <div className="flex flex-row items-center justify-between">
-        <h3 className={`font-futura-bold transition-all duration-300 ${isOpen ? "text-[#48B39A] text-2xl md:text-xl lg:text-2xl" : "text-[#B34865] text-xl md:text-lg lg:text-xl"}`}>
+        <h3 className={`font-futura-extra-bold transition-all duration-300 ${isOpen ? "text-[#48B39A] text-2xl md:text-xl lg:text-2xl" : "text-[#B34865] text-xl md:text-lg lg:text-xl"}`}>
           {question}
         </h3>
         <span
@@ -33,7 +33,7 @@ export default function FaqDropdown(
         className="overflow-hidden transition-all duration-300 ease-in-out"
         style={{ height: `${height}px` }}
       >
-        <div className="font-futura-medium text-[#B34865] text-lg md:text-base lg:text-lg mt-2">
+        <div className="font-futura-cond-medium text-[#B34865] text-xl md:text-lg lg:text-xl mt-2">
           {answer}
         </div>
       </div>
