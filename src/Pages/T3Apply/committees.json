@@ -5,8 +5,8 @@
       "name": "Layout",
       "description": "The Layout Committee is Green & White's arm for yearbook design and publicity. Whether we're pitching design concepts or bringing ideas to life through layout, vector and raster graphics, and digital illustrations, every visual counts toward the big picture.",
       "icons": {
-        "colored": "Layout_pt0zpe",
-        "uncolored": "Layout_i6mloz"
+        "colored": "/images/Layout.avif",
+        "uncolored": "/images/Layout.avif"
       }
     },
     {
@@ -14,8 +14,8 @@
       "name": "Literary",
       "description": "Green & White's Literary Committee is the home for creative writers to transform memories into meaningful narratives. As we create captions, write literary pieces, and proofread personal statements, we ensure that Lasallian memories are preserved on each page.",
       "icons": {
-        "colored": "Literary_luswlh",
-        "uncolored": "Literary_wgruzm"
+        "colored": "/images/Literary.avif",
+        "uncolored": "/images/Literary.avif"
       }
     },
     {
@@ -23,8 +23,8 @@
       "name": "Photo",
       "description": "At the Photo Committee of Green & White, we capture moments that tell the story of Lasallian campus life. From graduation pictorials to org portraits, school events, and everyday campus scenes, each shot frames life into memories that will piece the picture of our past.",
       "icons": {
-        "colored": "Photo_igfqbi",
-        "uncolored": "Photo_m659nc"
+        "colored": "/images/Photo.avif",
+        "uncolored": "/images/Photo.avif"
       }
     },
     {
@@ -32,8 +32,8 @@
       "name": "Marketing",
       "description": "Behind the scenes, the Marketing Committee of Green & White crafts avenues to foster meaningful connections. We bridge the publication with the Lasallian community through captivating campaigns and creative communication strategies that amplify the yearbook's presence online and offline.",
       "icons": {
-        "colored": "Marketing_u8zvr3",
-        "uncolored": "Marketing_zik1ha"
+        "colored": "/images/Marketing.avif",
+        "uncolored": "/images/Marketing.avif"
       }
     },
     {
@@ -41,8 +41,8 @@
       "name": "Office",
       "description": "The Office Committee is in charge of Green & White's logistical operations. We are the backbone that keeps everything running smoothly—handling logistics, monitoring inventory, organizing data—to ensure yearbook activities go on without a hitch.",
       "icons": {
-        "colored": "Office_kjnutt",
-        "uncolored": "Office_a8ifkl"
+        "colored": "/images/Office.avif",
+        "uncolored": "/images/Office.avif"
       }
     },
     {
@@ -50,8 +50,8 @@
       "name": "Customer Care",
       "description": "When yearbook deadlines, payments, and processes start to get overwhelming or confusing, Customer Care is here to help. As the frontliners of Green & White, we address concerns, anticipate potential issues, and guide subscribers throughout the yearbook activities with patience and clarity.",
       "icons": {
-        "colored": "CC_wlgfju",
-        "uncolored": "CC_o5qr8k"
+        "colored": "/images/CC.avif",
+        "uncolored": "/images/CC.avif"
       }
     },
     {
@@ -59,8 +59,8 @@
       "name": "Web",
       "description": "The Web Committee empowers Green & White by building systems and turning ideas into practical solutions. We design user interfaces, create automation scripts, and manage databases to optimize and simplify the yearbook experience for members and subscribers alike.",
       "icons": {
-        "colored": "Web_av1kbj",
-        "uncolored": "Web_a9fny2"
+        "colored": "/images/Web.avif",
+        "uncolored": "/images/Web.avif"
       }
     }
   ]
