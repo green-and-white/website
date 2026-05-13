@@ -28,6 +28,11 @@
   --color-retro-purple: #552CB7;
   --color-retro-green: #009953;
   --color-retro-lightblue: #058CD7;
+
+  --color-app-red: #B34865;
+  --color-app-green: #48B38A;
+  --color-app-yellow: #FFE500;
+  --color-app-white: #E8E4DD;
 }
 
 html {
