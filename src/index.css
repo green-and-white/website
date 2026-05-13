@@ -87,8 +87,10 @@ html {
   --color-photo: #C5ADEC;
   --color-modal-bg: #F2F0EF;
 
-  --color-appwhite: "#F5F0E8";
-  --color-appgreen: "#2D6A3F";
+  --color-app-red: #B34865;
+  --color-app-green: #48B38A;
+  --color-app-yellow: #FFE500;
+  --color-app-white: #E8E4DD; 
 
 }
 
