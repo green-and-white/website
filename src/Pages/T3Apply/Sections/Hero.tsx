@@ -23,13 +23,13 @@ function Hero() {
 
 
       {/* Vertically Oriented Content Container */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center gap-9 max-w-4xl h-full py-10 px-16">
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center gap-9 max-w-4xl h-full py-16 px-6">
         {/* 1. Vertical - White Logo */}
         <div className="transition-transform duration-500 hover:scale-105">
           <CloudinaryImage
             publicId={whiteLogo.public_id}
             alt={whiteLogo.display_name}
-            className="h-22 md:h-32 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+            className="h-22 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
           />
         </div>
 
@@ -38,7 +38,7 @@ function Hero() {
           <CloudinaryImage
             publicId={connonImage.public_id}
             alt={connonImage.display_name}
-            className="h-60 md:h-90 w-auto max-w-full object-contain drop-shadow-[0_4px_8px_rgba(0,0,0,0.4)]"
+            className="h-60 md:h-70 w-auto max-w-full object-contain drop-shadow-[0_4px_8px_rgba(0,0,0,0.4)]"
           />
         </div>
 

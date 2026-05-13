@@ -1,34 +1,34 @@
 import React from 'react';
+import { T3_ASSETS } from '../../../lib/t3Assets';
+import { CloudinaryImage } from '../../../components/t3-recweek/CloudinaryImage';
 
 function About() {
+  const aboutImage = T3_ASSETS.images.find(
+    (img) => img.public_id === "About_Us_ke5fkt"
+  ) || { public_id: "About_Us_ke5fkt", display_name: "About Us" };
+
   return (
-    <section id="about" className="min-h-screen bg-[#F5F0E8] flex flex-col justify-center items-center px-6 py-16 md:py-24">
-      <div className="w-full max-w-4xl xl:max-w-5xl flex flex-col gap-10 lg:gap-12">
-        {/* Top row: Title and Green Sub-text */}
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12">
-          {/* Title column */}
-          <div className="flex flex-col">
-            <h1 className="font-micu text-5xl md:text-6xl lg:text-7xl tracking-wide text-[#2D6A3F]">
-              ABOUT US
-            </h1>
-            <div className="mt-4 lg:mt-6 h-2 w-16 bg-[#B34865] rounded-full"></div>
-          </div>
-
-          {/* Green block & tagline */}
-          <div className="flex items-stretch gap-4 max-w-lg">
-            <div className="w-2 md:w-3 bg-[#2D6A3F] rounded-full shrink-0"></div>
-            <p className="text-xl md:text-2xl text-[#2D6A3F] font-libre-caslon-condensed font-bold py-1">
-              Green & White is the official yearbook publication of De La Salle University.
-            </p>
-          </div>
+    <section id="about" className="min-h-screen bg-app-white flex flex-col items-center justify-center text-app-red px-6 md:px-16 py-12 md:py-24 gap-4">
+      <div className="font-micu text-[40px] md:text-[64px] leading-10 md:leading-20 text-center">
+        Green & White
+      </div>
+      <div className="flex flex-col gap-5">
+        <div className="font-futura-extrabold text-center text-2xl">
+          The official yearbook publication of De La Salle University.
         </div>
-
-        {/* Bottom row: Detailed paragraph */}
-        <div className="flex justify-start lg:justify-end">
-          <div className="max-w-2xl font-dm-mono text-base md:text-lg leading-relaxed text-gray-700 bg-white/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-[#2D6A3F]/10 shadow-sm transition-all duration-300 hover:shadow-md">
-            Celebrating its 101st year, the publication lives as the record-keeper of Lasallian memories. From portraits to pages, Green & White brings the Lasallian community together and etches their place in time through the yearbook.
-          </div>
+        <div className="font-futura-bold text-center max-w-[730px] text-2xl ">
+          Celebrating its 101st year, the publication lives as the record-keeper of Lasallian memories.
+          From portraits to pages, <span className="font-futura-extrabold text-app-green">Green & White</span> brings the Lasallian community together and etches their place in time through the yearbook.
         </div>
+      </div>
+
+      {/* About Us Image - full width container but max-w-[750px] on larger screens */}
+      <div className="w-full max-w-[750px] mt-2 flex justify-center transition-transform duration-500 hover:scale-[1.02]">
+        <CloudinaryImage
+          publicId={aboutImage.public_id}
+          alt={aboutImage.display_name}
+          className="w-full h-auto object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.15)]"
+        />
       </div>
     </section>
   );
