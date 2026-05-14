@@ -20,7 +20,7 @@ function Committees() {
                     <h1 className="font-micu text-4xl md:text-6xl tracking-wide">
                         core committees
                     </h1>
-                    <p className="font-futura-extrabold text-xl md:text-2xl text-app-white drop-shadow">
+                    <p className="font-futura-bold text-xl md:text-2xl text-app-white drop-shadow">
                         the people behind the yearbook
                     </p>
                 </div>
