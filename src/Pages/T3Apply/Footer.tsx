@@ -82,7 +82,7 @@ function Footer() {
         <div className='font-futura-bold'>
           Visuals by: &nbsp;
           <span className='font-futura-extrabold'>
-            Ramon Enrico Martinez, Kim Balasabas, and Zoila Cagampan
+            Ramon Enrico Martinez, Kim Balasabas, and Zoila Caga
           </span>
         </div>
 
