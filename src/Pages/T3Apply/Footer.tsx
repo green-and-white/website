@@ -84,7 +84,7 @@ function Footer() {
         <div className='font-futura-bold'>
           Website by &nbsp;
           <span className='font-futura-extrabold'>
-            Ramon Enrico Martinez, Johan Marlo Cabili, Sean Alvin Cua, and Linus Carl Perdon
+            Ramon Enrico Martinez, Johan Marlo Cabili, Alvin Sean Cua, and Linus Carl Perdon
           </span>
         </div>
         {/* vis credits  */}
