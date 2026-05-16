@@ -33,7 +33,7 @@ export function CommitteeCard({
 
   return (
     <div
-      className={`group relative flex flex-col bg-app-white border max-w-[330px] h-[380px] px-8 py-6 border-app-red hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2`}
+      className={`group relative flex flex-col bg-app-white border max-w-[330px] h-[350px] px-2 py-4 border-app-red hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2`}
     >
       {/* Upper Image Section with micro-animation zoom */}
       {/* <CloudinaryImage

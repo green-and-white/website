@@ -18,7 +18,7 @@ function About() {
         </div>
         <div className="font-futura-bold text-center max-w-[730px] text-2xl ">
           Celebrating its 101st year, the publication lives as the record-keeper of Lasallian memories.
-          From portraits to pages, <span className="font-futura-extrabold text-app-green">Green & White</span> brings the Lasallian community together and etches their place in time through the yearbook.
+          From portraits to pages, <span className="font-futura-bold text-app-green">Green & White</span> brings the Lasallian community together and etches their place in time through the yearbook.
         </div>
       </div>
 
@@ -36,3 +36,7 @@ function About() {
 }
 
 export default About;
+
+// The official.. -> extrabold 
+//Celebrating its.. -> bold
+//G&W mention -> extrabold
