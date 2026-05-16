@@ -17,14 +17,20 @@ function Steps() {
           >
             bit.ly/GW26-T3-Application
           </a>{' '}
-          by Saturday, May 23.
+          by Saturday, <span className=" text-app-green">May 23</span>.
         </>
       )
     },
     {
       number: "2",
       title: "EXAMINATION",
-      description: "Wait for the details of your committee exam and take-home exam to be sent to you by May 25. Submit your exam deliverables, resume, and portfolio within the given time period."
+      description: (
+        <>
+          Wait for the details of your committee exam and take-home exam to be sent to you by{' '}
+          <span className=" text-app-green">May 25</span>.{' '}
+          Submit your exam deliverables, resume, and portfolio within the given time period.
+        </>
+      )
     },
     {
       number: "3",

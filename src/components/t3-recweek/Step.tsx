@@ -12,9 +12,9 @@ function Step({
     description,
 }: StepProps) {
     return (
-        <div className="flex flex-row lg:flex-col gap-6 bg-app-white p-6 items-start lg:items-start h-full">
+        <div className="flex flex-row lg:flex-col gap-6 bg-app-white p-6 h-full">
             {number && (
-                <div className="font-futura-extrabold text-app-white bg-app-red w-16 h-16 lg:w-20 lg:h-20 flex items-center justify-center text-4xl lg:text-5xl shrink-0">
+                <div className="font-futura-extrabold text-app-white bg-app-red w-16  lg:w-20 lg:h-20 flex justify-center items-center text-4xl lg:text-5xl shrink-0">
                     {number}
                 </div>
             )}
@@ -22,7 +22,7 @@ function Step({
                 <h3 className="font-futura-bold uppercase text-3xl text-app-red tracking-wide">
                     {title}
                 </h3>
-                <div className="font-futura-bold text-base text-app-red leading-relaxed">
+                <div className="font-futura-bold text-lg text-app-red leading-relaxed">
                     {description}
                 </div>
             </div>
