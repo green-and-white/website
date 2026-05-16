@@ -19,7 +19,7 @@ function Step({
                 </div>
             )}
             <div className="flex flex-col gap-1">
-                <h3 className="font-futura-bold uppercase text-3^xl text-app-red tracking-wide">
+                <h3 className="font-futura-bold uppercase text-3xl text-app-red tracking-wide">
                     {title}
                 </h3>
                 <div className="font-futura-bold text-base text-app-red leading-relaxed">
