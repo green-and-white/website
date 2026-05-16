@@ -23,7 +23,7 @@ function About() {
       </div>
 
       {/* About Us Image - full width container but max-w-[750px] on larger screens */}
-      <div className="w-full max-w-[750px] mt-2 flex justify-center transition-transform duration-500 hover:scale-[1.02]">
+      <div className="w-full max-w-[1000px] mt-2 flex justify-center transition-transform duration-500 hover:scale-[1.02]">
         <CloudinaryImage
           publicId={aboutImage.public_id}
           alt={aboutImage.display_name}
