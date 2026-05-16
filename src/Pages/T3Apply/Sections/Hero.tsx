@@ -1,4 +1,5 @@
 import React from 'react';
+import grainTexture from "@/assets/textures/grain.avif"
 import { T3_ASSETS } from '../../../lib/t3Assets';
 import { CloudinaryImage } from '../../../components/t3-recweek/CloudinaryImage';
 
@@ -20,6 +21,13 @@ function Hero() {
         alt="Hero Background"
         className="absolute inset-0 w-full h-full object-cover z-0 filter brightness-[0.9]"
         width={1000}
+      />
+      {/* Grain overlay */}
+      <img
+        src={grainTexture}
+        aria-hidden="true"
+        alt=""
+        className="pointer-events-none select-none absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-difference"
       />
 
 
