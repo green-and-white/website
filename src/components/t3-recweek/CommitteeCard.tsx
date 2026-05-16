@@ -57,7 +57,7 @@ export function CommitteeCard({
           <h3 className="font-micu text-2xl text-app-red group-hover:text-app-red transition-colors duration-300">
             {name}
           </h3>
-          <p className="font-futura-bold text-base text-app-red leading-relaxed">
+          <p className="font-futura-bold text-base text-app-red">
             {renderFormattedDescription(description)}
           </p>
         </div>

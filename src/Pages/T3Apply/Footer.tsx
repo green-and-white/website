@@ -11,6 +11,7 @@ import telegram from "@/assets/icons/telegram.svg"
 import tiktok from "@/assets/icons/tiktok.svg"
 import globe from "@/assets/icons/globe.svg"
 import footer from "@/assets/recweek/footer.avif"
+import grainTexture from "@/assets/textures/grain.avif"
 
 function Links() {
   return (
@@ -41,8 +42,15 @@ function Footer() {
   return (
     <section
       className="relative px-6 md:px-12 py-16 md:py-24 flex-col flex font-futura-bold justify-center items-center gap-[30px] bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${footer})` }}
+      style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url(${footer})` }}
     >
+      {/* Grain overlay */}
+      <img
+        src={grainTexture}
+        aria-hidden="true"
+        alt=""
+        className="pointer-events-none select-none absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-difference"
+      />
 
       <div className="transition-transform duration-500">
         <CloudinaryImage
