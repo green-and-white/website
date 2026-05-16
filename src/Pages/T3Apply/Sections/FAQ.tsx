@@ -14,13 +14,13 @@ const faqs = [
       <div className="flex flex-col gap-1">
         <p>You may apply to any of the seven (7) committees:</p>
         <ul className="list-disc list-inside flex flex-col gap-1 mt-1">
-          <li><span className="font-futura-bold">Literary:</span> Pitch and write stories for the yearbook, proofread yearbook write-ups, and create captions for online platforms.</li>
-          <li><span className="font-futura-bold">Photo:</span> Handle operations behind photoshoots and provide visual-photo assets for the yearbook and campaign materials.</li>
-          <li><span className="font-futura-bold">Layout:</span> Creates publicity materials and designs the contents of the yearbook.</li>
-          <li><span className="font-futura-bold">Marketing:</span> Ideates and executes promotion strategies that encourage students to subscribe to the yearbook.</li>
-          <li><span className="font-futura-bold">Customer Care:</span> Accommodates subscriber concerns and guides subscribers throughout yearbook processes.</li>
-          <li><span className="font-futura-bold">Office:</span> Organizes the systems, logistics and data of the yearbook operations.</li>
-          <li><span className="font-futura-bold">Web:</span> Deploys and manages the digital solutions behind <GWAbbr/>'s systems.</li>
+          <li><span className="font-futura-extrabold">Literary:</span> Pitch and write stories for the yearbook, proofread yearbook write-ups, and create captions for online platforms.</li>
+          <li><span className="font-futura-extrabold">Photo:</span> Handle operations behind photoshoots and provide visual-photo assets for the yearbook and campaign materials.</li>
+          <li><span className="font-futura-extrabold">Layout:</span> Creates publicity materials and designs the contents of the yearbook.</li>
+          <li><span className="font-futura-extrabold">Marketing:</span> Ideates and executes promotion strategies that encourage students to subscribe to the yearbook.</li>
+          <li><span className="font-futura-extrabold">Customer Care:</span> Accommodates subscriber concerns and guides subscribers throughout yearbook processes.</li>
+          <li><span className="font-futura-extrabold">Office:</span> Organizes the systems, logistics and data of the yearbook operations.</li>
+          <li><span className="font-futura-extrabold">Web:</span> Deploys and manages the digital solutions behind <GWAbbr/>'s systems.</li>
         </ul>
       </div>
     )
