@@ -40,7 +40,7 @@ function Steps() {
 
 
   return (
-    <section id="steps" className="min-h-screen bg-app-white flex flex-col justify-center items-center px-6 md:px-12 py-16 md:py-24">
+    <section id="steps" className="sm:min-h-fit bg-app-white flex flex-col justify-center items-center px-6 md:px-12 py-16 md:py-24">
       <h1 className="font-micu text-app-red text-5xl md:text-[80px] text-center mb-12 w-full">
         application process
       </h1>

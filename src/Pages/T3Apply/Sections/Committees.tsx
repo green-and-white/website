@@ -5,7 +5,7 @@ import pinkRisoImg from '../../../assets/textures/pink_riso.avif';
 
 function Committees() {
     return (
-        <section id="committees" className="min-h-screen py-16 flex flex-col items-center bg-app-white overflow-hidden gap-8 w-full">
+        <section id="committees" className="py-16 md:py-24 flex flex-col justify-start items-center bg-app-white overflow-hidden gap-8 w-full">
             {/* Title Div with Pink Riso Background */}
             <div className="relative w-full overflow-hidden py-8 px-6 md:py-16 flex flex-col justify-center items-center text-app-white">
                 {/* Absolute Background Texture Layer using local high-fidelity AVIF asset */}
@@ -27,7 +27,7 @@ function Committees() {
             </div>
 
             {/* Horizontal Free-Sliding Carousel Section */}
-            <div className="w-full pl-4 md:pl-8 max-w-7xl">
+            <div className="w-full pl-4 md:pl-8 px-6 md:px-12">
                 <div className="flex gap-6 overflow-x-auto pb-8 pt-4 scrollbar-hide scroll-smooth snap-x mr-4">
                     {committeesData.committees.map((committee) => (
                         <div

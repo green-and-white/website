@@ -8,7 +8,7 @@ function About() {
   ) || { public_id: "About_Us_ke5fkt", display_name: "About Us" };
 
   return (
-    <section id="about" className="min-h-screen bg-app-white flex flex-col items-center justify-center text-app-red px-6 md:px-16 py-12 md:py-24 gap-4">
+    <section id="about" className="min-h-screen bg-app-white flex flex-col items-center justify-center text-app-red px-6 md:px-16 md:py-24 gap-4">
       <div className="font-micu text-[40px] md:text-[64px] leading-10 md:leading-20 text-center text-app-red">
         Green & White
       </div>

@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { CloudinaryImage } from './CloudinaryImage';
 import { buildCloudinaryUrl } from '../../lib/cloudinary';
 
@@ -17,6 +18,19 @@ export function CommitteeCard({
   name,
   description
 }: CommitteeCardProps) {
+  // Splits on "Green & White" and wraps each match in bold green text
+  const renderFormattedDescription = (text: string) => {
+    const parts = text.split("Green & White");
+    return parts.map((part, index) => (
+      <Fragment key={index}>
+        {part}
+        {index < parts.length - 1 && (
+          <span className="font-futura-extrabold text-app-green">Green & White</span>
+        )}
+      </Fragment>
+    ));
+  };
+
   return (
     <div
       className={`group relative flex flex-col bg-app-white border max-w-[330px] h-[380px] px-8 py-6 border-app-red hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2`}
@@ -44,7 +58,7 @@ export function CommitteeCard({
             {name}
           </h3>
           <p className="font-futura-bold text-base text-app-red leading-relaxed">
-            {description}
+            {renderFormattedDescription(description)}
           </p>
         </div>
       </div>

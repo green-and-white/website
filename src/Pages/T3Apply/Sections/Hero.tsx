@@ -46,7 +46,7 @@ function Hero() {
 
         {/* 3. Group Text 1 - Subtitle and Headline */}
         <div className="flex flex-col items-center gap-2.5">
-          <div className="flex flex-col items-center text-white font-micu text-2xl md:text-6xl">
+          <div className="flex flex-col items-center text-white font-micu text-3xl md:text-6xl">
             <p className="">
               Come as you are.
             </p>
