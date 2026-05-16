@@ -67,12 +67,12 @@ function Footer() {
       </div>
       {/* Buttons */}
       <div className="flex flex-row gap-4 z-2">
-        <div className="flex flex-col items-center p-4 bg-white hover:bg-app-green hover:text-app-white transition-colors ease-in-out text-app-green font-futura-extrabold text-xl">
+        <div className="flex flex-col items-center px-2 py-4 bg-white hover:bg-app-green hover:text-app-white transition-colors ease-in-out text-app-green font-futura-extrabold text-xl">
           {/* main website */}
           {/* redirect to base route / */}
           <RouterLink to="/">main website</RouterLink>
         </div>
-        <div className="flex flex-col items-center p-4 bg-white hover:bg-app-green hover:text-app-white transition-colors ease-in-out text-app-green font-futura-extrabold text-xl">
+        <div className="flex flex-col items-center px-2 py-4 bg-white hover:bg-app-green hover:text-app-white transition-colors ease-in-out text-app-green font-futura-extrabold text-xl">
           {/* back to top */}
           {/* scroll to top */}
           <a href = "#hero">back to top</a>
@@ -82,14 +82,14 @@ function Footer() {
       {/* credits */}
       <div className="text-center text-white z-2">
         <div className='font-futura-bold'>
-          Website by: &nbsp;
+          Website by &nbsp;
           <span className='font-futura-extrabold'>
             Ramon Enrico Martinez, Johan Marlo Cabili, Sean Alvin Cua, and Linus Carl Perdon
           </span>
         </div>
         {/* vis credits  */}
         <div className='font-futura-bold'>
-          Visuals by: &nbsp;
+          Visuals by&nbsp;
           <span className='font-futura-extrabold'>
             Ramon Enrico Martinez, Kim Balasabas, and Zoila Caga
           </span>
