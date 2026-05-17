@@ -69,9 +69,14 @@ function Hero() {
         </div>
 
         {/* 4. Group Text 2 - Call to Action and micro-tagline */}
-        <div className="flex flex-col items-center p-4 bg-app-white hover:bg-app-green hover:text-app-white transition-colors ease-in-out text-app-green font-futura-extrabold text-xl">
-          applications open may 18
-        </div>
+        <a
+          href="https://bit.ly/GW26-T3-Application"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center p-4 bg-app-white hover:bg-app-green hover:text-app-white transition-colors ease-in-out text-app-green font-futura-extrabold text-xl cursor-pointer"
+        >
+          Apply Now
+        </a>
       </div>
     </section>
   );

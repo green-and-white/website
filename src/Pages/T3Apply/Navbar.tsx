@@ -19,6 +19,7 @@ function Navbar() {
     { name: 'Application Steps', href: '#steps' },
     { name: 'Important Dates', href: '#dates' },
     { name: 'FAQs', href: '#faq' },
+    { name: 'Apply Now', href: 'https://forms.gle/44nZBcpfgAyKT9m9A'}
   ];
 
   // Track when the hero has been scrolled past
@@ -81,6 +82,11 @@ function Navbar() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Close mobile dropdown when navbar hides
+  useEffect(() => {
+    if (!isVisible) setIsOpen(false);
+  }, [isVisible]);
+
   const handleLinkScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsOpen(false);
@@ -114,7 +120,20 @@ function Navbar() {
       </a>
 
       <div className="hidden md:flex items-center justify-end flex-1 gap-6 lg:gap-10 ml-8">
-        {navLinks.map((link, index) => (
+        {navLinks.map((link, index) => {
+          if (link.name === "Apply Now"){
+            return (
+              <a
+                key={index}
+                href={link.href}
+                onClick={(e) => handleLinkScroll(e, link.href)}
+                className="font-futura-bold text-app-white bg-[#06402B] px-2 text-lg lg:text-xl tracking-wide transition-colors duration-200 relative py-1 after:absolute after:bottom-1 after:left-2 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-[calc(100%-1rem)]"
+              >
+                {link.name.toUpperCase()}
+              </a>
+            )
+          }
+          return(
           <a
             key={index}
             href={link.href}
@@ -123,7 +142,8 @@ function Navbar() {
           >
             {link.name.toUpperCase()}
           </a>
-        ))}
+          )
+        })}
       </div>
 
       <div className="relative md:hidden">
@@ -137,16 +157,33 @@ function Navbar() {
 
         {isOpen && (
           <div className="absolute right-0 mt-4 w-64 bg-[#E8E4DD] border-2 border-[#B34865] rounded-xl shadow-[6px_6px_0px_0px_#B34865] py-4 px-6 flex flex-col gap-4 origin-top-right transition-all duration-300">
-            {navLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                onClick={(e) => handleLinkScroll(e, link.href)}
-                className="font-futura-bold text-[#B34865] text-xl hover:text-[#48B38A] hover:translate-x-1 transition-all duration-200 block py-1 border-b border-[#B34865]/10 last:border-none"
-              >
-                {link.name}
-              </a>
-            ))}
+            {[...navLinks].sort((a) => (a.name === "Apply Now" ? -1 : 1)).map((link, index) => {
+              if (link.name === "Apply Now") {
+                return (
+                  <a
+                    key={index}
+                    href={link.href}
+                    onClick={(e) => handleLinkScroll(e, link.href)}
+                    className="font-futura-bold text-xl hover:translate-x-1 transition-all duration-200 block py-1 border-b border-[#B34865]/10 last:border-none"
+                  >
+                    <span className="inline-block bg-[#06402B] text-app-white px-2">
+                      {link.name}
+                    </span>
+                  </a>
+                );
+              }
+              return (
+                <a
+                  key={index}
+                  href={link.href}
+                  onClick={(e) => handleLinkScroll(e, link.href)}
+                  className="font-futura-bold text-[#B34865] text-xl hover:text-[#48B38A] hover:translate-x-1 transition-all duration-200 block py-1 border-b border-[#B34865]/10 last:border-none"
+                >
+                  {link.name}
+                </a>
+              );
+            })}
+
           </div>
         )}
       </div>
