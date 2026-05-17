@@ -75,7 +75,7 @@ function Hero() {
           rel="noopener noreferrer"
           className="flex flex-col items-center p-4 bg-app-white hover:bg-app-green hover:text-app-white transition-colors ease-in-out text-app-green font-futura-extrabold text-xl cursor-pointer"
         >
-          Apply Now
+          apply now
         </a>
       </div>
     </section>
