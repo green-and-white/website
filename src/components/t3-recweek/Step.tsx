@@ -22,7 +22,7 @@ function Step({
                 <h3 className="font-futura-bold uppercase text-3xl text-app-red tracking-wide">
                     {title}
                 </h3>
-                <div className="font-futura-bold text-lg text-app-red leading-relaxed">
+                <div className="font-futura-bold text-lg text-app-red leading-relaxed break-words">
                     {description}
                 </div>
             </div>

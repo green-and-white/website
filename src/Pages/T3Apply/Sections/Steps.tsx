@@ -13,7 +13,7 @@ function Steps() {
             href="https://bit.ly/GW26-T3-Application"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline text-app-green transition-colors duration-200 break-all"
+            className="underline text-app-green transition-colors duration-200 inline-block"
           >
             bit.ly/GW26-T3-Application
           </a>{' '}

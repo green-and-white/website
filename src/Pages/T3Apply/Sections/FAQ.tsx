@@ -6,7 +6,7 @@ const GWAbbr = () => <span className="font-futura-bold text-[#48B38A]">G&W</span
 const faqs = [
   {
     question: "Who can apply?",
-    answer: <p>All undergraduate students from all campuses under DLSU-Manila, with a minimum of three (3) terms left are eligible to apply for <GW/>.</p>
+    answer: <p>All undergraduate students from all campuses under DLSU, with a minimum of three (3) terms left are eligible to apply for <GW/>.</p>
   },
   {
     question: "What committees may I apply for?",

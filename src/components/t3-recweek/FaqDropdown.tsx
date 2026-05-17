@@ -18,7 +18,7 @@ export default function FaqDropdown(
   return (
     <div className="flex flex-col border-b-2 border-b-[#B34865] px-2 py-4 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
       <div className="flex flex-row items-center justify-between">
-        <h3 className={`font-futura-extrabold transition-all duration-300 ${isOpen ? "text-[#48B39A] text-2xl md:text-2xl lg:text-3xl" : "text-[#B34865] text-xl md:text-xl lg:text-2xl"}`}>
+        <h3 className={`font-futura-extrabold transition-all duration-300 text-xl md:text-xl lg:text-2xl ${isOpen ? "text-[#48B39A]" : "text-[#B34865] "}`}>
           {question}
         </h3>
         <span

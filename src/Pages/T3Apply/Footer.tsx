@@ -5,26 +5,28 @@ import { CloudinaryImage } from '../../components/t3-recweek/CloudinaryImage';
 import { Link as RouterLink } from 'react-router-dom'
 
 import logo from "@/assets/logos_updated/black-vertical.svg"
-import facebook from "@/assets/icons/facebook-black.svg"
+import facebook from "@/assets/icons/facebook-black-cropped.svg"
 import instagram from "@/assets/icons/instagram-black.svg"
-import telegram from "@/assets/icons/telegram.svg"
-import tiktok from "@/assets/icons/tiktok.svg"
-import globe from "@/assets/icons/globe.svg"
+import telegram from "@/assets/icons/telegram-cropped.svg"
+import tiktok from "@/assets/icons/tiktok-white.svg"
 import footer from "@/assets/recweek/footer.avif"
 import grainTexture from "@/assets/textures/grain.avif"
 
 function Links() {
   return (
     <>
-      <div className="mx-auto flex flex-row w-full justify-center gap-4">
+      <div className="mx-auto flex flex-row w-full justify-center items-center gap-4">
         <a href="https://fb.com/gwyearbookdlsu" target="_blank" rel="noopener noreferrer">
           <img src={facebook} alt="Facebook" className="h-8 w-8 brightness-0 invert" />
         </a>
-        <a href="https://instagram.com/gwyearbookdlsu" target="_blank" rel="noopener noreferrer">
-          <img src={instagram} alt="Instagram" className="h-8 w-8 brightness-0 invert" />
-        </a>
         <a href="https://t.me/gwyearbookdlsu" target="_blank" rel="noopener noreferrer">
           <img src={telegram} alt="Telegram" className="h-8 w-8 brightness-0 invert" />
+        </a>
+        <a href="https://t.me/gwyearbookdlsu" target="_blank" rel="noopener noreferrer">
+          <img src={tiktok} alt="Tiktok" className="h-8 w-8 brightness-0 invert" />
+        </a>
+        <a href="https://instagram.com/gwyearbookdlsu" target="_blank" rel="noopener noreferrer">
+          <img src={instagram} alt="Instagram" className="h-8 w-8 brightness-0 invert" />
         </a>
       </div>
     </>
@@ -80,21 +82,20 @@ function Footer() {
       </div>
 
       {/* credits */}
-      <div className="text-center text-white z-2">
+      <div className="text-center text-white z-2 [text-shadow:0_4px_8px_rgba(0,0,0,0.8)]">
         <div className='font-futura-bold'>
           Website by &nbsp;
           <span className='font-futura-extrabold'>
-            Ramon Enrico Martinez, Johan Marlo Cabili, Alvin Sean Cua, and Linus Carl Perdon
+            <span className="whitespace-nowrap">Ramon Enrico Martinez</span>, <span className="whitespace-nowrap">Johan Marlo Cabili</span>, <span className="whitespace-nowrap">Alvin Sean Cua</span>, and <span className="whitespace-nowrap">Linus Carl Perdon</span>
           </span>
         </div>
         {/* vis credits  */}
-        <div className='font-futura-bold'>
+        <div className='font-futura-bold mt-1'>
           Visuals by&nbsp;
           <span className='font-futura-extrabold'>
-            Ramon Enrico Martinez, Kim Balasabas, and Zoila Caga
+            <span className="whitespace-nowrap">Ramon Enrico Martinez</span>, <span className="whitespace-nowrap">Kim Balasabas</span>, and <span className="whitespace-nowrap">Zoila Caga</span>
           </span>
         </div>
-
       </div>
       {/* web credits */}
 
